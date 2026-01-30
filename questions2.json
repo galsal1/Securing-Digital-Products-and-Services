@@ -349,5 +349,5 @@
     ],
     "correctAnswerIndex": 1,
     "explanation": "רוב חולשות האבטחה בתוכנה (כגון SQL Injection, XSS, Buffer Overflow) נובעות מטעויות אנוש של מפתחים, חוסר ידע בכתיבת קוד מאובטח (Secure Coding), או תכנון ארכיטקטורה לקוי מלכתחילה."
-  },
+  }
 ]
