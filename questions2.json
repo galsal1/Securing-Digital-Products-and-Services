@@ -379,6 +379,118 @@
   },
   {
     "type": "mc",
+    "question": "באיזה מה-Security Properties ניתן לפגוע באמצעות Passive Attack?",
+    "options": [
+      "סודיות המידע (Confidentiality)",
+      "שלמות המידע (Integrity)",
+      "זמינות המידע (Availability)",
+      "סודיות ושלמות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "התקפה פסיבית (כמו ציתות לתעבורה) אינה משנה את המידע או משביתה את המערכת, אלא רק 'מקשיבה'. לכן, היא פוגעת רק בסודיות (Confidentiality).",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון לגבי Targeted Attacks?",
+    "options": [
+      "אלו ההתקפות שהכי קל להתגונן מפניהן",
+      "ניתן להתגונן מפניהן רק באמצעות התקנת Security Patches",
+      "לעיתים הן מנצלות Day-Zero Vulnerabilities",
+      "תשובות א׳ וג׳ נכונות",
+      "תשובות א׳ ב׳ וג׳ נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "התקפות ממוקדות הן הקשות ביותר להתגוננות כי התוקף משקיע משאבים רבים ללמוד את היעד. לעיתים קרובות הן משתמשות ב'חולשות יום אפס' שטרם התגלו לציבור.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מהי Day-Zero Vulnerability?",
+    "options": [
+      "חולשה שתוקנה ע״י Patch רשמי",
+      "חולשה ידועה אך לא מנוצלת",
+      "חולשה שנוצלה ע״י תוקף לפני שהיה ידוע על קיומה ולפני שיצא Patch",
+      "התקפה אקטיבית על מערכת",
+      "תצורת אבטחה שגויה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "חולשת יום אפס (Zero-Day) היא חולשה שמתגלה לעולם ביום שהיא מנוצלת (או שמתגלה למפתח), ואין לה עדיין תיקון זמין מהיצרן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון לגבי Attack Surface?",
+    "options": [
+      "Attack Surface קטן מגדיל את הסיכון למתקפה",
+      "Attack Surface גדול מגדיל את הסיכוי לניצול Vulnerabilities",
+      "Attack Surface תלוי רק בקוד האפליקציה",
+      "Attack Surface רלוונטי רק לשרתים",
+      "אין קשר בין Attack Surface לבין אבטחת מידע"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "משטח התקיפה מייצג את כל נקודות הכניסה האפשריות. ככל שיש יותר שירותים ונקודות כניסה, כך גדל הסיכוי שתוקף ימצא חולשה באחת מהן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה סוג התקפה ניתן להקטין את הנזק באמצעות יישום עקרון Least Privilege?",
+    "options": [
+      "Passive Attack",
+      "Injection Attacks",
+      "DoS Attacks",
+      "Social Engineering",
+      "Physical Attacks"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "עקרון 'מינימום הרשאות' מבטיח שאם תוקף מצליח לבצע הזרקת קוד (Injection), הנזק יוגבל להרשאות המצומצמות של התהליך שנפרץ, ולא תהיה לו גישה לכל המערכת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו קטגוריית התקפות נחשבת להכי קשה להתגוננות?",
+    "options": [
+      "Random Opportunistic",
+      "Directed Opportunistic",
+      "Fully Targeted",
+      "Passive Attacks",
+      "Insider Attacks"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "התקפה ממוקדת מלאה (Fully Targeted) היא הקשה ביותר כי התוקף מוכוון מטרה, בעל מוטיבציה גבוהה, ומוכן להשקיע זמן רב ומשאבים כדי למצוא פרצה ספציפית.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל המרכזי בין Random Opportunistic Attack לבין Directed Opportunistic Attack?",
+    "options": [
+      "סוג ה־Vulnerability",
+      "אופן בחירת הקורבן",
+      "סוג הנזק",
+      "שימוש ב־Malware",
+      "רמת ההצפנה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "במתקפה אקראית (Random) התוקף סורק כל מה שבא ליד. במתקפה מכוונת (Directed) התוקף בוחר קהל יעד (למשל: 'כל בתי החולים'), אך עדיין משתמש בכלים 'הזדמנותיים' ולא בנשק ייעודי.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע התקנת כל ה-Security Patches אינה מספיקה כהגנה מפני Targeted Attacks?",
+    "options": [
+      "כי Patches אינם יעילים",
+      "כי Targeted Attacks מנצלות לעיתים Day-Zero",
+      "כי Patches פוגעים בזמינות",
+      "כי Patches רלוונטיים רק ל-Client",
+      "כי Targeted Attacks הן תמיד פנימיות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "תיקוני אבטחה (Patches) מגנים רק מפני חולשות ידועות. תוקפים ממוקדים משתמשים לעיתים בחולשות לא ידועות (Zero-Day) או בטכניקות של הנדסה חברתית שה-Patch לא יכול למנוע.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
     "question": "מה ההבדל המרכזי בין Vulnerability לבין Threat?",
     "options": [
       "Vulnerability היא איום חיצוני ו-Threat הוא חולשה פנימית",
