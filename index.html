@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>בוחן אבטחת מוצרים</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body { font-family: 'Assistant', sans-serif; }
+    .option-button.correct { background-color: #10b981; color: #fff; border-color: #059669; }
+    .option-button.incorrect { background-color: #ef4444; color: #fff; border-color: #dc2626; }
+    .option-button:disabled { opacity: 0.8; cursor: not-allowed; }
+  </style>
+</head>
+<body class="bg-slate-50 flex items-center justify-center min-h-screen p-2 sm:p-4">
+
+  <div id="quiz-container" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full max-w-2xl border-t-8 border-slate-800">
+
+    <div class="mb-8 text-center">
+        <h1 class="text-2xl font-bold text-slate-800">בוחן אבטחת מוצרים</h1>
+        <p class="text-slate-500 text-sm mt-1">תרגול שאלות אמריקאיות לפי נושאי הקורס</p>
+    </div>
+
+    <div id="lecture-select-area">
+      <div class="mb-6 p-4 bg-slate-100 rounded-xl">
+          <p class="font-bold text-slate-700 mb-4">בחרו נושאים לתרגול:</p>
+          <div id="lecture-checkboxes" class="flex flex-col gap-3 text-slate-700">
+            <label class="flex items-center gap-3 cursor-pointer bg-white p-3 rounded-lg shadow-sm hover:bg-slate-50 transition border border-transparent hover:border-slate-200">
+                <input type="checkbox" value="1" class="lecture-checkbox w-5 h-5 text-slate-800 rounded" /> 
+                <span class="font-medium">נושא 1 - Security properties and mechanisms</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer bg-white p-3 rounded-lg shadow-sm hover:bg-slate-50 transition border border-transparent hover:border-slate-200">
+                <input type="checkbox" value="2" class="lecture-checkbox w-5 h-5 text-slate-800 rounded" /> 
+                <span class="font-medium">נושא 2 - Vulnerabilities and Attacks</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer bg-white p-3 rounded-lg shadow-sm hover:bg-slate-50 transition border border-transparent hover:border-slate-200">
+                <input type="checkbox" value="3" class="lecture-checkbox w-5 h-5 text-slate-800 rounded" /> 
+                <span class="font-medium">נושא 3 - Authentication and Session Management</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer bg-white p-3 rounded-lg shadow-sm hover:bg-slate-50 transition border border-transparent hover:border-slate-200">
+                <input type="checkbox" value="4" class="lecture-checkbox w-5 h-5 text-slate-800 rounded" /> 
+                <span class="font-medium">נושא 4 - Access Control and Secure Design</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer bg-white p-3 rounded-lg shadow-sm hover:bg-slate-50 transition border border-transparent hover:border-slate-200">
+                <input type="checkbox" value="5" class="lecture-checkbox w-5 h-5 text-slate-800 rounded" /> 
+                <span class="font-medium">נושא 5 - Injection Attacks and XSS</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer bg-white p-3 rounded-lg shadow-sm hover:bg-slate-50 transition border border-transparent hover:border-slate-200">
+                <input type="checkbox" value="6" class="lecture-checkbox w-5 h-5 text-slate-800 rounded" /> 
+                <span class="font-medium">נושא 6 - Input Validation and Error Handling</span>
+            </label>
+          </div>
+      </div>
+
+      <div class="mb-6 px-2">
+        <label class="flex items-center gap-2 cursor-pointer text-slate-700">
+          <input id="show-all-checkbox" type="checkbox" class="w-4 h-4 rounded text-slate-800" />
+          <span>הצג את כל השאלות (ללא הגבלה של 40 שאלות)</span>
+        </label>
+      </div>
+
+      <button id="start-quiz-button"
+              class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 rounded-xl shadow-lg transition-all transform hover:scale-[1.01] active:scale-95">
+        התחל תרגול
+      </button>
+    </div>
+
+    <div id="progress-container" class="hidden mb-6 flex justify-between items-center border-b pb-4">
+      <span id="progress-text" class="font-bold text-slate-600"></span>
+      <span id="score-text" class="font-bold text-emerald-600"></span>
+    </div>
+
+    <div id="question-area" class="hidden">
+      <h2 id="question-text" class="text-xl md:text-2xl font-bold text-slate-800 mb-6 leading-tight"></h2>
+      <div id="options-container" class="flex flex-col gap-3"></div>
+    </div>
+
+    <div id="feedback-area" class="hidden mt-6 p-5 rounded-xl border-r-8 bg-slate-50 border-slate-300 transition-all">
+      <p id="feedback-message" class="text-lg font-bold mb-1"></p>
+      <p id="explanation-text" class="text-slate-600 text-sm leading-relaxed italic"></p>
+    </div>
+
+    <div id="controls-area" class="hidden mt-6">
+      <button id="next-question-button" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 rounded-xl shadow-md transition-colors">
+        השאלה הבאה ←
+      </button>
+    </div>
+
+    <div id="results-area" class="hidden text-center py-10">
+      <div class="text-6xl mb-4">🛡️</div>
+      <h2 class="text-3xl font-bold text-slate-800 mb-2">סיימת את התרגול!</h2>
+      <p id="final-score-text" class="text-xl text-slate-600 mb-8"></p>
+      <button id="restart-quiz-button" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-10 rounded-xl shadow-lg transition-transform transform hover:scale-105">
+        חזרה לבחירת נושאים
+      </button>
+    </div>
+  </div>
+
+<script>
+const MAX_QUESTIONS = 40;
+let ALL_QUESTIONS = [];
+let shuffledQuestions = [];
+let currentIndex = 0;
+let score = 0;
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+async function loadQuestions() {
+  const selected = [...document.querySelectorAll('.lecture-checkbox:checked')].map(cb => cb.value);
+  if (selected.length === 0) return alert('נא לבחור לפחות נושא אחד לתרגול');
+
+  const arrays = [];
+  for (const num of selected) {
+    try {
+      // מצפה לקבצים questions1.json, questions2.json וכו'
+      const res = await fetch(`questions${num}.json`);
+      if (res.ok) {
+        const data = await res.json();
+        arrays.push(data);
+      }
+    } catch (e) { 
+      console.error(`שגיאה בטעינת קובץ נושא ${num}:`, e); 
+    }
+  }
+
+  ALL_QUESTIONS = arrays.flat().filter(q => q.type === 'mc');
+  if (ALL_QUESTIONS.length === 0) return alert('לא נמצאו שאלות מתאימות בקבצים שנבחרו. ודאו שהקבצים קיימים בתיקייה.');
+  
+  startQuiz();
+}
+
+function startQuiz() {
+  shuffledQuestions = [...ALL_QUESTIONS];
+  shuffle(shuffledQuestions);
+  
+  if (!document.getElementById('show-all-checkbox').checked && shuffledQuestions.length > MAX_QUESTIONS) {
+    shuffledQuestions = shuffledQuestions.slice(0, MAX_QUESTIONS);
+  }
+
+  currentIndex = 0;
+  score = 0;
+
+  document.getElementById('lecture-select-area').classList.add('hidden');
+  document.getElementById('progress-container').classList.remove('hidden');
+  document.getElementById('question-area').classList.remove('hidden');
+  document.getElementById('controls-area').classList.remove('hidden');
+
+  displayQuestion();
+}
+
+function displayQuestion() {
+  const q = shuffledQuestions[currentIndex];
+  document.getElementById('feedback-area').classList.add('hidden');
+  document.getElementById('next-question-button').classList.add('hidden');
+  
+  document.getElementById('question-text').textContent = q.question;
+  document.getElementById('progress-text').textContent = `שאלה ${currentIndex + 1} מתוך ${shuffledQuestions.length}`;
+  document.getElementById('score-text').textContent = `ניקוד: ${score}`;
+
+  const container = document.getElementById('options-container');
+  container.innerHTML = '';
+
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = "option-button w-full text-right p-4 border-2 border-slate-100 rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all text-slate-700 font-medium";
+    btn.textContent = opt;
+    btn.onclick = () => handleAnswer(idx, btn);
+    container.appendChild(btn);
+  });
+}
+
+function handleAnswer(idx, clickedBtn) {
+  const q = shuffledQuestions[currentIndex];
+  const isCorrect = idx === q.correctAnswerIndex;
+  const buttons = document.querySelectorAll('.option-button');
+  
+  buttons.forEach(b => b.disabled = true);
+  
+  const feedback = document.getElementById('feedback-area');
+  const msg = document.getElementById('feedback-message');
+  feedback.classList.remove('hidden');
+
+  if (isCorrect) {
+    score++;
+    clickedBtn.classList.add('correct');
+    msg.textContent = "✓ נכון מאוד!";
+    msg.className = "text-lg font-bold text-emerald-600";
+    feedback.style.borderColor = "#10b981";
+  } else {
+    clickedBtn.classList.add('incorrect');
+    buttons[q.correctAnswerIndex].classList.add('correct');
+    msg.textContent = "✗ לא נכון";
+    msg.className = "text-lg font-bold text-rose-600";
+    feedback.style.borderColor = "#ef4444";
+  }
+
+  document.getElementById('explanation-text').textContent = "הסבר: " + q.explanation;
+  document.getElementById('next-question-button').classList.remove('hidden');
+  document.getElementById('score-text').textContent = `ניקוד: ${score}`;
+}
+
+document.getElementById('start-quiz-button').addEventListener('click', loadQuestions);
+document.getElementById('next-question-button').addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex < shuffledQuestions.length) displayQuestion();
+  else showResults();
+});
+
+function showResults() {
+  document.getElementById('question-area').classList.add('hidden');
+  document.getElementById('controls-area').classList.add('hidden');
+  document.getElementById('feedback-area').classList.add('hidden');
+  document.getElementById('progress-container').classList.add('hidden');
+  document.getElementById('results-area').classList.remove('hidden');
+  
+  const percentage = Math.round((score / shuffledQuestions.length) * 100);
+  document.getElementById('final-score-text').textContent = `צברת ${score} נקודות מתוך ${shuffledQuestions.length} (${percentage}%)`;
+}
+
+document.getElementById('restart-quiz-button').addEventListener('click', () => location.reload());
+</script>
+</body>
+</html>
