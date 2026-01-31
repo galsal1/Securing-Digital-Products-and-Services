@@ -1,1 +1,143 @@
+[
+  {
+    "type": "mc",
+    "question": "איזו התקפה מנצלת את העובדה שה־Session-ID שנמצא ב־Cookie נשלח אוטומטית ע\"י הדפדפן?",
+    "options": [
+      "התקפת XSS",
+      "התקפת XSRF/CSRF",
+      "התקפת SQL Injection",
+      "התקפת Cookie Poisoning",
+      "התקפת Session Hijacking"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "CSRF מנצלת את העובדה שהדפדפן שולח את ה־Session-ID אוטומטית עם כל בקשה, גם אם המשתמש לא יזם אותה במודע.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן לממש client authentication באמצעות challenge-response כאשר יש קשר בין השרת ל־client לפני ביצוע ה־Authentication (נניח שקיים מפתח סודי המשותף ל־Client ולשרת)?",
+    "options": [
+      "ה־Client מצפין את ה־Challenge ע\"י מפתח סימטרי ושולח לשרת",
+      "ה־Client מצפין את ה־Challenge ע\"י המפתח הציבורי של השרת",
+      "ה־Client מצפין את ה־Challenge ע\"י המפתח הפרטי של ה־Client ויוצר response הכוללת את המפתח הציבורי שלו",
+      "ה־Client מצפין את ה־Challenge ע\"י המפתח הציבורי של ה־Client",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "כאשר קיים מפתח סודי משותף, הצפנת האתגר באמצעותו מוכיחה של־Client יש את המפתח ולכן את זהותו.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תהליכי Authentication הדפדפן אחראי להצגת חלון בו המשתמש מקליד את שם המשתמש והסיסמה שלו?",
+    "options": [
+      "HTTP Basic Authentication ו־HTTP Digest Authentication",
+      "Form based Authentication ו־HTTP Digest Authentication",
+      "HTTP Basic Authentication ו־Form based Authentication",
+      "Certificate based Authentication",
+      "Certificate based Authentication ו־HTTP Digest Authentication"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ב־HTTP Basic ו־Digest הדפדפן עצמו מציג חלון הזדהות מובנה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד יודע הדפדפן האם עליו לבצע Authentication בשיטת HTTP Basic Authentication או בשיטת HTTP Digest Authentication?",
+    "options": [
+      "זה נבחר ע\"י המשתמש באיזו שיטה להזדהות",
+      "זה נקבע בקונפיגורציה של הדפדפן",
+      "זה נקבע ע\"י פרמטר ב־WWW-Authenticate Header",
+      "זה נקבע ע\"י פרמטר ב־Authorization Header",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "השרת מודיע לדפדפן על שיטת ההזדהות הנדרשת באמצעות ה־WWW-Authenticate Header.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה שיטת הזדהות חייבים לשקול אבטחת מידע (כלומר על מנת לשמור על סודיות הסיסמא) לשלוח את ה־HTTP Request המכיל את בקשת ה־Authentication על גבי חיבור מוצפן, כלומר ב־HTTPS תחת ההנחה שהסיסמה של המשתמש אינה בתת מפתח?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "HTTP Digest Authentication ו־HTTP Basic Authentication",
+      "HTTP Basic Authentication ו־Form Based Authentication"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ב־HTTP Basic וב־Form Based הסיסמה נשלחת באופן שניתן לחשיפה ללא HTTPS.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "בתצורה בה יש שרת Authentication מולו מבצע ה־Authentication והוא מעביר את המשתמש לאחר ה־Authentication ל־Web application בצירוף Ticket שנשלח באמצעות מנגנון Cookie, איזה מנגנון אבטחה נדרש כדי למנוע Replay attack?",
+    "options": [
+      "אין צורך להצפין את ה־Ticket",
+      "יש להצפין את ה־Ticket באמצעות מפתח סודי",
+      "יש להצפין את ה־Ticket באמצעות פרוטוקול SSL ולמנוע שינוי בתוכן ה־Ticket",
+      "יש להצפין את ה־Ticket אך אין צורך להגן על שלמותו",
+      "אין צורך להגן על ה־Ticket כלל"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "SSL מגן גם על סודיות וגם על שלמות ה־Ticket וכך מונע שימוש חוזר בו.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "למה צורך ב־Web application במנגנון Session management?",
+    "options": [
+      "כי Web application לא יכול לעבוד ללא מנגנון Client-server",
+      "כי HTTP הוא Request-Response protocol",
+      "כי HTTP הוא Stateless protocol",
+      "כי Web server לא יכול לשמור מידע על הלקוח",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "HTTP אינו שומר מצב בין בקשות ולכן יש צורך במנגנון Session.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר ב־Options על ה־Set-cookie header מופיעים גם Max-age וגם Discard, איזו Cookie ייווצר?",
+    "options": [
+      "Persistent Cookie שיימחק כאשר יעבור פרק הזמן שהוגדר ב־Max-age",
+      "Session Cookie שיימחק כאשר יעבור פרק הזמן שהוגדר ב־Max-age",
+      "Session Cookie שיימחק כאשר יסגר הדפדפן",
+      "Persistent Cookie שיימחק כאשר יסגר הדפדפן",
+      "Session Cookie שיימחק כאשר יסגר הדפדפן או כאשר יעבור פרק הזמן שהוגדר ב־Max-age"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "השילוב קובע שה־Cookie יימחק או בסגירת הדפדפן או בתום הזמן – המוקדם מביניהם.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו התקפה יכול שימוש ב־HTTP Only Option עבור ה־Cookie למנוע?",
+    "options": [
+      "גניבת ה־Cookie מהדפדפן באמצעות התקפת XSS",
+      "Cookie Poisoning",
+      "גניבת ה־Cookie באמצעות האזנה לערוץ התקשורת",
+      "ניחוש ה־Cookie ע\"י התוקף",
+      "גניבת ה־Cookie מהדפדפן באמצעות התקפת XSS ו־Cookie Poisoning"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "HttpOnly מונע גישה ל־Cookie דרך JavaScript וכך מגן מפני XSS.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "על מנת שהתקפת XSRF/CSRF תוכל לפגוע באפליקציה תלויה בכך ש:",
+    "options": [
+      "הדפדפן לא יבצע Input validation על HTTP Request",
+      "הדפדפן לא יבצע Input validation על HTTP Response",
+      "שלמשתמש יהיה Session פתוח מול האפליקציה",
+      "שלמשתמש תהיה הרשאה של אדמיניסטרטור",
+      "שלמשתמש והאפליקציה יהיו באותו דומיין"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "CSRF מנצלת Session קיים ופעיל של המשתמש מול האפליקציה.",
+    "source": "original"
+  }
+]
 
