@@ -1,1 +1,101 @@
+[
+  {
+    "type": "mc",
+    "question": "איזו התקפה מאפשרת לתוקף לבצע פעולות בשם המשתמש ללא ידיעתו תוך ניצול Session קיים?",
+    "options": [
+      "SQL Injection",
+      "XSS",
+      "CSRF",
+      "Session Fixation",
+      "Cookie Poisoning"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "CSRF מנצלת Session פעיל של המשתמש ומבצעת בקשות בשמו ללא ידיעתו.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה הקשר בין התקפת XSS לבין התקפת SQL Injection?",
+    "options": [
+      "אין קשר בין ההתקפות",
+      "שתיהן פוגעות ב־Database",
+      "שתיהן פוגעות בצד ה־Client",
+      "שתיהן מבוססות על פירוש קלט כקוד",
+      "XSS היא תת־סוג של SQL Injection"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "בשתי ההתקפות קלט לא מהימן מפורש כקוד – SQL בצד השרת ו־JavaScript בצד הלקוח.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מהי התקפת Cookie Poisoning?",
+    "options": [
+      "גניבת Cookie באמצעות XSS",
+      "שינוי ערך Cookie על ידי התוקף כדי להשפיע על לוגיקת האפליקציה",
+      "שליחת Cookie דרך ערוץ לא מוצפן",
+      "ניחוש Cookie של משתמש אחר",
+      "מחיקת Cookie של משתמש"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Cookie Poisoning היא שינוי ערך Cookie במטרה להשפיע על התנהגות האפליקציה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד התקפת XSS מאפשרת עקיפה של Same Origin Policy?",
+    "options": [
+      "באמצעות שליחת בקשות HTTP ישירות לשרת",
+      "באמצעות הרצת קוד זדוני בהקשר של הדומיין הלגיטימי",
+      "באמצעות שינוי כותרות HTTP",
+      "באמצעות שינוי DNS",
+      "באמצעות שימוש ב־HTTPS"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "קוד XSS רץ בדפדפן בהקשר של הדומיין הלגיטימי ולכן עוקף את Same Origin Policy.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה סוג של XSS מתרחש כולו בצד ה־Client ללא מעורבות של השרת?",
+    "options": [
+      "Stored XSS",
+      "Reflected XSS",
+      "DOM-Based XSS",
+      "Persistent XSS",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "DOM-Based XSS מתרחש כאשר הקלט מעובד ונוצל ישירות בדפדפן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל המהותי בין התקפת XSS להתקפת CSRF?",
+    "options": [
+      "XSS פוגעת בשרת ו־CSRF בדפדפן",
+      "XSS מנצלת Session ו־CSRF לא",
+      "XSS מזריקה קוד ו־CSRF מנצלת אמון ב־Session",
+      "CSRF דורשת JavaScript ו־XSS לא",
+      "אין הבדל מהותי"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "XSS מזריקה קוד זדוני לדפדפן, בעוד CSRF מנצלת Session קיים לביצוע פעולות.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מטרתו המרכזית של מנגנון Content Security Policy (CSP)?",
+    "options": [
+      "הצפנת התעבורה",
+      "מניעת SQL Injection",
+      "הגבלת מקורות מהם ניתן לטעון ולהריץ קוד בדפדפן",
+      "אימות זהות המשתמש",
+      "ניהול Sessions"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "CSP מגביל מקורות קוד ומקטין את הסיכון להתקפות XSS.",
+    "source": "original"
+  }
+]
 
