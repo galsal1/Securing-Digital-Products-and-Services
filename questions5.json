@@ -96,6 +96,76 @@
     "correctAnswerIndex": 2,
     "explanation": "CSP מגביל מקורות קוד ומקטין את הסיכון להתקפות XSS.",
     "source": "original"
+  },
+   {
+    "type": "mc",
+    "question": "איזו מבין ההתקפות הבאות מנצלת vulnerability באפליקציה שרצה על Web server על מנת להעביר קוד זדוני ליעד ההתקפה? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "התקפת XSS",
+      "התקפת SQL Injection",
+      "התקפת Session Hijacking",
+      "התקפת XSS והתקפת SQL Injection",
+      "התקפת XSS והתקפת SQL Injection והתקפת Session Hijacking"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "גם XSS וגם SQL Injection מנצלות חולשה באפליקציה כדי להעביר קוד זדוני – בדפדפן או בשרת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו התקפה מאפשרת לגנוב את הערך של ה־SessionID מתוך הדפדפן?",
+    "options": [
+      "Cookie Poisoning",
+      "SQL Injection",
+      "Session Hijacking",
+      "XSS",
+      "Session Hijacking ו־Cookie Poisoning"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "XSS מאפשר הרצת JavaScript בדפדפן וגניבת SessionID.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "התקפת Cookie Poisoning תוקף גורם ל:",
+    "options": [
+      "צד שלישי שמאזין לתעבורה בין הדפדפן לשרת",
+      "המשתמש של ה־Web application",
+      "צד שלישי שמצליח להחדיר קוד זדוני לדפדפן של המשתמש",
+      "תשובות א׳ ו־ב׳ נכונות",
+      "אף אחת מהתשובות אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Cookie Poisoning מתבצעת כאשר קוד זדוני בדפדפן משנה ערכי Cookies.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מבין ההתקפות הבאות התקפת ה־XSS נחשבת בעיית אבטחה נשמרת בבסיס הנתונים בשרת של ה־Web application?",
+    "options": [
+      "Reflected XSS",
+      "Persistence XSS",
+      "DOM-Based XSS",
+      "תשובות א׳ ו־ב׳ נכונות",
+      "תשובות ב׳ ו־ג׳ נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Persistent (Stored) XSS נשמרת בבסיס הנתונים ומופצת למשתמשים.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות יש לממש את מנגנוני הגנה כנגד XSS בצד ה־client על מנת למנוע את ההתקפה? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM-Based XSS",
+      "תשובות א׳ ו־ב׳ נכונות",
+      "תשובות א׳ ב׳ ו־ג׳ נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "DOM-Based XSS מתרחש כולו בדפדפן ולכן ההגנה העיקרית נדרשת בצד ה־client.",
+    "source": "original"
   }
 ]
 
