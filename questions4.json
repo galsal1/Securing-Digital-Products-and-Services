@@ -1,1 +1,73 @@
+[
+  {
+    "type": "mc",
+    "question": "מה ההבדל בין מנגנון ההרשאה Read Access control לבין Write Access control ביחס למידע רגיש?",
+    "options": [
+      "שניהם באים לשמור על סודיות המידע ומטרתם היא למנוע ממי שאינו מורשה לגשת לקובץ שמכיל את המידע",
+      "Read Access control שומר על סודיות המידע ו־Write Access control שומר על שלמות המידע",
+      "Write Access control שומר על סודיות המידע ו־Read Access control שומר על שלמות המידע",
+      "שניהם באים לשמור על זמינות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Read Access Control מונע חשיפה של מידע רגיש (סודיות), בעוד Write Access Control מונע שינוי לא מורשה של המידע (שלמות).",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "האם ניתן להשתמש בבחינת עלויות ניהול מדיניות אבטחת מידע לשימוש במנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic לעומת שימוש במנגנון אבטחת מידע המיישם את התפיסה של Positive Security Logic?",
+    "options": [
+      "כן, כי הוא מאפשר ניהול נכון למנוע False Positive",
+      "כן, כי הוא מאפשר ניהול נכון למנוע False Negative",
+      "כן, כי הוא מאפשר ניהול נכון למנוע False Positive ו־False Negative",
+      "כן, כי הוא Generic ואינו דורש הגדרות עבור כל מערכת בנפרד, ועלויות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic משמעותית נמוכות מעלויות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Positive Security Logic",
+      "לא, אין הבדל משמעותי בין עלויות ניהול מדיניות אבטחת מידע בין שימוש במנגנון המיישם את התפיסה של Positive Security Logic לבין מנגנון המיישם את התפיסה של Negative Security Logic"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Negative Security Logic מבוסס על חסימת חריגים ולכן פשוט יותר לניהול, בעוד Positive Security Logic דורש הגדרה מדויקת של כל מה שמותר.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "האם ומדוע להפריד את רכיב הניהול של המערכת מהאפליקציה הנגישה למשתמשים המשתמשת את המשתמשים (למשל השלושים ברשת האינטרנט) תחת הנחה ששתי האפליקציות רצות על שרת האינטרנט?",
+    "options": [
+      "אין יתרון בהפרדה כזאת והוא נועד רק לשפר ביצועים",
+      "אין יתרון בהפרדה כזאת כי ניתן לממש בקרת גישה באמצעות Access Control",
+      "הפרדה כזאת חשובה כי היא מונעת מצב שבו משתמש רגיל מנצל Vulnerability במנגנון Access Control כדי לבצע פעולות שאינן מורשות",
+      "הפרדה כזאת נועדה למנוע שימוש במנגנוני Authentication",
+      "הפרדה כזאת נועדה להגן על רכיב הניהול באמצעות מנגנון Authentication חזק יותר"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הפרדה תכנונית מקטינה את ה־Attack Surface ומונעת פגיעה מערכתית הנובעת מחולשה ב־Access Control.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרכים לצמצם את הנזק כתוצאה מהתקפות Injection attacks (עד שמקרים מסוימים זה בולם את ההתקפה)?",
+    "options": [
+      "שימוש טוב ב־Authentication Factor",
+      "שימוש נכון במנגנון Session management",
+      "צמצום ההרשאות של האפליקציה מול כל המערכת שאליה יעד ההתקפה",
+      "שימוש טוב ב־Authentication Factor ושימוש נכון במנגנון Session management",
+      "מימוש מנגנון Session management וצמצום ההרשאות של האפליקציה מול כל המערכת שאליה יעד ההתקפה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "צמצום ההרשאות (Least Privilege) מקטין את הנזק גם אם מתבצעת התקפת Injection.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרכים למנוע או לצמצם נזק אפשרי של התקפת SQL Injection?",
+    "options": [
+      "צמצום ההרשאות של האפליקציה בבסיס הנתונים על פי עקרון Least privileges",
+      "Untrusted sources ב־output encoding לפני החזרת הפלט",
+      "לא לבנות שאילתות SQL על ידי שרשור של מחרוזות, אלא להשתמש ב־strongly typed parameterized query APIs",
+      "צמצום ההרשאות של האפליקציה על פי עקרון Least privileges ושימוש נכון ב־output encoding",
+      "צמצום ההרשאות של האפליקציה בבסיס הנתונים על פי עקרון Least privileges ולא לבנות שאילתות SQL על ידי שרשור של מחרוזות אלא להשתמש ב־strongly typed parameterized query APIs"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "השילוב של Least Privilege יחד עם Parameterized Queries הוא ההגנה היעילה ביותר מפני SQL Injection.",
+    "source": "original"
+  }
+]
 
