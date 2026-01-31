@@ -195,7 +195,7 @@
     "explanation": "הצפנה (Encryption) נועדה לסודיות (Confidentiality). היא לא מונעת שינוי של המידע המוצפן (Integrity). תוקף יכול לשנות את ה-Ciphertext, ולמרות שהפענוח ישתבש, המערכת לא בהכרח תזהה שמדובר בהתקפה ללא מנגנון אימות נוסף (כגון MAC או חתימה).",
     "source": "original"
   },
-    {
+  {
     "type": "mc",
     "question": "האם כאשר מידע נמצא בתהליך עיבוד ובאחסון בזיכרון של המחשב, האם ניתן לוודא שהוא עובד לא רק באופן בטוח?",
     "options": [
@@ -515,6 +515,146 @@
     ],
     "correctAnswerIndex": 1,
     "explanation": "חתימה דיגיטלית מאפשרת לשרת לזהות שינוי בפרמטר שנשלח מהלקוח.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "שמירת קובץ על הדיסק בשרת שיש להגן הסודיות והשלמות שלו, כשהוא לא מוצפן וללא חתימה דיגיטלית על הקובץ, אבל כאשר מיושם Control Access Write and Read על הגישה לקובץ, היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack – התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "Access Control בלבד אינו נחשב Vulnerability או Attack אלא מנגנון הגנה חלקי.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון הצפנת המידע ומנגנון ה control Access Write ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא למנוע את השינוי הלא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא לאפשר לאתר שבוצע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת ההצפנה היא לאפשר לאתר שינוי לא מורשה שנעשה במידע ומטרת ה control access Write הוא למנוע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת ההצפנה היא למנוע שינוי לא מורשה במידע ומטרת ה control access Write היא לאתר שינוי לא מורשה שנעשה במידע",
+      "מנגנון ההצפנה בא לשמור על סודיות המידע ומנגנון ה control Access Write בא לשמור על שלמות המידע"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הצפנה מגנה על סודיות, Write Access Control על שלמות.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "Passive attack ואיזו תכונת אבטחה נפגעת?",
+    "options": [
+      "Integrity",
+      "Availability",
+      "Authentication",
+      "Confidentiality",
+      "Non-repudiation"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Passive attack כולל האזנה ופוגע בסודיות בלבד.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון במימוש ה Response-Challenge לצורך Authentication באמצעות הצפנה אסימטרית?",
+    "options": [
+      "החישוב והבדיקה של ה Response מהירים יותר",
+      "אין צורך לשמור את ה Challenge בשרת",
+      "אין צורך לשמור סוד משותף בשרת",
+      "אין הבדל בין הצפנה סימטרית לאסימטרית",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בהצפנה אסימטרית השרת אינו שומר סוד משותף.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מבין המשפטים הבאים נכון ביחס באופן בו יש לקבוע את זמן ה Timeout למחיקת Connection TCP ב Firewall Statefull?",
+    "options": [
+      "בשלב Handshake ה Timeout צריך להיות קצר משמעותית מאשר ב Established",
+      "בשלב סגירת Connection ה Timeout צריך להיות קצר יותר מאשר ב Established",
+      "בשלב Handshake ה Timeout צריך להיות ארוך יותר מאשר ב Established",
+      "ה Timeout צריך להיות זהה בכל שלב",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "Handshake ו־Closing צריכים Timeout קצר יותר מחיבור Established.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מתבצע Authentication Client בפני השרת באמצעות מנגנון Response-Challenge, אזי אפשר לממש את המנגנון ע\"י כך שה Client:",
+    "options": [
+      "מצפין את ה Challenge ע\"י מפתח סימטרי מוסכם",
+      "מצפין את ה Challenge ע\"י המפתח הציבורי של ה Client",
+      "מצפין את ה Challenge ע\"י המפתח הציבורי של השרת",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Challenge-Response יכול להתבצע באמצעות מפתח סימטרי משותף.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מי מיצר Assertions SAML?",
+    "options": [
+      "Identity Provider",
+      "Relying Party",
+      "Service Provider",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Assertions נוצרות ונחתמות ע\"י ה־Identity Provider.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס ל SSO Web המבוסס על SAML במודל PULL?",
+    "options": [
+      "ה Assertion חייב להיות חתום כי הוא עובר בדפדפן",
+      "ה Assertion לא חייב להיות חתום",
+      "ה Artifact חייב להיות חתום",
+      "ה Artifact לא חייב להיות חתום כי הוא אקראי ואינו מכיל Assertion",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב־PULL ה־Artifact בלבד עובר בדפדפן והוא אקראי.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "ב SSO Web המבוסס על SAML הערוץ הישיר בין Identity Provider ל Service Provider משמש ל:",
+    "options": [
+      "שליחת Assertion מה־IdP ל־SP",
+      "שליחת Response מה־SP ל־IdP",
+      "שליחת Artifact Response",
+      "שליחת Query Artifact וקבלת Assertion",
+      "שליחת Assertion דרך הדפדפן"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הערוץ הישיר משמש להעברת Assertion בצורה מאובטחת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה זה Output Encoding?",
+    "options": [
+      "מנגנון למניעת SQL Injection",
+      "מנגנון למניעת LDAP Injection",
+      "מנגנון למניעת XSS",
+      "מנגנון למניעת Parameter Tampering",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Output Encoding מונע פרשנות של קלט כקוד בדפדפן.",
     "source": "original"
   }
 ]

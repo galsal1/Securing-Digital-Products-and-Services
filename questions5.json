@@ -236,6 +236,118 @@
     "correctAnswerIndex": 1,
     "explanation": "CSRF מנצלת Session קיים ללא צורך בגניבתו, בניגוד ל-XSS/Session Hijacking.",
     "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מבין ההתקפות הבאות מנצלת Vulnerability באפליקציה על מנת להעביר קוד זדוני ליעד ההתקפה?",
+    "options": [
+      "SQL Injection",
+      "XSS",
+      "Session Hijacking",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "גם SQL Injection וגם XSS מעבירות קוד זדוני – בשרת או בדפדפן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן לצמצם את ה-Attack Surface של התקפת CSRF (XSRF)?",
+    "options": [
+      "שימוש ב-HttpOnly Cookie",
+      "הוספת CSRF Token לבקשות עם side-effect",
+      "Output Encoding",
+      "Parameterized Queries",
+      "ולידציה בצד ה-client בלבד"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Token ייחודי לכל בקשה מצמצם את נקודות התקיפה של CSRF.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מקרה האפליקציה חשופה להתקפת XSS?",
+    "options": [
+      "כאשר משלבים קלט בתוך JavaScript ללא Encoding",
+      "כאשר משלבים קלט בתוך HTML ללא Output Encoding",
+      "כאשר משתמשים ב-HTTPS",
+      "תשובות א' וב' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שילוב קלט לא מהימן בקוד/HTML ללא Encoding מוביל ל-XSS.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל המרכזי בין Reflected XSS לבין DOM-Based XSS?",
+    "options": [
+      "Reflected XSS מערב את השרת, DOM-Based מתרחש בדפדפן בלבד",
+      "Reflected XSS נשמר בבסיס הנתונים",
+      "DOM-Based XSS אינו דורש JavaScript",
+      "אין הבדל מהותי",
+      "DOM-Based XSS פוגע רק בזמינות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Reflected XSS עובר דרך השרת; DOM-Based מתרחש כולו בצד ה-client.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו התקפת XSS נשמרת בבסיס הנתונים של השרת ומופצת למשתמשים?",
+    "options": [
+      "Reflected XSS",
+      "DOM-Based XSS",
+      "Stored (Persistent) XSS",
+      "Self-XSS",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Stored XSS נשמר בשרת ומופעל לכל משתמש הצורך את התוכן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מאפשרת התקפת Session Hijacking?",
+    "options": [
+      "עקיפת Authentication בלבד",
+      "עקיפת Authorization בלבד",
+      "עקיפת Authentication ו-Authorization",
+      "עקיפת Auditing בלבד",
+      "גניבת סיסמה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Session תקף מאפשר התחזות מלאה למשתמש.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באילו סוגי XSS חייבים לממש מנגנוני הגנה בצד השרת?",
+    "options": [
+      "Reflected XSS בלבד",
+      "Stored XSS בלבד",
+      "DOM-Based XSS בלבד",
+      "Reflected ו-Stored XSS",
+      "כל סוגי ה-XSS"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Reflected ו-Stored מערבים את השרת ולכן מחייבים הגנה בצד השרת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה תפקידו של Output Encoding?",
+    "options": [
+      "מניעת SQL Injection",
+      "מניעת CSRF",
+      "מניעת XSS",
+      "מניעת Session Hijacking",
+      "מניעת Parameter Tampering"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Output Encoding מונע פרשנות של קלט כקוד בדפדפן.",
+    "source": "original"
   }
 ]
 

@@ -152,6 +152,62 @@
     "correctAnswerIndex": 0,
     "explanation": "Least Privilege מצמצם את הנזק בעיקר בהתקפות SQL Injection ע\"י הגבלת הרשאות ה-DB.",
     "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה התקפות יכול מימוש עקרון Least Privilege לסייע לצמצום הנזק? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "SQL Injection",
+      "CSRF",
+      "Session Hijacking",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Least Privilege מצמצם בעיקר את הנזק מ-SQL Injection ע\"י הגבלת הרשאות במסד הנתונים.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מהמצבים הבאים חייבים להשתמש ב-Negative Security Logic?",
+    "options": [
+      "כאשר ניתן להגדיר במדויק את כל ההתנהגויות החוקיות",
+      "כאשר המערכת סגורה ומוגדרת היטב",
+      "כאשר מדובר במערכת פתוחה עם קלט חופשי ומגוון",
+      "כאשר קיימת הפרדה בין אפליקציית ניהול לאפליקציית משתמשים",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "במערכות פתוחות עם קלט מגוון קשה להגדיר Allowlist מלא ולכן נדרשת Blacklist.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "Firewall המממש Negative Security Logic מאופיין בכך ש:",
+    "options": [
+      "הוא חוסם רק תעבורה שהוגדרה מראש כחוקית",
+      "הוא מאפשר רק תעבורה שהוגדרה מראש כחוקית",
+      "הוא חוסם תעבורה שנמצאה כחשודה או אסורה",
+      "הוא אינו מבצע סינון תעבורה כלל",
+      "הוא מבצע Authentication"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Negative Security Logic חוסם מה שמזוהה כחשוד ומאפשר את השאר.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע ניהול הרשאות לפי עקרון Least Privilege מסייע בצמצום נזק מתקיפות?",
+    "options": [
+      "כי הוא מונע לחלוטין תקיפות",
+      "כי הוא מונע גניבת SessionID",
+      "כי הוא מגביל את הפעולות שניתן לבצע גם לאחר חדירה",
+      "כי הוא מבצע הצפנה",
+      "כי הוא מונע XSS"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "גם לאחר חדירה, ההרשאות המצומצמות מגבילות את הנזק.",
+    "source": "original"
   }
 ]
 

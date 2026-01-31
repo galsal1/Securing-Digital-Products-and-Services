@@ -362,6 +362,202 @@
     "correctAnswerIndex": 3,
     "explanation": "גם CSRF וגם Session Hijacking גורמות לשליחת בקשות בשם הקורבן.",
     "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון בשימוש במנגנון Authentication מסוג Challenge-Response?",
+    "options": [
+      "הסיסמה נשלחת לשרת בצורה מוצפנת",
+      "הסיסמה אינה נשלחת כלל ברשת",
+      "אין צורך ב־HTTPS",
+      "השרת אינו נדרש לבצע ולידציה",
+      "המנגנון מונע CSRF"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ב־Challenge-Response הסוד אינו נשלח כלל ברשת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מאפיין את מנגנון HTTP Digest Authentication?",
+    "options": [
+      "שליחת Username וסיסמה כ־Base64",
+      "שליחת Hash של הסיסמה וה־Challenge",
+      "שימוש ב־Session Cookie",
+      "תלות ב־JavaScript",
+      "שליחת הסיסמה בטקסט גלוי"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Digest משתמש ב־Hash של הסיסמה וה-Challenge ולא שולח סיסמה גלויה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "אפליקציה רוצה שה־SessionID ימחק לאחר 10 דקות או עם סגירת הדפדפן. באילו Cookie Options עליה להשתמש?",
+    "options": [
+      "Max-Age בלבד",
+      "Discard בלבד",
+      "Max-Age ו־Discard",
+      "Persistent Cookie",
+      "HttpOnly"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Max-Age מגביל בזמן ו-Discard מוחק בסגירת הדפדפן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מונע שימוש ב־HttpOnly Cookie?",
+    "options": [
+      "גניבת Cookie באמצעות האזנה לרשת",
+      "גניבת Cookie באמצעות XSS",
+      "Session Fixation",
+      "CSRF",
+      "SQL Injection"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "HttpOnly מונע גישה ל-Cookie מ-JavaScript ולכן חוסם גניבה ב-XSS.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מאפשרת התקפת Session Hijacking?",
+    "options": [
+      "עקיפת Authentication בלבד",
+      "עקיפת Authorization בלבד",
+      "עקיפת Authentication ו-Authorization",
+      "עקיפת Auditing בלבד",
+      "גניבת סיסמה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Session תקף מאפשר התחזות מלאה למשתמש.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזו מהשיטות הבאות נשלחים Username ו-Password לשרת?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Authentication",
+      "תשובות א' ו-ג' נכונות",
+      "כל התשובות נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Basic ו-Form שולחות סיסמה (לעומת Digest).",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מי מציג בפועל את חלון ההזדהות למשתמש ב-HTTP Authentication?",
+    "options": [
+      "שרת ה-Web",
+      "האפליקציה",
+      "הדפדפן",
+      "שרת ה-Authentication",
+      "Identity Provider"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הדפדפן מציג את חלון ההזדהות בתגובה ל-WWW-Authenticate.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "במימוש Challenge-Response סימטרי, מה משותף ל-Client ול-Server?",
+    "options": [
+      "מפתח ציבורי",
+      "מפתח פרטי",
+      "סוד משותף",
+      "Certificate",
+      "SessionID"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "במנגנון סימטרי יש סוד משותף.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה המשמעות של שימוש משולב ב-Max-Age ו-Discard?",
+    "options": [
+      "ה־Cookie לעולם לא יימחק",
+      "ה־Cookie ימחק רק ידנית",
+      "ה־Cookie יימחק במוקדם מבין הזמן או סגירת הדפדפן",
+      "ה־Cookie יהפוך Persistent",
+      "אין משמעות מיוחדת"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "המחיקה מתבצעת לפי התנאי המוקדם ביותר.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע שליחת SessionID כחלק מה-URL אינה בטוחה?",
+    "options": [
+      "כי ה-URL מוצפן",
+      "כי ה-URL נשמר ב-History, Logs ו-Referer",
+      "כי ה-URL מוגבל באורך",
+      "כי הדפדפן חוסם אותו",
+      "כי הוא לא תומך ב-HTTPS"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "SessionID עלול לדלוף דרך Logs, History ו-Referer.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון נחשב העיקרי למניעת CSRF/XSRF?",
+    "options": [
+      "HttpOnly Cookie",
+      "Output Encoding",
+      "CSRF Token",
+      "Parameterized Queries",
+      "HTTPS בלבד"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Token ייחודי לבקשה מונע שליחה זדונית.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מכילה SAML Assertion?",
+    "options": [
+      "SessionID",
+      "פרטי Authentication והרשאות",
+      "רק שם משתמש",
+      "רק מפתח ציבורי",
+      "Cookie"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Assertion מכילה מידע על זהות והקשרים (Attributes).",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "ב-SAML SSO במודל PULL, מה עובר בדפדפן?",
+    "options": [
+      "Assertion",
+      "Artifact",
+      "SessionID",
+      "Username ו-Password",
+      "Certificate"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "רק Artifact אקראי עובר בדפדפן; ה-Assertion נשלף בערוץ ישיר.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "למה משמש הערוץ הישיר בין IdP ל-SP ב-SAML SSO?",
+    "options": [
+      "שליחת Cookie",
+      "שליחת Assertion בצורה מאובטחת",
+      "שליחת Redirect למשתמש",
+      "שליחת HTML",
+      "שליחת Credentials"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הערוץ הישיר משמש להעברת Assertion ללא חשיפה לדפדפן.",
+    "source": "original"
   }
 ]
 

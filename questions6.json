@@ -138,6 +138,104 @@
     "correctAnswerIndex": 2,
     "explanation": "CSRF ו־Cookie Poisoning מנצלות אמון ב־Session/Cookie, לא מבנה הקלט.",
     "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע Format Validation בלבד אינו נחשב מנגנון אבטחה מספק?",
+    "options": [
+      "כי הוא מאט את המערכת",
+      "כי ניתן לעקוף אותו באמצעות קידודים שונים או לוגיקה זדונית",
+      "כי הוא רלוונטי רק ל־SQL Injection",
+      "כי הוא פועל רק בצד ה־client",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בדיקת פורמט בלבד ניתנת לעקיפה באמצעות קידודים, קומבינציות ולוגיקה זדונית.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע בדיקות תקינות קלט (Input Validation) בצד ה־client אינן נחשבות למנגנון אבטחה?",
+    "options": [
+      "כי הן פוגעות בחוויית המשתמש",
+      "כי הן מאטות את המערכת",
+      "כי ניתן לעקוף אותן בקלות ע\"י שליחת בקשות ישירות לשרת",
+      "כי הן אינן תומכות בכל דפדפן",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "התוקף יכול לשלוח בקשות ישירות לשרת ולעקוף כל בדיקה בצד ה־client.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה החשיבות של ביצוע Canonicalization לפני Input Validation?",
+    "options": [
+      "שיפור ביצועים",
+      "איחוד ייצוגים שונים של אותו קלט כדי למנוע עקיפת ולידציה",
+      "מניעת CSRF",
+      "הקשחת Firewall",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Canonicalization מונעת עקיפה ע\"י ייצוגים שונים של אותו קלט.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע Negative Security Logic מקל על תוקף לבצע Evasion?",
+    "options": [
+      "כי קשה להגדיר Allowlist מלא",
+      "כי קל יותר לפספס תבנית זדונית אחת מאשר להגדיר את כל התבניות החוקיות",
+      "כי הוא מחייב Canonicalization",
+      "כי הוא חוסם יותר מדי קלט",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Blacklist נוטה לפספס וריאציות חדשות של קלט זדוני.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מהדרכים הבאות היא הדרך הנכונה ביותר למנוע SQL Injection?",
+    "options": [
+      "חסימת תווים מיוחדים",
+      "ולידציה בצד ה־client בלבד",
+      "שימוש ב־Parameterized Queries בשילוב Input Validation",
+      "בניית שאילתות ע\"י שרשור מחרוזות",
+      "Output Encoding"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Parameterized Queries מפרידים בין קוד לנתונים; ולידציה משלימה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מההתקפות הבאות אינה נמנעת באמצעות Negative Security Logic?",
+    "options": [
+      "SQL Injection חדש",
+      "XSS חדש",
+      "CSRF",
+      "Command Injection חדש",
+      "LDAP Injection חדש"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "CSRF אינו מבוסס על דפוסי קלט ולכן Blacklist אינה מונעת אותו.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו בדיקה מייצגת Logic Security Negative?",
+    "options": [
+      "הרשאה רק לערכים שמוגדרים מראש",
+      "חסימת קלט שמכיל תווים אסורים",
+      "שימוש ב־Whitelist",
+      "בדיקת טווחים חוקיים בלבד",
+      "אימות מול Schema סגור"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "חסימת תבניות אסורות היא Blacklist – Negative Security Logic.",
+    "source": "original"
   }
 ]
 

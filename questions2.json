@@ -572,6 +572,103 @@
     "correctAnswerIndex": 3,
     "explanation": "גם קלט אלפא-נומרי עלול להוביל ל-XSS אם הוא משולב ב-HTML ללא Output Encoding.",
     "source": "original"
+  },{
+    "type": "mc",
+    "question": "מה עדיף לבצע כאשר מתגלה Vulnerability במערכת?",
+    "options": [
+      "לחסום רק את ההתקפה הידועה שמנצלת את ה־Vulnerability",
+      "לתקן את ה־Vulnerability עצמה",
+      "לחסום רק את ה־IP של התוקף",
+      "להוסיף מנגנון Auditing בלבד",
+      "אין עדיפות ברורה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "חסימת התקפה אחת אינה מונעת ניצולים אחרים; תיקון החולשה הוא הפתרון הנכון.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "שינוי ערך של Hidden Parameter או של פרמטר ב־URL ע\"י המשתמש הוא:",
+    "options": [
+      "Vulnerability",
+      "Attack",
+      "Threat",
+      "Risk",
+      "Control Access Bypass"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "שינוי ערכים ע\"י התוקף הוא מימוש אקטיבי – התקפה (Attack).",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מבין ההתקפות הבאות אינה ניתנת למניעה באמצעות Format Validation בלבד?",
+    "options": [
+      "SQL Injection",
+      "XSS",
+      "CSRF",
+      "OS Command Injection",
+      "LDAP Injection"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "CSRF אינו מבוסס על פורמט הקלט אלא על אמון ב־Session.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מאפיין Random Opportunistic attacks?",
+    "options": [
+      "הן מכוונות ליעד ספציפי לאחר מחקר ממושך",
+      "הן מנצלות לרוב Zero-Day",
+      "הן סורקות מטרות רבות ומנצלות חולשות ידועות",
+      "הן מתבצעות רק ע\"י Insider",
+      "הן אינן נשענות על Vulnerabilities"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "מתקפות Opportunistic סורקות ומנצלות חולשות מוכרות בקנה מידה רחב.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא ה-Vulnerability אותו מנצלת התקפה מסוג Content Replacement Attack?",
+    "options": [
+      "היעדר Authentication",
+      "אי־ביצוע Canonicalization לפני Input Validation",
+      "שימוש ב־HTTPS",
+      "שימוש ב־Positive Security Logic",
+      "חסימת תווים מיוחדים"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ללא Canonicalization, ניתן לעקוף ולידציה ולהחליף תוכן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "לאיזו התקפה חשופה אפליקציה שמשלבת קלט אלפא-נומרי בתוך HTML ללא Output Encoding?",
+    "options": [
+      "SQL Injection",
+      "OS Command Injection",
+      "Forceful Browsing",
+      "XSS",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "גם קלט אלפא-נומרי עלול לגרום ל-XSS אם משולב ב-HTML ללא Encoding.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מתאפשר לתוקף בעקבות גניבת Session-ID תקף?",
+    "options": [
+      "לעקוף Authentication בלבד",
+      "לעקוף Authorization בלבד",
+      "לעקוף Authentication ו-Authorization",
+      "לעקוף Auditing בלבד",
+      "לבצע SQL Injection"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Session תקף מאפשר התחזות מלאה למשתמש – אימות והרשאות.",
+    "source": "original"
   },
   {
     "type": "mc",
