@@ -166,6 +166,76 @@
     "correctAnswerIndex": 2,
     "explanation": "DOM-Based XSS מתרחש כולו בדפדפן ולכן ההגנה העיקרית נדרשת בצד ה־client.",
     "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן לצמצם את ה Attack Surface של התקפת CSRF (XSRF)?",
+    "options": [
+      "שימוש ב Cookie עם HttpOnly",
+      "הוספת Token רנדומלי וחד־פעמי לבקשות המבצעות פעולה עם side effect",
+      "ולידציה מחמירה של הקלט בצד ה client",
+      "שימוש ב Output Encoding",
+      "שימוש ב Parameterized Queries"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Token ייחודי לכל בקשה מצמצם את מספר ה־Endpoints החשופים ל־CSRF.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מקרה האפליקציה חשופה להתקפת XSS?",
+    "options": [
+      "כאשר האפליקציה משלבת קלט מהמשתמש ישירות בתוך קוד JavaScript",
+      "כאשר האפליקציה משלבת קלט מהמשתמש בתוך אלמנט HTML ללא Output Encoding",
+      "כאשר האפליקציה משתמשת ב HTTPS",
+      "תשובות א' וב' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שילוב קלט לא מהימן בקוד JavaScript או HTML ללא Encoding מוביל ל-XSS.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל המרכזי בין Reflected XSS לבין DOM-Based XSS?",
+    "options": [
+      "Reflected XSS מתבצע בצד השרת ו-DOM-Based XSS בצד הלקוח",
+      "Reflected XSS נשמר בבסיס הנתונים ו-DOM-Based XSS לא",
+      "DOM-Based XSS תמיד דורש JavaScript זדוני",
+      "אין הבדל מהותי בין שני הסוגים",
+      "DOM-Based XSS פוגע רק ב-Availability"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Reflected XSS מערב את השרת, בעוד DOM-Based XSS מתרחש כולו בדפדפן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מבין התקפות ה-XSS הבאות נשמרת בבסיס הנתונים של השרת ומופצת למשתמשים רבים?",
+    "options": [
+      "Reflected XSS",
+      "DOM-Based XSS",
+      "Stored (Persistent) XSS",
+      "Self-XSS",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Stored XSS נשמר בשרת ומופעל עבור כל משתמש שצורך את התוכן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל המהותי בין התקפת CSRF לבין התקפת XSS או Session Hijacking?",
+    "options": [
+      "CSRF דורשת JavaScript ו-XSS לא",
+      "CSRF אינה דורשת גניבת SessionID",
+      "XSS ו-Session Hijacking פוגעות ב-Integrity בלבד",
+      "CSRF מתבצעת בצד השרת בלבד",
+      "אין הבדל מהותי"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "CSRF מנצלת Session קיים ללא צורך בגניבתו, בניגוד ל-XSS/Session Hijacking.",
+    "source": "original"
   }
 ]
 

@@ -68,6 +68,76 @@
     "correctAnswerIndex": 2,
     "explanation": "Parameterized Queries מפרידים בין הקוד לנתונים ולכן מונעים פירוש קלט כקוד בלי לפגוע בפונקציונליות.",
     "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע בדיקות תקינות קלט (Input Validation) בצד ה client אינן נחשבות למנגנון אבטחה?",
+    "options": [
+      "כי בדיקות כאלה מאטות את זמן התגובה של האפליקציה",
+      "כי ניתן לעקוף אותן בקלות ע\"י שליחת בקשות ישירות לשרת",
+      "כי הן אינן תומכות בכל סוגי הדפדפנים",
+      "כי הן פוגעות בחוויית המשתמש",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התוקף יכול לשלוח בקשות ישירות לשרת ולעקוף כל ולידציה בצד ה־client.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה החשיבות של ביצוע Canonicalization לפני ביצוע Input Validation?",
+    "options": [
+      "כדי לשפר ביצועים",
+      "כדי למנוע קידודים שונים של אותו קלט שיכולים לעקוף את ה־Validation",
+      "כדי לאפשר שימוש ב־Negative Security Logic",
+      "כדי למנוע התקפות CSRF",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Canonicalization מאחדת ייצוגים שונים של אותו קלט וכך מונעת עקיפת ולידציה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע שימוש ב־Negative Security Logic בבדיקת קלט מקל על תוקף לבצע Evasion?",
+    "options": [
+      "כי קשה להגדיר תבניות תקינות",
+      "כי קל יותר לפספס תבנית זדונית אחת מאשר להגדיר את כל התבניות החוקיות",
+      "כי Negative Security Logic חוסם יותר מדי קלט",
+      "כי הוא דורש Canonicalization",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Blacklist נוטה לפספס וריאציות לא מוכרות של קלט זדוני, מה שמקל על Evasion.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מהדרכים הבאות היא הדרך הנכונה ביותר למנוע SQL Injection?",
+    "options": [
+      "ולידציה מחמירה של הקלט בצד ה־client",
+      "חסימת תווים מיוחדים בקלט",
+      "שימוש ב־Parameterized Queries בשילוב Input Validation",
+      "בניית שאילתות SQL באמצעות שרשור מחרוזות",
+      "שימוש ב־Output Encoding"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Parameterized Queries מפרידים בין קוד לנתונים, ולידציה משלימה את ההגנה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע בדיקת פורמט הקלט (Format validation) אינה מונעת התקפות CSRF או Cookie Poisoning?",
+    "options": [
+      "כי ההתקפות אינן מבוססות על קלט מהמשתמש",
+      "כי ההתקפות מתבצעות בצד השרת בלבד",
+      "כי ההתקפות מנצלות אמון במידע שנשלח מהדפדפן ולא את פורמט הקלט",
+      "כי Format validation רלוונטי רק ל־SQL Injection",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "CSRF ו־Cookie Poisoning מנצלות אמון ב־Session/Cookie, לא מבנה הקלט.",
+    "source": "original"
   }
 ]
 

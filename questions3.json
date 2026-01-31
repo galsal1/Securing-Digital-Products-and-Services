@@ -278,6 +278,90 @@
     "correctAnswerIndex": 2,
     "explanation": "Cookie Poisoning מתבצעת ע\"י קוד זדוני בדפדפן שמשנה ערכי Cookies.",
     "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון במימוש ה Response-Challenge לצורך Authentication באמצעות הצפנה אסימטרית?",
+    "options": [
+      "החישוב והבדיקה של ה Response מהירים יותר",
+      "אין צורך לשמור את ה Challenge בשרת שמבצע את תהליך ה Authentication",
+      "אין צורך לשמור את האלמנט הסודי על פיו מתבצע תהליך ה Authentication בשרת שמבצע את תהליך ה Authentication ולכן הוא מתאים גם ל party Third Authentication",
+      "אין הבדל בין מימוש ה Response-Challenge בהצפנה סימטרית ובין מימוש ה Response-Challenge בהצפנה אסימטרית",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בהצפנה אסימטרית השרת אינו מחזיק סוד משותף ולכן המנגנון מתאים גם ל-Third Party Authentication.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר נעשה שימוש ב Authentication Digest HTTP , וה server Web מתבסס על ה Challenge ב Header Authorization שנשלח ב Request בבדיקת ה Response, ולא בודק שה Challenge שמופיע ב Header Authorization הוא ה Challenge שאכן נשלח לדפדפן ע\"י ה Server Web, אזי לאיזה התקפה חשוף ה Server Web (תחת ההנחה שהסיסמא של המשתמש אינה ברת מניה)?",
+    "options": [
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת הסיסמא של המשתמש",
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת ה ID-Session של המשתמש",
+      "התחזות של התוקף למשתמש החוקי באמצעות שימוש ב Header Authorization בבקשות לאותו URI ו Method של הבקשה המקורית",
+      "תשובות א' ב' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "אי־אימות ה-Challenge מאפשר Replay של Authorization Header לאותו URI/Method.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "אפליקציה בנקאית רוצה שה cookie שבו נשמר ה ID-session ימחק מהדפדפן כעבור חמש דקות או כאשר המשתמש סוגר את הדפדפן, מה הם ה Options ב Cookie שבהם היא צריכה להשתמש עבור ה cookie הזה?",
+    "options": [
+      "Discard",
+      "Max-Age",
+      "Max-Age ו Discard",
+      "Persistent",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Max-Age מגביל בזמן ו-Discard מוחק בסגירת הדפדפן – המוקדם מביניהם.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מטרת השימוש ב option Cookie של Only HTTP עבור ה Cookie המשמש להעברת ה ID Session היא למנוע:",
+    "options": [
+      "התקפת XSS על הדפדפן",
+      "גניבת ה ID Session שנשלח ב cookie ע\"י התקפת XSS",
+      "גניבת ה ID Session שנשלח ב cookie ע\"י האזנה ל or/and Requests HTTP Responses",
+      "מניה או ניחוש של ה ID Session שנשלח ב cookie",
+      "התקפת Poisoning Cookie על הערך של ה ID Session"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "HttpOnly מונע גישה ל-Cookie מ-JavaScript ולכן חוסם גניבה ב-XSS.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "התקפת Hijacking Session מאפשרת לתוקף: (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "לעקוף את מנגנון ההזדהות",
+      "לעקוף את מנגנון ההזדהות ואת מנגנון ההרשאות",
+      "לעקוף את מנגנון ההזדהות ואת מנגנון ה Auditing",
+      "לעקוף את מנגנון ההזדהות, את מנגנון ההרשאות ואת מנגנון ה Auditing",
+      "לבצע התקפת XSS"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "עם Session תקף ניתן לעקוף Authentication, Authorization ו-Auditing.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות מטרת ההתקפה היא לשלוח לאפליקציה בקשות HTTP בשמו של המותקף (כך שהאפליקציה תחשוב שבקשת ה HTTP נשלחה ע\"י המותקף)?",
+    "options": [
+      "הן התקפת XSS והן התקפת CSRF",
+      "הן התקפת XSS והן התקפת Injection SQL",
+      "הן התקפת CSRF והן התקפת Injection SQL",
+      "הן התקפת CSRF והן התקפת Hijacking Session",
+      "הן התקפת Hijacking Session והן התקפת Injection SQL"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "גם CSRF וגם Session Hijacking גורמות לשליחת בקשות בשם הקורבן.",
+    "source": "original"
   }
 ]
 

@@ -519,6 +519,62 @@
   },
   {
     "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון:",
+    "options": [
+      "קטגורית ההתקפות שהכי קשה להתגונן מולם הוא Attacks Targeted",
+      "על מנת להיות מוגן כנגד התקפות מסוג Directed Opportunistic מספיק להתקין את כל ה Patches Security שמפרסם היצרן של מערכת ההפעלה ויצרני שאר תוכנות התשתית המותקנות על המחשב",
+      "התקפות מסוג של Attacks Targeted מנצלות לעיתים vulnerabilities day-Zero בתשתיות המערכת (כגון במערכת ההפעלה) או בתוכנות בהם נעשה שימוש במערכת",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "התקפות Targeted הן הקשות ביותר להתגוננות ולעיתים מנצלות Zero-day; לעומת זאת, Opportunistic לרוב נבלמות ע\"י עדכונים.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון?",
+    "options": [
+      "אם קיים Vulnerability אזי קיים בהכרח Attack שמנצל אותו",
+      "אם קיים Attack אפשרי על האפליקציה אזי קיים בהכרח Vulnerability שאותו הוא מנצל",
+      "אין קשר בין קיומו של Vulnerability באפליקציה ובין קיומו של Attack אפשרי",
+      "Vulnerability ו־Attack הם מושגים שקולים",
+      "אם קיים Vulnerability אזי קיים בהכרח Attack שמנצל אותו וגם להפך"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Attack הוא מימוש של פוטנציאל נזק; כל Attack נשען על Vulnerability, אך לא כל Vulnerability מנוצלת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא ה Vulnerability אותו מנצלת התקפה מסוג Replacement Content Attack?",
+    "options": [
+      "שהאפליקציה לא מבצעת Canonicalization על הקלט לפני שהיא מבצעת Input validation",
+      "שהאפליקציה לא מטפלת נכון בחלק מסוגי הקידוד השונים האפשריים ב HTML, ומבצעת המרות לא נכונות של התוכן הנבדק",
+      "שהאפליקציה מבצעת Validation Input המבוסס על Logic Security Positive",
+      "שהאפליקציה אינה מבצעת Validation Input חוזר לתוכן של ה request לאחר \"הסירה\" מה Request תוכן שאותר כ\"חשוד\"",
+      "שהתבניות בהם משתמש האפליקציה לאיתור תכנים חשודים אינם תואמים לסוג הקידוד של תוכן Request"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "החולשה היא אי־ביצוע ולידציה חוזרת לאחר שינוי/הסרה של תוכן חשוד מה־Request.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "בהנחה שניתן להגביל את תוכנו של שדה קלט לאותיות וספרות בלבד, וכן להגביל את אורכו של הקלט ל 20 תווים, ובהנחה שהאפליקציה בודקת בשרת את תוכן הקלט שהוא אכן אלפא-נומרי שאורכו עד 20 תווים. לאיזה התקפה חשופה האפליקציה:",
+    "options": [
+      "SQL Injection",
+      "OS/Command Injection",
+      "Forceful Browsing",
+      "XSS בו האפליקציה משלבת את הקלט בתוכנו של אלמנט HTML בדף ה HTML המוחזר למשתמש",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "גם קלט אלפא-נומרי עלול להוביל ל-XSS אם הוא משולב ב-HTML ללא Output Encoding.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
     "question": "מה ההבדל המרכזי בין Vulnerability לבין Threat?",
     "options": [
       "Vulnerability היא איום חיצוני ו-Threat הוא חולשה פנימית",

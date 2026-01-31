@@ -110,6 +110,48 @@
     "correctAnswerIndex": 3,
     "explanation": "הפרדה תכנונית מקטינה סיכוני Access Control ומצמצמת פגיעה מערכתית.",
     "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "האם יש יתרון המשמעותי מבחינת אבטחת מידע לשימוש במנגנון אבטחת מידע המיישם את התפיסה של Logic Security Positive לעומת שימוש מנגנון אבטחת מידע המיישם את התפיסה של Logic Security Negative? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ Positive False",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ Negative False",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ Positive False ומ Negative False",
+      "כן, כי הוא Generic ואינו דורש הגדרות עבור כל מערכת בנפרד, ולכן עלות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Logic Security Positive נמוך משמעותית לעומת עלות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic",
+      "לא, אין הבדל משמעותי בין שימוש במנגנון אבטחת מידע המיישם את התפיסה של Logic Security Positive לבין שימוש במנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Positive Security Logic (Allowlist) מאפשרת, בניהול נכון, להימנע גם מ-False Positives וגם מ-False Negatives.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "האם ומדוע יש להפריד את רכיב הניהול של המערכת לאפליקציה נפרדת מהאפליקציה המשרתת את המשתמשים של המערכת (למשל הגולשים ברשת האינטרנט) תחת ההנחה ששתי האפליקציות רצות על שרת האינטרנט ב DMZ ?",
+    "options": [
+      "אין צורך בהפרדה כזאת והיא מיותרת כי היא גורמת לשכפול של קוד בין אפליקצית הניהול לאפליקציה המיועדת למשתמשים",
+      "אין צורך בהפרדה כזאת כי ניתן לממש בקלות מנגנון Control Access באמצעות העובדה שלכל אחד מהמשתמשים מוצגות בדף ה HTML רק הפעולות המותרות עבורו",
+      "הפרדה כזאת חשובה כי היא תמנע מצב שבו משתמש רגיל מנצל vulnerability במנגנון ה Control Access על מנת לבצע פעולות שמותרות רק למנהל המערכת (והנסיון מלמד שבמימוש של Control Access יש לעיתים קרובות Vulnerabilities)",
+      "הפרדה כזאת חוסכת את הצורך בהקשחה של שרת האינטרנט ומאפשרת להסתפק בהגנה על אפליקצית הניהול באמצעות מנגנון של Authentication Strong",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הפרדה תכנונית מקטינה Attack Surface ומגינה מפני כשלי Access Control.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה התקפות יכול ניהול הרשאות של האפליקציה במדיניות של privileges Least לסייע למזער את הנזק? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "התקפת Injection SQL",
+      "התקפת CSRF",
+      "התקפת Hijacking Session",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Least Privilege מצמצם את הנזק בעיקר בהתקפות SQL Injection ע\"י הגבלת הרשאות ה-DB.",
+    "source": "original"
   }
 ]
 
