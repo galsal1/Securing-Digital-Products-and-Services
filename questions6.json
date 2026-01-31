@@ -1,1 +1,31 @@
+[
+  {
+    "type": "mc",
+    "question": "מה הדרכים לצמצם את הנזק כתוצאה מהתקפות Injection attacks (עד שמקרים מסוימים זה בולם את ההתקפה)?",
+    "options": [
+      "שימוש טוב ב־Authentication Factor",
+      "שימוש נכון במנגנון Session management",
+      "צמצום ההרשאות של האפליקציה מול כל המערכת שאליה יעד ההתקפה",
+      "שימוש טוב ב־Authentication Factor ושימוש נכון במנגנון Session management",
+      "מימוש מנגנון Session management וצמצום ההרשאות של האפליקציה מול כל המערכת שאליה יעד ההתקפה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "צמצום ההרשאות (Least Privilege) מקטין את הנזק גם אם מתבצעת התקפת Injection, ובמקרים מסוימים אף חוסם אותה לחלוטין.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרכים למנוע או לצמצם נזק אפשרי של התקפת SQL Injection?",
+    "options": [
+      "צמצום ההרשאות של האפליקציה בבסיס הנתונים על פי עקרון Least privileges",
+      "Untrusted sources ב־output encoding לפני החזרת הפלט",
+      "לא לבנות שאילתות SQL על ידי שרשור של מחרוזות, אלא להשתמש ב־strongly typed parameterized query APIs",
+      "צמצום ההרשאות של האפליקציה על פי עקרון Least privileges ושימוש נכון ב־output encoding",
+      "צמצום ההרשאות של האפליקציה בבסיס הנתונים על פי עקרון Least privileges ולא לבנות שאילתות SQL על ידי שרשור של מחרוזות אלא להשתמש ב־strongly typed parameterized query APIs"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "השילוב של Least Privilege עם שימוש ב־Parameterized Queries מונע פירוש קלט כקוד ומצמצם משמעותית את הנזק האפשרי.",
+    "source": "original"
+  }
+]
 
