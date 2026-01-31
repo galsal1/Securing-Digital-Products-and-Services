@@ -138,6 +138,146 @@
     "correctAnswerIndex": 2,
     "explanation": "CSRF מנצלת Session קיים ופעיל של המשתמש מול האפליקציה.",
     "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה הסיבה העיקרית שבגללה קל לבצע dictionary attack על סיסמאות שבחרו משתמשים?",
+    "options": [
+      "כי הן קצרות יחסית",
+      "כי מספר האפשרויות עבור כל תו מוגבל ל־94 תווים",
+      "כי משתמשים בוחרים סיסמאות בעלות משמעות עבורם מתוך מרחב אפשרויות קטן יחסית",
+      "תשובות א׳ ו־ב׳ נכונות",
+      "תשובות א׳ ב׳ ו־ג׳ נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "משתמשים נוטים לבחור סיסמאות שקל לזכור, ולכן מרחב האפשרויות האפקטיבי קטן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד כדאי להפריד בין אפליקציית הניהול המיועדת לשימוש מנהלי האתר (או האפליקציה) ובין אפליקציית השימוש למשתמשים?",
+    "options": [
+      "אין חשיבות להפרדה כי אפליקציית הניהול היא מאובטחת יותר",
+      "כדי למנוע מהאפליקציית השימוש לממש את כל יכולות הניהול",
+      "כדי לאפשר למשתמשים גישה שונה אל אחת מהאפליקציות (ברמת הרשת)",
+      "כדי להקטין את הסיכון לבעיית Access Control ולמנוע מצב שבו שתי האפליקציות משתמשות באותו מנגנון",
+      "תשובות ב׳ ו־ג׳ נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הפרדה תכנונית מקטינה סיכון לטעויות Authentication ו־Access Control.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מממש Third Party Authentication? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "הזדהות בין Web server לבין Client בפרוטוקול SSL",
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "הזדהות של Web server בפני Client בפרוטוקול SSL ו־HTTP Digest Authentication"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Third Party Authentication מתבצע כאשר צד שלישי (כמו CA) מאמת את זהות השרת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן לממש Challenge-Response לצורך Authentication באמצעות הצפנה אסימטרית? (בהנחה שהשרת מכיר את המפתח הציבורי של ה־Client)",
+    "options": [
+      "יש ליצור Challenge רנדומלי",
+      "יש להצפין את ה־Challenge באמצעות המפתח הציבורי של ה־Client",
+      "יש להצפין את ה־Challenge באמצעות המפתח הפרטי של ה־Client",
+      "יש לשלוח את ה־Response באמצעות המפתח הציבורי של השרת",
+      "תשובות א׳ ו־ג׳ נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "השרת יוצר Challenge וה־Client מוכיח זהות ע\"י הצפנה עם המפתח הפרטי שלו.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תהליך Authentication ה־Username וה־Password שהזין המשתמש נשלחים ל־Web server בתוך Authorization Header כשהם מקודדים ב־Base64?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "תשובות א׳ ו־ב׳ נכונות",
+      "תשובות א׳ ו־ג׳ נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "HTTP Basic שולח את הפרטים ב־Authorization Header כשהם מקודדים ב־Base64.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו שיטת הזדהות עושה שימוש ב־Challenge-Response?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "תשובות א׳ ו־ב׳ נכונות",
+      "תשובות א׳ ו־ג׳ נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "HTTP Digest מבוסס על Challenge-Response ולא שולח סיסמה גלויה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מפתח ה־Web application רוצים לשלוח ב־Request מידע רגיש למשתמש החוקי של האפליקציה, מה המקום הכי בטוח מבחינת אבטחת מידע? (בהנחה שהמשתמש החוקי עושה שימוש ב־Proxy)",
+    "options": [
+      "Query String",
+      "POST Data",
+      "Cookie",
+      "אין הבדל בין המיקומים השונים ב־Request",
+      "תשובות ב׳ ו־ג׳ נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "POST Data אינו נרשם בלוגים ו־URLs כמו Query String.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "Form Method איזה Form hidden parameter SessionID מממשים את ה־SessionID כדי?",
+    "options": [
+      "GET",
+      "POST",
+      "HEAD",
+      "POST או GET",
+      "לא משנה כל עוד הבקשה נשלחת ב־HTTPS"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "SessionID כ־hidden parameter נשלח בגוף הבקשה (POST).",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו התקפה מאפשרת לגנוב את הערך של ה־SessionID מתוך הדפדפן?",
+    "options": [
+      "Cookie Poisoning",
+      "SQL Injection",
+      "Session Hijacking",
+      "XSS",
+      "Session Hijacking ו־Cookie Poisoning"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "XSS מאפשר הרצת JavaScript בדפדפן וגניבת SessionID.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "התקפת Cookie Poisoning תוקף גורם ל:",
+    "options": [
+      "צד שלישי שמאזין לתעבורה בין הדפדפן לשרת",
+      "המשתמש של ה־Web application",
+      "צד שלישי שמצליח להחדיר קוד זדוני לדפדפן של המשתמש",
+      "תשובות א׳ ו־ב׳ נכונות",
+      "אף אחת מהתשובות אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Cookie Poisoning מתבצעת ע\"י קוד זדוני בדפדפן שמשנה ערכי Cookies.",
+    "source": "original"
   }
 ]
 
