@@ -1,0 +1,457 @@
+[
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון:",
+    "options": [
+      "קטגורית ההתקפות שהכי קל להתגונן מולם הוא Directed Opportunistic",
+      "על מנת להיות מוגן כנגד התקפות מסוג Directed Opportunistic מספיק להתקין את כל ה Patches Security שמפרסם היצרן של מערכת ההפעלה ויצרני שאר תוכנות התשתית המותקנות על המחשב",
+      "התקפות מהסוג של Directed Opportunistic מתבססות רק על ניצול known vulnerabilities בתשתיות המערכת (כגון במערכת ההפעלה)",
+      "תשובות א' ב' וג' נכונות",
+      "אף תשובה אינה נכונה",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "Directed Opportunistic attacks אינן קלות להתגוננות באופן מלא, אינן מסתמכות רק על vulnerabilities ידועות, ועדכון patches בלבד אינו מספק הגנה מלאה. לכן אף אחת מהטענות א–ג אינה נכונה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות מטרתה לשלוח לאפליקציה פקודות בשמו של המותקף (כך שהאפליקציה תחשוב שבקשות ה HTTP נשלחו ע\"י המותקף)?",
+    "options": [
+      "הן התקפת XSS והן התקפת CSRF",
+      "הן התקפת XSS והן התקפת Injection SQL",
+      "הן התקפת CSRF והן התקפת Injection SQL",
+      "הן התקפת CSRF והן התקפת Hijacking Session",
+      "הן התקפת Hijacking Session והן התקפת Injection SQL",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "גם CSRF וגם Session Hijacking מאפשרות שליחת בקשות HTTP בשם הקורבן תוך שימוש ב־Session תקף, כך שהאפליקציה מזהה את הבקשות כאילו נשלחו ע\"י המשתמש עצמו.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות ה Vulnerability באפליקציה שרצה ב server Web מנוצל ע\"י התוקף על מנת להעביר קוד עוין של התוקף ליעד ההתקפה?",
+    "options": [
+      "התקפת XSS",
+      "התקפת Injection SQL",
+      "התקפת CSRF/XSRF",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב־XSS מועבר קוד זדוני לדפדפן המשתמש, וב־SQL Injection מועבר קוד זדוני למסד הנתונים. בשתי ההתקפות מועבר קוד עוין ליעד התקיפה דרך חולשה באפליקציה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה התקפות יכול ניהול הרשאות במדיניות של privileges Least לסייע למזער את הנזק?",
+    "options": [
+      "XSS",
+      "XSRF/CSRF",
+      "Injection SQL",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "עקרון Least Privilege מגביל את ההרשאות של האפליקציה, במיוחד מול בסיס הנתונים, ולכן מצמצם משמעותית את הנזק האפשרי במקרה של SQL Injection.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מאפשר למנוע פגיעה בזמינות המידע עקב פגיעה בשלמות המידע:",
+    "options": [
+      "הצפנת המידע",
+      "חתימה דיגיטלית על המידע",
+      "יישום של Control Access Read בגישה אל המידע",
+      "יישום של Control Access Write בגישה אל המידע",
+      "אף תשובה אינה נכונה",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Control Access Write מונע שינוי לא מורשה של המידע. בכך נמנעת פגיעה בשלמות, שמובילה לעיתים גם לפגיעה בזמינות (למשל השחתת נתונים).",
+    "source": "original"
+  },
+
+  {
+    "type": "mc",
+    "question": "איזו מבין ההתקפות הבאות היא מסוג Attack Passive?",
+    "options": [
+      "Eavesdropping/Interception Message",
+      "Message Tampering",
+      "Defacement",
+      "Denial-of-Service",
+      "תשובות א' וב' נכונות",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Passive attack מתאפיינת בהאזנה בלבד ללא שינוי המידע. Eavesdropping הוא הדוגמה הקלאסית לפגיעה בסודיות בלבד.",
+    "source": "original"
+  },
+  
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מאפשר שמירה על סודיות המידע?",
+    "options": [
+      "Control Access Read",
+      "Control Access Write",
+      "הצפנת המידע",
+      "חתימה דיגיטלית על המידע",
+      "אף תשובה אינה נכונה",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הצפנה היא המנגנון היחיד שמבטיח סודיות גם אם תוקף משיג גישה פיזית או לוגית למידע. Control Access וחתימה דיגיטלית אינם מונעים קריאה של המידע עצמו.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מאפשר לוודא את שלמות המידע?",
+    "options": [
+      "הצפנת המידע",
+      "Control Access Read",
+      "חתימה דיגיטלית על המידע",
+      "Firewall",
+      "VPN",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "חתימה דיגיטלית מאפשרת לאתר שינוי לא מורשה במידע, ולכן מספקת מנגנון לשלמות (Integrity). הצפנה לבדה אינה מספקת איתור שינוי.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מאפשר למנוע התחזות של צד לתוכן המידע?",
+    "options": [
+      "Control Access Write",
+      "Hash קריפטוגרפי",
+      "חתימה דיגיטלית",
+      "הצפנה סימטרית",
+      "VPN",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "חתימה דיגיטלית מספקת Authentication ו-Non-repudiation, ולכן מאפשרת לוודא מי יצר או חתם על המידע ולמנוע התחזות.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו תכונת אבטחה אינה נשמרת באמצעות Hash קריפטוגרפי בלבד?",
+    "options": [
+      "Integrity",
+      "Authentication",
+      "Non-repudiation",
+      "Confidentiality",
+      "תשובות ב' וג' נכונות",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "Hash מספק Integrity בלבד. הוא אינו מספק Authentication או Non-repudiation ללא חתימה דיגיטלית, ואינו מספק Confidentiality כלל.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון העיקרי בשימוש ב-Hybrid Encryption?",
+    "options": [
+      "ביצועים גבוהים יותר בהצפנה אסימטרית",
+      "הקטנת גודל המפתח",
+      "שילוב של יעילות הצפנה סימטרית עם הפצת מפתחות מאובטחת",
+      "ביטול הצורך ב-Certificates",
+      "הגנה מפני התקפות DoS",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Hybrid Encryption משתמשת בהצפנה אסימטרית להפצת מפתח סימטרי, ולאחר מכן בהצפנה סימטרית מהירה להעברת המידע עצמו.",
+    "source": "original"
+  },
+  
+  {
+    "type": "mc",
+    "question": "כאשר מתבצע Authentication Client בפני השרת באמצעות מנגנון Response-Challenge, אזי אפשר לממש את המנגנון ע\"י כך שה Client:",
+    "options": [
+      "מצפין את ה Challenge ע\"י מפתח סימטרי מוסכם",
+      "מצפין את ה Challenge ע\"י המפתח הציבורי של ה Client",
+      "מצפין את ה Challenge ע\"י המפתח הציבורי של השרת",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "במימוש סימטרי של Challenge-Response קיים סוד משותף בין ה־Client ל־Server, והלקוח מצפין או מחשב Response על בסיס ה-Challenge באמצעות המפתח הסימטרי.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון במימוש מנגנון Authentication מסוג Response-Challenge באמצעות הצפנה אסימטרית?",
+    "options": [
+      "החישוב והבדיקה של ה Response מהירים יותר",
+      "אין צורך לשמור את ה Challenge בשרת",
+      "אין צורך לשמור סוד משותף בשרת",
+      "אין הבדל בין מימוש סימטרי ואסימטרי",
+      "תשובות ב' וג' נכונות",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בהצפנה אסימטרית השרת אינו מחזיק סוד משותף אלא רק מפתח ציבורי של הלקוח, ולכן אין סיכון של דליפת סוד משותף מצד השרת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "ב HTTP Authentication מי מציג בפועל את חלון הזיהוי (Authentication Dialog) למשתמש?",
+    "options": [
+      "שרת ה Web",
+      "אפליקציית ה Web",
+      "הדפדפן",
+      "שרת ה Authentication",
+      "Identity Provider",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "ב־HTTP Authentication (Basic/Digest) הדפדפן הוא זה שמציג את חלון ההזדהות בעקבות קבלת Header מסוג WWW-Authenticate מהשרת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מהשיטות הבאות נשלחים Username ו Password לשרת?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Authentication",
+      "תשובות א' וג' נכונות",
+      "כל התשובות נכונות",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב־HTTP Basic הסיסמה נשלחת (בקידוד Base64), וב־Form Authentication היא נשלחת כחלק מבקשת HTTP. ב־Digest הסיסמה עצמה אינה נשלחת.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה המשמעות של שימוש ב Cookie עם Options Max-Age ו Discard יחד?",
+    "options": [
+      "ה Cookie יישמר לנצח",
+      "ה Cookie יימחק רק לאחר סגירת הדפדפן",
+      "ה Cookie יימחק רק לאחר שיחלוף הזמן",
+      "ה Cookie יימחק במוקדם מבין הזמן שהוגדר או סגירת הדפדפן",
+      "אין לכך משמעות מיוחדת",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "כאשר מוגדרים גם Max-Age וגם Discard, ה־Cookie יימחק ברגע שמתקיים התנאי הראשון מביניהם – סיום הזמן או סגירת הדפדפן.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה מטרת השימוש ב Cookie עם option HttpOnly?",
+    "options": [
+      "למנוע האזנה לרשת",
+      "למנוע גניבת Cookie באמצעות XSS",
+      "למנוע CSRF",
+      "למנוע Session Fixation",
+      "למנוע SQL Injection",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "HttpOnly מונע גישה ל־Cookie באמצעות JavaScript ולכן מגן מפני גניבת SessionID במקרה של XSS.",
+    "source": "original"
+  },
+  
+  {
+    "type": "mc",
+    "question": "מה מאפשרת התקפת Session Hijacking?",
+    "options": [
+      "עקיפת מנגנון ההזדהות בלבד",
+      "עקיפת מנגנון ההרשאות בלבד",
+      "עקיפת מנגנון ההזדהות ומנגנון ההרשאות",
+      "עקיפת מנגנון ההזדהות, ההרשאות ומנגנון ה Auditing",
+      "ביצוע התקפת XSS",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Session Hijacking מעניקה לתוקף Session תקף של משתמש אחר. לכן הוא עוקף Authentication (כבר מזוהה), Authorization (הרשאות המשתמש), וגם Auditing (הפעולות נרשמות על שם הקורבן).",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע שליחת Session-ID כחלק מה URL אינה נחשבת בטוחה?",
+    "options": [
+      "כי ה URL אינו מוצפן",
+      "כי ה URL נשמר ב History, Logs וב Header Referer",
+      "כי ה URL מוגבל באורכו",
+      "כי הדפדפן חוסם URL ארוך",
+      "כי Session-ID אינו מתאים ל HTTPS",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Session-ID ב־URL עלול לדלוף דרך היסטוריית הדפדפן, קבצי לוגים ו־Referer Header, וכך לאפשר גניבה של ה־Session.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון נחשב העיקרי והיעיל ביותר למניעת התקפות CSRF/XSRF?",
+    "options": [
+      "שימוש ב Cookie עם HttpOnly",
+      "שימוש ב HTTPS",
+      "שימוש ב CSRF Token ייחודי לבקשה",
+      "שימוש ב Output Encoding",
+      "שימוש ב Firewall",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "CSRF Token אקראי וחד־פעמי מאמת שהבקשה נוצרה ע\"י האפליקציה עצמה ולא ע\"י אתר זדוני חיצוני.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מי מייצר את ה Assertions במנגנון SAML?",
+    "options": [
+      "Service Provider",
+      "Identity Provider",
+      "Relying Party",
+      "Browser",
+      "תשובות א' וג' נכונות",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ב־SAML, ה־Identity Provider אחראי על אימות המשתמש ויצירת ה־Assertion החתומה שמועברת ל־Service Provider.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס ל SSO Web המבוסס על SAML במודל PULL?",
+    "options": [
+      "ה Assertion חייב להיות חתום כי הוא עובר בדפדפן",
+      "ה Assertion לא חייב להיות חתום",
+      "ה Artifact חייב להיות חתום כי הוא עובר בדפדפן",
+      "ה Artifact לא חייב להיות חתום כי הוא אקראי ואינו מכיל את ה Assertion עצמו",
+      "אף תשובה אינה נכונה",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "במודל PULL רק ה־Artifact עובר בדפדפן. הוא אקראי ואינו מכיל מידע רגיש, ולכן אינו חייב להיות חתום. ה־Assertion עצמה מועברת בערוץ ישיר ומאובטח.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "ב SSO Web המבוסס על SAML, מה תפקידו של הערוץ הישיר בין ה Identity Provider ל Service Provider?",
+    "options": [
+      "העברת Cookie של המשתמש",
+      "העברת Assertion בצורה מאובטחת",
+      "העברת Redirect למשתמש",
+      "העברת HTML",
+      "העברת Credentials של המשתמש",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הערוץ הישיר משמש להעברת ה־Assertion בין ה־IdP ל־SP ללא מעבר בדפדפן, וכך מונע חשיפה או שינוי ע\"י התוקף.",
+    "source": "original"
+  },
+  
+  {
+    "type": "mc",
+    "question": "מדוע בדיקות Format Validation בלבד אינן נחשבות למנגנון אבטחה מספק?",
+    "options": [
+      "כי הן מאטות את ביצועי המערכת",
+      "כי ניתן לעקוף אותן באמצעות קידודים שונים וטריקים לוגיים",
+      "כי הן פועלות רק בצד ה client",
+      "כי הן רלוונטיות רק ל SQL Injection",
+      "אף תשובה אינה נכונה",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Format Validation בודקת מבנה חיצוני בלבד. תוקף יכול להשתמש בקידודים שונים, ייצוגים חלופיים או קומבינציות לוגיות כדי לעקוף בדיקה כזו מבלי לשנות את הפורמט הגלוי.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע בדיקות Input Validation בצד ה client אינן נחשבות למנגנון אבטחה?",
+    "options": [
+      "כי הן אינן נוחות למשתמש",
+      "כי הן אינן תומכות בכל הדפדפנים",
+      "כי ניתן לעקוף אותן ע\"י שליחת בקשות ישירות לשרת",
+      "כי הן צורכות יותר זיכרון",
+      "אף תשובה אינה נכונה",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בדיקות בצד ה־client נועדו לנוחות המשתמש בלבד. תוקף יכול לשלוח בקשות ישירות לשרת (למשל בעזרת curl או proxy) ולעקוף אותן לחלוטין.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מה החשיבות של ביצוע Canonicalization לפני ביצוע Input Validation?",
+    "options": [
+      "שיפור ביצועים",
+      "איחוד ייצוגים שונים של אותו קלט לפני בדיקה",
+      "מניעת CSRF",
+      "מניעת Session Hijacking",
+      "אף תשובה אינה נכונה",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Canonicalization ממירה את הקלט לייצוג אחיד (למשל פענוח קידודים). ללא שלב זה, תוקף יכול לעקוף Validation ע\"י ייצוג שונה של אותו ערך.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע שימוש ב Negative Security Logic מקל על תוקף לבצע Evasion?",
+    "options": [
+      "כי קשה להגדיר Allowlist מלאה",
+      "כי קל יותר לפספס תבנית זדונית אחת מאשר להגדיר את כל התבניות החוקיות",
+      "כי Negative Security Logic חוסם יותר מדי קלט",
+      "כי הוא מחייב שימוש ב Firewall",
+      "אף תשובה אינה נכונה",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Negative Security Logic מבוסס על Blacklist. תמיד ניתן למצוא וריאציה חדשה של קלט זדוני שלא נחסמה מראש, ולכן קל לבצע עקיפה (Evasion).",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מהדרכים הבאות היא הדרך הנכונה ביותר למנוע התקפות SQL Injection?",
+    "options": [
+      "בדיקות Format Validation בלבד",
+      "חסימת תווים מיוחדים",
+      "שימוש ב Parameterized Queries בשילוב Input Validation",
+      "שימוש ב Output Encoding",
+      "שימוש ב Firewall",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Parameterized Queries מפרידים לחלוטין בין קוד לנתונים ולכן מונעים פרשנות של קלט כקוד SQL. Input Validation משלים את ההגנה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מההתקפות הבאות אינה נמנעת באמצעות Negative Security Logic?",
+    "options": [
+      "SQL Injection",
+      "XSS",
+      "CSRF",
+      "Command Injection",
+      "LDAP Injection",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "CSRF אינה מבוססת על קלט זדוני אלא על אמון בבקשה לגיטימית, ולכן Blacklist או בדיקות קלט אינן מונעות אותה.",
+    "source": "original"
+  },
+  {
+    "type": "mc",
+    "question": "איזו בדיקה מייצגת Logic Security Negative?",
+    "options": [
+      "הרשאה רק לערכים שמוגדרים מראש",
+      "חסימת קלט שמכיל תווים אסורים",
+      "אימות קלט מול Schema סגור",
+      "בדיקת טווח ערכים חוקיים בלבד",
+      "בדיקת Regex שמגדיר ערכים מותרים",
+      "בחרתי לא לענות על השאלה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "חסימת תבניות אסורות (Blacklist) היא המימוש הקלאסי של Negative Security Logic.",
+    "source": "original"
+  }
+]

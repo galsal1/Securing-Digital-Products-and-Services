@@ -1,253 +1,236 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>חזרה למבחן באבטחת מוצרים</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>חזרה למבחן באבטחת מוצרים</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <style>
-    body { font-family: 'Assistant', sans-serif; }
-    .option-button.correct { background-color: #10b981; color: #fff; border-color: #059669; }
-    .option-button.incorrect { background-color: #ef4444; color: #fff; border-color: #dc2626; }
-    .option-button:disabled { opacity: 0.8; cursor: not-allowed; }
-  </style>
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+        }
+
+        .option-button.correct {
+            background-color: #10b981;
+            color: #fff;
+            border-color: #059669;
+        }
+
+        .option-button.incorrect {
+            background-color: #ef4444;
+            color: #fff;
+            border-color: #dc2626;
+        }
+
+        .option-button:disabled {
+            opacity: 0.8;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 
 <body class="bg-slate-50 flex items-center justify-center min-h-screen p-2 sm:p-4">
 
-<div id="quiz-container" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full max-w-2xl border-t-8 border-slate-800">
+    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full max-w-2xl border-t-8 border-slate-800">
 
-  <div class="mb-8 text-center">
-    <h1 class="text-2xl font-bold text-slate-800">מבחן אבטחת מוצרים</h1>
-    <p class="text-slate-500 text-sm mt-1">תרגול שאלות אמריקאיות לפי נושאי הקורס</p>
-  </div>
+        <div class="mb-8 text-center">
+            <h1 class="text-2xl font-bold text-slate-800">מבחן אבטחת מוצרים</h1>
+            <p class="text-slate-500 text-sm mt-1">תרגול לפי נושאים או מבחנים אמיתיים</p>
+        </div>
 
-  <!-- בחירת נושאים -->
-  <div id="lecture-select-area">
-    <div class="mb-6 p-4 bg-slate-100 rounded-xl">
-      <p class="font-bold text-slate-700 mb-4">בחרו נושאים לתרגול:</p>
-      <div id="lecture-checkboxes" class="flex flex-col gap-3 text-slate-700">
-        <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
-          <input type="checkbox" value="1" class="lecture-checkbox w-5 h-5" />
-          <span>נושא 1 - Security properties and mechanisms</span>
-        </label>
-        <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
-          <input type="checkbox" value="2" class="lecture-checkbox w-5 h-5" />
-          <span>נושא 2 - Vulnerabilities and Attacks</span>
-        </label>
-        <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
-          <input type="checkbox" value="3" class="lecture-checkbox w-5 h-5" />
-          <span>נושא 3 - Authentication and Session Management</span>
-        </label>
-        <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
-          <input type="checkbox" value="4" class="lecture-checkbox w-5 h-5" />
-          <span>נושא 4 - Access Control and Secure Design</span>
-        </label>
-        <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
-          <input type="checkbox" value="5" class="lecture-checkbox w-5 h-5" />
-          <span>נושא 5 - Injection Attacks and XSS</span>
-        </label>
-        <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
-          <input type="checkbox" value="6" class="lecture-checkbox w-5 h-5" />
-          <span>נושא 6 - Input Validation and Error Handling</span>
-        </label>
-      </div>
+        <!-- בחירה -->
+        <div id="selection-area">
+
+            <!-- נושאים -->
+            <div class="mb-6 p-4 bg-slate-100 rounded-xl">
+                <p class="font-bold text-slate-700 mb-4">תרגול לפי נושאי הקורס:</p>
+                <div class="flex flex-col gap-3">
+                    <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                        <input type="checkbox" value="1" class="lecture-checkbox w-5 h-5">
+                        <span>נושא 1</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                        <input type="checkbox" value="2" class="lecture-checkbox w-5 h-5">
+                        <span>נושא 2</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                        <input type="checkbox" value="3" class="lecture-checkbox w-5 h-5">
+                        <span>נושא 3</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                        <input type="checkbox" value="4" class="lecture-checkbox w-5 h-5">
+                        <span>נושא 4</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                        <input type="checkbox" value="5" class="lecture-checkbox w-5 h-5">
+                        <span>נושא 5</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                        <input type="checkbox" value="6" class="lecture-checkbox w-5 h-5">
+                        <span>נושא 6</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- מבחנים -->
+            <div class="mb-6 p-4 bg-slate-100 rounded-xl">
+                <p class="font-bold text-slate-700 mb-4">מבחנים אמיתיים:</p>
+                <div id="exam-list" class="flex flex-col gap-2"></div>
+            </div>
+
+            <button id="start-btn"
+                    class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 rounded-xl">
+                התחל תרגול
+            </button>
+        </div>
+
+        <!-- התקדמות -->
+        <div id="progress" class="hidden mt-4 flex justify-between">
+            <span id="progress-text" class="font-bold"></span>
+            <span id="score-text" class="font-bold text-emerald-600"></span>
+        </div>
+
+        <!-- שאלה -->
+        <div id="question-area" class="hidden mt-6">
+            <h2 id="question-text" class="font-bold mb-4"></h2>
+            <div id="options" class="flex flex-col gap-3"></div>
+        </div>
+
+        <!-- פידבק -->
+        <div id="feedback" class="hidden mt-4">
+            <p id="feedback-msg" class="font-bold"></p>
+            <p id="feedback-exp" class="text-sm text-slate-600"></p>
+        </div>
+
+        <button id="next-btn"
+                class="hidden w-full mt-6 bg-slate-800 text-white py-3 rounded-xl">
+            הבא →
+        </button>
+
     </div>
 
-    <label class="flex items-center gap-2 mb-6">
-      <input id="show-all-checkbox" type="checkbox" class="w-4 h-4" />
-      <span>הצג את כל השאלות (ללא הגבלה של 40)</span>
-    </label>
+    <script>
+        const examList = document.getElementById('exam-list');
 
-    <button id="start-quiz-button"
-      class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 rounded-xl">
-      התחל תרגול
-    </button>
-  </div>
+        /* ---------- BUILD EXAM LIST ---------- */
 
-  <!-- התקדמות -->
-  <div id="progress-container" class="hidden mb-6 flex justify-between border-b pb-4">
-    <span id="progress-text" class="font-bold text-slate-600"></span>
-    <span id="score-text" class="font-bold text-emerald-600"></span>
-  </div>
+        // 2016–2020 A/B
+        for (let y = 2016; y <= 2020; y++) {
+        ['A','B'].forEach(m => addExam(`${y}${m}`));
+        }
 
-  <!-- שאלה -->
-  <div id="question-area" class="hidden">
-    <h2 id="question-text" class="text-xl font-bold mb-6"></h2>
-    <div id="options-container" class="flex flex-col gap-3"></div>
-  </div>
+        // 2023–2024 A/B
+        ['2023','2024'].forEach(y => {
+        ['A','B'].forEach(m => addExam(`${y}${m}`));
+        });
 
-  <!-- פידבק -->
-  <div id="feedback-area" class="hidden mt-6 p-5 rounded-xl border-r-8 bg-slate-50">
-    <p id="feedback-message" class="text-lg font-bold mb-1"></p>
-    <p id="explanation-text" class="text-slate-600 text-sm italic"></p>
-  </div>
+        // 2025_0 … 2025_5
+        for (let i = 0; i <= 5; i++) {
+        addExam(`2025_${i}`);
+        }
 
-  <!-- שליטה -->
-  <div id="controls-area" class="hidden mt-6">
-    <button id="next-question-button"
-      class="w-full bg-slate-800 text-white font-bold py-4 rounded-xl">
-      השאלה הבאה ←
-    </button>
-  </div>
+        function addExam(name) {
+        const label = document.createElement('label');
+        label.className = "flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm";
+        label.innerHTML = `
+        <input type="radio" name="exam" value="${name}" class="exam-radio w-5 h-5">
+        <span>מבחן ${name.replace('_',' – ')}</span>
+        `;
+        examList.appendChild(label);
+        }
 
-  <!-- סיום -->
-  <div id="results-area" class="hidden text-center py-10">
-    <div class="text-6xl mb-4">🛡️</div>
-    <h2 class="text-3xl font-bold mb-2">סיימת את התרגול!</h2>
-    <p id="final-score-text" class="text-xl mb-6"></p>
+        /* ---------- QUIZ ENGINE ---------- */
 
-    <button id="download-summary-button"
-      class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-xl mb-4">
-      הורדת סיכום המבחן (JSON)
-    </button>
+        let ALL = [], Q = [], idx = 0, score = 0;
 
-    <br/>
+        function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+        }
+        }
 
-    <button id="restart-quiz-button"
-      class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl">
-      חזרה לבחירת נושאים
-    </button>
-  </div>
+        document.getElementById('start-btn').onclick = async () => {
+        const exam = document.querySelector('.exam-radio:checked');
+        const topics = [...document.querySelectorAll('.lecture-checkbox:checked')];
 
-</div>
+        if (exam) {
+        const res = await fetch(`${exam.value}.json`);
+        ALL = (await res.json()).filter(q => q.type === 'mc');
+        } else {
+        if (!topics.length) return alert('נא לבחור נושא או מבחן');
+        const arr = [];
+        for (const t of topics) {
+        const r = await fetch(`questions${t.value}.json`);
+        arr.push(await r.json());
+        }
+        ALL = arr.flat().filter(q => q.type === 'mc');
+        }
 
-<script>
-const MAX_QUESTIONS = 40;
-let ALL_QUESTIONS = [];
-let shuffledQuestions = [];
-let quizResults = [];
-let currentIndex = 0;
-let score = 0;
+        startQuiz();
+        };
 
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-}
+        function startQuiz() {
+        Q = [...ALL];
+        shuffle(Q);
+        idx = 0;
+        score = 0;
 
-async function loadQuestions() {
-  const selected = [...document.querySelectorAll('.lecture-checkbox:checked')].map(cb => cb.value);
-  if (selected.length === 0) return alert('נא לבחור לפחות נושא אחד');
+        document.getElementById('selection-area').classList.add('hidden');
+        document.getElementById('progress').classList.remove('hidden');
+        document.getElementById('question-area').classList.remove('hidden');
 
-  const arrays = [];
-  for (const num of selected) {
-    const res = await fetch(`questions${num}.json`);
-    if (res.ok) arrays.push(await res.json());
-  }
+        showQ();
+        }
 
-  ALL_QUESTIONS = arrays.flat().filter(q => q.type === 'mc');
-  startQuiz();
-}
+        function showQ() {
+        const q = Q[idx];
+        document.getElementById('question-text').textContent = q.question;
+        document.getElementById('progress-text').textContent = `שאלה ${idx+1} / ${Q.length}`;
+        document.getElementById('score-text').textContent = `ניקוד: ${score}`;
 
-function startQuiz() {
-  shuffledQuestions = [...ALL_QUESTIONS];
-  shuffle(shuffledQuestions);
+        const opt = document.getElementById('options');
+        opt.innerHTML = '';
 
-  if (!document.getElementById('show-all-checkbox').checked && shuffledQuestions.length > MAX_QUESTIONS) {
-    shuffledQuestions = shuffledQuestions.slice(0, MAX_QUESTIONS);
-  }
+        q.options.forEach((o,i) => {
+        const b = document.createElement('button');
+        b.className = 'option-button p-3 border-2 rounded-xl';
+        b.textContent = o;
+        b.onclick = () => answer(i,b);
+        opt.appendChild(b);
+        });
+        }
 
-  quizResults = [];
-  currentIndex = 0;
-  score = 0;
+        function answer(i,b) {
+        const q = Q[idx];
+        document.querySelectorAll('.option-button').forEach(x => x.disabled = true);
 
-  document.getElementById('lecture-select-area').classList.add('hidden');
-  document.getElementById('progress-container').classList.remove('hidden');
-  document.getElementById('question-area').classList.remove('hidden');
-  document.getElementById('controls-area').classList.remove('hidden');
+        if (i === q.correctAnswerIndex) {
+        score++;
+        b.classList.add('correct');
+        } else {
+        b.classList.add('incorrect');
+        document.querySelectorAll('.option-button')[q.correctAnswerIndex].classList.add('correct');
+        }
 
-  displayQuestion();
-}
+        document.getElementById('feedback').classList.remove('hidden');
+        document.getElementById('feedback-msg').textContent =
+        i === q.correctAnswerIndex ? '✓ נכון' : '✗ לא נכון';
+        document.getElementById('feedback-exp').textContent = q.explanation;
 
-function displayQuestion() {
-  const q = shuffledQuestions[currentIndex];
-  document.getElementById('feedback-area').classList.add('hidden');
-  document.getElementById('next-question-button').classList.add('hidden');
+        document.getElementById('next-btn').classList.remove('hidden');
+        }
 
-  document.getElementById('question-text').textContent = q.question;
-  document.getElementById('progress-text').textContent = `שאלה ${currentIndex + 1} מתוך ${shuffledQuestions.length}`;
-  document.getElementById('score-text').textContent = `ניקוד: ${score}`;
-
-  const container = document.getElementById('options-container');
-  container.innerHTML = '';
-
-  q.options.forEach((opt, idx) => {
-    const btn = document.createElement('button');
-    btn.className = "option-button p-4 border-2 rounded-xl";
-    btn.textContent = opt;
-    btn.onclick = () => handleAnswer(idx, btn);
-    container.appendChild(btn);
-  });
-}
-
-function handleAnswer(idx, clickedBtn) {
-  const q = shuffledQuestions[currentIndex];
-  const isCorrect = idx === q.correctAnswerIndex;
-
-  quizResults.push({
-    question: q.question,
-    options: q.options,
-    correctAnswerIndex: q.correctAnswerIndex,
-    userAnswerIndex: idx,
-    isCorrect: isCorrect,
-    explanation: q.explanation
-  });
-
-  document.querySelectorAll('.option-button').forEach(b => b.disabled = true);
-
-  if (isCorrect) {
-    score++;
-    clickedBtn.classList.add('correct');
-  } else {
-    clickedBtn.classList.add('incorrect');
-    document.querySelectorAll('.option-button')[q.correctAnswerIndex].classList.add('correct');
-  }
-
-  document.getElementById('feedback-message').textContent = isCorrect ? "✓ נכון" : "✗ לא נכון";
-  document.getElementById('explanation-text').textContent = q.explanation;
-  document.getElementById('feedback-area').classList.remove('hidden');
-  document.getElementById('next-question-button').classList.remove('hidden');
-}
-
-function downloadQuizSummary() {
-  const summary = {
-    totalQuestions: shuffledQuestions.length,
-    score: score,
-    questions: quizResults
-  };
-
-  const blob = new Blob([JSON.stringify(summary, null, 2)], { type: "application/json" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "quiz-summary.json";
-  a.click();
-}
-
-document.getElementById('start-quiz-button').onclick = loadQuestions;
-document.getElementById('next-question-button').onclick = () => {
-  currentIndex++;
-  currentIndex < shuffledQuestions.length ? displayQuestion() : showResults();
-};
-
-function showResults() {
-  document.getElementById('question-area').classList.add('hidden');
-  document.getElementById('controls-area').classList.add('hidden');
-  document.getElementById('feedback-area').classList.add('hidden');
-  document.getElementById('progress-container').classList.add('hidden');
-  document.getElementById('results-area').classList.remove('hidden');
-
-  document.getElementById('final-score-text').textContent =
-    `צברת ${score} נקודות מתוך ${shuffledQuestions.length}`;
-}
-
-document.getElementById('restart-quiz-button').onclick = () => location.reload();
-document.getElementById('download-summary-button').onclick = downloadQuizSummary;
-</script>
+        document.getElementById('next-btn').onclick = () => {
+        document.getElementById('feedback').classList.add('hidden');
+        document.getElementById('next-btn').classList.add('hidden');
+        idx++;
+        idx < Q.length ? showQ() : alert(`סיימת! ניקוד: ${score}/${Q.length}`);
+        };
+    </script>
 
 </body>
 </html>

@@ -491,20 +491,6 @@
   },
   {
     "type": "mc",
-    "question": "איזה מבין המשפטים הבאים נכון?",
-    "options": [
-      "אם קיים Vulnerability אזי קיים בהכרח Attack שמנצל אותו",
-      "אם קיים Attack אפשרי על האפליקציה אזי קיים בהכרח Vulnerability שאותו הוא מנצל",
-      "אין קשר בין קיומו של Vulnerability באפליקציה ובין קיומו של Attack אפשרי",
-      "Vulnerability ו-Attack הם מושגים שקולים",
-      "אם קיים Vulnerability אזי קיים בהכרח Attack שמנצל אותו וגם להפך"
-    ],
-    "correctAnswerIndex": 1,
-    "explanation": "Attack הוא מימוש בפועל של פוטנציאל נזק. כדי שיתאפשר Attack, חייבת להתקיים Vulnerability במערכת. לעומת זאת, ייתכן שקיימת Vulnerability אך טרם פותחה או בוצעה התקפה שמנצלת אותה.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
     "question": "האם ומדוע להפריד את רכיב הניהול של המערכת מהאפליקציה הנגישה למשתמשים המשתמשת את המשתמשים (למשל השלושים ברשת האינטרנט) תחת הנחה ששתי האפליקציות רצות על שרת האינטרנט?",
     "options": [
       "אין יתרון בהפרדה כזאת והוא נועד רק לשפר ביצועים",
@@ -529,20 +515,6 @@
     ],
     "correctAnswerIndex": 3,
     "explanation": "התקפות Targeted הן הקשות ביותר להתגוננות ולעיתים מנצלות Zero-day; לעומת זאת, Opportunistic לרוב נבלמות ע\"י עדכונים.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "איזה מבין המשפטים הבאים נכון?",
-    "options": [
-      "אם קיים Vulnerability אזי קיים בהכרח Attack שמנצל אותו",
-      "אם קיים Attack אפשרי על האפליקציה אזי קיים בהכרח Vulnerability שאותו הוא מנצל",
-      "אין קשר בין קיומו של Vulnerability באפליקציה ובין קיומו של Attack אפשרי",
-      "Vulnerability ו־Attack הם מושגים שקולים",
-      "אם קיים Vulnerability אזי קיים בהכרח Attack שמנצל אותו וגם להפך"
-    ],
-    "correctAnswerIndex": 1,
-    "explanation": "Attack הוא מימוש של פוטנציאל נזק; כל Attack נשען על Vulnerability, אך לא כל Vulnerability מנוצלת.",
     "source": "original"
   },
   {
@@ -611,7 +583,7 @@
       "LDAP Injection"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "CSRF אינו מבוסס על פורמט הקלט אלא על אמון ב־Session.",
+    "explanation": "CSRF אינה מבוססת על קלט זדוני או על פורמט לא תקין של הבקשה. הבקשה עצמה יכולה להיות חוקית לחלוטין מבחינת Format Validation. ההתקפה מנצלת את העובדה שהדפדפן מצרף אוטומטית Session או Cookies, והשרת סומך עליהם ללא אימות כוונת המשתמש. לכן Format Validation בלבד אינה יכולה למנוע CSRF.",
     "source": "original"
   },
   {
@@ -639,7 +611,7 @@
       "חסימת תווים מיוחדים"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "ללא Canonicalization, ניתן לעקוף ולידציה ולהחליף תוכן.",
+    "explanation": "Content Replacement Attack מנצלת מצב שבו המערכת מבצעת Input Validation על קלט שאינו בצורה הקנונית שלו. ללא ביצוע Canonicalization מוקדם, התוקף יכול לשלוח קלט שמיוצג בצורה מקודדת או עקיפה, שעובר את בדיקות הוולידציה, אך לאחר פירוש (decoding / normalization) מתפרש כתוכן שונה או זדוני. לכן ה־Vulnerability הוא אי־ביצוע Canonicalization לפני Input Validation.",
     "source": "original"
   },
   {
@@ -780,20 +752,6 @@
     ],
     "correctAnswerIndex": 2,
     "explanation": "Certificate Pinning מגביל את האפליקציה לתעודה או מפתח ציבורי ידוע מראש, וכך מונע מתקפות MITM גם אם הותקנה תעודת Root זדונית.",
-    "source": "generated"
-  },
-  {
-    "type": "mc",
-    "question": "איזה תרחיש מדגים שילוב של מספר Vulnerabilities קטנות לכדי סיכון חמור?",
-    "options": [
-      "שימוש בסיסמה חזקה",
-      "מערכת מבודדת ללא רשת",
-      "חוסר הצפנה יחד עם קונפיגורציה שגויה וניהול גרסאות לקוי",
-      "עדכון תוכנה תדיר",
-      "שימוש ב-Least Privilege"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "לעיתים אין חולשה אחת קריטית, אך שילוב של מספר חולשות קטנות במקומות שונים במערכת עלול להוביל לפגיעה חמורה באבטחה.",
     "source": "generated"
   },
   {
