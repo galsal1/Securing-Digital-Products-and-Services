@@ -15,13 +15,13 @@
 
         .option-button.correct {
             background-color: #10b981;
-            color: white;
+            color: #fff;
             border-color: #059669;
         }
 
         .option-button.incorrect {
             background-color: #ef4444;
-            color: white;
+            color: #fff;
             border-color: #dc2626;
         }
 
@@ -52,13 +52,13 @@
             </button>
         </div>
 
-        <!-- SELECTION -->
+        <!-- SELECTION AREA -->
         <div id="lecture-select-area">
 
-            <!-- TOPICS -->
+            <!-- TOPICS VIEW -->
             <div id="topics-view" class="mb-6 p-4 bg-slate-100 rounded-xl">
-                <p class="font-bold mb-4">בחר נושאים:</p>
-                <div class="flex flex-col gap-3">
+                <p class="font-bold text-slate-700 mb-4">בחר נושאים:</p>
+                <div class="flex flex-col gap-3 text-slate-700">
                     <label><input type="checkbox" value="1" class="topic"> נושא 1</label>
                     <label><input type="checkbox" value="2" class="topic"> נושא 2</label>
                     <label><input type="checkbox" value="3" class="topic"> נושא 3</label>
@@ -67,18 +67,18 @@
                     <label><input type="checkbox" value="6" class="topic"> נושא 6</label>
                 </div>
 
-                <label class="flex items-center gap-2 mt-4">
+                <label class="flex items-center gap-2 mt-4 text-slate-700">
                     <input type="checkbox" id="limit40">
                     עד 40 שאלות (אם לא מסומן – כל השאלות)
                 </label>
             </div>
 
-            <!-- EXAMS -->
+            <!-- EXAMS VIEW -->
             <div id="exams-view" class="hidden mb-6 p-4 bg-slate-100 rounded-xl">
-                <p class="font-bold mb-4">בחר מבחן:</p>
-                <div id="exam-list" class="flex flex-col gap-2"></div>
+                <p class="font-bold text-slate-700 mb-4">בחר מבחן:</p>
+                <div id="exam-list" class="flex flex-col gap-2 text-slate-700"></div>
 
-                <label class="flex items-center gap-2 mt-4">
+                <label class="flex items-center gap-2 mt-4 text-slate-700">
                     <input type="checkbox" id="exam-shuffle" checked>
                     ערבוב שאלות (Shuffle)
                 </label>
@@ -116,6 +116,25 @@
             </button>
         </div>
 
+        <!-- RESULTS -->
+        <div id="results-area" class="hidden text-center py-10">
+            <div class="text-6xl mb-4">🛡️</div>
+            <h2 class="text-3xl font-bold mb-2">סיימת את התרגול!</h2>
+            <p id="final-score-text" class="text-xl mb-6"></p>
+
+            <button id="download-summary-button"
+                    class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-xl mb-4">
+                הורדת סיכום המבחן (JSON)
+            </button>
+
+            <br />
+
+            <button id="restart-quiz-button"
+                    class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl">
+                חזרה לבחירה
+            </button>
+        </div>
+
     </div>
 
     <script>
@@ -148,17 +167,22 @@
         ['2023','2024'].forEach(y=>['A','B'].forEach(m=>addExam(`${y}${m}`)));
         for(let i=0;i<=5;i++) addExam(`2025_${i}`);
 
-        /* ---------- QUIZ ENGINE (ORIGINAL FLOW) ---------- */
-        let questions=[],currentIndex=0,score=0;
+        /* ---------- QUIZ ENGINE ---------- */
+        let questions=[], quizResults=[], currentIndex=0, score=0;
 
-        function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}}
+        function shuffle(a){
+        for(let i=a.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [a[i],a[j]]=[a[j],a[i]];
+        }
+        }
 
         document.getElementById('start-quiz-button').onclick = async () => {
-        questions=[]; currentIndex=0; score=0;
+        questions=[]; quizResults=[]; currentIndex=0; score=0;
 
         if(!topicsView.classList.contains('hidden')){
         const sel=[...document.querySelectorAll('.topic:checked')];
-        if(!sel.length) return alert('בחר נושא');
+        if(!sel.length) return alert('נא לבחור לפחות נושא אחד');
         for(const t of sel){
         const r=await fetch(`questions${t.value}.json`);
         questions.push(...(await r.json()).filter(q=>q.type==='mc'));
@@ -167,7 +191,7 @@
         if(document.getElementById('limit40').checked) questions=questions.slice(0,40);
         } else {
         const e=document.querySelector('input[name=exam]:checked');
-        if(!e) return alert('בחר מבחן');
+        if(!e) return alert('נא לבחור מבחן');
         const r=await fetch(`${e.value}.json`);
         questions=(await r.json()).filter(q=>q.type==='mc');
         if(document.getElementById('exam-shuffle').checked) shuffle(questions);
@@ -186,11 +210,10 @@
         document.getElementById('question-text').textContent=q.question;
         document.getElementById('progress-text').textContent=`שאלה ${currentIndex+1} מתוך ${questions.length}`;
         document.getElementById('score-text').textContent=`ניקוד: ${score}`;
+        document.getElementById('feedback-area').classList.add('hidden');
 
         const c=document.getElementById('options-container');
         c.innerHTML='';
-        document.getElementById('feedback-area').classList.add('hidden');
-
         q.options.forEach((opt,idx)=>{
         const b=document.createElement('button');
         b.className='option-button p-4 border-2 rounded-xl';
@@ -203,6 +226,15 @@
         function answer(idx,btn){
         const q=questions[currentIndex];
         const correct=idx===q.correctAnswerIndex;
+
+        quizResults.push({
+        question:q.question,
+        options:q.options,
+        correctAnswerIndex:q.correctAnswerIndex,
+        userAnswerIndex:idx,
+        isCorrect:correct,
+        explanation:q.explanation
+        });
 
         document.querySelectorAll('.option-button').forEach(b=>b.disabled=true);
 
@@ -219,8 +251,31 @@
 
         document.getElementById('next-question-button').onclick=()=>{
         if(++currentIndex<questions.length) showQuestion();
-        else alert(`סיימת! ${score}/${questions.length}`);
+        else showResults();
         };
+
+        function showResults(){
+        document.getElementById('question-area').classList.add('hidden');
+        document.getElementById('controls-area').classList.add('hidden');
+        document.getElementById('progress-container').classList.add('hidden');
+        document.getElementById('feedback-area').classList.add('hidden');
+
+        document.getElementById('final-score-text').textContent =
+        `צברת ${score} נקודות מתוך ${questions.length}`;
+        document.getElementById('results-area').classList.remove('hidden');
+        }
+
+        function downloadQuizSummary(){
+        const summary={ totalQuestions:questions.length, score, questions:quizResults };
+        const blob=new Blob([JSON.stringify(summary,null,2)],{type:'application/json'});
+        const a=document.createElement('a');
+        a.href=URL.createObjectURL(blob);
+        a.download='quiz-summary.json';
+        a.click();
+        }
+
+        document.getElementById('download-summary-button').onclick=downloadQuizSummary;
+        document.getElementById('restart-quiz-button').onclick=()=>location.reload();
     </script>
 
 </body>
