@@ -1,0 +1,316 @@
+[
+  {
+    "type": "mc",
+    "question": "מה הכוונה בכינוי Zero-Day Vulnerability?",
+    "options": [
+      "Vulnerability שהתגלה באותו יום שבו הוא נוצר",
+      "Vulnerability ששוחרר עבורו Patch באותו יום שבו הוא התגלה",
+      "Vulnerability שניתן לתקן אותו בפרק זמן קצר של פחות מיום עבודה",
+      "Vulnerability שאפשר היה לנצל אותו רק במשך פרק זמן קצר של פחות מיום",
+      "Vulnerability שנוצל ע\"י התוקף כאשר קיומו לא היה ידוע (למעט לתוקף) ולא היה Patch לתיקון ה Vulnerability"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "Zero-Day Vulnerability היא חולשה שמנוצלת על ידי תוקפים לפני שהיצרן מודע לקיומה או הספיק לשחרר עבורה תיקון (Patch).",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "שליחת מידע שהסודיות והשלמות שלו חשובות ברשת האינטרנט כשהוא מוצפן אך ללא חתימה דיגיטלית על המידע היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הצפנה מבטיחה סודיות (Confidentiality), אך ללא חתימה דיגיטלית או מנגנון אימות אחר (כגון MAC), אין ערובה לשלמות המידע (Integrity) וניתן לשנותו בדרך.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תפיסת אבטחת מידע קיומם של False Positive הוא מובנה (ולא ניתן למנוע אותו לחלוטין גם כאשר מנגנון אבטחת המידע מקונפג כראוי)?",
+    "options": [
+      "Positive Security Logic",
+      "Negative Security Logic",
+      "אף אחת מהתשובות לעיל אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בגישת Negative Security Logic (שימוש בחתימות לזיהוי התקפות), חתימות כלליות מדי עשויות לזהות תעבורה לגיטימית כהתקפה (False Positive).",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מבין ההתקפות הבאות היא מסוג Passive Attack?",
+    "options": [
+      "Message Interception/Eavesdropping",
+      "Message Tampering",
+      "Defacement",
+      "Denial-of-Service",
+      "תשובות א' וב' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "התקפה פסיבית (Passive Attack) כוללת האזנה לרשת ואיסוף מידע ללא שינוי הנתונים או השפעה על המערכת, ולכן Eavesdropping היא הדוגמה המתאימה.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "ככל שאפליקציה מאפשרת/מטפלת בסוגי בקשות רבים יותר (HTTP Request Types):",
+    "options": [
+      "ההסתברות למציאת vulnerability ולניצול ה vulnerability להתקפה על אפליקציה גבוהה יותר כי ה Attack surface גדל",
+      "ההסתברות להתקפה מוצלחת על האפליקציה כתוצאה מניצול vulnerability באפליקציה קטנה כי הסבירות למציאת vulnerability באפליקציה קטנה כאשר ה Attack surface גדל",
+      "זה לא משפיע על ההסתברות להתקפה על האפליקציה כי אין קשר בין כמות המימשקים של האפליקציה להסתברות לקיומו של Vulnerability באפליקציה",
+      "הנזק האפשרי למערכת כתוצאה מהתקפה על האפליקציה גדל כי ה Attack surface גדל",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ריבוי סוגי בקשות וממשקים מגדיל את משטח התקיפה (Attack Surface), מה שמעלה סטטיסטית את הסיכוי להימצאות חולשות אבטחה.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות לא ניתן למנוע ע\"י Input Validation?",
+    "options": [
+      "התקפת XSS",
+      "התקפת XSRF/CSRF",
+      "התקפת SQL Injection",
+      "התקפת Session Hijacking",
+      "תשובות א' וג' נכונות",
+      "תשובות ב' וד' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 5,
+    "explanation": "Input Validation מטפל בתוכן הקלט (מונע XSS ו-SQLi), אך אינו מונע CSRF (ניצול אמון הדפדפן לביצוע פעולה) או Session Hijacking (גניבת זהות ברשת), שאינם תלויים בתוכן הקלט הזדוני אלא במצבי session.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות האפליקציה היא תווך להעביר קוד עוין ליעד ההתקפה?",
+    "options": [
+      "התקפת XSS",
+      "התקפת SQL Injection",
+      "התקפת Session Hijacking",
+      "תשובות א' וב' נכונות",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב-XSS האפליקציה מעבירה סקריפט לדפדפן הלקוח, וב-SQL Injection האפליקציה מעבירה שאילתה זדונית לבסיס הנתונים. בשני המקרים האפליקציה משמשת כצינור לקוד העוין.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא המנגנון המאפשר לשמור על סודיות המידע (Data Confidentiality) כאשר המידע נייח?",
+    "options": [
+      "Read Access Control",
+      "Encryption",
+      "Auditing",
+      "Authentication",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "סודיות מידע במנוחה (Data at Rest) נשמרת על ידי בקרת גישה (מניעת גישה למי שאינו מורשה) והצפנה (הפוכת המידע ללא קריא אם הגישה הפיזית הושגה).",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון החתימה הדיגיטלית ומנגנון ה Read Access control ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא למנוע את השינוי הלא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא לאפשר לאתר שבוצע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת החתימה הדיגיטלית הוא לאפשר לאתר שינוי לא מורשה שנעשה במידע ומטרתה Read access control הוא למנוע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת החתימה הדיגיטלית היא למנוע שינוי לא מורשה במידע ומטרת Read access control היא לאתר שינוי לא מורשה שנעשה במידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "חתימה דיגיטלית נועדה לוודא שלמות ואימות, בעוד Read Access Control נועד לשמור על סודיות. הם משרתים מטרות שונות במשולש ה-CIA ולכן התשובות המשוות ביניהם בהקשר של שלמות אינן נכונות.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "Risk Matrix - מה הם שני הצירים של המטריצה? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "ההשפעה על הארגון והסיכוי של התוקף לגלות את ה Vulnerability",
+      "כמות המשתמשים שתושפע מההתקפה והיכולת של התוקף לבצע את ההתקפה",
+      "הנזק הכספי לארגון והסיכוי של התוקף לגלות את ה vulnerability",
+      "ההשפעה על הארגון (Impact) וההסתברות שאירוע אבטחת המידע יתרחש (Probability)",
+      "הנזק הכספי לארגון ורמת הקושי של התוקף לנצל את Vulnerability"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מטריצת סיכונים קלאסית ממפה סיכונים על פי ציר ההסתברות להתרחשות (Likelihood/Probability) וציר עוצמת ההשפעה/הנזק (Impact/Severity).",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות אין קשר ישיר בין התוקף למותקף (אלא רק באמצעות ה Web application)?",
+    "options": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM-Based XSS",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ב-Stored XSS התוקף שומר את הקוד הזדוני בשרת (למשל בתגובה בפורום), והקורבן נחשף אליו מאוחר יותר בעת גלישה לאתר, ללא צורך באינטראקציה ישירה (כמו שליחת לינק) מצד התוקף.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה זה Output Encoding?",
+    "options": [
+      "מנגנון אבטחת מידע שבא למנוע התקפת SQL Injection",
+      "מנגנון אבטחת מידע שבא למנוע התקפת Session Hijacking",
+      "מנגנון אבטחת מידע שבא למנוע התקפת XSS",
+      "מנגנון אבטחת מידע שבא למנוע Cookie Poisoning",
+      "תשובות ב' וד' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Output Encoding ממיר תווים מיוחדים לייצוג הבטוח שלהם (למשל HTML Entities) לפני הצגתם בדפדפן, ובכך מונע מהדפדפן לפרש קלט כקוד הרצה, מה שמונע XSS.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תהליכי Authentication הדפדפן אחראי להצגת החלון בו המשתמש מקליד את שם המשתמש והסיסמא שלו?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form based Authentication",
+      "תשובות א' וב' נכונות",
+      "Certificated based Authentication"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "בפרוטוקולי HTTP Basic ו-HTTP Digest הדפדפן מקפיץ חלון התחברות טבעי (Native), בניגוד ל-Form Based שבו דף ה-HTML מכיל את שדות הקלט.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "למה מומלץ להגביל את הגישה של משתמשים לתהליכים שרצים במערכת על פי העקרון Least privileges?",
+    "options": [
+      "כי עי\"כ ממזערים את הסיכון שמשתמש נורמטיבי (לא עוין) ישתמש בתהליך באופן שגוי ויגרם נזק",
+      "כי ע\"כ ממזערים את הסיכון שמשתמש עוין ישתמש בתהליך על מנת לבצע פעולות שאסור לו לבצע",
+      "כי עי\"כ ממזערים את הסיכון שמשתמש עוין ינצל Vulnerability בתהליך על מנת לתקוף את המערכת",
+      "כי עי\"כ חוסכים את הצורך של Input validation בקוד של התהליך",
+      "תשובות א' וב' נכונות",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות",
+      "תשובות א' ב' ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 6,
+    "explanation": "עקרון המידור (Least Privilege) מגן מפני טעויות משתמש, פעולות זדוניות של משתמשים, וניצול חולשות בתהליכים עצמם, שכן הוא מגביל את הנזק הפוטנציאלי למינימום ההכרחי.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "בדוגמא של החנות הוירטואלית החלוקה של החנות למודולים (קטלוג, חנות, ניהול קטלוג, ניהול חנות) מאפשרת:",
+    "options": [
+      "להגביל את הגישה למודולים של הניהול רק לעובדי החנות ולא לאפשר גישה אליהם לגולשים ברשת באמצעות חוקי ה Firewall",
+      "להגביל את הגישה למודולים של הניהול רק לעובדי החנות ולא לאפשר גישה אליהם לגולשים ברשת באמצעות מנגנון ה Access Control שלה Apache web server",
+      "להצפין את התעבורה רק עבור חלק מהמודולים",
+      "לתת לכל מודול את ההרשאות המינימליות הנדרשות לו מול בסיס הנתונים",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות",
+      "תשובות א' ב' וד' נכונות"
+    ],
+    "correctAnswerIndex": 6,
+    "explanation": "חלוקה למודולים מאפשרת בקרת גישה מפורטת: הן ברמת הרשת (Firewall), הן ברמת השרת (Access Control), והן ברמת מסד הנתונים (הרשאות שונות לכל מודול).",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מתבצע Client Authentication בפני השרת באמצעות מנגנון ה-Challenge Response, אזי אפשר לממש את המנגנון עי\"כ שה Client:",
+    "options": [
+      "מצפין את ה Challenge ע\"י המפתח סימטרי מוסכם על ה Client והשרת",
+      "מצפין את ה Challenge ע\"י המפתח ציבורי של ה Client",
+      "מצפין את ה Challenge ע\"י המפתח הפרטי של ה Client",
+      "מצפין את ה Challenge ע\"י המפתח הציבורי של השרת",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 5,
+    "explanation": "אימות Challenge-Response דורש הוכחת זהות. זה נעשה או באמצעות מפתח סימטרי משותף (כמו ב-Kerberos או Digest) או באמצעות חתימה על ה-Challenge עם המפתח הפרטי של הלקוח (באימות מבוסס תעודות).",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר נעשה שימוש ב HTTP Digest Authentication, במידה וה Web server מתבסס על ה Authorization Header שמופיע ב Request ולא בודק שה Challenge שאכן נשלח לדפדפן ע\"י ה Server הוא ה Challenge, אזי לאיזה התקפה חשוף ה Web Server (תחת ההנחה שהסיסמא של המשתמש אינה ברת מניה)?",
+    "options": [
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת הסיסמא של המשתמש",
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת ה SessionID של המשתמש",
+      "התחזות של התוקף למשתמש החוקי באמצעות שימוש ב Authorization Header בבקשות Protected resources אחרים",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 5,
+    "explanation": "התשובה הנכונה לפי המבחן היא 'אף תשובה אינה נכונה'. ייתכן שהתרחיש המתואר מוגן מעצם המבנה של Digest המשתמש ב-Nonce וב-Counter, או שההתקפות הרלוונטיות אינן מופיעות ברשימה.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מפתח ה web application רוצים לשלוח ב web page שנשלח מה Request מידע סודי שלא רוצים יחשף למשתמש החוקי של האפליקציה ב HTTPS, מה המיקום הכי בטוח מבחינת אבטחת מידע? (תניחו שהמשתמש עושה שימוש ב Proxy)",
+    "options": [
+      "QueryString",
+      "POST Data",
+      "Cookie",
+      "אין הבדל בין המיקומים השונים ב Request"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "כאשר משתמשים ב-HTTPS, כל התעבורה (כולל ה-URL, ה-Body וה-Cookies) מוצפנת בתווך. לכן מבחינת חשיפה בתווך, רמת האבטחה זהה לכל המיקומים.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה התקפה יכול המנגנון של HTTP Only למנוע?",
+    "options": [
+      "Cookie Poisioning",
+      "גנבת ה Cookie מהדפדפן באמצעות התקפת XSS",
+      "גנבת ה Cookie באמצעות האזנה לערוץ התקשורת",
+      "ניחוש ה Cookie ע\"י התוקף",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "דגל HttpOnly מורה לדפדפן למנוע גישה ל-Cookie דרך סקריפטים בצד הלקוח (document.cookie), ובכך מונע גניבת Session ID באמצעות התקפות Cross-Site Scripting (XSS).",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "האם גנבת ה SessionID של משתמש יכולה לאפשר לתוקף התחזות לאותו משתמש במהלך אותו ה Session?",
+    "options": [
+      "כן, כי ה SessionID כולל את שם המשתמש ואת הסיסמא של המשתמש",
+      "כן, כי ה SessionID מתבסס על הסיסמא של המשתמש ואפשר לשחזר מתוכו את הסיסמא של המשתמש",
+      "כן, כי ה SessionID משמש כמזהה של המשתמש במהלך ה Session (ואין למעשה תהליך של Authentication במהלך ה Session)",
+      "לא, SessionID אינו יכול לאפשר לתוקף התחזות למשתמש"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "ה-SessionID הוא ה\"כרטיס\" המזהה את המשתמש לאחר ההזדהות הראשונית. מי שמחזיק בו נחשב על ידי השרת כמשתמש המחובר, שכן ברוב המערכות לא מתבצע אימות סיסמה חוזר בכל בקשה.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון אבטחת מידע שמטרתו למנוע Injection Attacks (כולל XSS) חשוף ל Evasion Techniques?",
+    "options": [
+      "Input validation that is based on positive security logic",
+      "Input validation that is based on negative security logic",
+      "Access-control",
+      "Output encoding"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ולידציה המבוססת על Negative Security Logic (רשימה שחורה) מנסה לחסום תבניות התקפה ידועות. תוקפים יכולים לעקוף זאת על ידי שינוי קל של התחביר (Evasion) כך שלא יתאים לחתימה אך עדיין יבצע את ההתקפה.",
+    "source": "TAU 2016 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד התקפת XSS עוקפת את המגבלה שלה Same Origin Policy שלא מאשר לקוד JavaScript לשלוח בקשות ל domains שאינם ה domain ממנו נטען דף ה HTML המכיל את קוד ה JavaScript?",
+    "options": [
+      "הוא לא יכול לעקוף את המגבלה הזאת",
+      "הוא מנצל vulnerability בישום של מנגנון ה Same Origin Policy",
+      "המגבלה הזאת היא רק לגבי בקשות POST ולכן הוא מיצר בקשות GET",
+      "הוא מיצר אלמנט ב DOM שמכיל src attribute ושם את הבקשה שאותה הוא רוצה לשלוח כערך של ה src attribute ועי\"כ גורם לדפדפן לשלוח את הבקשה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מדיניות SOP אינה חוסמת טעינת משאבים חיצוניים דרך תגיות כמו <img> או <script> (שיש להן src). תוקף XSS מנצל זאת כדי לגרום לדפדפן לשלוח בקשה לשרת התוקף על ידי הזרקת אלמנט עם src המכיל את המידע הגנוב.",
+    "source": "TAU 2016 Moed B"
+  }
+]
