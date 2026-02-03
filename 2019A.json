@@ -1,0 +1,478 @@
+[
+  {
+    "type": "mc",
+    "question": "האזנה פאסיבית שלרשת WIFI שעובר בה מידע שהסודיות והשלמות שלו חשובות, וכל המידע נשלח ברשת ה WIFI כשהוא מוצפן (ולמאזין אין את מפתח הפענוח) אך ללא חתימה דיגיטלית על המידע היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "המידע מוצפן, ולכן הסודיות נשמרת (בהנחה שההצפנה חזקה). היעדר חתימה דיגיטלית הוא חולשה (Vulnerability) שמאפשרת פגיעה בשלמות (Integrity) על ידי שינוי אקטיבי, אך השאלה מתארת 'האזנה פאסיבית'. האזנה פאסיבית אינה מנצלת את היעדר החתימה ואינה פוגעת בשלמות, ולכן אף תשובה אינה מדויקת לתיאור הסיטואציה.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון:",
+    "options": [
+      "קטגורית ההתקפות שהכי קל להתגונן מולם הוא Opportunistic Random",
+      "על מנת להיות מוגן כנגד התקפות מסוג Opportunistic Directed מספיק להתקין את כל ה Security Patches",
+      "התקפות מהסוג של Targeted Attacks מתבססות בעיקר על ניצול known vulnerabilities",
+      "תשובות א' ב' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "התקפות Opportunistic Random הן סריקות אוטומטיות המחפשות חולשות ידועות ונפוצות. עדכון טלאי אבטחה (Patching) והקשחה בסיסית מספיקים לרוב כדי לבלום אותן, ולכן הן הקלות ביותר להגנה.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון החתימה הדיגיטלית ומנגנון Write Access control ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא למנוע את השינוי הלא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא לאפשר לאתר שבוצע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת החתימה הדיגיטלית הוא לאפשר לאתר שינוי לא מורשה שנעשה במידע ומטרת ה Write access control הוא למנוע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת החתימה הדיגיטלית היא למנוע שינוי לא מורשה במידע ומטרת ה Write access control היא לאתר שינוי לא מורשה שנעשה במידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Write Access Control הוא מנגנון מניעה (Prevention) שחוסם את עצם הכתיבה. חתימה דיגיטלית היא מנגנון גילוי (Detection) המאפשר לדעת בדיעבד אם הקובץ שונה.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין הטכניקות הבאות עוזרת להקטנת הסיכון מהתקפות Application Layer DoS?",
+    "options": [
+      "ישום של מנגנון Authentication שבהם אין נעילה של משתמשים לאחר X פעולות Authentication כושלות",
+      "פירוק של פעולות הדורשות משאבי חישוב משמעותיים לפעולות בסיסיות הדורשות כל אחת פחות משאבי חישוב",
+      "מעקב אחר צריכת משאבי מערכת (CPU, זכרון, דיסק) של המשתמשים, ובדיקת שהמשתמש לא חורג מה Quota שהוקצתה לו",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כל השיטות מסייעות: מניעת נעילה מונעת DoS של חשבונות (Lockout), פירוק פעולות מונע תפיסת משאבים ארוכה (Starvation), ואכיפת מכסות (Quota) מונעת ממשתמש בודד להפיל את המערכת.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם יש יתרון המשמעותי מבחינת עלויות ניהול מדיניות אבטחת מידע לשימוש במנגנון אבטחת מידע המישם את התפיסה של Negative Security Logic לעומת Positive Security Logic?",
+    "options": [
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Positive",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Negative",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Positive ומ False Negative",
+      "כן, כי הוא Generic ואינו דורש הגדרות עבור כל מערכת בנפרד, ולכן עלות הניהול... נמוכה משמעותית",
+      "לא, אין הבדל משמעותי"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מנגנוני Negative Security (כגון חתימות אנטי-וירוס או IPS) הם גנריים ומוכנים מראש (\"התקן ושכח\"), ולכן זולים יותר לניהול לעומת Positive Security (כגון Whitelisting) הדורשים לימוד והתאמה ספציפית לכל אפליקציה.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם חברה שמקבלת שרותי DNS משרת DNS חיצוני יכולה לחסום (באמצעות Stateless Firewall) את תעבורת ה UDP הנכנסת מהרשת החיצונית לרשת הפנימית?",
+    "options": [
+      "לא, מכיוון שהדפדפנים פונים לשרת ה DNS בפרטוקול UDP",
+      "כן, מכיוון שהדפדפנים פונים לשרת ה DNS בפרטוקול TCP",
+      "כן, וזה מומלץ כי בהגדרה תעבורת UDP בעלת סיכון רב מאד",
+      "כן, ובתנאי שה Firewall יאפשר תקשורת UDP מהרשת הפנימית אל הרשת החיצונית",
+      "כן, ובתנאי שהחברה תבנה שרת DNS פנימי... וב Firewall יוגדר חוק המאפשר תעבורת UDP נכנסת ויוצאת רק אל/מאת שרת ה DNS הפנימי"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ב-Stateless Firewall קשה לחסום UDP נכנס באופן גורף כי הוא משמש לתשובות DNS לגיטימיות. הפתרון הוא ריכוז התעבורה דרך שרת DNS מקומי ופתיחת הפורטים (53) רק עבורו מול השרת החיצוני.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון לגבי Stateless Firewall:",
+    "options": [
+      "במידה וקיים חוק Deny שמתאים לפרמטרים אזי יחסם בהכרח",
+      "במידה וקיים חוק Allow שמתאים לפרמטרים אזי יעביר בהכרח",
+      "ה Firewall עובר על טבלת החוקים על פי סדר... ובמידה והוא מוצא חוק שתואם... אזי הוא מפעיל את ה Action (First Match)",
+      "ה Firewall בודק שישנו רק חוק אחד שתואם... (Best Match)",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "רוב הפיירוולים עובדים בשיטת First Match - החוק הראשון ברשימה שתואם את החבילה הוא זה שקובע, והבדיקה מסתיימת שם.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין הטענות הבאות נכונה ביחס לתעבורת UDP?",
+    "options": [
+      "Stateless firewall מספק רמת אבטחה גבוהה יותר",
+      "Statefull firewall מספק רמת אבטחה גבוהה יותר כי הוא בודק כל Packet UDP כנגד סט החוקים",
+      "Stateless firewall מספק אותה רמת אבטחה כי אין Connection ב UDP",
+      "Statefull firewall מספק רמת אבטחה גבוהה יותר כי הוא בודק כל Packet על פי ה State של ה connection",
+      "Statefull firewall מספק רמת אבטחה גבוהה יותר כי הוא מאפשר להגדיר ש Incoming Packet יועבר רק אם הוא שייך ל UDP connection... כלומר שהוא מענה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "למרות ש-UDP הוא Connectionless, פיירוול Stateful מנהל טבלאות מצב וירטואליות (Pseudo-state) המאפשרות לו לזהות תגובות לגיטימיות לבקשות שיצאו מתוך הארגון, ולחסום תעבורה שלא יזומה מבפנים.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בהנתן תצורת רשת נתונה ומדיניות אבטחת מידע נתונה מה יחס בין כמות החוקים ב Statelass firewall ובין כמות החוקים ב Stateful firewall?",
+    "options": [
+      "עבור תעבורת TCP ב Stateless firewall כמות החוקים קטנה ב 50%",
+      "עבור תעבורת TCP ב Stateful firewall כמות החוקים קטנה בכ 50% לעומת Stateless",
+      "עבור תעבורת UDP אין הבדל",
+      "תשובות א' וג' נכונות",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ב-Stateful אין צורך לכתוב חוקים נפרדים לתעבורה חוזרת (Response Traffic) כי היא מאושרת דינמית לפי ה-State Table. ב-Stateless חייבים לכתוב חוקים מפורשים לשני הכיוונים, מה שמכפיל את כמות החוקים.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה הטריגר למחיקה של רשומת UDP Connection מטבלת ה Statefull Firewall?",
+    "options": [
+      "זיהוי של בקשה ב Protocol האפליקטיבי (כגון HTTP) לסגור את ה Connection",
+      "זיהוי של סגירת Connection בפרוטוקול ה UDP",
+      "Timeout כתוצאה מחוסר תעבורה ב Connection",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "לפי התשובות במבחן זה (תשובה א'), פיירוולים מתקדמים (Application Aware) יכולים לזהות סיום שיחה ברמת האפליקציה. עם זאת, ברירת המחדל בפרוטוקול UDP היא Timeout (תשובה ג'). מכיוון שהתשובה הרשמית במפתח היא א', היא נבחרה כאן.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מוד של PAT/NAT כל כתובת חיצונית \"רואה\" את השרת ברשת הפנימית בכתובת IP אחרת?",
+    "options": [
+      "Full Cone",
+      "Restricted Cone",
+      "Port Restricted Cone",
+      "Symmetric NAT",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב-Symmetric NAT, המיפוי החיצוני (IP:Port) משתנה עבור כל יעד שאליו הלקוח הפנימי פונה. כלומר, שני שרתים חיצוניים שונים יראו את אותו לקוח מגיע מפורטים (ולעיתים מכתובות) שונים.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "אתר אינטרנט המיועד לשימוש הגולשים ברשת ומורכב משרת אינטרנט ומשרת Database מה כללי ה best practice (PCI-DSS)?",
+    "options": [
+      "שני השרתים ברשת הפנימית",
+      "שני השרתים ב DMZ",
+      "שרת האינטרנט ב DMZ ושרת ה Database ברשת הפנימית",
+      "שרת ה DB ב DMZ ושרת ה Web בפנימית",
+      "שרת ה Web ב DMZ ושרת ה DB לפי נוחות המפתחים"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "ארכיטקטורת שכבות: השרת הפונה לאינטרנט (Web) יושב ב-DMZ החשוף, בעוד שהמידע הרגיש (DB) יושב ברשת הפנימית המוגנת, ללא גישה ישירה מהאינטרנט.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס לסיכוי הטעות בקונפיגורציה של טבלת החוקים ב Firewall?",
+    "options": [
+      "ככל שכמות החוקים גדולה יותר הסיכוי לטעות גבוה יותר",
+      "ככל שכמות ה Network Interfaces גדולה יותר הסיכוי לטעות גדול יותר",
+      "הסיכוי לטעות ב Stateful גדול יותר מאשר Stateless",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מורכבות (Complexity) היא הגורם הראשי לטעויות אנוש. מורכבות נובעת הן מכמות החוקים והן מכמות הממשקים (Interfaces) שמגדילה את מטריצת הקישוריות.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מתבצע Client Authentication בפני השרת באמצעות מנגנון ה Challenge-Response, אזי אפשר לממש את המנגנון עי\"כ שה Client:",
+    "options": [
+      "מצפין את ה Challenge ע\"י המפתח סימטרי מוסכם",
+      "מצפין את ה Challenge ע\"י המפתח הפרטי של ה Client",
+      "מצפין את ה Challenge ע\"י המפתח הציבורי של השרת",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Challenge-Response ניתן למימוש או בשיטה סימטרית (Secret Key כמו ב-Digest) או בשיטה אסימטרית (חתימה עם מפתח פרטי).",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן לממש client authentication באמצעות challenge-response כאשר לא היה כל קשר בין השרת ל client לפני ביצוע ה Authentication? (הניחו שקיים מנפיק תעודות דיגיטלי)",
+    "options": [
+      "ה Client יצפין את ה Challenge ע\"י מפתח סימטרי שיגריל ויצפין את המפתח הסימטרי באמצעות המפתח הציבורי של השרת",
+      "ה Client יצפין את ה Challenge ע\"י המפתח הציבורי של ה Client...",
+      "ה Client יצפין את ה Challenge ע\"י המפתח הפרטי של ה Client ויצרף response את התעודה הדיגיטלית...",
+      "ה Client יצפין את ה Challenge ע\"י המפתח הציבורי של השרת",
+      "ה Client יצפין את ה Challenge ע\"י המפתח הפרטי של השרת"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "לפי המפתח של המבחן, התשובה היא א'. עם זאת, השיטה הסטנדרטית לאימות מבוסס תעודות היא ג' (חתימה עם מפתח פרטי). ייתכן שהשאלה מכוונת לפרוטוקול ספציפי המשלב הצפנה היברידית.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל בין HTTP Basic Authentication לבין HTTP Digest Authentication?",
+    "options": [
+      "ב Basic סיסמא סטטית וב Digest סיסמא חד פעמית",
+      "ב Basic נבדק ע\"י הדפדפן וב Digest ע\"י השרת",
+      "ב Basic נבדק ע\"י השרת וב Digest ע\"י האפליקציה",
+      "ב Basic הסיסמא נשלחת ללא הצפנה וב Digest נשלח ה Response המחושב (Hash)",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Basic Auth שולח את הסיסמה כטקסט קריא (Base64), בעוד Digest שולח Hash של הסיסמה והאתגר, ולכן הסיסמה לא עוברת ברשת.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה שיטת הזדהות חייבים משיקולי אבטחת מידע לשלוח את HTTP Request המכיל את בקשת ה Authentication על גבי תווך מאובטח (HTTPS)?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Basic ו-Form Based שולחים את הסיסמה המקורית לשרת, ולכן חובה להצפין את התווך. Digest אינו שולח סיסמה ולכן פחות קריטי (אם כי עדיין מומלץ למניעת MITM).",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה שיטת/שיטות Authentication נעשה שימוש בחתימה דיגיטלית אסימטרית?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Certificate based Authentication",
+      "Form Based Authentication",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "רק אימות מבוסס תעודות (Certificate Based) עושה שימוש במפתחות אסימטריים (Public/Private Key Infrastructure).",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם נכון להשתמש באותה סיסמא עבור כל האתרים?",
+    "options": [
+      "כן, כי אז ניתן לבחור סיסמה חזקה",
+      "לא, כי אז Vulnerability באתר אחד יחשוף את הסיסמא עבור אחרים",
+      "לא, כי לאתרים שונים יש דרישות אבטחה שונות",
+      "תשובות ב' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שימוש חוזר בסיסמאות (Password Reuse) הוא סיכון קריטי, כיוון שפריצה לאתר אחד (שהוא החוליה החלשה) מביאה לפשרה של כל חשבונות המשתמש.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר רוצים לשלוח ב HTTPS מידע סודי... מה המיקום הכי פחות בטוח?",
+    "options": [
+      "QueryString",
+      "POST Data",
+      "Cookie",
+      "אין הבדל בין POST ל Query",
+      "אין הבדל בין כולם"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Query String נשמר בהיסטוריית הדפדפן, בלוגים של שרתים ומועבר ב-Referer Header, ולכן הוא המיקום הגרוע ביותר למידע רגיש.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר ב Set-cookie header מופיע רק ה Option - Discard:",
+    "options": [
+      "Persistent Cookie שימחק כעבור Max-age",
+      "Session Cookie שימחק כעבור Max-age",
+      "Session Cookie שימחק כאשר הדפדפן יסגר",
+      "Persistent Cookie...",
+      "Session Cookie..."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הדגל Discard (בתקנים ישנים או מימושים ספציפיים) נועד לסמן שהעוגייה לא אמורה להישמר לדיסק, כלומר היא Session Cookie.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מטרת השימוש ב HTTP Only Cookie option היא למנוע:",
+    "options": [
+      "התקפת CSRF",
+      "גניבת ה Session ID ע\"י התקפת XSS",
+      "גניבה ע\"י האזנה",
+      "מניה או ניחוש",
+      "Cookie Poisoning"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "HttpOnly מונע גישה ל-Cookie דרך JavaScript (document.cookie), ובכך מנטרל את היכולת של תוקף XSS לגנוב את ה-Session ID.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "למה חשוב לשלוח ב HTTPS כל HTTP request שהוא חלק מ Session אפליקטיבי?",
+    "options": [
+      "אין צורך אם אין מידע סודי",
+      "כדי להגן על ה SessionID מפני גנבתו ע\"י האזנה לתעבורה",
+      "כדי להגן מפני XSS",
+      "רק אם ה SessionID לא אקראי",
+      "רק אם המרחב בר-מניה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "אם אפילו בקשה אחת נשלחת ב-HTTP, ה-Session Cookie נשלח ב-Cleartext וחשוף ליירוט (Session Hijacking).",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע חתימה דיגיטלית סימטרית (MAC) מספיקה לצורך מניעת Cookie Poisoning?",
+    "options": [
+      "כי החותם הוא הבודק",
+      "כי לא צריך חתימה חזקה",
+      "כי חייבים חתימה מהירה",
+      "כי הבודק לא יודע את המפתח הציבורי",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "השרת הוא זה שמנפיק את ה-Cookie והוא זה שבודק אותו כשהוא חוזר. אין צורך בצד שלישי או במפתח ציבורי, כי השרת חולק סוד עם עצמו.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מהמשפטים הבאים נכון ביחס ל Web SSO המבוסס על SAML במודל ה PUSH?",
+    "options": [
+      "ה Artifact נשלח כפרמטר של QueryString",
+      "ה Assertion נשלח כפרמטר של QueryString",
+      "ה Assertion נשלח כ Hidden Parameter ב HTML Form שה Method שלו הוא POST",
+      "ה Assertion נשלח כ Hidden Parameter ב HTML Form שה Method שלו הוא GET",
+      "ה Artifact נשלח כ Hidden Parameter"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "במודל Push (SAML POST Binding), ה-Assertion המלא נשלח בתוך הגוף של בקשת POST (בדרך כלל בתוך שדה מוסתר בטופס), מכיוון שהוא גדול מדי ל-Query String.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס ל Web SSO המבוסס על SAML במודל ה PULL?",
+    "options": [
+      "ה Assertion חייב להיות חתום כי הוא עובר דרך הדפדפן",
+      "ה Assertion לא חייב להיות חתום כי הוא עובר דרך הדפדפן",
+      "ה Artifact חייב להיות חתום",
+      "ה Artifact לא חייב להיות חתום כי הוא אינו מכיל את ה Assertion עצמו והוא אמור להיות אקראי",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "במודל Pull (Artifact Binding), מה שעובר בדפדפן הוא רק מזהה (Artifact). ה-Assertion עצמו עובר בערוץ ישיר ומאובטח (Back-channel) בין ה-SP ל-IdP, ולכן ה-Artifact עצמו הוא רק הפניה.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס ל Web SSO מבוסס SAML:",
+    "options": [
+      "כאשר ה Artifact מועבר ברשת יש להצפין אותו",
+      "כאשר ה SAML Response מועבר ברשת יש לחתום עליו דיגיטלית",
+      "כאשר ה SAML Response מועבר ברשת יש להצפין אותו",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "תשובה ה' (כל התשובות נכונות) מסמנת כי נדרשת הגנה מלאה: חתימה לשלמות ואימות, והצפנה לסודיות.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מתי ולמה מומלץ לפרק את האפליקציה לרכיבים (וכל רכיב רץ כתהליך נפרד)?",
+    "options": [
+      "כאשר כל רכיב מיועד לקבוצת משתמשים שונה (רמת אמון שונה)",
+      "כאשר לכל רכיב נדרשות הרשאות שונות לבסיס הנתונים",
+      "כאשר לכל רכיב דרישות Input validation שונות",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "פירוק לרכיבים נועד לבידוד אבטחה (Security Isolation) – לאפשר הרשאות שונות (Least Privilege) ולהפריד בין אזורי אמון שונים.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "במערכת של Google שרת ה Authentication הוא:",
+    "options": [
+      "Identity Provider",
+      "Relying Party",
+      "SAML Asserting Party",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "גוגל משמשת כספק זהויות (IdP) המנפיק אישורים, וזה מקביל למונח SAML Asserting Party. האפליקציה שמשתמשת בגוגל היא ה-Relying Party.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכונים ביחס ל SAML Assertions?",
+    "options": [
+      "הם אבני היסוד מהן נבנים ה SAML Statements",
+      "הם מורכבים מ SAML Statements",
+      "הם נשלחים בד\"כ בחלק מה SAML response",
+      "תשובות א' וג' נכונות",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "Assertion הוא המעטפת שמכילה הצהרות (Statements) כמו Authentication Statement או Attribute Statement, והוא נשלח כחלק מה-Response.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "היכן צריך השרת לשלב את ה Anti-CSRF Token?",
+    "options": [
+      "בכל URL שחשוב להגן עליו",
+      "בכל FORM ב Hidden parameter",
+      "ב Set-Cookie Header",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הטוקן חייב להיות חלק מהבקשה עצמה (בגוף או ב-URL) כדי שהשרת יוכל לאמת אותו מול ה-Session. שליחתו ב-Cookie בלבד לא עוזרת כי ה-Cookie נשלח אוטומטית.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מקטין את ה Attack surface של התקפת XSRF/CSRF?",
+    "options": [
+      "שהפעולות הרגישות יבוצעו רק באמצעות POST Requests",
+      "מנגנון של Inactivity timeout",
+      "שימוש ב SSL",
+      "תשובות א' וב' נכונות",
+      "תשובות א', ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שימוש ב-POST מונע התקפות פשוטות דרך קישורים ותמונות. Timeout מצמצם את חלון הזמן לתקיפה. SSL לא מונע CSRF.",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן להקטין את הסיכון למערכת כתוצאה מניצול Unknown vulnerability שקיים ב Service?",
+    "options": [
+      "מקטינים את ההרשאות של ה Services למינימום האפשרי",
+      "מאפשרים גישה ל Service רק לאותם גורמים נדרשים",
+      "אין אפשרות להקטין את הנזק",
+      "עובדים עם הגירסא העדכנית ביותר",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הקטנת נזק של חולשה לא ידועה נעשית באמצעות צמצום משטח התקיפה (הגבלת גישה) וצמצום האימפקט (הגבלת הרשאות - Least Privilege).",
+    "source": "TAU 2019 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בדוגמא של החנות הוירטואלית החלוקה של תוכנת החנות למודולים שכל אחד מהם רץ כ process נפרד מאפשרת:",
+    "options": [
+      "להריץ את המודולים המיועדים לגולשים בשרתים נפרדים ולהגביל גישה...",
+      "לתת לכל מודול הרשאות מינימליות ב DB",
+      "לישם בכל מודול מנגנון Authentication מתאים...",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כל התשובות נכונות: ההפרדה מאפשרת הקשחת רשת, הקשחת בסיס נתונים והתאמת מנגנוני אימות לכל רכיב בנפרד.",
+    "source": "TAU 2019 Moed A"
+  }
+]

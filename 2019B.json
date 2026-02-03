@@ -1,0 +1,498 @@
+[
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון ההצפנה ומנגנון Read Access control ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על סודיות המידע ומטרת שניהם היא למנוע ממי שאינו מורשה לגשת לקובץ שמכיל את המידע",
+      "שניהם באים לשמור על סודיות המידע ומטרת שניהם היא למנוע ממי שהשיג את הקובץ שמכיל את המידע להבין את המידע",
+      "שניהם באים לשמור על סודיות המידע כאשר מטרת ההצפנה היא למנוע גישה לקובץ שמכיל את המידע ממי שאינו מורשה, ומטרת ה Read access control היא למנוע ממי שהשיג את הקובץ להבין את המידע",
+      "שניהם באים לשמור על סודיות המידע כאשר מטרת ההצפנה היא למנוע ממי שהשיג את הקובץ שמכיל את המידע להבין את המידע (כלומר להפוך את המידע ללא קריא), ומטרת ה Read access control היא למנוע גישה לקובץ שמכיל את המידע ממי שאינו מורשה",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שני המנגנונים מגינים על הסודיות (Confidentiality). בקרת גישה (Read Access Control) מונעת את עצם הגישה לקובץ, בעוד שהצפנה מונעת את הבנת התוכן אם הגישה הפיזית לקובץ הושגה (Defense in Depth).",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון?",
+    "options": [
+      "קטגורית ההתקפות שהכי קל להתגונן מולם הוא Opportunistic Random",
+      "על מנת להיות מוגן כנגד התקפות מסוג Opportunistic Random מספיק להתקין את כל Security Patches שמפרסם היצרן",
+      "התקפות מהסוג של Opportunistic Random מתבססות על ניצול known vulnerabilities בתשתיות המערכת",
+      "תשובות א' ב' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "כל הטענות נכונות: התקפות אקראיות מזדמנות (כמו תולעים ובוטים סורקים) מחפשות חולשות ידועות, ולכן התקנת עדכונים (Patches) היא ההגנה היעילה והפשוטה ביותר נגדן.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "ככל שאפליקציה מאפשרת/מטפלת בסוגי בקשות רבים יותר (HTTP Request Types) אזי:",
+    "options": [
+      "ההסתברות למציאת vulnerability ולניצול ה vulnerability להתקפה על אפליקציה גבוהה יותר כי ה Attack surface גדל",
+      "ההסתברות להתקפה מוצלחת... קטנה כי הסבירות למציאת vulnerability באפליקציה קטנה כאשר ה Attack surface גדל",
+      "זה לא משפיע על ההסתברות להתקפה...",
+      "הנזק האפשרי למערכת כתוצאה מהתקפה על האפליקציה גדל כי ה Attack surface גדל",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "הגדלת מספר הממשקים וסוגי הבקשות הנתמכים מגדילה את משטח התקיפה (Attack Surface), מה שסטטיסטית מעלה את הסבירות לקיומן של חולשות ולניצולן.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "העתקה של קובץ שמאוחסן מוצפן אך ללא חתימה דיגיטלית על דיסק בשרת, כאשר יש להגן הסודיות והשלמות של הקובץ, היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "העתקה כשלעצמה אינה פוגעת בסודיות (כי הקובץ מוצפן) ולא בשלמות. היעדר חתימה הוא חולשה, אך הפעולה המתוארת (העתקה) אינה מנצלת זאת באופן שמתואר באפשרויות א-ד. לכן התשובה היא ה'.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר ה Firewall רוצה לאפשר גישה אך ורק לשרת אינטרנט... לתעבורת HTTP HTTPS... החוק המאפשר את פתיחת ה Connection לשרת האינטרנט יתבסס על כך ש:",
+    "options": [
+      "Source Port הוא פורט 80 ו/או 443",
+      "Destination Port הוא פורט 80 ו/או 443",
+      "Source IP 212.145.35.67",
+      "Destination IP 212.145.35.67",
+      "Syn Flag דולק",
+      "תשובות א' וג נכונות",
+      "תשובות ב' וד' נכונות",
+      "תשובות א' ג' וה' נכונות",
+      "תשובות ב' ד' וה' נכונות"
+    ],
+    "correctAnswerIndex": 8,
+    "explanation": "כדי לאפשר כניסה לשרת, החוק ב-Firewall צריך לאשר תעבורה המיועדת לכתובת ה-IP של השרת (Destination IP), לפורטים של השירות (Destination Port 80/443), ועבור בקשות חדשות (SYN Flag דולק).",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מתי חייבים להשתמש במנגנון אבטחת מידע המתבסס על Negative Security Logic?",
+    "options": [
+      "כאשר צריכים להבטיח Zero false positive",
+      "כאשר צריכים להבטיח Zero false negative",
+      "כאשר לא ניתן להגדיר את רשימת המקרים החוקיים אותם יש לאפשר",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "שימוש ב-Negative Security Logic (רשימה שחורה) הוא כורח המציאות כאשר המערכת פתוחה מדי או מורכבת מכדי שניתן יהיה להגדיר מראש את כל הפעולות המותרות (Whitelist) מבלי לפגוע בפונקציונליות.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה הם הגורמים המשפיעים על הערכת הסיכון (Risk) לארגון כתוצאה מקיום פגיעות (Vulnerability)?",
+    "options": [
+      "הערכת הנזק שיגרם לארגון",
+      "הערכת הסיכוי שהפגיעות תנוצל להתקפה על הארגון",
+      "הערכת העלות של מניעת ההתקפה שמנצלת את הפגיעות",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Risk = Impact * Likelihood. הסיכון מוגדר כמכפלה של נזק (Impact) בהסתברות (Likelihood).",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "Firewall שמבודד בין רשת האינטרנט ל DMZ ומגן על אתר Web... יכול לחסום Outgoing TCP Connections?",
+    "options": [
+      "כן, כי ממילא בקשת ה HTTP נשלחת בפרוטוקול UDP",
+      "כן, וזה מומלץ על מנת לשפר את אבטחת המידע של האתר",
+      "כן, כי היוזמה לפתיחת ה TCP Connection... נעשית ע\"י שרת ה Web server",
+      "לא מכיוון שבקשת ה HTTP נשלחת בפרוטוקול TCP ע\"י דפדפן... והדפדפן הוא היוזם",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "שרת Web אמור לשרת בקשות נכנסות (להיות המאזין). אין סיבה לגיטימית ששרת Web ייזום חיבורים החוצה לאינטרנט (Outgoing), וחסימתם מונעת ממנו לשמש כבוט או להוריד נוזקות במקרה של פריצה.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה סוגי PAT/NAT רק Destination IP and Port אליו נשלח ה Packet יכול להחזיר תשובה?",
+    "options": [
+      "Restricted Cone",
+      "Port Restricted Cone",
+      "Symmetric NAT",
+      "תשובות א' וב' נכונות",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ב-Port Restricted Cone וב-Symmetric NAT, חומת האש מבצעת סינון מחמיר שדורש שהתשובה תגיע ספציפית מה-IP וה-Port שאליהם נשלחה הבקשה המקורית.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון לממש את ה DMZ באמצעות שני Firewalls פיזיים?",
+    "options": [
+      "Policy של כל Firewall פשוט יותר ולכן בד\"כ הסיכוי לטעות קטן יותר",
+      "כי טעות בקונפיגורציה של אחד ה Firewalls לא תחשוף את הרשת הפנימית להתקפות",
+      "Vulnerability בתוכנה של אחד ה Firewalls לא תחשוף את הרשת הפנימית להתקפות",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "שימוש בשני פיירוולים (Defense in Depth) מפשט את הניהול, ומגן מפני כשל נקודתי (טעות אנוש או באג) באחד מהם.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ה Network Firewall \"יודע\" מה סוג התעבורה (הפרוטוקול האפליקטיבי) שהוא מעביר?",
+    "options": [
+      "הוא יודע מה סוג התעבורה על פי ה PORT של המקור",
+      "הוא יודע מה סוג התעבורה על פי ה PORT של היעד",
+      "הוא יודע מה סוג התעבורה על פי ה PORT של המקור וה PORT של היעד",
+      "הוא יודע את סוג התעבורה על פי ה IP וה PORT של היעד",
+      "הוא \"מניח\" מה סוג התעבורה על פי ה PORT של היעד בשילוב הידע האם התעבורה היא מסוג TCP UDP"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "פיירוול ברשת (שאינו Application Firewall מלא) מסיק את הפרוטוקול לפי מספרי הפורטים הסטנדרטיים (למשל, TCP/80 = HTTP).",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין הטענות הבאות נכונה ביחס לרמת אבטחת המידע שמספק Firewall?",
+    "options": [
+      "Statefull firewall מספק רמת אבטחת מידע גבוהה יותר מ Stateless firewall כי הוא בודק כל Packet...",
+      "Statefull firewall מספק רמת אבטחת מידע גבוהה יותר מ Stateless Firewall כי הוא בודק כל Packet...",
+      "Statefull firewall מספק רמת אבטחת מידע גבוהה יותר לתעבורת TCP כי הוא בודק כל Packet אליו שייך ה TCP connection שלה State...",
+      "Statefull firewall מספק רמת אבטחת מידע גבוהה יותר לתעבורת UDP כי הוא יכול לאפשר מצב שבו UDP Packet יוכל להכנס לרשת הפנימית רק אם קיים UDP pseudo connection...",
+      "תשובות ג וד נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "Stateful Firewall מספק אבטחה טובה יותר הן ל-TCP (בדיקת דגלים ורצף) והן ל-UDP (ניהול מצב וירטואלי המאפשר חסימת תעבורה שלא נפתחה מבפנים).",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מממש Two Party Authentication?",
+    "options": [
+      "בהזדהות של ה Web Server בפני ה Client בפרוקול ה SSL",
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "תשובות ב' ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "המונח מתייחס לאימות משתמש מול שרת (Client-Server), שבו שני הצדדים מעורבים בתהליך האימות. כל השיטות המנויות (Basic, Digest, Form) הן שיטות אימות משתמש סטנדרטיות.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה יחס בין כמות החוקים ב Statelass firewall ובין כמות החוקים ב Stateful firewall ביחס לתעבורת UDP שמשמשת לפרוטוקולים אפליקטיביים שעובדים בתבנית של Request-Response?",
+    "options": [
+      "Stateless firewall כמות החוקים קטנה ב 10%...",
+      "Stateful firewall כמות החוקים קטנה בכ 10%...",
+      "Stateless firewall כמות החוקים קטנה ב 50%...",
+      "Stateful firewall כמות החוקים קטנה בכ 50% לעומת כמות החוקים ב Stateless firewall",
+      "אין הבדל בכמות חוקים"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב-Stateless יש להגדיר חוק נפרד לכל כיוון (בקשה ותגובה). ב-Stateful מגדירים רק את כיוון הבקשה, והתגובה מאושרת אוטומטית לפי ה-State Table, מה שחוסך כ-50% מהחוקים.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל העקרוני בין Packet Filter ובין PAT/NAT?",
+    "options": [
+      "ה NAT מסתיר את הכתובות של הרשת הפנימית וה Packet Filter מבקר את הגישה לכתובות ברשת הפנימית",
+      "ה NAT מסתיר את הכתובות של הרשת החיצונית...",
+      "ה NAT מסתיר את הכתובות של הרשת החיצונית...",
+      "ה NAT מתאים לטיפול בתעבורת UDP...",
+      "Stateful Packet Filter מקביל ל NAT"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "NAT (תרגום כתובות) נועד במקור לחיסכון בכתובות והסתרה, בעוד Packet Filter הוא מנגנון אבטחה שנועד לאשר או לחסום תעבורה על פי מדיניות.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס לסיכוי הטעות בקונפיגורציה של טבלת החוקים ב Firewall?",
+    "options": [
+      "ככל שכמות החוקים ב FW קטנה יותר הסיכוי לטעות קטן יותר",
+      "ככל שכמות ה Network Interfaces (\"הרגליים\") של ה FW גדולה יותר הסיכוי לטעות גדול יותר...",
+      "הסיכוי לטעות בקונפיגורציה של Stateful firewall גדולה יותר כי מבנה החוקים מורכב יותר...",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מורכבות (כמות חוקים, כמות ממשקים) מגדילה את הסיכוי לטעויות אנוש בקונפיגורציה.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון במימוש ה Challenge-Response לצורך Authentication באמצעות הצפנה אסימטרית לעומת מימוש באמצעות הצפנה סימטרית?",
+    "options": [
+      "החישוב ב Challenge-Response מהירים יותר...",
+      "אין צורך לשמור את ה Challenge בשרת...",
+      "אין צורך בתיאום מוקדם של סוד סימטרי משותף בין שני הצדדים (השרת וה Client) בינהם מתבצע תהליך ה Authentication",
+      "אין הבדל...",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בהצפנה אסימטרית (מפתחות ציבורי/פרטי), השרת צריך לדעת רק את המפתח הציבורי של הלקוח (שיכול להיות מופץ בתעודה), ואין צורך לנהל סוד משותף רגיש מראש לכל משתמש.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תהליכי Authentication הדפדפן אחראי להצגת החלון בו המשתמש מקליד את שם המשתמש והסיסמא שלו?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form based Authentication",
+      "Certificated based Authentication",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וד' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ב-Basic ו-Digest הפרוטוקול מחייב את הדפדפן להקפיץ חלון התחברות (Native Browser Dialog).",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה שיטת הזדהות נעשה שימוש ב Challenge-Response?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "רק Digest (מבין האפשרויות הללו) משתמש ב-Nonce (אתגר) למניעת שליחת הסיסמה בגלוי.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר נעשה שימוש ב HTTP Digest Authentication, במידה וה Web server... לא בודק שה Challenge... אזי לאיזה התקפה חשוף ה Web Server?",
+    "options": [
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת הסיסמא",
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת ה SessionID",
+      "התחזות של התוקף למשתמש החוקי באמצעות שימוש חוזר ב Authorization Header בבקשות ל Protected resources אחרים",
+      "התחזות של התוקף למשתמש החוקי באמצעות Replay של בקשת ה HTTP",
+      "תשובות וג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "אם השרת לא מאמת את האתגר (Nonce), תוקף יכול להקליט בקשה תקינה (Replay Attack) ולשלוח אותה שוב, והשרת יקבל אותה כוולידית.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון מבחינת אבטחת מידע בכך שה HTTP Digest Response מחושב על סמך MD5(username:realm:password)?",
+    "options": [
+      "השרת לא צריך לשמור את הסיסמא של המשתמש בגלוי אלא רק את תוצאת ה Hash וזה עדיף מבחינת אבטחת המידע",
+      "השרת שומר את הסיסמא של המשתמש יחד עם שם המשתמש",
+      "שגם שם המשתמש ולא רק הסיסמא משולבים בחישוב ה Response",
+      "אין יתרון מבחינת אבטחת מידע",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "המבנה הזה מאפשר לשרת לשמור את ה-Hash בלבד (A1) ולא את הסיסמה המקורית, מה שמגן על הסיסמאות במקרה של דליפת בסיס הנתונים בשרת.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מממשים את ה SessionID כ Form hidden parameter אזי ה Form Method צריך להיות:",
+    "options": [
+      "GET",
+      "POST",
+      "HEAD",
+      "POST או GET",
+      "לא משנה כל עוד הבקשה נשלחת ב HTTPS"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "שימוש ב-POST מונע את חשיפת ה-SessionID ב-URL.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה התקפה יכול השימוש HTTP Only Option עבור Cookie למנוע?",
+    "options": [
+      "Cookie Poisioning",
+      "גנבת ה Cookie מהדפדפן באמצעות התקפת XSS",
+      "גנבת ה Cookie באמצעות האזנה לערוץ התקשורת",
+      "ניחוש ה Cookie ע\"י התוקף",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "HttpOnly חוסם גישת JavaScript ל-Cookie, ובכך מונע גניבה ע\"י XSS.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר ב Set-cookie header מופיע גם Options של Max-age אזי:",
+    "options": [
+      "Cookie שיווצר יהיה Persistent Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "Cookie שיווצר יהיה Session Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "Cookie שיווצר יהיה Session Cookie שימחק רק כאשר הדפדפן יסגר ע\"י המשתמש",
+      "Cookie שיווצר יהיה Persistent Cookie שימחק או כעבור פרק הזמן שמוגדר ב Max-age או כאשר הדפדפן יסגר ע\"י המשתמש, המאוחר מבין שניהם",
+      "ה Cookie שיווצר יהיה Session Cookie שימחק או כעבור פרק הזמן שמוגדר ב Max-age או כאשר הדפדפן יסגר ע\"י המשתמש, המוקדם מבין שניהם"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "הגדרת Max-Age הופכת את ה-Cookie ל-Persistent.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "בהנחה שה SessionID נשלח באמצעות Cookie עם HTTP-Only Option אבל האפליקציה חשופה להתקפת XSS וחלק מהבקשות לאפליקציה נשלחות מהדפדפן ב HTTP, האם התוקף יכול לבצע Session Hijacking?",
+    "options": [
+      "כן, כי הוא יכול לגנוב ה SessionID באמצעות התקפת XSS...",
+      "כן, כי הוא יכול לגנוב את ה SessionID באמצעות האזנה לבקשות ה HTTP שנשלחות בגלוי, ומכיוון שה SessionID מתבסס על הסיסמא...",
+      "כן, כי הוא יכול לגנוב את ה SessionID באמצעות האזנה לבקשות ה HTTP שנשלחות בגלוי, וה SessionID משמש כמזהה של המשתמש במהלך ה Session...",
+      "לא...",
+      "לא..."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "HttpOnly לא מגן מפני האזנה (Sniffing). אם התעבורה לא מוצפנת (HTTP), התוקף יכול לקרוא את ה-Cookie מהרשת.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון הגנה מאפשר להתגונן בפני התקפת Cookie Poisoning?",
+    "options": [
+      "חתימה דיגיטלית של ה Cookie הנשלח לדפדפן ע\"י ה Web server...",
+      "לשמור את המידע הרגיש בשרת באוביקט ה session ולשלוח ב SessionID cookie אקראי...",
+      "הצפנת התעבורה (SSL)",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מניעת שינוי (Poisoning) אפשרית ע\"י חתימה (A) או ע\"י שמירת המידע בשרת (B).",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "במערכת של Google אפליקצית ה Drive היא:",
+    "options": [
+      "Identity Provider",
+      "Relying Party",
+      "SAML Asserting Party",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Google Drive מסתמך על מנגנון ההזדהות של גוגל (Google Accounts), ולכן הוא ה-Relying Party (או Service Provider).",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "ה SAML Protocol Layer מתאר:",
+    "options": [
+      "את המבנה שלה SAML Assertions",
+      "כיצד ה Service Provider מבקש SAML Assertion מה Identity Provider",
+      "כיצד ה Identity provider עונה על בקשה ל SAML Assertion",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שכבת הפרוטוקול ב-SAML מגדירה את הבקשות והתגובות (Request/Response Protocols) להעברת Assertions.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס לב Web SSO המבוסס על SAML במודל ה PUSH?",
+    "options": [
+      "Assertion חייב להיות חתום בחתימה דיגיטלית כי הוא עבור דרך הדפדפן של המשתמש",
+      "Assertion לא חייב להיות חתום...",
+      "Artifact חייב להיות חתום...",
+      "Artifact לא חייב להיות חתום...",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "במודל Push (POST Binding), ה-Assertion המלא עובר דרך הדפדפן של המשתמש, ולכן חייב להיות חתום כדי להבטיח את שלמותו ומקורו.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "הערוץ בין ה Identity Provider ובין ה Service Provider ב Web SSO המבוסס על SAML משמש ל:",
+    "options": [
+      "Service Provider שולח עליו את ה Assertion Query...",
+      "Service Provider שולח עליו את ה Assertion Response...",
+      "Service Provider שולח עליו את ה Artifact Response...",
+      "Service Provider שולח עליו את ה Artifact Query ל Identity Provider וה Identity Provider שולח כמענה SAML Response הכולל Authentication Assertion",
+      "Identity Provider שולח עליו את ה Artifact Query..."
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ערוץ ישיר (Back-channel) משמש למימוש Artifact Binding: ה-SP מקבל Artifact מהדפדפן, ושולח שאילתה ישירה (Artifact Query/Resolve) ל-IdP כדי לקבל את ה-Assertion האמיתי.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה מטרתה של התקפת CSRF?",
+    "options": [
+      "לגנוב את הסיסמא של המשתמש ולשלוח אותה לתוקף",
+      "לגנוב את ה Session ID של המשתמש ולשלוח אותו לתוקף",
+      "לבצע Cookie Poisoning",
+      "לבצע פעולה בשמו של המשתמש ללא ידיעתו",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "CSRF מנצלת את האמון של השרת בדפדפן כדי לבצע פעולות בשם המשתמש המחובר, מבלי שהמשתמש יזם אותן.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון אבטחת מידע אפליקטיבי יכול למנוע CSRF/ISRF כאשר האפליקציה חשופה ל XSS",
+    "options": [
+      "Client-side Input Validation",
+      "Server-Side Input Validation",
+      "Output Encoding",
+      "שימוש ב Anti-CSRF token",
+      "כאשר אפליקציה חשופה ל XSS אין מנגנון שיכול למנוע התקפת XSRF/CSRF"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "XSS מאפשר לתוקף לקרוא את ה-DOM, כולל את ה-Anti-CSRF Token, ולכן מבטל את ההגנה של מנגנונים אלו.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "למה מומלץ להגביל את ההרשאות של כל תהליך במערכת על פי העקרון של Least privileges?",
+    "options": [
+      "כי עי\"כ מוודאים שלתהליך תהיה גישה רק ל Authenticated users",
+      "כי עי\"כ מונעים ניצול של Vulnerability בתהליך להתקפה על המערכת",
+      "כי עי\"כ ממזערים את הנזק במקרה של ניצול של Vulnerability בתהליך להתקפה על המערכת",
+      "כי עי\"כ חוסכים את הצורך של Input validation בקוד של התהליך",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Least Privilege לא מונע את הפריצה עצמה (Exploit), אלא מגביל את מה שהתוקף יכול לעשות לאחר הפריצה (מזעור נזק).",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מתי ולמה מומלץ משיקולי אבטחת מידע לפרק את האפליקציה לרכיבים שכל אחד מהם רץ כתהליך נפרד?",
+    "options": [
+      "כאשר לכל רכיב קלט שונה",
+      "כאשר לכל רכיב פונקציונאליות שונה",
+      "כאשר לכל רכיב יש דרישות Input validation שונות",
+      "כאשר לכל רכיב נדרשות הרשאות שונות לבסיס הנתונים",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הפרדה לתהליכים מאפשרת להריץ כל תהליך תחת זהות משתמש שונה, ובכך לאכוף הרשאות שונות (למשל מול ה-DB) ברמת מערכת ההפעלה.",
+    "source": "TAU 2019 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "בדוגמא של החנות הוירטואלית החלוקה של החנות למודולים (קטלוג, חנות, ניהול קטלוג, ניהול חנות) מאפשרת:",
+    "options": [
+      "להריץ את המודולים המיועדים לגולשים על Web server אחד ואת המודולים המיועדים לעובדי החברה... ולהגביל את הגישה ל Web server עליו רצים המודולים של הניהול רק לעובדי החנות...",
+      "להגביל את הגישה למודולים של הניהול רק לעובדי החנות ולא לאפשר גישה אליהם לגולשים ברשת באמצעות מנגנון Access Control של ה Apache web server",
+      "לתת לכל מודול את ההרשאות המינימליות הנדרשות לו בבסיס הנתונים",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "חלוקה למודולים מאפשרת את כל שכבות ההגנה: הקשחת רשת (Firewall), הקשחת שרת (Access Control) והקשחת DB (Least Privilege).",
+    "source": "TAU 2019 Moed B"
+  }
+]
