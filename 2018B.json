@@ -1,0 +1,337 @@
+[
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס להתקפות Opportunistic Random?",
+    "options": [
+      "קטגורית ההתקפות שהכי קל להתגונן מולם הוא Opportunistic Random",
+      "על מנת להיות מוגן כנגד התקפות מסוג Opportunistic Random מספיק להתקין את כל ה Security Patches שמפרסם היצרן",
+      "התקפות מהסוג של Opportunistic Random מתבססות על ניצול known vulnerabilities בתשתיות המערכת",
+      "תשובות א' ב' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "התקפות אקראיות מזדמנות (Opportunistic Random) הן סריקות אוטומטיות המנצלות חולשות ידועות (Known Vulnerabilities). לכן, התקנת עדכוני אבטחה (Patches) היא ההגנה היעילה ביותר נגדן, והן נחשבות לקלות ביותר לעצירה.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "שמירת על DiskOnKey של מידע שאינו סודי אבל חשוב לשמור על השלמות שלו, כשהוא חתום דיגיטלית אבל לא מוצפן היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Threat - איום על סודיות המידע",
+      "Threat - איום על שלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "מכיוון שהמידע אינו מוצפן, כל מי שמוצא את ה-DiskOnKey יכול לקרוא אותו, מה שמהווה חולשה (Vulnerability) הפוגעת בסודיות (Confidentiality). החתימה הדיגיטלית מגנה על השלמות (Integrity) אך לא על הסודיות.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות לא ניתן למנוע ע\"י Input Validation?",
+    "options": [
+      "התקפת XSS",
+      "התקפת XSRF/CSRF",
+      "התקפת SQL Injection",
+      "התקפת Hidden Parameter Manipulation",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בדיקות קלט (Input Validation) נועדו לסנן תווים זדוניים או פורמט לא חוקי. התקפת CSRF אינה מסתמכת על קלט זדוני אלא על ניצול אמון השרת בזהות המשתמש, ולכן ולידציה לא תמנע אותה (נדרש Anti-CSRF Token).",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין מנגנוני אבטחת המידע הבאים מאפשר למנוע פגיעה בזמינות המידע עקב פגיעה בשלמות המידע?",
+    "options": [
+      "הצפנה",
+      "חתימה דיגיטלית",
+      "Write Access Control",
+      "הצפנה וחתימה דיגיטלית",
+      "אף אחת מהתשובות אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "מנגנון Write Access Control מונע כתיבה לא מורשית לקובץ, ובכך מונע את השחתתו (פגיעה בשלמות) שעלולה להוביל לחוסר יכולת להשתמש בו (פגיעה בזמינות). חתימה דיגיטלית רק *מזהה* שינוי, לא מונעת אותו.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מבין ההתקפות הבאות היא (הם) מסוג Passive Attack?",
+    "options": [
+      "Message Tampering",
+      "Eavesdropping",
+      "Masquerading",
+      "Traffic Analysis",
+      "תשובות ב' וד' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "התקפות פאסיביות כוללות האזנה (Eavesdropping) וניתוח תעבורה (Traffic Analysis), שכן הן אינן משנות את המידע אלא רק אוספות אותו. Tampering ו-Masquerading הן התקפות אקטיביות.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תפיסת אבטחת מידע יתכן False Negative למרות שמנגנון אבטחת המידע מקונפג כראוי?",
+    "options": [
+      "Negative Security Logic",
+      "Positive Security Logic",
+      "Negative Security Logic וגם Positive Security Logic",
+      "אם מנגנון אבטחת המידע מקונפג כראוי אין בשום מקרה אפשרות ל False Negative"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "בגישת Negative Security Logic (רשימה שחורה), המערכת חוסמת רק התקפות ידועות. התקפה חדשה (Zero Day) שלא מופיעה בחתימות לא תזוהה ותעבור (False Negative), גם אם המערכת מוגדרת היטב לפי הידע הקיים.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "למה מומלץ להגביל את ההרשאות של כל תהליך במערכת על פי העקרון של Least privileges?",
+    "options": [
+      "כי עי\"כ מקטינים את ה Attack surface של המערכת",
+      "כי עי\"כ ממזערים את הנזק במקרה של ניצול של Vulnerability בתהליך להתקפה על המערכת",
+      "כי עי\"כ חוסכים את הצורך של Input validation בקוד של התהליך",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "עקרון המידור (Least Privilege) מבטיח שאם תוקף מצליח להשתלט על תהליך, הוא יהיה מוגבל רק להרשאות המצומצמות של אותו תהליך, מה שממזער את הנזק הפוטנציאלי.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תהליכי Authentication נעשה שימוש ב Challenge-Response?",
+    "options": [
+      "HTTP Basic Authentication ו-HTTP Digest Authentication",
+      "HTTP Digest Authentication ו-Form based Authentication",
+      "HTTP Digest Authentication ו-Certificated based Authentication",
+      "רק Certificated based Authentication",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "פרוטוקול HTTP Digest משתמש ב-Nonce (אתגר) כדי למנוע שליחת סיסמה בגלוי. אימות מבוסס תעודות (Certificate Based) משתמש בחתימה על אתגר כדי להוכיח בעלות על המפתח הפרטי.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מממש Third Party Authentication?",
+    "options": [
+      "בהזדהות של ה Web Server בפני ה Client בפרוקול ה SSL",
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ב-SSL/TLS, השרת מזדהה באמצעות תעודה דיגיטלית החתומה על ידי רשות אישורים (CA - Certificate Authority), שהיא הצד השלישי הנאמן.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "בדוגמא של החנות הוירטואלית החלוקה של החנות למודולים (קטלוג, חנות, ניהול קטלוג, ניהול חנות) מאפשרת:",
+    "options": [
+      "להגביל את הגישה למודולים של הניהול רק לעובדי החנות באמצעות חוקי ה Firewall",
+      "להגביל את הגישה למודולים של הניהול רק לעובדי החנות באמצעות מנגנון ה Access Control של ה Apache web server",
+      "להצפין את התעבורה רק עבור חלק מהמודולים",
+      "לתת לכל מודול את ההרשאות המינימליות הנדרשות לו מול בסיס הנתונים",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות",
+      "תשובות א' ב' וד' נכונות"
+    ],
+    "correctAnswerIndex": 6,
+    "explanation": "הפרדה למודולים מאפשרת שכבות הגנה מרובות: ברמת הרשת (FW), ברמת השרת (Access Control), וברמת הנתונים (DB permissions).",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "האם וכיצד ניתן להקטין את הנזק האפשרי (לא את ה attack surface) כתוצאה מניצול Unknown vulnerability שקיים ב Service?",
+    "options": [
+      "כן, ע\"י צמצום ההרשאות של ה Service למינימום האפשרי",
+      "כן, עי\"כ שמאפשרים גישה ל Service רק לאותם גורמים/תהליכים/משתמשים שלהם נדרשת גישה",
+      "לא, אין אפשרות להקטין את הנזק כתוצאה מניצול Unknown vulnerability שקיים ב Service",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "הקטנת נזק (Mitigation) נעשית על ידי צמצום הרשאות (Least Privilege). הגבלת הגישה ל-Service (אופציה ב') מקטינה את משטח התקיפה (Attack Surface) וההסתברות לניצול, אך השאלה ביקשה במפורש דרך להקטין את ה*נזק*.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן למזער את הסיכון להתקפה על מערכת ההפעלה (כלומר ביצוע פעולות במערכת ההפעלה שלמשתמש אסור לבצע) באמצעות ה Web application?",
+    "options": [
+      "התקנה של Patches של יצרן מערכת ההפעלה",
+      "מתן הרשאות מינמליות לאפליקציה ביחס לפעולות במערכת ההפעלה",
+      "מתן הרשאות מינימליות לתהליכים במערכת ההפעלה",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כל האמצעים נכונים: עדכונים סוגרים חולשות, והרשאות מינימליות לאפליקציה ולתהליכים מונעות את היכולת לבצע פעולות מסוכנות במערכת ההפעלה גם אם האפליקציה נפרצה.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד יודע הדפדפן האם יש לבצע Authentication בשיטת ה HTTP Basic Authentication או בשיטת ה HTTP Digest Authentication?",
+    "options": [
+      "זה בחירה של המשתמש באיזה שיטה להזדהות",
+      "זה נקבע בקונפיגורציה של הדפדפן",
+      "זה נקבע על פי פרמטר ב WWW-Authenticate Header",
+      "זה נקבע על פי פרמטר Authorization Header",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "כאשר השרת מחזיר שגיאת 401 Unauthorized, הוא מצרף כותרת WWW-Authenticate המפרטת באילו שיטות אימות הוא תומך (למשל Basic realm=... או Digest realm=...).",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "למה שילוב ה SessionID ב URL של ה HTTP request נחשבת לא בטוחה מבחינת אבטחת מידע?",
+    "options": [
+      "כי זה עלול להשלח כחלק מה Referrer Header לשרת אחר",
+      "כי זה נשמר בד\"כ בלוג של ה Web server",
+      "כי זה נשמר ב History של הדפדפן",
+      "תשובות א' וב' נכונות",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 5,
+    "explanation": "העברת מידע רגיש ב-URL (כמו SessionID) חושפת אותו במקומות רבים: היסטוריית הדפדפן, לוגים של שרתים ופרוקסי, וכותרת ה-Referer בעת מעבר לאתרים אחרים.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר ב Set-cookie header מופיע גם Options של Max-age וגם Discard אזי:",
+    "options": [
+      "Cookie שיווצר יהיה Persistent Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "Cookie שיווצר יהיה Session Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "Cookie שיווצר יהיה Session Cookie שימחק רק כאשר הדפדפן יסגר ע\"י המשתמש",
+      "ה Cookie שיווצר יהיה Session Cookie שימחק או כעבור פרק הזמן שמוגדר ב Max-age או כאשר הדפדפן יסגר ע\"י המשתמש, המוקדם מבין שניהם"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "דגל ה-Discard מסמן שה-Cookie אמור להימחק בסיום ה-Session (סגירת הדפדפן), ואילו Max-Age מגדיר זמן חיים מקסימלי. בפועל, הדפדפן ימחק את ה-Cookie באירוע הראשון מביניהם.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון הגנה מאפשר להתגונן בפני Cookie Poisoning?",
+    "options": [
+      "חתימה דיגיטלית של ה Cookie הנשלח לדפדפן ע\"י ה Web server, ובדיקת החתימה ע\"י ה Web server כאשר הוא חוזר",
+      "חתימה דיגיטלית ע\"י הדפדפן",
+      "הצפנת התעבורה (SSL)",
+      "תשובות א' וג' נכונות",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Cookie Poisoning הוא מצב בו המשתמש משנה את תוכן ה-Cookie. כדי למנוע זאת, השרת חותם דיגיטלית (או עם HMAC) על ה-Cookie לפני שליחתו, ומאמת את החתימה כשה-Cookie חוזר. SSL מגן רק מפני מאזין ברשת, לא מפני המשתמש עצמו.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע Client side validation אינו רלוונטי במבחינת אבטחת מידע בישומי WEB?",
+    "options": [
+      "כי קל לנטרל את ה Client side validation ע\"י שינוי הקוד של הדף בדפדפן",
+      "כי קל לעקוף את ה Client side validation ע\"י שינוי תוכן ה HTTP request שנשלח לשרת (באמצעות שימוש ב Proxy)",
+      "כי אי אפשר לממש Client side validation בדפדפן",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "בדיקות בצד הלקוח (בדפדפן) נועדות לשיפור חווית המשתמש בלבד. תוקף יכול לשנות את הקוד המקומי או לשלוח בקשות HTTP ישירות לשרת (תוך עקיפת הדפדפן), ולכן מבחינת אבטחה חייבים לבצע ולידציה בצד השרת.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המצבים הבאים היא דוגמא ל Insecure Direct Object Reference (IDOR)?",
+    "options": [
+      "שילוב של אינדקס לטבלת המרה ב URL של בקשת ה HTTP",
+      "שילוב של אינדקס לטבלת המרה כ FORM Hidden Parameter",
+      "שילוב של מספר ת.ז. של המשתמש כ FORM Hidden Parameter",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "שימוש במזהים ישירים (כמו ת\"ז, מפתח רשומה ב-DB, או אינדקס ישיר) כפרמטרים חשופים מאפשר למשתמש לשנותם ולנסות לגשת לנתונים של אחרים. כל האפשרויות מתארות חשיפה של מזהים כאלו.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "אפליקציה מצפה לקבל כפרמטר מספר ת.ז... האפליקציה מוודאת שהקלט הוא מחרוזת של תווים נומריים (0-9) שאורכה 9 תווים... לאיזה התקפה חשופה האפליקציה?",
+    "options": [
+      "SQL Injection",
+      "XSS",
+      "Parameter manipulation בו המשתמש ישלח מספר ת.ז. של משתמש אחר",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בדיקת התקינות (רק ספרות, אורך 9) מונעת הזרקת תווים מיוחדים הנדרשים ל-SQL Injection או XSS. עם זאת, היא אינה בודקת הרשאות (Authorization), ולכן משתמש יכול לשלוח ת\"ז תקינה של משתמש אחר ולגשת לפרטיו (IDOR/Parameter Manipulation).",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא ה Vulnerability שמאפשר את התקפת ה DOM based XSS?",
+    "options": [
+      "חוסר ב Input validation בקוד האפליקציה שרץ ב Web server",
+      "חוסר ב Output encoding בקוד האפליקציה שרץ ב Web server",
+      "חוסר ב Input validation / Output encoding בקוד ה JavaScript של האפליקציה שרץ בדפדפן",
+      "SessionID מועבר בגלוי ברשת",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "DOM Based XSS מתרחש כולו בצד הלקוח. החולשה היא בקוד ה-JavaScript שמעבד קלט לא בטוח (Source) ומעביר אותו ל-Sink מסוכן ללא בדיקה או קידוד מתאים בתוך הדפדפן.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל בין Reflected XSS ל-Stored XSS?",
+    "options": [
+      "שב Reflected XSS הקוד העוין נשלח לשרת וב Stored XSS הקוד העוין אינו נשלח לשרת",
+      "שב Reflected XSS הקוד העוין אינו נשמר בשרת וב Stored XSS הקוד העוין נשמר בשרת (בבסיס הנתונים)",
+      "שב Reflected XSS הקוד העוין רץ בשרת וב Stored XSS הקוד העוין אינו רץ בשרת",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ההבדל העיקרי הוא האחסון (Persistence): ב-Reflected ההתקפה היא חד-פעמית ומוחזרת מיידית בתגובה, בעוד שב-Stored הקוד הזדוני נשמר בשרת ומוגש לכל משתמש שצופה בדף.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מבין הטענות הבאות ביחס בין התקפת XSS ובין התקפת XSRF/CSRF אינה נכונה?",
+    "options": [
+      "התקפת XSS מטרתה לתקוף את הדפדפן של המשתמש והתקפת CSRF/XSRF מטרתה לתקוף את האפליקציה",
+      "התקפת XSS מנצלת פגיעות (Vulnerability) בדפדפן והתקפת CSRF/XSRF אינה מנצלת פגיעות בדפדפן",
+      "התקפת XSS מנצל את האמון של הדפדפן בדפי ה HTML שנשלחים אליו ע\"י ה Web server",
+      "התקפת CSRF/XSRF מנצל את האמון של ה Web application ב HTTP Request שנשלח אליו מהדפדפן",
+      "פגיעות להתקפת XSS מאפשרת התקפת CSRF/XSRF"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הטענה השגויה היא ב'. XSS אינה מנצלת פגיעות בדפדפן עצמו (Browser Vulnerability), אלא פגיעות באפליקציה (חוסר ב-Sanitization) שגורמת לדפדפן להריץ קוד. שאר הטענות נכונות.",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרכים לצמצם את הנזק כתוצאה מהתקפת Injection attacks (עד שבמקרים מסוימים זה בולם את ההתקפה)?",
+    "options": [
+      "שימוש ב Authentication Factor טוב יותר",
+      "צמצום ההרשאות של האפליקציה אל מול המערכת שהיא יעד ההתקפה (Least Privilege)",
+      "Input validation that is based on negative security logic",
+      "תשובות א' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "שימוש ב-Least Privilege (למשל, הגבלת הרשאות ה-DB למשתמש האפליקציה) הוא קו הגנה קריטי שממזער את הנזק אם הזרקת קוד הצליחה (למשל, מונע מחיקת טבלאות או גישה לנתונים לא רלוונטיים).",
+    "source": "TAU 2018 Moed B-1"
+  },
+  {
+    "type": "mc",
+    "question": "מפתח/ת אפליקציה שילב/ה את מחיר המוצר Hidden parameter... מה נדרש המפתח/ת לעשות על מנת למנוע Hidden Parameter Tampering על ערכו של המחיר?",
+    "options": [
+      "לבצע בקוד ה JavaScript שרץ בדפדפן Input validation",
+      "לבצע בשרת Input validation based on Negative security logic",
+      "לבצע בשרת Format validation",
+      "לבצע בשרת בדיקה שערך המחיר הוא בטווח",
+      "לשמור בשרת את הערך המחיר שנשלח למשתמש בדף ה Web, ולבדוק בשרת שהערך שהתקבל ב HTTP Request הוא הערך שאכן נשלח למשתמש (או פשוט להשתמש בערך השמור)"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כדי למנוע זיוף מחיר, אסור להסתמך על הערך שמגיע מהלקוח. יש לאמת אותו מול המקור האמין בשרת (Session או Database) לפני ביצוע העסקה.",
+    "source": "TAU 2018 Moed B-1"
+  }
+]

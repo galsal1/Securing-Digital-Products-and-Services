@@ -103,20 +103,6 @@
   },
   {
     "type": "mc",
-    "question": "האם Firewall שמבודד בין רשת האינטרנט ל DMZ ומגן על אתר Web שנמצא ב DMZ שמטרתו לשרת משתמשים ברשת האינטרנט יכול לחסום Incoming TCP Connections?",
-    "options": [
-      "כן, כי ממילא בקשת ה HTTP נשלחת בפרוטוקול UDP",
-      "כן, וזה מומלץ על מנת לשפר את אבטחת המידע של האתר",
-      "כן, כי היוזמה לפתיחת ה TCP Connection עליו נשלחת בקשת ה HTTP נעשית ע\"י שרת ה Web server",
-      "לא מכיוון שבקשת ה HTTP נשלחת בפרוטוקול TCP ע\"י דפדפן שנמצא ברשת החיצונית, והדפדפן הוא היוזם את פתיחת ה TCP Connection",
-      "תשובות ב' וג' נכונות"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "שרת Web חייב להיות מסוגל לקבל חיבורי TCP נכנסים (בדרך כלל בפורט 80 או 443), כיוון שהלקוחות (הדפדפנים) הם אלו שיוזמים את החיבור (Three-way handshake). חסימת חיבורים נכנסים תמנע גישה לאתר.",
-    "source": "TAU 2017 Moed B"
-  },
-  {
-    "type": "mc",
     "question": "ההבדל בין Statefull firewall ו-Stateless firewall הוא:",
     "options": [
       "Stateless firewall בודק כל Packet בפני עצמו וב Statefull Firewall נבדק כל Packet יחד HTTP Request",
