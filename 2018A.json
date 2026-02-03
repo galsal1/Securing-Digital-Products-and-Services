@@ -1,0 +1,380 @@
+[
+  {
+    "type": "mc",
+    "question": "שמירת קובץ על הדיסק בשרת שיש להגן הסודיות והשלמות שלו, כשהוא לא מוצפן וללא חתימה דיגיטלית על הקובץ, אבל כאשר מיושם Read and Write Access Control על הגישה לקובץ, היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "יישום הרשאות גישה (Access Control) לקריאה וכתיבה הוא מנגנון הגנה בסיסי ולגיטימי לשמירה על סודיות ושלמות במערכת ההפעלה. העדר הצפנה או חתימה אינו בהכרח חולשה (Vulnerability) או התקפה, אלא בחירה תכנונית בהתאם למודל האיומים.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין סוגי ההתקפות הבאות מספיק להתקין את כל ה Security Patches שמפרסם היצרן של מערכת ההפעלה ויצרני שאר תוכנות התשתית המותקנות על המחשב על מנת שהמחשב יהיה מוגן מההתקפה?",
+    "options": [
+      "Opportunistic Random",
+      "Opportunistic Directed",
+      "Fully Targeted",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "התקפות אקראיות מזדמנות (Opportunistic Random) מסתמכות בדרך כלל על סריקה אוטומטית של חולשות ידועות (Known Vulnerabilities) ברחבי הרשת. עדכון טלאי אבטחה (Patches) סוגר חולשות אלו ומונע את ההתקפה.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות מנוצל vulnerability באפליקציה שרצה ב Web server על מנת להעביר קוד עוין ליעד ההתקפה?",
+    "options": [
+      "התקפת XSS",
+      "התקפת SQL Injection",
+      "התקפת Session Hijacking",
+      "התקפת XSS והתקפת SQL Injection",
+      "התקפת Session Hijacking והתקפת SQL Injection והתקפת XSS"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב-XSS האפליקציה מעבירה קוד זדוני לדפדפן (היעד), וב-SQL Injection האפליקציה מעבירה קוד זדוני לבסיס הנתונים (היעד). בשני המקרים השרת משמש כצינור להעברת הקוד.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה התקפות יכול ניהול הרשאות של האפליקציה במדיניות של Least privileges לסייע למזער את הנזק?",
+    "options": [
+      "התקפת SQL Injection",
+      "התקפת Cookie poisoning",
+      "התקפת Session Hijacking",
+      "התקפת Session Hijacking והתקפת Cookie poisoning",
+      "התקפת Session Hijacking והתקפת Cookie poisoning והתקפת SQL Injection"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "הגבלת הרשאות (Least Privilege) של המשתמש מול בסיס הנתונים תגביל את הנזק שניתן לבצע באמצעות הזרקת SQL (למשל, מניעת מחיקת טבלאות). ההתקפות האחרות מתרחשות ברמת ה-Session או הדפדפן ואינן מושפעות ישירות מהרשאות האפליקציה בשרת.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא המנגנון המאפשר לשמור על שלמות המידע (Data Integrity) הן כאשר המידע נייח והן כאשר הוא מעובד בזיכרון של המחשב?",
+    "options": [
+      "Write Access Control",
+      "Read Access Control",
+      "Encryption",
+      "Digital Signature",
+      "Digital Signature ו-Write Access Control"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "בקרת גישה לכתיבה (Write Access Control) מונעת שינויים לא מורשים במידע על ידי תהליכים או משתמשים אחרים, הן בקבצים (נייח) והן בזיכרון בזמן עיבוד. הצפנה וחתימה דיגיטלית אינן מגנות על מידע בזמן שהוא מעובד בזיכרון (במבנה המחשב הקלאסי).",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון הצפנת המידע ומנגנון ה Write Access control ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא למנוע את השינוי הלא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא לאפשר לאתר שבוצע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת ההצפנה היא לאפשר לאתר שינוי לא מורשה שנעשה במידע ומטרת ה Write access control הוא למנוע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת ההצפנה היא למנוע שינוי לא מורשה במידע ומטרתה Write access control היא לאתר שינוי לא מורשה שנעשה במידע",
+      "מנגנון ההצפנה בא לשמור על סודיות המידע ומנגנון ה Write Access control בא לשמור על שלמות המידע"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הגדרה קלאסית של אבטחת מידע: הצפנה נועדה להבטיח סודיות (Confidentiality), בעוד שבקרת כתיבה נועדה להבטיח שלמות (Integrity) על ידי מניעת שינויים.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מה security properties ניתן לפגוע באמצעות התקפה פאסיבית (Passive attack)?",
+    "options": [
+      "סודיות המידע",
+      "שלמות המידע",
+      "זמינות המידע",
+      "סודיות המידע ושלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "התקפה פאסיבית (כגון האזנת סתר - Eavesdropping) מאפשרת קריאת מידע ללא שינויו, ולכן פוגעת בסודיות בלבד.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה מבין הטענות הבאות אינו חסרון של זיהוי התקפות המבוסס על תבניות של התקפות ידועות (Patterns and Signatures)?",
+    "options": [
+      "היא דורשת עדכון תמידי של תבניות ההתקפות",
+      "היא דורשת הגדרה מראש של התכנים החוקיים",
+      "היא חשופה ל Zero day attack",
+      "היא חשופה לזיהוי שגוי של תכנים חוקיים כהתקפה (False positive)",
+      "היא חשופה למצבים בהם היא אינה מזהה את ההתקפה (False Negative)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הצורך להגדיר תכנים חוקיים הוא מאפיין של מנגנוני 'רשימה לבנה' (Positive Security / Anomaly Detection). זיהוי מבוסס חתימות (Negative Security) מחפש את הרע (חתימות התקפה) ואינו דורש הגדרה של הטוב, ולכן זהו אינו חסרון שלו (זה פשוט לא רלוונטי אליו).",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "Risk Matrix - מה הם שתי הצירים של המטריצה?",
+    "options": [
+      "ההשפעה על הארגון והסיכוי של התוקף לגלות את ה Vulnerability",
+      "כמות המשתמשים שתושפע מההתקפה והיכולת של התוקף לבצע את ההתקפה",
+      "הנזק הכספי לארגון והסיכוי של התוקף לגלות את ה vulnerability",
+      "ההשפעה על הארגון וההסתברות שאירוע אבטחת המידע יתרחש",
+      "הנזק הכספי לארגון ורמת הקושי של התוקף לנצל את ה Vulnerability"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מטריצת סיכונים בנויה משקלול של הסתברות (Probability/Likelihood) ועוצמת ההשפעה (Impact/Severity).",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מתי מומלץ משיקולי אבטחת מידע לפרק את האפליקציה לרכיבים שכל אחד מהם רץ כתהליך נפרד?",
+    "options": [
+      "כאשר לכל רכיב קלט שונה",
+      "כאשר לכל רכיב יש דרישות Input validation שונות",
+      "כאשר לכל רכיב נדרשות הרשאות שונות לבסיס הנתונים",
+      "כאשר לכל רכיב נדרשות הרשאות שונות ביחס לקבצים ב file system",
+      "כאשר לכל רכיב נדרשות הרשאות שונות לבסיס הנתונים או כאשר לכל רכיב נדרשות הרשאות שונות ביחס לקבצים ב file system"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "פירוק לתהליכים נפרדים מאפשר להקצות לכל תהליך זהות משתמש שונה במערכת ההפעלה, ובכך לאכוף את עקרון המידור (Least Privilege) ברמת הגישה לקבצים ולבסיס הנתונים.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בדוגמא של החנות הוירטואלית החלוקה של החנות למודולים (קטלוג, חנות, ניהול קטלוג, ניהול חנות) מאפשרת:",
+    "options": [
+      "להריץ את המודולים המיועדים לגולשים על Web server אחד ואת המודולים המיועדים לעובדי החברה על Web server נפרד ולהגביל את הגישה ל Web server של הניהול רק לעובדי החנות באמצעות חוקי Firewall",
+      "להגביל את הגישה למודולים של הניהול רק לעובדי החנות באמצעות מנגנון Access Control של ה Apache web server",
+      "לתת לכל מודול את ההרשאות המינימליות הנדרשות לו בבסיס הנתונים",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "חלוקה למודולים מאפשרת גמישות מלאה באבטחה: הפרדה רשתית (Firewall), הפרדה ברמת השרת (Access Control), והפרדת הרשאות נתונים (DB Privileges).",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן להקטין את הנזק האפשרי כתוצאה מניצול Unknown vulnerability שקיים ב Apache web server?",
+    "options": [
+      "אין אפשרות להקטין את הנזק כתוצאה מניצול Unknown vulnerability שקיים ב Apache web server בגלל שמדובר בשרת אינטרנט",
+      "להתקין את כל ה patches שמפרסם הארגון האחראי על פיתוח ותחזוקת ה Apache web server",
+      "מקטינים את ההרשאות של Apache web server ביחס ל resources במערכת ההפעלה למינימום האפשרי",
+      "מריצים את ה Apache web server תחת Jail/Chroot",
+      "מקטינים את ההרשאות של ה Apache web server ביחס resources במערכת ההפעלה למינימום האפשרי ו/או מריצים את ה Apache web server תחת Jail/Chroot"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "מכיוון שהחולשה אינה ידועה (Unknown/Zero-day), לא קיים טלאי (Patch). הדרך היחידה היא למזער נזקים (Containment) על ידי הרצת השרת בהרשאות מינימליות ובסביבה מבודדת (Jail/Chroot).",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מממש Third Party Authentication?",
+    "options": [
+      "הזדהות של ה Web Server בפני ה Client בפרוקול ה SSL",
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "הזדהות של ה Client בפני ה Web Server בפרוטוקול ה SSL"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ב-SSL/TLS, השרת מזדהה בפני הלקוח באמצעות תעודה דיגיטלית החתומה על ידי גורם שלישי נאמן (Certificate Authority - CA).",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מתבצע Client Authentication בפני השרת באמצעות מנגנון ה Challenge-Response אסימטרי (המבוסס על שימוש באלגוריתם הצפנה אסימטרי), אזי אפשר לממש את המנגנון עי\"כ שה Client מצפין את ה Challenge באמצעות:",
+    "options": [
+      "מפתח סימטרי המוסכם על ה Client והשרת",
+      "המפתח הציבורי של ה Client",
+      "המפתח הציבורי של השרת",
+      "המפתח הפרטי של ה Client",
+      "המפתח הפרטי של השרת"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הוכחת זהות במערכת אסימטרית מתבצעת על ידי כך שהמשתמש מוכיח שליטה במפתח הפרטי שלו (על ידי חתימה/הצפנה של האתגר), והשרת מאמת זאת באמצעות המפתח הציבורי.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "ברירת המחדל עבור קבצים המאוחסנים על ה Web server היא:",
+    "options": [
+      "שהגישה אליהם דורשת HTTP Basic Authentication",
+      "שהגישה אליהם דורשת HTTP Digest Authentication",
+      "שהגישה אליהם דורשת Certificate based Authentication",
+      "שהגישה אליהם דורשת FORM based Authentication",
+      "שהגישה אליהם חופשית ולא דורשת שום תהליך Authentication"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "שרתי אינטרנט (כמו Apache, IIS) מוגדרים כברירת מחדל להגיש קבצים סטטיים לכל דורש, אלא אם הוגדרה מגבלת גישה ספציפית.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון מבחינת אבטחת מידע בכך שה HTTP Digest Authentication Response מחושב על סמך (MD5(username:realm:password?",
+    "options": [
+      "זה מאפשר לשרת לא לשמור את הסיסמא של המשתמש אלא את תוצאת ה Hash וזה עדיף מבחינת אבטחת המידע כי כך הסיסמא לא נשמרת בגלוי בשרת",
+      "שם המשתמש משמש כמעין SALT לצורך הצפנת הסיסמא, כך שגם אם שני משתמשים בחרו את אותה סיסמא לא ניתן יהיה לגלות זאת מתוך ה Hash שנשמר בשרת",
+      "שגם שם המשתמש ולא רק הסיסמא משולבים בחישוב ה Response",
+      "אין יתרון מבחינת אבטחת מידע, רק מבחינה חישובית",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "המבנה הזה מאפשר לשרת לשמור רק את ה-Hash (ולא את הסיסמה הגלויה כמו ב-Basic Auth), והשימוש ב-Realm ושם המשתמש מוסיף גיוון (Salt) המונע התקפות Rainbow Tables פשוטות.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בתצורה בה יש Authentication server מולו מתבצע תהליך ה Authentication והוא מעביר את המשתמש לאחר ה Authentication ל Web application בצירוף Ticket שנשלח באמצעות מנגנון ה Cookie, אזי?",
+    "options": [
+      "אין צורך להצפין את ה Ticket כי המידע שמועבר בו אינו סודי",
+      "יש להצפין את ה Ticket כאשר הוא מועבר ברשת על מנת למנוע את גנבתו ע\"י התוקף המאזין לרשת",
+      "יש לחתום את ה Ticket על מנת שהמשתמש לא ישנה את תוכנו של ה Ticket",
+      "אין צורך להצפין את ה Ticket אבל יש לחתום את ה Ticket",
+      "יש להצפין את ה Ticket כאשר הוא מועבר ברשת על מנת למנוע את גנבתו ע\"י התוקף המאזין לרשת ויש לחתום את ה Ticket על מנת שהמשתמש לא ישנה את תוכנו של ה Ticket"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כרטיס (Ticket) חייב להיות מוצפן כדי למנוע גניבת זהות ושימוש חוזר (Replay/Hijacking) על ידי מאזין, וחייב להיות חתום כדי למנוע זיוף (Tampering) על ידי המשתמש עצמו.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מממשים את ה SessionID כ Form hidden parameter אזי ה Form Method צריך להיות:",
+    "options": [
+      "POST",
+      "HEAD",
+      "GET",
+      "POST או GET",
+      "לא משנה כל עוד הבקשה נשלחת ב HTTPS"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "שימוש ב-GET יגרום לפרמטרים (כולל ה-SessionID) להופיע ב-URL, מה שחושף אותם בהיסטוריה ובלוגים. שימוש ב-POST מעביר אותם בגוף הבקשה.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "ב Gmail בהנחה שלמשתמש יש Session פעיל מול האפליקציה. המשתמש סגר את הדפדפן וכאשר הוא פתח מחדש את הדפדפן ומקליד את ה URL של Gmail הוא נכנס לדף הבית של החשבון ללא צורך ב Authentication. מה היה/היו ה Cookie Options של ה Cookie שאותו שלח Gmail לדפדפן של המשתמש?",
+    "options": [
+      "Discard",
+      "Max-Age",
+      "Max-Age ו-Discard",
+      "Persistent",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "כדי שה-Cookie יישמר גם לאחר סגירת הדפדפן (Persistent Cookie), יש להגדיר לו זמן תפוגה באמצעות Max-Age (או Expires בעבר).",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "תוסף ה Firesheep לדפדפן ה Firefox שבו דנו בהרצאה אפשר?",
+    "options": [
+      "גניבת ה Session ID מתוך הדפדפן",
+      "גניבת ה Session ID מהאזנה ל Request רק במקרה שה Request נשלח בגלוי",
+      "גניבת ה Session ID מהאזנה ל Request רק במקרה שה Session ID נשלח ב Cookie header",
+      "גניבת ה Session ID מהאזנה ל Request רק במקרה שה Session ID נשלח ב Hidden parameter",
+      "גניבת ה Session ID מהאזנה ל Request רק במקרים שה Session ID נשלח ב Cookie header או שה Session ID נשלח ב Hidden parameter"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Firesheep היה כלי שאפשר גניבת זהות (Sidejacking) ברשתות Wi-Fi פתוחות על ידי האזנה לתעבורת HTTP לא מוצפנת וגניבת העוגיות.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "על מנת למנוע Hidden Parameter Tampering על ה Hidden parameter שבו מועבר מחיר מוצר נדרש:",
+    "options": [
+      "לבצע Format validation על ערך הפרמטר",
+      "לחתום בחתימה דיגיטלית את הערך של ה Hidden parameter בשרת ולבדוק את החתימה הדיגיטלית בשרת",
+      "לשמור בשרת את הערך (או הערכים) שנשלח למשתמש בדף ה Web, ולבדוק בשרת שהערך שהתקבל הוא הערך המקורי",
+      "לחתום בחתימה דיגיטלית את הערך בשרת ולבדוק אותה, או לשמור את הערך בשרת ולבדוק מולו",
+      "לבצע Format validation או את אחת מהאופציות האחרות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "כדי למנוע שינוי של פרמטר נסתר (כמו מחיר), השרת חייב לאמת את הנתונים החוזרים: או על ידי אימות חתימה קריפטוגרפית (שהלקוח לא יכול לזייף) או על ידי התעלמות מהערך החוזר ושימוש בערך השמור ב-State בשרת.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד התקפת XSS עוקפת את המגבלה של ה Same Origin Policy שלא מאשר לקוד JavaScript לשלוח בקשות ל domains שאינם ה domain ממנו נטען דף ה HTML המכיל את קוד ה JavaScript?",
+    "options": [
+      "הוא לא יכול לעקוף את המגבלה הזאת",
+      "הוא מנצל vulnerability בישום של מנגנון ה Same Origin Policy",
+      "המגבלה הזאת היא רק לגבי בקשות POST ולכן הוא מיצר בקשות GET",
+      "הוא מיצר אלמנט ב DOM שמכיל src attribute ושם את הבקשה שאותה הוא רוצה לשלוח כערך של ה src attribute של האלמנט ועי\"כ גורם לדפדפן לשלוח את הבקשה",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מדיניות SOP אינה חוסמת טעינת משאבים חיצוניים דרך תכונת ה-src (למשל בתמונות או סקריפטים). תוקפים מנצלים זאת כדי להדליף מידע (כמו עוגיות) דרך ה-URL של הבקשה למשאב החיצוני.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות אין קשר ישיר בין התוקף למותקף (אלא רק באמצעות ה Web application)?",
+    "options": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM-Based XSS",
+      "Reflected XSS ו-DOM-Based XSS",
+      "Stored XSS ו-Reflected XSS"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ב-Stored XSS התוקף מאחסן את הקוד הזדוני בשרת (למשל בפורום). הקורבן נחשף אליו כשהוא גולש לאתר באופן עצמאי, ללא צורך שהתוקף ישלח לו קישור ישיר.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה התקפות יכול ניהול הרשאות במדיניות של Least privileges לסייע למזער את הנזק שתגרום ההתקפה (או אולי אפילו למנוע את ההתקפה)?",
+    "options": [
+      "XSS",
+      "SQL Injection",
+      "LDAP Injection",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Least Privilege בצד השרת (בסיס נתונים או LDAP) מגביל את הפעולות שניתן לבצע במקרה של הזרקה מוצלחת. זה לא עוזר ב-XSS שרץ בצד הלקוח.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מפתח כלל את מספר ת.ז. של המשתמש ב Hidden Field... המפתח מבצע בדיקה שפרמטר ת.ז. מכיל רק תשע ספרות... מה עוד נדרש מהמפתח לעשות על מנת להיות מוגן ממצב שבו התוקף משנה את ערך שדה ת.ז. בבקשת ה HTTP על מנת לצפות בפרטיו של משתמש אחר?",
+    "options": [
+      "לבנות את שאילתת ה SQL באמצעות Parameterized Query",
+      "להגביל את ההרשאות של האפליקציה להרשאות READ מול טבלת פרטי המשתמשים",
+      "לבדוק את ההרשאה של המשתמש לגשת לרשומה שאליה הוא מבקש לגשת ע\"פ שדה ת.ז. שבבקשה (בהתבסס על זיהוי המשתמש ב-Authentication)",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הבעיה המתוארת היא Insecure Direct Object Reference (IDOR). הפתרון הוא בדיקת הרשאות (Authorization) שמוודאת שהמשתמש המחובר אכן רשאי לגשת לנתונים של תעודת הזהות שהתבקשה.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מבין הטענות הבאות ביחס בין התקפת XSS ובין התקפת XSRF/CSRF נכונות?",
+    "options": [
+      "התקפת XSS מטרתה לתקוף את הדפדפן של המשתמש והתקפת CSRF/XSRF מטרתה לתקוף את האפליקציה",
+      "התקפת XSS מנצל את האמון של הדפדפן בדפי ה HTML שנשלחים אליו ע\"י ה Web server והתקפת CSRF/XSRF מנצל את האמון של ה Web application ב HTTP Request שנשלח אליו מהדפדפן",
+      "פגיעות להתקפת XSS מאפשרת התקפת CSRF/XSRF",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כל הטענות נכונות: XSS תוקף את הלקוח, CSRF מנצל את אמון השרת בלקוח, וקיום XSS מאפשר לעקוף הגנות CSRF (כגון קריאת טוקנים), ובכך מאפשר CSRF.",
+    "source": "TAU 2018 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרכים למנוע התקפת SQL Injection attacks? (לא לצמצם נזק אפשרי של ההתקפה)",
+    "options": [
+      "צמצום ההרשאות של האפליקציה על פי עקרון ה Least privileges",
+      "מימוש נכון של Input validation על הקלט המתקבל מ Untrusted sources",
+      "לא לבנות שאילתות SQL ע\"י שרשור של מחרוזות קבועות וקלט אלא להשתמש ב strongly typed parametrizes query APIs",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מניעת ההתקפה (Prevention) נעשית ע\"י ולידציה ושימוש ב-Parameterized Queries. צמצום הרשאות הוא צעד של מזעור נזקים (Mitigation) למקרה שהמניעה נכשלה.",
+    "source": "TAU 2018 Moed A"
+  }
+]

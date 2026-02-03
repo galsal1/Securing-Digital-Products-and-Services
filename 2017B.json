@@ -1,0 +1,457 @@
+[
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים הוא הנכון ביותר, בהנתן שבעל האתר מודע לקיומו של Vulnerability באחד services באתר שמאפשר התקפה על האתר שלו שיכולה גרום לאתר נזק (בהנחה שעלויות תיקון ה vulnerability הם כעלויות מניעת ההתקפה)?",
+    "options": [
+      "עדיף להשקיע את המשאבים העומדים לרשות בעל אתר במניעת ההתקפה (למשל ע\"י חסימת הגישה service באמצעות FW) ללא תיקון Vulnerability",
+      "עדיף להשקיע את המשאבים העומדים לרשות בעל האתר בתיקון ה Vulnerability ע\"י החלפת ה service שמכיל את ה vulnerability בגירסא חדשה שלו שאינה מכילה את ה vulnerability",
+      "מכיוון שאין הבדל בין מניעת ההתקפה ובין תיקון ה Vulnerability בעל האתר יכול לבחור בכל אחת משתי האפשרויות, והתוצאה מבחינת אבטחת מידע תהיה זהה",
+      "חייבים גם לתקן את ה vulnerability וגם למנוע את ההתקפה",
+      "ההתקפה על האתר אינה תלויה בקיומו של Vulnerability באתר"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מבחינת אבטחת מידע, עדיף לטפל בשורש הבעיה (Root Cause) ולתקן את החולשה (Patching/Remediation) מאשר להסתמך על מעקף או חסימה חיצונית (Virtual Patching/Mitigation) שעלולה להיכשל או להיעקף.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "שליחת מידע שאינו סודי אבל השלמות שלו (integrity) חשובה ברשת האינטרנט, כשהוא מוצפן אך ללא חתימה דיגיטלית על המידע היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הצפנה ללא מנגנון אימות (כגון חתימה דיגיטלית או MAC) אינה מבטיחה את שלמות המידע. תוקף יכול לשנות את המידע המוצפן (Bit-flipping בבלוקים מסוימים למשל) מבלי שהמקבל ידע זאת, ולכן זוהי חולשה הפוגעת ב-Integrity.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות מטרתה לשלוח לאפליקציה פקודות שיתבצעו בשמו של המותקף תוך ניצול ההרשאות שלו?",
+    "options": [
+      "התקפת XSS",
+      "התקפת XSRF/CSRF",
+      "התקפת SQL Injection",
+      "התקפת Session Hijacking",
+      "תשובות א' וג' נכונות",
+      "תשובות ב' וד' נכונות",
+      "תשובות א' ב' וג' נכונות",
+      "תשובות א' ב' ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 5,
+    "explanation": "גם ב-CSRF (שליחת בקשות בשם המשתמש ללא ידיעתו) וגם ב-Session Hijacking (גניבת הזהות ושימוש בה), התוקף מצליח לבצע פעולות בשמו של הקורבן ובמסגרת הרשאותיו.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה התקפה מנצלת את העובדה שה SessionID שנמצא ב Cookie נשלח אוטומטית ע\"י הדפדפן?",
+    "options": [
+      "התקפת XSS",
+      "התקפת XSRF/CSRF",
+      "התקפת SQL Injection",
+      "התקפת Cookie poisoning",
+      "התקפת Hidden Parameter Manipulation"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התקפת CSRF מסתמכת על כך שהדפדפן מצרף אוטומטית עוגיות (Cookies) לכל בקשה היוצאת ל-Domain מסוים, גם אם הבקשה יצאה מתוך אתר זדוני (Cross-Site).",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון ההצפנה ומנגנון ה Read Access control ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על סודיות המידע ומטרת שניהם היא למנוע ממי שאינו מורשה לגשת לקובץ שמכיל את המידע",
+      "שניהם באים לשמור על סודיות המידע ומטרת שניהם היא למנוע ממי שהשיג את הקובץ שמכיל את המידע להבין את המידע",
+      "שניהם באים לשמור על סודיות המידע כאשר מטרת ההצפנה היא למנוע גישה לקובץ שמכיל את המידע ממי שאינו מורשה, ומטרתה Read access control היא למנוע ממי שהשיג את הקובץ להבין את המידע",
+      "שניהם באים לשמור על סודיות המידע כאשר מטרת ההצפנה היא למנוע ממי שהשיג את הקובץ שמכיל את המידע להבין את המידע (כלומר להפוך את המידע ללא קריא), ומטרת ה Read access control היא למנוע גישה לקובץ שמכיל את המידע ממי שאינו מורשה",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "בקרת גישה (Access Control) מונעת את עצם הגישה לקובץ, בעוד שהצפנה (Encryption) משמשת כשכבת הגנה שנייה - אם התוקף עקף את בקרת הגישה והשיג את הקובץ הפיזי, הוא עדיין לא יוכל לקרוא את תוכנו.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות נעשה שימוש ב Bot-net?",
+    "options": [
+      "XSS",
+      "Defacement",
+      "Cache Poisoning",
+      "Denial-of-Service",
+      "Distributed Denial of Service (DDoS)",
+      "כל התשובות נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "Bot-net (רשת של מחשבים נגועים) משמשת בעיקר ליצירת עומס תעבורה מבוזר על השרת המותקף, פעולה המוגדרת כ-DDoS.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה הם הגורמים המשפיעים על הערכת הסיכון לארגון כתוצאה מקיום פגיעות (Vulnerability)?",
+    "options": [
+      "הערכת הנזק שיגרם לארגון",
+      "הערכת הסיכוי שהפגיעות תנוצל להתקפה על הארגון",
+      "הערכת העלות של מניעת ההתקפה שמנצלת את הפגיעות",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הערכת סיכונים (Risk Assessment) מחושבת קלאסית כמכפלה של ההסתברות לאירוע (Probability/Likelihood) בעוצמת הנזק/ההשפעה (Impact). עלות המניעה היא חלק מניהול הסיכונים (Risk Management) אך לא מגדירה את גודל הסיכון עצמו.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "האם Firewall שמבודד בין רשת האינטרנט ל DMZ ומגן על אתר Web שנמצא ב DMZ שמטרתו לשרת משתמשים ברשת האינטרנט יכול לחסום Incoming TCP Connections?",
+    "options": [
+      "כן, כי ממילא בקשת ה HTTP נשלחת בפרוטוקול UDP",
+      "כן, וזה מומלץ על מנת לשפר את אבטחת המידע של האתר",
+      "כן, כי היוזמה לפתיחת ה TCP Connection עליו נשלחת בקשת ה HTTP נעשית ע\"י שרת ה Web server",
+      "לא מכיוון שבקשת ה HTTP נשלחת בפרוטוקול TCP ע\"י דפדפן שנמצא ברשת החיצונית, והדפדפן הוא היוזם את פתיחת ה TCP Connection",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שרת Web חייב להיות מסוגל לקבל חיבורי TCP נכנסים (בדרך כלל בפורט 80 או 443), כיוון שהלקוחות (הדפדפנים) הם אלו שיוזמים את החיבור (Three-way handshake). חסימת חיבורים נכנסים תמנע גישה לאתר.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "ההבדל בין Statefull firewall ו-Stateless firewall הוא:",
+    "options": [
+      "Stateless firewall בודק כל Packet בפני עצמו וב Statefull Firewall נבדק כל Packet יחד HTTP Request",
+      "ב Stateless Firewall כל Packet נבדק כנגד סט החוקים המוגדרים ב Firewall Access Policy. ב Statefull Firewall, במידה וה Packet שייך ל TCP Connection שקיים בטבלת ה Connection הוא נבדק על פי התאמתו ל TCP Connection State",
+      "ב Stateless Firewall כל Packet נבדק כנגד סט החוקים המוגדרים ב Firewall Access Policy. ב Statefull Firewall במידה וה Packet שייך ל TCP Connection שקיים בטבלת ה Connection הוא נבדק כנגד סט החוקים המוגדרים ב Firewall Access Policy",
+      "ב Stateless Firewall רק Packet שלא שייכים ל TCP Connection שקיים בטבלת ה Connections נבדקים כנגד כל סט החוקים המוגדרים ב Firewall Access Policy",
+      "ה Stateless Firewall משמש עבור תעבורת UDP וה Statefull Firewall משמש עבור תעבורת TCP"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Stateful Firewall מנהל טבלת שיחות (State Table). אם חבילה שייכת לשיחה קיימת ומאושרת, היא עוברת מהר יותר על בסיס ה-State. Stateless בודק כל חבילה בנפרד מול חוקי ה-ACL.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין הטענות הבאות נכונה לגבי רמת האבטחה של Statefull vs Stateless?",
+    "options": [
+      "Statefull firewall מספק אותה רמת אבטחת מידע גבוהה כמו Stateless firewall",
+      "Stateless firewall מספק רמת אבטחת מידע גבוהה יותר לתעבורת TCP",
+      "Statefull firewall והחוקים בטבלת החוקים של ה Firewall כוללים התיחסות גם ל State, בעוד שהחוקים של Stateless firewall אינם כוללים את ה connection state",
+      "Statefull firewall מספק רמת אבטחת מידע גבוהה יותר מ Stateless firewall לתעבורת TCP כי הוא בודק כל Packet (למעט ה SYN) על פי ה state של ה connection אליו שייך ה Packet",
+      "תשובות ב' וג' נכונות",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Stateful Firewall מאובטח יותר כיוון שהוא מוודא שחבילות TCP הן חלק מרצף תקין (למשל, לא מאפשר ACK ללא SYN קודם), מה שמונע סוגים מסוימים של סריקות והתקפות ש-Stateless לא יכול לעצור.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה סוגי NAT/PAT ה-Destination IP אליו נשלח ה Packet יכול להחזיר תשובה ל NAT/PAT Gateway אבל מ-Destination Port שונה מה Port שיצר את המיפוי?",
+    "options": [
+      "Restricted Cone NAT",
+      "Port Restricted Cone NAT",
+      "Symmetric NAT",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ב-Restricted Cone NAT, ה-Gateway מבצע סינון רק על בסיס כתובת ה-IP של השולח החיצוני, ולא על בסיס הפורט שלו. לכן, אם השרת החיצוני עונה מפורט שונה, החבילה עדיין תעבור (כל עוד ה-IP זהה).",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון לממש את ה DMZ באמצעות שני Firewalls פיזיים?",
+    "options": [
+      "Policy של כל Firewall פשוט יותר ולכן בד\"כ הסיכוי לטעות קטן יותר",
+      "כי טעות בקונפיגורציה של אחד ה Firewalls לא תחשוף את הרשת הפנימית להתקפות",
+      "Vulnerability בתוכנה של אחד ה Firewalls לא תחשוף את הרשת הפנימית להתקפות",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "שימוש בשני פיירוולים (Defense in Depth) מפשט את הניהול (אחד מטפל בחוץ, אחד בפנים), ומגן מפני כשל נקודתי - בין אם זו טעות אנוש בקונפיגורציה או באג בתוכנה של אחד מהם.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס לסיכוי הטעות בקונפיגורציה של טבלת החוקים ב Firewall?",
+    "options": [
+      "ככל שכמות החוקים ב FW קטנה יותר הסיכוי לטעות גבוה יותר",
+      "ככל שכמות ה Network Interfaces (\"הרגליים\") של ה FW גדולה יותר הסיכוי לטעות גדול יותר כי זה בד\"כ מגדיל את כמות החוקים ב FW",
+      "הסיכוי לטעות בקונפיגורציה של Stateful firewall גדולה יותר",
+      "הסיכוי לטעות בקונפיגורציה של Staless firewall גדולה יותר",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מורכבות היא האויב של האבטחה. ריבוי ממשקי רשת (Interfaces) גורר בהכרח מטריצת חוקים גדולה ומסובכת יותר, מה שמעלה סטטיסטית את הסיכוי לטעות אנוש.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "האם חשוב להסיר את כל ה Services שאינם נחוצים ב Web server ומאזינים לבקשות מהרשת?",
+    "options": [
+      "כן, כי עי\"כ מקטינים את ה Attack surface של ה Web server",
+      "כן, כי במידה וב Services שאינם נחוצים יש Unknown vulnerabilities אי אפשר יהיה לנצל אותם לתקוף את השרת במידה וה Services בוטלו",
+      "לא, אין צורך להסיר אותם ובתנאי שדואגים שכל ה patches הרלוונטיים עבורם יותקנו על השרת",
+      "לא, אין לכך חשיבות מבחינת אבטחת מידע",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הסרת שירותים מיותרים (Hardening) מקטינה את משטח התקיפה (Attack Surface) ומונעת ניצול של חולשות עתידיות בשירותים אלו, גם אם כרגע הם מעודכנים.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרך הטובה ביותר מבחינת אבטחת מידע לטפל ב Known vulnerability ב Service שקיים במערכת ושוחרר עבורו Patch?",
+    "options": [
+      "להקטין את ההרשאות של ה Service",
+      "להריץ את ה Service תחת Jail",
+      "להתקין את ה Patch שמתקן את ה Vulnerability",
+      "תשובות א' וב' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "אם קיים טלאי אבטחה (Patch), הפתרון הנכון והבטוח ביותר הוא להתקין אותו ולסגור את הפרצה, במקום להסתמך על מיטיגציות עקיפות.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מממש Two Party Authentication?",
+    "options": [
+      "בהזדהות של ה Web Server בפני ה Client בפרוקול ה SSL",
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "תשובות ב' ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "המונח מתייחס לאימות זהות של צד אחד מול השני. בשיטות Basic, Digest ו-Form הלקוח מזדהה מול השרת (שני צדדים מעורבים בתהליך האימות).",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרונות במנגנון ה Challenge-Response מבחינת אבטחת מידע? (תניחו שהמנגנון אכן ממומש ב Client-side ושמרחב הסיסמאות אינו בר-מניה)",
+    "options": [
+      "המנגנון מונע הקלטת הסיסמא באמצעות Keylogger",
+      "המנגנון מונע את האפשרות לירט את הסיסמא מהרשת",
+      "המנגנון מונע התקפת Replay",
+      "תשובות א' וב' נכונות",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ב-Challenge-Response הסיסמה עצמה לא עוברת ברשת (מונע יירוט) והתגובה תלויה באתגר חד-פעמי (Nonce), מה שמונע שימוש חוזר בתשובה (Replay). הוא לא מונע Keylogger כי המשתמש עדיין מקליד את הסיסמה בצד הלקוח כדי לחשב את התגובה.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מתהליכי Authentication הבאים הדפדפן הוא אחראי להצגת החלון (ה Pop-up screen) בו מתבקש המשתמש להקליד את שם המשתמש והסיסמא שלו?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form based Authentication",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "בפרוטוקולי Basic ו-Digest (המוגדרים ברמת ה-HTTP Header), הדפדפן מזהה את דרישת האימות (401 Unauthorized) ומציג חלונית התחברות טבעית (Native) של הדפדפן.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "למה שליחת ה SessionID מהדפדפן אל ה Web-server ב URL של ה HTTP request נחשבת לא בטוחה מבחינת אבטחת מידע?",
+    "options": [
+      "כי זה לא נשלח אוטומטית ע\"י הדפדפן",
+      "כי זה חשוף בשורת ה URL (בהיסטוריה, בלוגים)",
+      "כי זה עלול להשלח כחלק מה Referrer Header",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מידע ב-URL נשמר בהיסטוריית הדפדפן, בלוגים של שרתי Proxy, ומועבר לאתרים צד-שלישי דרך כותרת ה-Referer, ולכן הוא חשוף הרבה יותר מאשר מידע ב-Header או ב-Body.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה התקפה מתאפשרת ע\"י גנבת ערכו של ה SessionID מתוך הדפדפן?",
+    "options": [
+      "Cookie Poisoning",
+      "Session Hijacking",
+      "Hidden Parameter Manipulation",
+      "SQL Injection",
+      "XSS"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ה-SessionID הוא המזהה של המשתמש. ברגע שהוא נגנב, התוקף יכול להשתמש בו כדי להתחזות למשתמש (\"לחטוף\" את ה-Session) ללא צורך בשם משתמש וסיסמה.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "למה חשוב לשלוח ב HTTPS כל HTTP request שהוא חלק מ Session אפליקטיבי גם כאשר הוא אינו כולל מידע סודי או רגיש?",
+    "options": [
+      "אין באמת צורך לשלוח כל HTTP request שהוא חלק מ Session אפליקטיבי ב HTTPS",
+      "כדי להגן על ה SessionID שנשלח כחלק מה Request מפני גנבתו ע\"י האזנה לתעבורה",
+      "כדי להגן על ה SessionID מפני גנבתו ע\"י התקפת XSS",
+      "יש צורך להצפין את ה HTTP request רק כאשר ה SessionID אינו אקראי",
+      "יש צורך להצפין את ה HTTP request רק כאשר המרחב של ה SessionID הוא בר-מניה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ה-SessionID (בדרך כלל Cookie) נשלח בכל בקשה. אם בקשה אחת נשלחת ב-HTTP רגיל, ה-SessionID עובר כטקסט גלוי (Cleartext) וחשוף ליירוט (Sniffing), מה שמאפשר חטיפת Session.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר ב Set-cookie header מופיע גם Options של Max-age אזי:",
+    "options": [
+      "Cookie שיווצר יהיה Persistent Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "Cookie שיווצר יהיה Session Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "Cookie שיווצר יהיה Session Cookie שימחק רק כאשר הדפדפן יסגר ע\"י המשתמש",
+      "Cookie שיווצר יהיה Persistent Cookie שימחק או כעבור פרק הזמן שמוגדר ב Max-age או כאשר הדפדפן יסגר ע\"י המשתמש, המאוחר מבין שניהם",
+      "ה Cookie שיווצר יהיה Session Cookie שימחק או כעבור פרק הזמן שמוגדר ב Max-age או כאשר הדפדפן יסגר ע\"י המשתמש, המוקדם מבין שניהם"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "הגדרה של Max-Age הופכת את ה-Cookie ל-Persistent (קבוע), כלומר הוא נשמר בדיסק ואינו נמחק בסגירת הדפדפן, אלא רק כשחולף הזמן שהוגדר.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע חתימה דיגיטלית סימטרית (MAC) מספיקה לצורך מניעת Cookie Poisoning?",
+    "options": [
+      "כי החותם הוא הבודק",
+      "כי לא צריך חתימה דיגיטלית חזקה",
+      "כי חייבים חתימה דיגיטלית מהירה",
+      "כי הבודק לא יודע את המפתח הציבורי לצורך בדיקת החתימה",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Cookie Poisoning מתבצע על ידי המשתמש/הלקוח. השרת הוא זה שמנפיק את ה-Cookie והוא זה שבודק אותו כשהוא חוזר. מכיוון שהשרת הוא גם יוצר החתימה וגם בודק החתימה, אין צורך במפתח ציבורי/פרטי, ומפתח סימטרי סודי (הידוע רק לשרת) מספיק.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "בהנחה שניתן להגביל את תוכנו של שדה קלט לאותיות וספרות בלבד, וכן להגביל את אורכו של הקלט ל 20 תווים, ובהנחה שהאפליקציה בודקת בשרת את תוכן הקלט שהוא אכן אלפא-נומרי שאורכו עד 20 תווים. לאיזה התקפה חשופה האפליקציה?",
+    "options": [
+      "SQL Injection",
+      "OS/Command Injection",
+      "Forceful Browsing",
+      "XSS בו האפליקציה משלבת את הקלט בתוכנו של אלמנט HTML בדף ה HTML המוחזר למשתמש",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הגבלה לאותיות וספרות בלבד (Allowlist קשוח) מונעת את השימוש בתווים מיוחדים הדרושים להתקפות SQL Injection (כגון ' או --), Command Injection (כגון ; או |) ו-XSS (כגון < או >). לכן היישום מוגן מפני התקפות אלו.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מנגנון ה Same Origin Policy המיושם בדפדפן: (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "מאתר ומונע מהדפדפן להריץ קוד JavaScript עוין שמשולב בדף HTML שנשלח לדפדפן ע\"י האפליקציה",
+      "מונע מקוד JavaScript עוין שהוחדר לדף HTML של האפליקציה לגנוב את ה SessionID מתוך ה Cookies של האפליקציה שמנהל הדפדפן",
+      "מונע מקוד ה JavaScript שרץ בדפדפן לגשת לקבצים ב file system של המחשב",
+      "מונע התקפת Session Hijacking",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "מנגנון ה-Same Origin Policy (יחד עם ארגז החול של הדפדפן) נועד למנוע מקוד המגיע ממקור אינטרנטי (Origin) לגשת למשאבים מקומיים (כמו מערכת הקבצים) או למשאבים של Origin אחר. בקונטקסט של המבחן הזה, הם מדגישים את ההגנה על המשאבים המקומיים.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא ה-Vulnerability שמאפשר DOM based XSS?",
+    "options": [
+      "חוסר ב Input validation בקוד האפליקציה שרץ ב Web server",
+      "חוסר ב Output encoding בקוד האפליקציה שרץ ב Web server",
+      "חוסר ב Input validation בקוד ה JavaScript של האפליקציה שרץ בדפדפן",
+      "חוסר ב Output encoding בקוד ה JavaScript של האפליקציה שרץ בדפדפן",
+      "תשובות א' וב' נכונות",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 5,
+    "explanation": "DOM-Based XSS מתרחש כולו בצד הלקוח (Client Side). הוא נובע מכך שקוד ה-JavaScript מעבד קלט לא בטוח ומכניס אותו ל-DOM ללא בדיקה (Input Validation) או קידוד (Output Encoding) מתאימים בתוך הסקריפט.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות נדרש קשר בין התוקף למותקף (למשל באמצעות שליחת דוא\"ל מהתוקף למותקף) לצורך ביצוע ההתקפה?",
+    "options": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM-Based XSS",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב-Reflected XSS וב-DOM-Based XSS, הקוד הזדוני נמצא בתוך ה-URL עצמו, ולכן התוקף חייב לגרום לקורבן ללחוץ על קישור ספציפי (Phishing). לעומת זאת, ב-Stored XSS הקוד יושב בשרת והקורבן מותקף מעצם הגלישה הרגילה לאתר.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון אבטחת מידע מאפשר למנוע התקפת XSRF/CSRF?",
+    "options": [
+      "דרישה למעורבות אנושית בשליחת הבקשה לדוגמא ע\"י מנגנון של Captcha",
+      "Client-side Input Validation",
+      "Server-Side Input Validation",
+      "Output Encoding",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "מנגנון CAPTCHA מחייב אינטראקציה אנושית שסקריפט אוטומטי (שמבצע את ה-CSRF) אינו יכול לחקות בקלות, ולכן הוא מונע את זיוף הבקשה.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון אבטחת מידע אפליקטיבי יכול למנוע CSRF כאשר האפליקציה חשופה ל XSS?",
+    "options": [
+      "Client-side Input Validation",
+      "Server-Side Input Validation",
+      "Output Encoding",
+      "שימוש ב Anti-CSRF token",
+      "כאשר אפליקציה חשופה ל XSS אין מנגנון שיכול למנוע התקפת XSRF/CSRF"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "אם לתוקף יש יכולת XSS, הוא יכול להריץ קוד בדפדפן הקורבן, לקרוא את ה-Anti-CSRF Token מה-DOM, ולבצע את בקשת ה-CSRF בהצלחה. לכן XSS עוקף הגנות CSRF סטנדרטיות.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרכים למנוע התקפת SQL Injection attacks (לא לצמצם נזק אפשרי של ההתקפה)?",
+    "options": [
+      "צמצום ההרשאות של האפליקציה על פי עקרון ה Least privileges",
+      "מימוש נכון של Input validation על הקלט המתקבל מ Untrusted sources",
+      "לא לבנות שאילתות SQL ע\"י שרשור של מחרוזות קבועות וקלט אלא להשתמש ב strongly typed parametrized query APIs",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מניעה (Prevention) נעשית ע\"י ולידציה של הקלט ושימוש בשאילתות פרמטריות (שמונעות את פרשנות הקלט כקוד). צמצום הרשאות הוא צעד חשוב להפחתת הנזק (Mitigation), אך לא מונע את ההזרקה עצמה.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה התקפות יכול ניהול הרשאות של ה web application/web server על פי מדיניות של Least privileges לסייע למזער את הנזק?",
+    "options": [
+      "Forceful Browsing",
+      "SQL Injection",
+      "OS/Command Injection",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "עקרון המידור (Least Privilege) מפחית את הנזק בכל המקרים: ב-SQLi הוא מגביל את הטבלאות הנגישות, ב-Command Injection הוא מגביל את הפקודות המערכתיות, וב-Forceful Browsing הוא מונע גישה לדפים שמשתמש רגיל לא אמור לראות.",
+    "source": "TAU 2017 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה זה Canonicalization בהקשר של Input Validation?",
+    "options": [
+      "תרגום התבניות המתארות את ההתקפות השונות לצורה קנונית",
+      "תרגום התבניות המתארות את ההתקפות לכל צורות הקידוד האפשריות",
+      "תרגום הקלט לצורה קנונית (הפשוטה והסטנדרטית ביותר)",
+      "בדיקת הקלט כנגד סט מוגדר של תווים חוקיים",
+      "תרגום של הקוד העוין לקידוד שלא מובן לאפליקציה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Canonicalization הוא התהליך של המרת נתונים שיכולים להיות מיוצגים בדרכים שונות (כגון קידוד URL, קידוד כפול וכו') לצורה אחת, אחידה וסטנדרטית, לפני ביצוע בדיקות אבטחה, כדי למנוע עקיפה של המסננים.",
+    "source": "TAU 2017 Moed B"
+  }
+]

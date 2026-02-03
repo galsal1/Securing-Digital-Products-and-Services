@@ -33,6 +33,7 @@
     "options": [
       "Positive Security Logic",
       "Negative Security Logic",
+	  "שניהם",
       "אף אחת מהתשובות לעיל אינה נכונה"
     ],
     "correctAnswerIndex": 1,
@@ -173,13 +174,12 @@
     "type": "mc",
     "question": "באיזה תהליכי Authentication הדפדפן אחראי להצגת החלון בו המשתמש מקליד את שם המשתמש והסיסמא שלו?",
     "options": [
-      "HTTP Basic Authentication",
-      "HTTP Digest Authentication",
-      "Form based Authentication",
-      "תשובות א' וב' נכונות",
+      "HTTP Basic Authentication and HTTP Digest Authentication",
+      "HTTP Digest Authentication and Form based Authentication",
+      "Form based Authentication and HTTP Basic Authentication",
       "Certificated based Authentication"
     ],
-    "correctAnswerIndex": 3,
+    "correctAnswerIndex": 0,
     "explanation": "בפרוטוקולי HTTP Basic ו-HTTP Digest הדפדפן מקפיץ חלון התחברות טבעי (Native), בניגוד ל-Form Based שבו דף ה-HTML מכיל את שדות הקלט.",
     "source": "TAU 2016 Moed B"
   },
@@ -244,7 +244,7 @@
       "אף תשובה אינה נכונה"
     ],
     "correctAnswerIndex": 5,
-    "explanation": "התשובה הנכונה לפי המבחן היא 'אף תשובה אינה נכונה'. ייתכן שהתרחיש המתואר מוגן מעצם המבנה של Digest המשתמש ב-Nonce וב-Counter, או שההתקפות הרלוונטיות אינן מופיעות ברשימה.",
+    "explanation": "ב-HTTP Digest Authentication ה-Authorization Header אינו מכיל את הסיסמה או SessionID אלא ערך hash המחושב על בסיס הסיסמה, ה-Nonce והבקשה הספציפית. גם אם השרת אינו בודק שה-Challenge שנשלח הוא זה ששימש לחישוב התגובה, לא ניתן לעשות שימוש חוזר ב-Authorization Header כדי להזדהות כמשתמש אחר, לא ניתן לגנוב סיסמה, ולא נוצר SessionID שניתן לחטוף. לכן אף אחת מההתקפות המוצעות אינה מתאימה לתרחיש המתואר.",
     "source": "TAU 2016 Moed B"
   },
   {

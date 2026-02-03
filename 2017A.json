@@ -1,0 +1,338 @@
+[
+  {
+    "type": "mc",
+    "question": "שמירת קובץ על הדיסק בשרת שיש להגן הסודיות והשלמות שלו, כשהוא מוצפן, ללא חתימה דיגיטלית על הקובץ, אבל כאשר מיושם Read and Write Access Control על הגישה לקובץ, היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "למרות היעדר חתימה דיגיטלית, שילוב של הצפנה (סודיות) ובקרת גישה (Access Control) לקריאה וכתיבה מספק הגנה סבירה בשרת מאובטח. השאלה מתארת מצב הגנה ולא מתקפה פעילה.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין הטכניקות הבאות אופינית/אופניות ל Targeted Attacks?",
+    "options": [
+      "Watering-Hole",
+      "Spear-Phishing",
+      "ניצול של Zero day vulnerability",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "מתקפות ממוקדות (Targeted Attacks) משתמשות במגוון שיטות מתוחכמות: Watering Hole (הדבקת אתרים שהקורבן גולש בהם), Spear Phishing (דיוג ממוקד), וניצול חולשות Zero Day שטרם תוקנו.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות לא ניתן למנוע ע\"י Input Validation המתבסס על Format validation (כלומר בדיקה שהפורמט של הקלט תקין)?",
+    "options": [
+      "התקפת Session Hijacking",
+      "התקפת XSRF/CSRF",
+      "Cookie Poisoning",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "בדיקת פורמט (Format Validation) מוודאת שהקלט תקין מבחינה תחבירית (למשל, שכתובת אימייל נראית ככתובת אימייל). התקפות כמו Session Hijacking, CSRF ו-Cookie Poisoning משתמשות בערכים חוקיים מבחינת פורמט (כמו מזהה Session תקין), אך בהקשר זדוני או גנוב, ולכן בדיקת פורמט אינה מונעת אותן.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות מנוצל vulnerability באפליקציה שרצה ב Web server על מנת להעביר קוד עוין ליעד ההתקפה?",
+    "options": [
+      "התקפת XSS",
+      "התקפת SQL Injection",
+      "התקפת XSRF/CSRF",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב-XSS האפליקציה מעבירה קוד JavaScript זדוני לדפדפן. ב-SQL Injection האפליקציה מעבירה שאילתות SQL זדוניות למסד הנתונים. בשני המקרים האפליקציה משמשת כצינור להעברת הקוד.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות מאפשרת לגנוב SessionID מהדפדפן של במשתמש?",
+    "options": [
+      "התקפת XSRF/CSRF",
+      "התקפת XSS",
+      "התקפת Forceful Browsing",
+      "התקפת Hidden Parameter Manipulation",
+      "התקפת SQL Injection"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התקפת XSS (Cross-Site Scripting) מאפשרת הרצת קוד JavaScript בדפדפן הקורבן, מה שמאפשר גישה ל-document.cookie ולגניבת ה-SessionID (אלא אם כן מוגדר HttpOnly).",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "במערכת א' קיים Serious vulnerability אחד למשך כשנה, לעומת זאת במערכת ב' התגלו כ 12 Serious vulnerabilities במהלך השנה אבל כל אחד מהם תוקן תוך שבוע מיום שהתגלה. באיזה מערכת מצב אבטחת המידע טוב יותר מבחינת המדד Windows of Exposure?",
+    "options": [
+      "במערכת א'",
+      "במערכת ב'",
+      "אין הבדל במצב אבטחת המידע בין מערכת א' למערכת ב'",
+      "אין מספיק נתונים לענות על השאלה",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מדד Windows of Exposure בודק את משך הזמן הכולל שהמערכת הייתה חשופה. במערכת א' החשיפה הייתה 52 שבועות (שנה). במערכת ב' החשיפה הייתה 12 * 1 = 12 שבועות. לכן מצב מערכת ב' טוב יותר.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם כאשר מידע נמצא בתהליך עיבוד ומאוחסן בזיכרון של המחשב, האם ניתן לוודא שתוך כדי עיבוד הוא לא שונה ע\"י גורם עוין?",
+    "options": [
+      "כן, באמצעות ישום של מנגנון Read Access Control",
+      "כן, באמצעות ישום של מנגנון Write Access Control",
+      "כן, באמצעות ישום של מנגנון Encryption",
+      "כן, באמצעות ישום של מנגנון Digital Signature",
+      "לא (אין מנגנון אבטחת מידע שמאפשר זאת)"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כאשר מידע מעובד ב-CPU ובזיכרון הנדיף (RAM), מנגנוני הגנה סטנדרטיים כמו הצפנת דיסק או חתימות דיגיטליות על קבצים אינם מגנים מפני שינוי בזמן אמת ע\"י תוקף עם שליטה במערכת ההפעלה או בחומרה (במסגרת הקורס הנ\"ל).",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין מנגנוני אבטחת המידע הבאים משמש תוקפים לפגיעה בזמינות המידע?",
+    "options": [
+      "הצפנת המידע",
+      "חתימה דיגיטלית על המידע",
+      "ישום של Read Access Control בגישה אל המידע",
+      "ישום של Write Access Control בגישה אל המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "תוקפים (כמו בתוכנות כופר) משתמשים בהצפנה כדי לנעול את המידע ולמנוע מהמשתמשים החוקיים גישה אליו, ובכך פוגעים בזמינותו.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם יש יתרון המשמעותי מבחינת אבטחת מידע לשימוש במנגנון אבטחת מידע המישם את התפיסה של Positive Security Logic לעומת שימוש מנגנון אבטחת מידע המישם את התפיסה של Negative Security Logic?",
+    "options": [
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Positive",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Negative",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Positive ומ False Negative",
+      "ד. כן, כי הוא Generic ואינו דורש הגדרות עבור כל מערכת בנפרד",
+      "לא, אין הבדל משמעותי"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "לפי המבחן, התשובה הנכונה היא ש-Positive Security Logic (התרת המותר בלבד) בניהול נכון מאפשרת להימנע משני סוגי השגיאות, ובעיקר חוסמת התקפות לא ידועות (Zero Day) שהן המקור העיקרי ל-False Negatives בשיטת ה-Negative Logic.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם ומדוע יש להפריד את רכיב הניהול של המערכת לאפליקציה נפרדת מהאפליקציה המשרתת את המשתמשים של המערכת?",
+    "options": [
+      "אין צורך בהפרדה כזאת והיא מיותרת",
+      "אין צורך בהפרדה כזאת כי ניתן לממש בקלות מנגנון Access Control",
+      "הפרדה כזאת חשובה כי היא תמנע מצב שבו משתמש רגיל מנצל vulnerability במנגנון ה Access Control על מנת לבצע פעולות שמותרות רק למנהל המערכת",
+      "הפרדה כזאת חוסכת את הצורך בהקשחה של שרת האינטרנט",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הפרדה פיזית או לוגית מובהקת (אפליקציה נפרדת) מונעת מצב שבו כשל נקודתי במנגנון הרשאות (Access Control) באפליקציית המשתמשים יאפשר לתוקף לבצע פעולות ניהול רגישות.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "למה מומלץ להגביל את ההרשאות של כל תהליך במערכת על פי העקרון של Least privileges?",
+    "options": [
+      "כי עי\"כ מוודאים שלתהליך תהיה גישה רק ל Authenticated users",
+      "כי עי\"כ מונעים ניצול של Vulnerability בתהליך להתקפה על המערכת",
+      "כי עי\"כ ממזערים את הנזק במקרה של ניצול של Vulnerability בתהליך להתקפה על המערכת",
+      "כי עי\"כ חוסכים את הצורך של Input validation בקוד של התהליך",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "עקרון המידור (Least Privilege) לא מונע את פריצת התהליך עצמו, אך מבטיח שאם התהליך נפרץ, לתוקף תהיה גישה מוגבלת רק למשאבים שהתהליך היה חייב, ובכך ממזער את הנזק הכולל.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם יש חשיבות לבטל HTTP Methods שלא נעשה בהם שימוש באפליקציה/במערכת כאשר כל התעבורה לשרת ה HTTP מאובטחת באמצעות פרוטוקול ה TLS/SSL?",
+    "options": [
+      "לא, כי מדובר על HTTP Methods סטנדרטיים שנתמכים ע\"י שרת ה HTTP",
+      "לא, כי כל התעבורה לשרת ה HTTP מאובטחת באמצעות פרוטוקול ה TLS/SSL",
+      "כן, כי זה מקטין את Attack surface של המערכת",
+      "כן, כי זה מימוש של עקרון ה Least privileges",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ביטול מתודות מיותרות (כמו PUT, DELETE, TRACE אם אינן בשימוש) מקטין את משטח התקיפה ומהווה יישום של עקרון המידור (Least Privilege) ברמת השרת.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן לממש client authentication באמצעות challenge-response כאשר לא היה כל קשר בין השרת ל client לפני ביצוע ה Authentication? (הניחו שקיים מנפיק תעודות דיגיטלי שמוסכם על ה Client והשרת)",
+    "options": [
+      "ה Client יצפין את ה Challenge באמצעות מפתח סימטרי",
+      "ה Client יצפין את ה Challenge באמצעות המפתח הציבורי של ה Client",
+      "ה Client יצפין את ה Challenge באמצעות המפתח הפרטי של ה Client ויצרף response את התעודה הדיגיטלית הכוללת את המפתח הציבורי שלו",
+      "ה Client יצפין את ה Challenge באמצעות המפתח הציבורי של השרת",
+      "ה Client יצפין את ה Challenge באמצעות המפתח הפרטי של השרת"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "כדי להוכיח זהות (Authentication), הלקוח חותם (מצפין) את האתגר שנשלח מהשרת באמצעות המפתח הפרטי שלו. השרת מוודא את החתימה באמצעות המפתח הציבורי המופיע בתעודה הדיגיטלית שהנפיק גוף שלישי נאמן.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין שיטות Authentication הבאות, Authentication מתבצע על פי ה Authorization Header שאותו צריך הדפדפן לשלוח ב HTTP Request לאוביקט המבוקש?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "גם ב-Basic וגם ב-Digest Authentication הדפדפן שולח את פרטי ההזדהות בכל בקשה בתוך כותרת ה-Authorization. ב-Form Based ההזדהות היא חד פעמית בדרך כלל ומתבצעת דרך גוף הבקשה (POST) ומנוהלת אח\"כ ע\"י Cookie.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר רוצים לשלוח ב Request שנשלח ב HTTPS מידע סודי שלא רוצים יחשף לצד שלישי (שאינו המשתמש עצמו) מה המיקום הכי פחות בטוח מבחינת אבטחת מידע? (בהנחה שיש Proxy)",
+    "options": [
+      "Query String",
+      "POST Data",
+      "Cookie",
+      "אין הבדל בין POST data ל Query string",
+      "אין הבדל בין המיקומים השונים ב Request"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ה-Query String (חלק מה-URL) נשמר לעיתים קרובות בלוגים של שרתי Proxy, בהיסטוריית הדפדפן וב-Referer header, ולכן הוא המקום הפחות בטוח למידע רגיש, גם ב-HTTPS (שמצפין את התעבורה אך לא מונע שמירת ה-URL בקצוות).",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בהנחה שה SessionID נשלח באמצעות Cookie עם HTTP-Only Option אבל האפליקציה חשופה להתקפת XSS וחלק מהבקשות לאפליקציה נשלחות מהדפדפן ב HTTP, האם התוקף יכול לבצע Session Hijacking?",
+    "options": [
+      "כן, כי הוא יכול לגנוב ה SessionID באמצעות התקפת XSS",
+      "כן, כי הוא יכול לגנוב את ה SessionID באמצעות האזנה לבקשות ה HTTP ושיחזור הסיסמא",
+      "כן, כי הוא יכול לגנוב את ה SessionID באמצעות האזנה לבקשות ה HTTP שנשלחות בגלוי",
+      "לא, כי ה SessionID נשלח באמצעות Cookie עם HTTPonly",
+      "לא, כי ה SessionID נשלח באמצעות Cookie עם HTTPonly ומאובטח בהאזנה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "מכיוון שה-Cookie לא הוגדר כ-Secure (רק HttpOnly) וחלק מהתעבורה היא ב-HTTP (לא מוצפן), תוקף המאזין לרשת (Sniffing) יכול לקרוא את ה-SessionID העובר בגלוי. HttpOnly מגן רק מפני גניבה ע\"י XSS.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון הגנה מאפשר להתגונן בפני התקפת Cookie Poisoning?",
+    "options": [
+      "חתימה דיגיטלית של ה Cookie",
+      "שמירת המידע הרגיש בשרת (Session) ושימוש ב-SessionID אקראי",
+      "הצפנת התעבורה (SSL)",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Cookie Poisoning (שינוי ערכי ה-Cookie ע\"י המשתמש) נמנע אם המשתמש לא יכול לשנות את הערך (חתימה דיגיטלית שמוודאת שלמות) או אם המידע כלל לא נמצא אצלו אלא בשרת (שימוש ב-SessionID אקראי המפנה למידע בשרת).",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרכים למנוע התקפת SQL Injection attacks ו/או לצמצם נזק אפשרי של ההתקפה?",
+    "options": [
+      "צמצום ההרשאות של האפליקציה על פי עקרון ה Least privileges",
+      "מימוש נכון של Input validation על הקלט המתקבל מ Untrusted sources",
+      "שימוש ב strongly typed parametrized query APIs (ולא שרשור מחרוזות)",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הגנה מקיפה כוללת מניעה (Parameterized Queries, Input Validation) וצמצום נזק (Least Privileges) למקרה שהמניעה נכשלה.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "התקפה מסוג Content Replacement Attack מנצלת את ה Vulnerability:",
+    "options": [
+      "שהאפליקציה כלל אינה מבצעת Input Validation",
+      "שהאפליקציה מבצעת Input validation המבוסס על Format validation",
+      "שהאפליקציה מבצעת Input Validation המבוסס על Positive Security Logic",
+      "שהאפליקציה מבצעת Input Validation המבוסס על Negative Security Logic",
+      "שהאפליקציה אינה מבצעת Input Validation (במלואו) לאחר ש\"הסירה\" תוכן שאותר כ\"חשוד\""
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "בהתקפה זו, התוקף שולח קלט שעוקף את המסנן (למשל, הכפלת תווים אסורים כמו `<scr<script>ipt>`). אם המסנן מסיר את ה\"זבל\" פעם אחת בלבד ולא מבצע ולידציה חוזרת על התוצאה הסופית, הקלט הופך לזדוני לאחר הניקוי.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "לצורך איזה מנגנון אבטחת מידע יש צורך ב Canonicalization?",
+    "options": [
+      "Input validation that is based on positive security logic",
+      "Input validation that is based on negative security logic",
+      "Input validation that is based on Format validation",
+      "תשובות א' וב' נכונות",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מנגנון Negative Security Logic (חסימת הידוע כרע) חייב לבצע Canonicalization (האחדת ייצוג) כדי למנוע עקיפה ע\"י ייצוגים שונים של אותו קלט זדוני (למשל, קידוד URL, קידוד Unicode וכו').",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המצבים הבאים היא דוגמא ל Insecure Direct Object Reference?",
+    "options": [
+      "שילוב של Record-ID של רשומה בבסיס הנתונים כ Value של Menu Drop Down",
+      "שילוב של שם קובץ (filepath) כ Value של Menu Drop Down",
+      "שילוב של מספר ת.ז. של המשתמש כ Hidden Parameter ב FORM",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כל האפשרויות מתארות חשיפה של מזהה פנימי ישיר (ID ב-DB, נתיב קובץ, ת\"ז) למשתמש, המאפשרת למשתמש לשנות את המזהה ולנסות לגשת לאובייקטים שאינם שלו אם אין בקרת גישה מתאימה בשרת.",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון אבטחת מידע יחודי למניעת התקפות Stored and Reflected XSS?",
+    "options": [
+      "Client-side Input Validation",
+      "Server-Side Input Validation",
+      "Write Access-Control",
+      "Read Access-Control",
+      "Output Encoding"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "Output Encoding (קידוד פלט) הוא המנגנון הקריטי ביותר למניעת XSS, כיוון שהוא מבטיח שהדפדפן יתייחס למידע כטקסט בלבד ולא כקוד לביצוע, ללא קשר למקור המידע (Stored או Reflected).",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות יש לממש את מנגנוני הגנה כנגד XSS בצד ה client על מנת למנוע את ההתקפה?",
+    "options": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM-Based XSS",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "DOM-Based XSS מתרחש כולו בצד הלקוח (Client-side), כאשר הסקריפט מעבד מידע לא בטוח (Source) ומעביר אותו ל-Sink מסוכן בדפדפן. לכן, ההגנה חייבת להתבצע בקוד ה-JavaScript בצד הלקוח (הימנעות משימוש ב-innerHTML עם מידע לא בדוק וכו').",
+    "source": "TAU 2017 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מקטין את ה Attack surface של התקפת XSRF/CSRF?",
+    "options": [
+      "שהפעולות החשובות יבוצעו רק באמצעות POST Requests",
+      "מנגנון של Inactivity timeout שסוגר את ה Session",
+      "מנגנון של Output encoding",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שימוש ב-POST מונע התקפות טריוויאליות דרך תגיות IMG או קישורים (אם כי לא מונע CSRF לחלוטין ללא Token). קיצור זמן ה-Session (Timeout) מקטין את חלון הזמן שבו התוקף יכול לנצל Session פתוח. לכן שניהם מקטינים את משטח התקיפה.",
+    "source": "TAU 2017 Moed A"
+  }
+]

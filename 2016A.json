@@ -418,8 +418,8 @@
       "תשובות א' ב' וג' נכונות",
       "בחרתי לא לענות על השאלה"
     ],
-    "correctAnswerIndex": 4,
-    "explanation": "מניעת SQL Injection דורשת גם הפרדת קוד ונתונים (Parameterized Queries), גם ולידציה, וגם צמצום נזק באמצעות Least Privilege.",
+    "correctAnswerIndex": 3,
+    "explanation": ,
     "source": "original"
   }
 ]
