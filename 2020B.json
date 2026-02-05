@@ -1,0 +1,492 @@
+[
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים הוא הנכון ביותר, בהנתן שהבעל האתר מודע לקיומו של Vulnerability באחד ה services אתר שמאפשר התקפה על האתר שלו שיכולה גרום לאתר נזק (בהנחה שעלויות תיקון ה vulnerability הם כעלויות מניעת ההתקפה)?",
+    "options": [
+      "עדיף להשקיע את המשאבים העומדים לרשות בעל אתר במניעת ההתקפה (למשל ע\"י חסימת הגישה service באמצעות FW) ללא תיקון Vulnerability",
+      "עדיף להשקיע את המשאבים העומדים לרשות בעל האתר בתיקון ה Vulnerability ע\"י החלפת ה service שמכיל את ה vulnerability בגירסא חדשה שלו שאינה מכילה את ה vulnerability",
+      "מכיוון שאין הבדל בין מניעת ההתקפה ובין תיקון ה Vulnerability בעל האתר יכול לבחור בכל אחת משתי האפשרויות, והתוצאה מבחינת אבטחת מידע תהיה זהה",
+      "חייבים גם לתקן את ה vulnerability וגם למנוע את ההתקפה",
+      "ההתקפה על האתר אינה תלויה בקיומו של Vulnerability באתר"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מבחינת אבטחת מידע, תמיד עדיף לטפל בשורש הבעיה (Root Cause) ולתקן את החולשה עצמה (Remediation/Patching) מאשר להסתמך על מעקף או חסימה חיצונית (Mitigation) שעשויה להיכשל או להיעקף בעתיד.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "שמירת קובץ על הדיסק בשרת שיש להגן הסודיות והשלמות שלו, כשהוא לא מוצפן וללא חתימה דיגיטלית על הקובץ, אבל כאשר מיושם Read and Write Access Control על הגישה לקובץ, היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "יישום הרשאות גישה (Access Control) לקריאה וכתיבה הוא מנגנון הגנה לגיטימי ומקובל במערכת ההפעלה לשמירה על הקבצים. המצב המתואר אינו בהכרח חולשה או התקפה, אלא הסתמכות על מנגנון אבטחה של מערכת ההפעלה.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון הצפנת המידע ומנגנון ה Write Access control ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא למנוע את השינוי הלא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא לאפשר לאתר שבוצע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת ההצפנה היא לאפשר לאתר שינוי לא מורשה שנעשה במידע ומטרת ה Write access control הוא למנוע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת ההצפנה היא למנוע שינוי לא מורשה במידע ומטרתה Write access control היא לאתר שינוי לא מורשה שנעשה במידע",
+      "מנגנון ההצפנה בא לשמור על סודיות המידע ומנגנון ה Write Access control בא לשמור על שלמות המידע"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הצפנה נועדה להבטיח סודיות (Confidentiality - שרק מורשים יוכלו לקרוא). בקרת גישה לכתיבה (Write Access Control) נועדה להבטיח שלמות (Integrity - שרק מורשים יוכלו לשנות).",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "Hidden parameter manipulation ו URL Tampering שתארנו בהרצאה הם:",
+    "options": [
+      "Vulnerabilities שנובעים מטעות של המשתמש",
+      "Vulnerabilities שנובעים מטעות של מפתח התוכנה",
+      "Attacks שהמנצלים טעויות של המשתמשים",
+      "Attacks שמנצלים Vulnerabilities שיצרו המפתחים בטעות במהלך פיתוח התוכנה",
+      "Attacks שמנצלים Vulnerabilities שיצרו המפתחים במכוון במהלך פיתוח התוכנה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מניפולציה על פרמטרים נסתרים ושינוי URL הן התקפות (Attacks) שמנצלות חולשות תכנוניות (Vulnerabilities) של המפתחים, אשר סמכו על מידע המגיע מהלקוח (Client-side) ולא אימתו אותו בשרת.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות לא ניתן למנוע ע\"י Input Validation המתבסס על Format validation (כלומר בדיקה שהפורמט של הקלט תקין)?",
+    "options": [
+      "התקפת Session Hijacking",
+      "התקפת XSRF/CSRF",
+      "התקפת Cookie Poisoning",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "בדיקת פורמט בלבד לא תמנע אף אחת מההתקפות הללו. Session Hijacking ו-CSRF משתמשים בערכים חוקיים מבחינת פורמט (מזהה סשן תקין), ו-Cookie Poisoning יכול להיעשות ע\"י שינוי ערכים לערכים אחרים שעדיין תקינים מבחינת פורמט.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות מנוצל vulnerability באפליקציה שרצה ב Web server על מנת להעביר קוד עוין ליעד ההתקפה (שאינו האפליקציה עצמה)?",
+    "options": [
+      "התקפת XSS",
+      "התקפת SQL Injection",
+      "התקפת Session Hijacking",
+      "התקפת XSS והתקפת SQL Injection",
+      "התקפת Session Hijacking והתקפת SQL Injection והתקפת XSS"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב-XSS האפליקציה משמשת כצינור להעברת קוד זדוני לדפדפן הלקוח (היעד). ב-SQL Injection האפליקציה משמשת כצינור להעברת קוד זדוני למסד הנתונים (היעד). בשני המקרים מנוצלת חולשה באפליקציה כדי לפגוע ברכיב אחר.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה התקפות יכול ניהול הרשאות של ה web application/web server על פי מדיניות של Least privileges לסייע למזער את הנזק?",
+    "options": [
+      "Forceful Browsing",
+      "SQL Injection",
+      "OS/Command Injection",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "עקרון המידור (Least Privilege) מפחית נזק בכל המקרים: ב-SQL Injection הוא מונע גישה לטבלאות רגישות או פקודות מערכת; ב-OS Injection הוא מונע הרצת פקודות הדורשות הרשאות גבוהות; וב-Forceful Browsing הוא מונע גישה לדפים שהמשתמש לא מורשה אליהם.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מתי חייבים להשתמש במנגנון אבטחת מידע המתבסס על Negative Security Logic?",
+    "options": [
+      "כאשר צריכים להבטיח Zero false positive",
+      "כאשר צריכים להבטיח Zero false negative",
+      "כאשר לא ניתן להגדיר את רשימת המקרים החוקיים אותם יש לאפשר",
+      "אין מצב שבו חייבים להשתמש במנגנון אבטחת מידע המתבסס על Negative Security Logic ותמיד עדיף לישם מנגנון אבטחת מידע המתבסס על Positive Security Logic",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "כאשר המערכת פתוחה מדי או שהקלט מגוון מדי (כמו שדה טקסט חופשי) ולא ניתן להגדיר מראש את כל מה ש\"מותר\" (Whitelist/Positive), חייבים להשתמש בגישת חסימת ה\"אסור\" (Blacklist/Negative).",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון?",
+    "options": [
+      "קטגורית ההתקפות שהכי קל להתגונן מולם הוא Opportunistic Random",
+      "על מנת להיות מוגן כנגד התקפות מסוג Opportunistic Random מספיק להתקין את כל ה Security Patches שמפרסם היצרן של מערכת ההפעלה ויצרני שאר תוכנות התשתית המותקנות על המחשב",
+      "התקפות מהסוג של Opportunistic Random מתבססות על ניצול known vulnerabilities בתשתיות המערכת (כגון במערכת ההפעלה)",
+      "תשובות א' ב' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "כל המשפטים נכונים: התקפות אקראיות מזדמנות (כמו תולעים ובוטים) מחפשות חולשות ידועות ונפוצות, ולכן התקנת עדכוני אבטחה (Patches) היא דרך ההגנה היעילה והמספקת נגדן.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "חוקי ה Firewall ביחס לתעבורת TCP מתבססים על:",
+    "options": [
+      "Source IP and Source Port",
+      "Destination IP and Destination Port",
+      "SYN/ACK bits",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "סינון מנות (Packet Filtering) בפרוטוקול TCP מתבצע על סמך כתובות המקור והיעד, הפורטים של המקור והיעד, ודגלי הבקרה (Flags) כמו SYN ו-ACK.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ה Firewall יודע שה Packet הוא בקשה לפתוח TCP Connection?",
+    "options": [
+      "הוא לא יודע, כי אין אינדיקציה TCP Header",
+      "הוא יודע על פי ה SYN ביט שדולק ב TCP Header",
+      "הוא יודע על פי ה ACK ביט שדולק ב TCP Header",
+      "הוא יודע על פי ה SYN ביט וה ACK ביט שדולקים ב TCP Header",
+      "הוא יודע כי זה ה Packet הראשון שנשלח מה Source IP ל Destination IP"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בפרוטוקול TCP, בקשה לפתיחת חיבור חדש מסומנת על ידי דגל ה-SYN שדולק (1) ודגל ה-ACK שכבוי (0).",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר ה Firewall מממש Negative Security Logic:",
+    "options": [
+      "החוק האחרון יהיה Deny ALL ולפניו יופיעו חוקים המתארים את התקשורת המותרת",
+      "החוק האחרון יהיה Allow ALL ולפניו יופיעו חוקים המתארים את התקשורת האסורה",
+      "החוק האחרון יהיה Deny ALL ולפניו יופיעו חוקים המתארים את התקשורת האסורה",
+      "החוק האחרון יהיה Allow ALL ולפניו יופיעו חוקים המתארים את התקשורת המותרת",
+      "תחילה יופיעו החוקים המתארים את התקשורת האסורה ואחריהם יופיעו חוקים המתארים את התקשורת המותרת"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בגישת Negative Security (רשימה שחורה), הכל מותר כברירת מחדל (Allow ALL בסוף), ורק מה שמוגדר במפורש כאסור (בחוקים שלפני הסוף) נחסם.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "ההבדל בין Statefull firewall ו Stateless Firewall הוא:",
+    "options": [
+      "Stateless Firewall נבדק כל Packet בפני עצמו וב Statefull Firewall בודקים את כל ה Packets שייכים ל HTTP Request יחד",
+      "ב Stateless Firewall כל Packet נבדק כנגד סט החוקים המוגדרים ב Firewall Access Policy. ב Statefull Firewall במידה וה Packet שייך ל TCP Connection שקיים בטבלת ה Connection הוא נבדק על פי התאמתו ל TCP Connection State",
+      "ב Stateless Firewall כל Packet נבדק כנגד סט החוקים המוגדרים ב Firewall Access Policy, ב Statefull Firewall במידה וה Packet שייך ל TCP Connection שקיים בטבלת ה Connection הוא נבדק כנגד סט החוקים המוגדרים ב Firewall Access Policy",
+      "ב Stateless Firewall רק Packet שלא שייכים ל TCP Connection שקיים בטבלת ה Connections נבדקים כנגד כל סט החוקים המוגדרים ב Firewall Access Policy. וב Statefull Firewall רק Packet שייכים ל TCP Connection שקיים בטבלת ה Connections עוברים את כל בדיקות החוקים המוגדרים ב Firewall Access Policy",
+      "ה Stateless Firewall משמש עבור תעבורת UDP וה Statefull Firewall משמש עבור תעבורת TCP"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Stateful Firewall מנהל טבלת מצבים (State Table). אם חבילה שייכת לחיבור קיים ומאושר, היא נבדקת רק מול מצב החיבור. Stateless בודק כל חבילה מחדש מול רשימת החוקים (ACL).",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "עבור תעבורת UDP השימוש ב Stateful Firewall מאפשר:",
+    "options": [
+      "לחסוך בדיקות של ה UDP Packet מול טבלת החוקים של ה Firewall אם ה UDP Packet שייך ל UDP \"Connection\" קיים",
+      "לאפשר תעבורת UDP מכתובת חיצונית לכתובת פנימית רק אם קדמה לה תעבורת UDP תואמת מהכתובת הפנימית לכתובת החיצונית",
+      "לאפשר תעבורת ICMP מכתובת פנימית החוצה בתנאי שקיים \"UDP \"Connection בין ה Source IP ובין ה Destination IP",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "למרות ש-UDP הוא ללא חיבור (Connectionless), פיירוול Stateful יוצר רישום וירטואלי (Pseudo-state) שמאפשר אופטימיזציה (דילוג על חוקים) ואבטחה (חסימת תעבורה נכנסת שלא נפתחה מבפנים). ICMP קשור לרוב לפרוטוקול אחר ולכן תשובה ה' היא המלאה ביותר.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה מבין המשפטים הבאים נכון ביחס באופן בו יש לקבוע את זמן ה Timeout המשמש למחיקה של רשומת TCP Connection מטבלת ה Connection ב Statefull Firewall במידה ואין פעילות ב Connection?",
+    "options": [
+      "בזמן ה Handshake המשמש ליצירת ה Connection זמן ה Timeout צריך להיות קצר משמעותית לעומת זמן ה Timeout כאשר ה Connection הוא Established ונשלח מידע על גבי ה Connection)",
+      "בזמן סגירת ה Connection זמן ה Timeout צריך להיות קצר יותר משמעותית לעומת זמן ה Timeout כאשר ה Connection הוא Established ונשלח מידע על גבי ה Connection",
+      "בזמן ה Handshake המשמש ליצירת ה Connection זמן ה Timeout צריך להיות ארוך משמעותית לעומת זמן ה Timeout כאשר ה Connection הוא Established ונשלח מידע על גבי ה Connection",
+      "זמן ה Timeout צריך להיות זהה בכל אחד משלבי ה Conection",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כדי למנוע התקפות DoS של הצפת טבלת המצבים (כמו SYN Flood), זמני ה-Timeout בשלבי הפתיחה והסגירה צריכים להיות קצרים. בשלב ה-Established, נדרש זמן ארוך יותר כדי לאפשר הפוגות טבעיות בתקשורת ללא ניתוק.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה הכוונה ב Application aware firewall?",
+    "options": [
+      "זה Firewall שמאפשר את עדכון טבלת החוקים ע\"י ה Firewall administrator תוך כדי פעולת ה Firewall",
+      "זה Firewall שמשלב Packet filtering עם Symmatric NAT",
+      "זה Firewall שהחוקים שלו מבוססים רק על ניתוח התוכן האפליקטיבי של ה Packet",
+      "זה Firewall שמנתח (לפחות באופן חלקי) את התוכן האפליקטיבי של הבקשה על מנת לחלץ פרמטרים לצורך יצירת חוקים באופן דינמי בטבלת החוקים של ה Firewall",
+      "תשובות ב' וד נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "פיירוול המודע לאפליקציה (כגון FTP או SIP) יודע לפענח את פקודות הפרוטוקול (למשל פקודת PORT ב-FTP) ולפתוח דינמית את הפורטים הנדרשים בטבלת החוקים.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מנגנון ה NAT/PAT מסוג Port Restricted Cone אזי מנגנון ה PATINAT יעביר Packet שנשלח לכתובת החיצונית של ה NAT/PAT רק בתנאי שהוא נשלח:",
+    "options": [
+      "מכל IP Address ברשת",
+      "מה IP Address אליה נשלחה outgoing Packet",
+      "רק מה IP Address וה Port אליו נשלחה outgoing Packet",
+      "רק מ IP Address המגודרים כחוקיים ב PAT/NAT",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "ב-Port Restricted Cone, הסינון מחמיר ודורש שהתעבורה הנכנסת תגיע בדיוק מאותה כתובת IP ומאותו פורט שאליהם נשלחה התעבורה היוצאת הפנימית.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין סוגי ה PAT/NAT הבאים זהה ל Symmetric NAT באספקט של \"מי יכול להחזיר תשובה לבקשה שנשלחה\"?",
+    "options": [
+      "Full Cone",
+      "Restricted Cone",
+      "Port Restricted Cone",
+      "תשובות ב' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "גם Symmetric NAT וגם Port Restricted Cone דורשים שהתשובה תגיע מה-IP וה-Port הספציפיים שאליהם נשלחה הבקשה (ההבדל ביניהם הוא באופן המיפוי כלפי חוץ, אך חוקי הכניסה דומים באספקט זה).",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מחשבים (שרתים / תחנות עבודה) מקובל לשים ב DMZ?",
+    "options": [
+      "את השרתים שנותנים שירות למשתמשים ברשת האינטרנט (כגון שרתי Web שעליהם מותקן אתר האינטרנט של האירגון)",
+      "את שרת בסיס הנתונים משמשרת את אפליקצית ה WEB שנותנת שרות לגולשים ברשת ומאחסן מידע רגיש כגון פרטי משתמשים וכרטיסי אשראי.",
+      "את תחנות העבודה של המשתמשים בארגון שגולשים ברשת האינטרנט",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ב-DMZ שמים רק שרתים שחייבים להיות נגישים ישירות מהאינטרנט הציבורי (Front-end). שרתי בסיס נתונים ותחנות עבודה צריכים להיות ברשת הפנימית המוגנת.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מתבצע Client Authentication בפני השרת באמצעות מנגנון ה Challenge-Response, אזי אפשר לממש את המנגנון עי\"כ שה Client",
+    "options": [
+      "מצפין את ה Challenge ע\"י מפתח סימטרי המוסכם על ה Client והשרת",
+      "מצפין את ה Challenge ע\"י המפתח ציבורי של ה Client",
+      "מצפין את ה Challenge ע\"י המפתח הציבורי של השרת",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "מימוש Challenge-Response יכול להיעשות ע\"י מפתח סימטרי משותף (כמו ב-Kerberos או Digest) או ע\"י חתימה במפתח פרטי (אסימטרי). אופציה א' מתארת את המקרה הסימטרי.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תהליכי Authentication ה Username וה Password שהזין המשתמש נשלחים ל Web server ב Authorization Header מקודדים ב Base64?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form based Authentication",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ב-HTTP Basic Authentication, שם המשתמש והסיסמה משורשרים (user:pass) ומקודדים ב-Base64 בתוך כותרת ה-Authorization.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תהליכי Authentication הדפדפן אחראי להצגת החלון בו המשתמש מקליד את שם המשתמש והסיסמא שלו?",
+    "options": [
+      "HTTP Basic Authentication ו HTTP Digest Authentication",
+      "HTTP Digest Authentication ו Form based Authentication",
+      "Form based Authentication ו HTTP Basic Authentication",
+      "רק ב Certificated based Authentication",
+      "HTTP Basic Authentication, HTTP Digest Authentication ו Certificated based Authentication"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "בפרוטוקולי Basic ו-Digest, הדפדפן מזהה את דרישת האימות (401) ומציג חלונית התחברות מובנית (Native) של מערכת ההפעלה/דפדפן. ב-Form based הדף הוא HTML רגיל.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה שיטת הזדהות נעשה שימוש ב Challenge-Response סימטרי",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Certificate based Authentication",
+      "תשובות א' וב' נכונות",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "HTTP Digest משתמש באתגר (Nonce) ובסיסמה (סוד משותף) כדי לחשב Hash, ולכן הוא מנגנון Challenge-Response סימטרי.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר ב Set-cookie header של ה Options מופיע גם Max-age וגם Discard אזי:",
+    "options": [
+      "ה Cookie שיווצר יהיה Persistent Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "ה Cookie שיווצר יהיה Session Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "ה Cookie שיווצר יהיה Session Cookie שימחק רק כאשר הדפדפן יסגר ע\"י המשתמש",
+      "ה Cookie שיווצר יהיה Persistent Cookie שימחק או כעבור פרק הזמן שמוגדר ב Max-age או כאשר הדפדפן יסגר ע\"י המשתמש, המאוחר מבין שניהם",
+      "ה Cookie שיווצר יהיה Session Cookie שימחק או כעבור פרק הזמן שמוגדר ב Max-age או כאשר הדפדפן יסגר ע\"י המשתמש, המוקדם מבין שניהם"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "שילוב של Discard (מחיקה בסגירה) ו-Max-Age (זמן קצוב) יוצר עוגייה זמנית שתפוג ברגע שיקרה הראשון מבין שני האירועים: תום הזמן או סגירת הדפדפן.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "למה שליחת ה SessionID מהדפדפן אל ה Web-server ב URL ב HTTP request נחשבת לא בטוחה מבחינת אבטחת מידע?",
+    "options": [
+      "כי זה לא נשלח אוטומטית ע\"י הדפדפן",
+      "כי זה חשוף בשורת ה URL שנשמרת ב history של הדפדפן",
+      "כי זה עלול להשלח כחלק מה Referrer Header",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "פרמטרים ב-URL (כמו SessionID) נשמרים בהיסטוריית הדפדפן, בלוגים של שרתי Proxy, ומועברים לאתרים חיצוניים דרך ה-Referer Header, מה שחושף אותם לגניבה.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה התקפה מתאפשרת ע\"י גנבת ערכו של ה Session-ID מתוך הדפדפן?",
+    "options": [
+      "Cookie Poisoning",
+      "Session Hijacking",
+      "Hidden Parameter Manipulation",
+      "SQL Injection",
+      "XSS"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "גניבת ה-Session-ID מאפשרת לתוקף להתחזות למשתמש ולהשתלט על ה-Session הפעיל שלו (Session Hijacking).",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון אבטחת מידע מאפשר לגלות ולמנוע XSRF/CSRF",
+    "options": [
+      "Client-side Input Validation",
+      "Server-Side Input Validation",
+      "Output Encoding",
+      "Token יחודי שמשולב בכל URL של האפליקציה",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שימוש ב-Anti-CSRF Token (ערך ייחודי ובלתי צפוי המשולב בבקשות המשנות מצב) הוא ההגנה הסטנדרטית למניעת זיוף בקשות.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מי מיצר SAML Assertions?",
+    "options": [
+      "Identity Provider",
+      "Relying Party",
+      "Service Provider",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ספק הזהויות (Identity Provider - IdP) הוא הגורם המאמת את המשתמש ומנפיק את ה-Assertions שמאשרים את זהותו ופרטיו.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון ביחס ל Web SSO המבוסס על 1.1 SAML במודל ה PULL?",
+    "options": [
+      "Assertion חייב להיות חתום בחתימה דיגיטלית כי הוא עובר דרך הדפדפן של המשתמש",
+      "Assertion לא חייב להיות חתום כי הוא עובר דרך הדפדפן של המשתמש",
+      "Artifact חייב להיות חתום בחתימה דיגיטלית כי הוא עובר דרך הדפדפן של המשתמש",
+      "ה Artifact לא חייב להיות חתום כי הוא אינו מכיל את ה Assertion עצמו והוא אמור להיות אקראי ולא בר מניה/ניחוש",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "במודל Pull (Artifact Binding), ה-Artifact הוא רק מזהה אקראי שעובר בדפדפן. המידע האמיתי (Assertion) עובר בערוץ ישיר ומאובטח בין ה-SP ל-IdP, ולכן אין חובה לחתום על ה-Artifact עצמו (כל עוד הוא לא ניתן לניחוש).",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "הערוץ הישיר בין ה Identity Provider ובין ה Service Provider ב SAML המבוסס על Web SSO משמש ל: (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "ה Identity Provider שולח עליו את ה Assertion Query וה Service Provider שולח כמענה Authentication Assertion",
+      "ה Service Provider שולח עליו את ה Assertion Response וה Indentity provider שולח כמענה Authentication Assertion",
+      "ה Service Provider שולח עליו את ה Artifact Response וה Indentity provider שולח כמענה SAML Response",
+      "ה Service Provider שולח עליו את ה Artifact Query ל Identity Provider וה Identity Provider שולח כמענה Authentication Assertion הכולל SAML Response",
+      "ה Identity Provider שולח עליו את ה Artifact Query ל Service Provider וה Service Provider שולח כמענה Authentication Assertion הכולל SAML Response"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הערוץ הישיר (Back-channel) משמש לפתרון ה-Artifact: ה-Service Provider שולח שאילתה (Artifact Query) ל-IdP, וה-IdP מחזיר את ה-SAML Response המלא.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות לא יכול input validation המבוסס על Negative security Logic למנוע ?",
+    "options": [
+      "התקפת Cookie Poisoning",
+      "התקפת XSS (Cross-site-Scripting",
+      "התקפת Parameter Tampering",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Negative Security Logic (חסימת תווים/תבניות זדוניות) מתקשה למנוע התקפות עסקיות כמו Cookie Poisoning או Parameter Tampering, שבהן הערכים יכולים להיות חוקיים מבחינת פורמט (למשל שינוי מחיר מ-100 ל-1, שניהם מספרים תקינים), ולכן לא יזוהו כ\"זדוניים\".",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין הבדיקות הבאות היא מסוג Negative Security Logic?",
+    "options": [
+      "בדיקה שהאורך של הפרמטר הוא בטווח האורך החוקי שהוגדר",
+      "בדיקה שהערך של הפרמטר הוא מתוך סט הערכים שנשלחו למשתמש",
+      "בדיקה שהערך של הפרמטר אינו כולל תו שידוע כמשמש להתקפת XSS",
+      "בדיקה שהערך של הפרמטר מכיל רק ספרות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בדיקה שמחפשת ספציפית תווים אסורים או ידועים כרעים (כמו תווים המשמשים ל-XSS) היא ההגדרה של Negative Security Logic (רשימה שחורה). שאר האפשרויות הן Positive Security (רשימה לבנה).",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מנגנון Same Origin Policy הוא מנגנון אבטחת מידע שמיושם ב:",
+    "options": [
+      "Web server",
+      "Web Application",
+      "Web Browser",
+      "Database Server",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Same Origin Policy (SOP) הוא מנגנון אבטחה בסיסי המוטמע בדפדפן (Web Browser) כדי למנוע סקריפטים מאתר אחד לגשת לנתונים של אתר אחר.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות יש לממש את מנגנוני הגנה כנגד XSS בצד השרת על מנת למנוע את ההתקפה? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM-Based XSS",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הגנה בצד השרת (כגון Output Encoding) יעילה עבור Reflected ו-Stored XSS, מכיוון שהקוד הזדוני עובר דרך השרת ומוזרק ל-HTML המוחזר. DOM-Based XSS מתרחש לעיתים קרובות כולו בצד הלקוח, ולכן הגנה בשרת לא תמיד תמנע אותו.",
+    "source": "TAU 2020 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה זה Output Encoding?",
+    "options": [
+      "מנגנון אבטחת מידע שבא למנוע התקפת SQL Injection",
+      "מנגנון אבטחת מידע שבא למנוע התקפת LDAP Injection",
+      "מנגנון אבטחת מידע שבא למנוע התקפת XSS",
+      "מנגנון אבטחת מידע שבא למנוע Parameter tampering",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Output Encoding הוא המנגנון העיקרי למניעת XSS. הוא ממיר תווים מיוחדים לייצוג הבטוח שלהם (HTML Entities) לפני שהם מוצגים בדפדפן, כך שהדפדפן לא יריץ אותם כקוד.",
+    "source": "TAU 2020 Moed B"
+  }
+]

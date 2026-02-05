@@ -57,24 +57,6 @@
   },
   {
     "type": "mc",
-    "question": "כאשר ה Firewall רוצה לאפשר גישה אך ורק לשרת אינטרנט... לתעבורת HTTP HTTPS... החוק המאפשר את פתיחת ה Connection לשרת האינטרנט יתבסס על כך ש:",
-    "options": [
-      "Source Port הוא פורט 80 ו/או 443",
-      "Destination Port הוא פורט 80 ו/או 443",
-      "Source IP 212.145.35.67",
-      "Destination IP 212.145.35.67",
-      "Syn Flag דולק",
-      "תשובות א' וג נכונות",
-      "תשובות ב' וד' נכונות",
-      "תשובות א' ג' וה' נכונות",
-      "תשובות ב' ד' וה' נכונות"
-    ],
-    "correctAnswerIndex": 8,
-    "explanation": "כדי לאפשר כניסה לשרת, החוק ב-Firewall צריך לאשר תעבורה המיועדת לכתובת ה-IP של השרת (Destination IP), לפורטים של השירות (Destination Port 80/443), ועבור בקשות חדשות (SYN Flag דולק).",
-    "source": "TAU 2019 Moed B"
-  },
-  {
-    "type": "mc",
     "question": "מתי חייבים להשתמש במנגנון אבטחת מידע המתבסס על Negative Security Logic?",
     "options": [
       "כאשר צריכים להבטיח Zero false positive",

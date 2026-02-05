@@ -1,0 +1,352 @@
+[
+  {
+    "type": "mc",
+    "question": "שמירת קובץ על הדיסק בשרת (ב data center) שיש להגן הסודיות והשלמות שלו, כשהוא מוצפן, ללא חתימה דיגיטלית על הקובץ, אבל כאשר מיושם Read and Write Access Control על הגישה לקובץ (באמצעות מערכת ההפעלה), היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "למרות היעדר חתימה דיגיטלית, שילוב של הצפנה ובקרת גישה (Access Control) נחשב בדרך כלל להגנה סבירה על קבצים במנוחה (Data at Rest) בשרת מאובטח, ולכן במסגרת הקורס מצב זה אינו מוגדר בהכרח כ-Vulnerability או Attack.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון החתימה הדיגיטלית ומנגנון ה Read Access control ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא למנוע את השינוי הלא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא לאפשר לאתר שבוצע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת החתימה הדיגיטלית הוא לאפשר לאתר שינוי לא מורשה שנעשה במידע ומטרתה Read access control הוא למנוע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת החתימה הדיגיטלית היא למנוע שינוי לא מורשה במידע ומטרת ה Read access control היא לאתר שינוי לא מורשה שנעשה במידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "חתימה דיגיטלית שומרת על שלמות המידע (Integrity) ומאפשרת זיהוי שינויים. Read Access Control שומר על סודיות המידע (Confidentiality) על ידי מניעת גישה. התשובות המוצעות מנסות לקשור את שניהם לשלמות המידע בצורה שגויה.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין מנגנוני אבטחת המידע הבאים מאפשר למנוע פגיעה בזמינות המידע עקב פגיעה בשלמות המידע? (כלומר המנגנון מונע פגיעה בשלמות המידע אבל בכך גם מסייע לשמירה על זמינות המידע)",
+    "options": [
+      "הצפנה",
+      "חתימה דיגיטלית",
+      "Write Access Control",
+      "תשובות א' וב' נכונות",
+      "אף אחת מהתשובות אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "מנגנון Write Access Control מונע כתיבה לא מורשית לקובץ. מניעת כתיבה לא מורשית שומרת על שלמות הקובץ (מונעת השחתה), ובכך מבטיחה שהקובץ יישאר תקין וזמין לשימוש (Availability).",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מה security properties ניתן לפגוע באמצעות התקפה פאסיבית( Passive attack)?",
+    "options": [
+      "סודיות המידע",
+      "שלמות המידע",
+      "זמינות המידע",
+      "סודיות המידע ושלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "התקפה פאסיבית (כגון האזנת סתר - Eavesdropping) כוללת צפייה במידע מבלי לשנות אותו. פעולה זו פוגעת בסודיות (Confidentiality) אך אינה משפיעה על השלמות או הזמינות.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים נכון:",
+    "options": [
+      "קטגורית ההתקפות שהכי קשה להתגונן מולם הוא Targeted Attacks",
+      "על מנת להיות מוגן כנגד התקפות מסוג Opportunistic Directed מספיק להתקין את Security Patches שמפרסם היצרן של מערכת ההפעלה ויצרני שאר תוכנות התשתית המותקנות על המחשב",
+      "התקפות מסוג של Targeted Attacks מנצלות לעיתים Zero-day vulnerabilities בתשתיות המערכת (כגון במערכת ההפעלה) או בתוכנות בהם נעשה שימוש במערכת",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "התקפות ממוקדות (Targeted Attacks) הן אכן הקשות ביותר להגנה (א') כיוון שהן מותאמות ספציפית ליעד ולעיתים קרובות משתמשות בחולשות יום-אפס (Zero-day) שאין להן עדיין תיקון (ג').",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם יש יתרון המשמעותי מבחינת אבטחת מידע לשימוש במנגנון אבטחת מידע המיישם את התפיסה של Positive Security Logic לעומת שימוש מנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Positive",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Negative",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Positive ו False Negative",
+      "כן, כי הוא Generic ואינו דורש הגדרות עבור כל מערכת בנפרד, ולכן עלות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Positive Security Logic נמוך משמעותית לעומת עלות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic",
+      "לא, אין הבדל משמעותי בין שימוש במנגנון אבטחת מידע המיישם את התפיסה של Positive Security Logic לבין שימוש במנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "גישת Positive Security Logic (רשימה לבנה - התרת המותר בלבד) נחשבת למאובטחת יותר. בניהול אופטימלי, היא מונעת False Negative (כי התקפות חדשות לא יורשו) ומצמצמת False Positive (כי מגדירים בדיוק מה מותר).",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם ומדוע יש להפריד את רכיב הניהול של המערכת לאפליקציה נפרדת מהאפליקציה המשרתת את המשתמשים של המערכת (למשל הגולשים ברשת האינטרנט) תחת ההנחה ששתי האפליקציות רצות על שרת האינטרנט ב DMZ?",
+    "options": [
+      "אין צורך בהפרדה כזאת והיא מיותרת כי היא גורמת לשכפול של קוד בין אפליקצית הניהול לאפליקציה המיועדת למשתמשים",
+      "אין צורך בהפרדה כזאת כי ניתן לממש בקלות מנגנון Access Control באמצעות העובדה שלכל אחד מהמשתמשים מוצגות בדף ה HTML רק הפעולות המותרות עבורו",
+      "הפרדה כזאת חשובה כי היא תמנע מצב שבו משתמש רגיל מנצל vulnerability במנגנון ה Access Control על מנת לבצע פעולות שמותרות רק למנהל המערכת (והנסיון מלמד שבמימוש של Access Control יש לעיתים קרובות Vulnerabilities)",
+      "הפרדה כזאת חוסכת את הצורך בהקשחה של שרת האינטרנט ומאפשרת להסתפק בהגנה על אפליקצית הניהול באמצעות מנגנון של Strong Authentication",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הפרדה פיזית או לוגית מובהקת (אפליקציה נפרדת) מונעת מצב שבו כשל נקודתי במנגנון הרשאות (Access Control Vulnerability) באפליקציית המשתמשים יאפשר לתוקף לבצע פעולות אדמיניסטרטיביות.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון במימוש ה Challenge-Response לצורך Authentication באמצעות הצפנה אסימטרית?",
+    "options": [
+      "החישוב והבדיקה של ה Response מהירים יותר",
+      "אין צורך לשמור את ה Challenge בשרת שמבצע את תהליך ה Authentication",
+      "אין צורך לשמור את האלמנט הסודי על פיו מתבצע תהליך ה Authentication בשרת שמבצע את תהליך ה Authentication ולכן הוא מתאים גם Third party Authentication",
+      "אין הבדל בין מימוש ה Challenge-Response בהצפנה סימטרית ובין מימוש ה Challenge-Response בהצפנה אסימטרית",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בהצפנה אסימטרית, השרת מחזיק רק את המפתח הציבורי של המשתמש. אין לו צורך לשמור סוד משותף (כמו סיסמה או מפתח סימטרי), מה שמפחית את הסיכון במקרה של פריצה לשרת האימות.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר נעשה שימוש ב HTTP Digest Authentication ה Web server מתבסס על Authorization Header בבדיקת ה Request שנשלח Challenge ולא בודק שה Challenge הוא ה Authorization Header שמופיע ב Response, שאכן נשלח לדפדפן ע\"י Web Server, אזי לאיזה התקפה חשוף ה Web Server (תחת ההנחה שהסיסמא של המשתמש אינה ברת מניה)?",
+    "options": [
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת הסיסמא של המשתמש",
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת ה Session-ID של המשתמש",
+      "התחזות של התוקף למשתמש החוקי באמצעות שימוש ב Authorization Header בבקשות לאותו URI Method (של הבקשה המקורית)",
+      "תשובות א' ב' וג' נכונות",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "אם השרת לא מאמת שה-Challenge (Nonce) הוא זה שהוא שלח, תוקף יכול לבצע Replay Attack: להשתמש שוב באותה כותרת Authorization חוקית שהוא האזין לה, כדי לגשת לאותו משאב.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "אפליקציה בנקאית רוצה שה cookie שבו נשמר ה session-ID ימחק מהדפדפן כעבור חמש דקות או כאשר המשתמש סוגר את הדפדפן, מה הם ה Cookie Options שבהם היא צריכה להשתמש עבור ה cookie הזה?",
+    "options": [
+      "Discard",
+      "Max-Age",
+      "Discard ו Max-Age",
+      "Persistent",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "שילוב של Discard (מחיקה בסיום הסשן/סגירת דפדפן) ו-Max-Age (מחיקה לאחר זמן קצוב) מבטיח שהעוגייה תימחק במוקדם מבין שני האירועים.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מטרת השימוש HTTP Only Cookie option עבור ה Cookie המשמש להעברת ה Session ID היא למנוע:",
+    "options": [
+      "התקפת XSS על הדפדפן",
+      "גניבת ה Session ID שנשלח ב cookie ע\"י התקפת XSS",
+      "גניבת ה Session ID שנשלח ב cookie ע\"י האזנה ל HTTP Requests and/or Responses",
+      "מניה או ניחוש של ה Session ID שנשלח ב cookie",
+      "התקפת Cookie Poisoning על הערך של ה Session ID"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "דגל HttpOnly מונע מקוד JavaScript (הרץ בדפדפן) לגשת לתוכן העוגייה. בכך הוא מגן מפני גניבת ה-Session ID במקרה של פרצת Cross-Site Scripting (XSS).",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "התקפת Session Hijacking מאפשרת לתוקף: (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "לעקוף את מנגנון ההזדהות",
+      "לעקוף את מנגנון ההזדהות ואת מנגנון ההרשאות",
+      "לעקוף את מנגנון ההזדהות ואת מנגנון ה Auditing",
+      "לעקוף את מנגנון ההזדהות, את מנגנון ההרשאות ואת מנגנון ה Auditing",
+      "לבצע התקפת XSS"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ברגע שתוקף מחזיק ב-Session של המשתמש, המערכת מזהה אותו כמשתמש החוקי. לכן הוא עוקף את ההזדהות (Authentication), מקבל את ההרשאות של המשתמש (Authorization bypass), וכל פעולותיו נרשמות בלוגים על שם המשתמש החוקי (Auditing bypass).",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון (או מנגנוני) הגנה מאפשר להתגונן בפני Cookie Poisoning?",
+    "options": [
+      "Input Validation המבוסס על Negative Security Logic",
+      "חתימה דיגיטלית של ה Cookie הנשלח לדפדפן ע\"י ה Web server, ובדיקת החתימה ע\"י Web server כאשר Cookie נשלח חזרה ל Web server ע\"י הדפדפן",
+      "חתימה דיגיטלית של ה Cookie הנשלח לשרת ע\"י הדפדפן ובדיקת החתימה ע\"י הדפדפן כאשר Cookie נשלח חזרה לדפדפן ע\"י Web server",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "כדי למנוע זיוף או שינוי של עוגייה (Poisoning) על ידי המשתמש, השרת חותם עליה דיגיטלית לפני השליחה, ומאמת את החתימה כשהיא חוזרת. אם החתימה לא תואמת, השרת יודע שהמידע שונה.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מקטין את ה Attack surface של התקפת XSRF/CSRF?",
+    "options": [
+      "שהפעולות (בקשות ה HTTP) החשובות יבוצעו רק באמצעות POST Requests",
+      "מנגנון של Inactivity timeout שסוגר את ה Session לאחר זמן קצר שאין בו פעילות",
+      "מנגנון של Output encoding",
+      "תשובות א' וב' נכונות",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שימוש ב-POST מקשה על התקפות CSRF פשוטות (דרך לינקים או תמונות), ו-Timeout מצמצם את חלון הזמן שבו הסשן פתוח ופגיע לתקיפה. שניהם יחד מקטינים את משטח התקיפה.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בהנחה שחייבים לשלב FORM Hidden Parameter את מספר ת.ז. של המשתמש כיצד ניתן למנוע מהתוקף לנצל זאת על מנת לתקוף את האפליקציה ע\"י Parameter tampering?",
+    "options": [
+      "אי אפשר לבצע על הערך של ת.ז. Parameter tampering כי הוא Hidden parameter",
+      "לצרף ל FORM פרמטר נוסף (כ hiden parameter) שמכיל חתימה דיגיטלית על ערך של ת.ז. בבקשה, ולבדוק בשרת כאשר מגיע ה request שהערך של מספר ת.ז. המופיע ב request תואם לחתימה הדיגיטלית על מספר ת.ז. ה שמהוה גם היא חלק מה request",
+      "לבדוק בשרת שהערך של ת.ז. הוא מספר ת.ז. של משתמש שמוגדר במערכת (registered user)",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הוספת חתימה דיגיטלית (HMAC או דומה) לפרמטר מבטיחה שהלקוח לא שינה את הערך. השרת מחשב את החתימה מחדש בעת קבלת הבקשה ומשווה. בדיקת קיום המשתמש בלבד (ג') לא מונעת גישה לנתונים של משתמש אחר שגם הוא קיים במערכת.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "לבדיקת User Input Validation Client-side:",
+    "options": [
+      "אין משמעות בכלל",
+      "יש משמעות מבחינת Usability and Performance אבל אין משמעות מבחינת Security וחייבים לבצע בדיקות User Input Validation בקוד של האפליקציה שרץ בשרת",
+      "יש משמעות מבחינת Security כי זה חוסך בדיקות ב Server-side",
+      "יש משמעות מבחינת Usability and Performance ומבחינת Security כי זה חוסך בדיקות ב Server-side",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בדיקות בצד הלקוח (Client-side) ניתנות לעקיפה בקלות ולכן אינן מספקות אבטחה. הן נועדו אך ורק לשיפור חווית המשתמש והפחתת עומס (Performance/Usability). אבטחה מחייבת בדיקות בצד השרת.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא ה Vulnerability אותו מנצלת התקפה מסוג Content Replacement Attack?",
+    "options": [
+      "שהאפליקציה לא מבצעת Canonicalization על הקלט לפני שהיא מבצעת Input validation",
+      "שהאפליקציה לא מטפלת נכון בחלק מסוגי הקידוד השונים האפשריים ב HTML, ומבצעת המרות לא נכונות של התוכן הנבדק",
+      "שהאפליקציה מבצעת Input Validation המבוסס על Positive Security Logic",
+      "שהאפליקציה אינה מבצעת Input Validation חוזר לתוכן של ה request לאחר ש\"הסירה\" מה Request תוכן שאותר כ\"חשוד\"",
+      "שהתבניות בהם משתמש האפליקציה לאיתור תכנים חשודים אינם תואמים לסוג הקידוד של תוכן Request"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "התקפה זו מסתמכת על כך שהמערכת מסירה תוכן זדוני (Sanitization) אך התוצאה שנשארת יוצרת מחדש ביטוי זדוני (למשל `<scr<script>ipt>`), והמערכת לא בודקת שוב את התוצר הסופי.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בהנחה שניתן להגביל את תוכנו של שדה קלט לאותיות וספרות בלבד, וכן להגביל את אורכו של הקלט ל 20 תווים, ובהנחה שהאפליקציה בודקת בשרת את תוכן הקלט שהוא אכן אלפא-נומרי שאורכו עד 20 תווים. לאיזה התקפה חשופה האפליקציה:",
+    "options": [
+      "SQL Injection",
+      "OS/Command Injection",
+      "Forceful Browsing",
+      "XSS בו האפליקציה משלבת את הקלט בתוכנו של אלמנט HTML בדף ה HTML המוחזר למשתמש",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ולידציה קפדנית המאפשרת רק אותיות וספרות (Alphanumeric Whitelist) מונעת את כל ההתקפות המפורטות (SQLi, OS Injection, XSS) מכיוון שכולן דורשות תווים מיוחדים (כמו גרש, סוגריים, סימני פיסוק) כדי לפעול.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון אבטחת מידע חשוף Evasion Techniques?",
+    "options": [
+      "Input validation that is based on positive security logic",
+      "Input validation that is based on negative security logic",
+      "Output encoding",
+      "בנית שאילתות SQL באמצעות Parameterized Query API",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מנגנון המבוסס על Negative Security Logic (חסימת הידוע כרע) חשוף לטכניקות התחמקות, כיוון שתוקף יכול לשנות מעט את ההתקפה כך שלא תתאים לחתימה הידועה אך עדיין תהיה זדונית.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרכים למנוע התקפת SQL Injection attacks ו/או לצמצם נזק אפשרי של ההתקפה?",
+    "options": [
+      "צמצום ההרשאות של האפליקציה על פי עקרון ה Least privileges",
+      "מימוש נכון של Input validation על הקלט המתקבל מ Untrusted sources",
+      "לא לבנות שאילתות SQL ע\"י שרשור של מחרוזות קבועות וקלט אלא להשתמש ב strongly typed parametrizes query APIs",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הגנה מלאה (Defense in Depth) כוללת את שלושת המרכיבים: צמצום הרשאות (מזעור נזק), ולידציה של קלט (סינון), ושימוש בשאילתות פרמטריות (מניעת הזרקה ברמת הקוד).",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל בין Reflected XSS ל DOM based XSS?",
+    "options": [
+      "שב Reflected XSS הקוד העוין נשלח לשרת וב DOM based XSS הקוד העוין אינו נשלח לשרת",
+      "שב Reflected XSS הקוד העוין נשמר בשרת וב DOM based XSS הקוד העוין אינו נשמר בשרת",
+      "שב Reflected XSS הקוד העוין רץ בשרוב DOM based XSS הקוד העוין אינו רץ בשרת",
+      "ש Reflected XSS הקוד העוין נשלח למותקף בדוא\"ל וב DOM based XSS הקוד העוין אינו נשלח למותקף בדוא\"ל",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ב-Reflected XSS הקוד הזדוני נשלח כחלק מהבקשה לשרת ומוחזר בתגובה. ב-DOM Based XSS, הקוד הזדוני מעובד כולו בצד הלקוח (למשל דרך ה-URL fragment #) ולא בהכרח מגיע לשרת.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות התוכן העוין של התקפת ה XSS נשמר בבסיס הנתונים Web application?",
+    "options": [
+      "Reflected XSS",
+      "Persistence XSS",
+      "DOM-Based XSS",
+      "תשובות א' וב' נכונות",
+      "תשובות א' וג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בהגדרה, Persistent (או Stored) XSS הוא סוג ההתקפה שבו הקוד הזדוני מאוחסן בשרת (למשל בבסיס הנתונים) ומוגש לקורבנות כשהם צופים בתוכן.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות לא ניתן למנוע ע\"י Input Validation המתבסס על Format validation (כלומר בדיקה שהפורמט של הקלט תקין)?",
+    "options": [
+      "התקפת XSS",
+      "התקפת XSRF/CSRF",
+      "Cookie Poisoning",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "בדיקת פורמט יכולה למנוע הזרקת קוד (כמו ב-XSS), אך אינה מונעת CSRF (שמשתמש בבקשות חוקיות) או Cookie Poisoning (שמשנה ערכים אך שומר על פורמט תקין).",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה התקפות יכול ניהול הרשאות של האפליקציה במדיניות של Least privileges לסייע למזער את הנזק? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "התקפת SQL Injection",
+      "התקפת CSRF",
+      "התקפת Session Hijacking",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Least Privilege הוא קריטי ב-SQL Injection: אם לאפליקציה יש הרשאות מוגבלות בבסיס הנתונים (למשל, אין הרשאת DROP TABLE), הנזק מהזרקה מוצלחת יהיה מוגבל.",
+    "source": "TAU 2020 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות מטרת ההתקפה היא לשלוח לאפליקציה בקשות HTTP בשמו של המותקף (כך שהאפליקציה תחשוב שבקשת ה HTTP נשלחה ע\"י המותקף)?",
+    "options": [
+      "הן התקפת XSS והן התקפת CSRF",
+      "הן התקפת XSS והן התקפת SQL Injection",
+      "הן התקפת CSRF והן התקפת SQL Injection",
+      "הן התקפת CSRF והן התקפת Session Hijacking",
+      "הן התקפת SQL Injection והן התקפת Session Hijacking"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "גם CSRF (זיוף בקשות צד-לקוח) וגם Session Hijacking (גניבת זהות) מאפשרות לתוקף לשלוח בקשות שהשרת מפרש כאילו נשלחו על ידי המשתמש הלגיטימי.",
+    "source": "TAU 2020 Moed A"
+  }
+]
