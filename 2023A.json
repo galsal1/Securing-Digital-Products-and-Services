@@ -1,0 +1,296 @@
+[
+  {
+    "type": "mc",
+    "question": "האזנה פאסיבית שלרשת WIFI שעובר בה מידע שהסודיות והשלמות שלו חשובות, וכל המידע נשלח ברשת ה WIFI כשהוא מוצפן (ולמאזין אין את מפתח הפענוח) אך ללא חתימה דיגיטלית על המידע היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "המידע מוצפן, ולכן הסודיות נשמרת. היעדר חתימה דיגיטלית הוא חולשה (Vulnerability) הקשורה לשלמות המידע, אך האזנה פאסיבית (Eavesdropping) אינה מנצלת חולשה זו (כי היא לא משנה מידע) ואינה מהווה התקפה על השלמות.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות מאפשרת לגנוב SessionID מהדפדפן של במשתמש?",
+    "options": [
+      "התקפת XSRF/CSRF",
+      "התקפת XSS",
+      "התקפת Forceful Browsing",
+      "התקפת SQL Injection",
+      "התקפת Hidden Parameter Manipulation"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התקפת XSS (Cross-Site Scripting) מאפשרת הרצת קוד JavaScript בדפדפן הקורבן. קוד זה יכול לגשת ל-document.cookie (אם לא מוגדר HttpOnly) ולשלוח את ה-SessionID לתוקף.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון החתימה הדיגיטלית ומנגנון ה Write Access control ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא למנוע את השינוי הלא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא לאפשר לאתר שבוצע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת החתימה הדיגיטלית הוא לאפשר לאתר שינוי לא מורשה שנעשה במידע ומטרת ה Write access control הוא למנוע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת החתימה הדיגיטלית היא למנוע שינוי לא מורשה במידע ומטרת ה Write access control היא לאתר שינוי לא מורשה שנעשה במידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Write Access Control הוא מנגנון מניעה (Prevention) שחוסם את עצם הכתיבה הלא מורשית. חתימה דיגיטלית היא מנגנון גילוי (Detection) המאפשר לדעת בדיעבד אם הקובץ שונה.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "האם יש יתרון המשמעותי מבחינת אבטחת מידע לשימוש במנגנון אבטחת מידע המיישם את התפיסה של Positive Security Logic לעומת שימוש מנגנון אבטחת מידע המיישם את התפיסה Negative Security Logic? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Positive",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Negative",
+      "כן, כי הוא מאפשר בניהול נכון להימנע מ False Positive ומ False Negative",
+      "כן, כי הוא Generic ואינו דורש הגדרות עבור כל מערכת בנפרד, ולכן עלות הניהול של מנגנון אבטחת מידע המישם את התפיסה של Positive Security Logic נמוך משמעותית לעומת עלות הניהול של מנגנון אבטחת מידע המישם את התפיסה של Negative Security Logic",
+      "לא, אין הבדל משמעותי בין שימוש במנגנון אבטחת מידע המישם את התפיסה של Positive Security Logic לבין שימוש במנגנון אבטחת מידע המישם את התפיסה של Negative Security Logic"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "גישת Positive Security Logic (רשימה לבנה - התרת המותר בלבד) נחשבת למאובטחת יותר. בניהול אופטימלי, היא מונעת False Negative (כי התקפות חדשות לא יורשו) ומצמצמת False Positive (כי מגדירים בדיוק מה מותר).",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר משה רוצה להצפין באמצעות הצפנה אסימטרית מידע עבור שלמה על מנת לשמור על הסודיות של המידע ולחתום עליו באמצעות חתימה דיגיטלית אסימטרית על מנת ששלמה יוכל לודא את שלמות המידע אזי:",
+    "options": [
+      "הוא יצפין את המידע תוך שימוש במפתח הפרטי של שלמה ויחתום את המידע תוך שימוש במפתח הפרטי של משה",
+      "הוא יצפין את המידע תוך שימוש במפתח הציבורי של שלמה ויחתום את המידע תוך שימוש במפתח הפרטי של משה",
+      "הוא יצפין את המידע תוך שימוש במפתח הפרטי של משה ויחתום את המידע תוך שימוש במפתח הציבורי של שלמה",
+      "הוא יצפין את המידע תוך שימוש במפתח הציבורי של משה ויחתום את המידע תוך שימוש במפתח הציבורי של שלמה",
+      "הוא יצפין את המידע תוך שימוש במפתח הציבורי של שלמה ויחתום את המידע תוך שימוש במפתח הפרטי של שלמה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "לשמירה על סודיות: מצפינים עם המפתח הציבורי של המקבל (שלמה), כך שרק המפתח הפרטי שלו יוכל לפתוח. לשמירה על שלמות ואימות (חתימה): חותמים עם המפתח הפרטי של השולח (משה), כך שכל אחד עם המפתח הציבורי שלו יוכל לוודא.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בדוגמא של החנות הוירטואלית החלוקה של תוכנת החנות למודולים (קטלוג, חנות, ניהול קטלוג, ניהול חנות) שכל אחד מהם רץ כ process נפרד מאפשרת:",
+    "options": [
+      "להריץ את המודולים המיועדים לגולשים שרתים פיזיים/וירטואליים נפרדים ולהגביל את הגישה לשרת עליו רצים המודולים של הניהול רק לעובדי החנות המגיעים מכתובות IP ידועות, ולא לאפשר גישה אליו לגולשים ברשת באמצעות חוקי ה Firewall",
+      "לתת לכל מודול את ההרשאות המינימליות הנדרשות לו בבסיס הנתונים",
+      "ליישם בכל מודול מנגנון Authentication מתאים לרמת הסיכון במקרה של Impersonation (כלומר שמודולים שמיועדים לעובדי חברה ידרשו two-factor authentication בעוד שמודולים המיועדים ללקוחות ידרשו סיסמא בלבד), ללא חשש ממצב שבו בעיית יישום של Access-control ברמת האפליקציה מאפשרת ללקוח לבצע פעולות שמותרות רק לעובד חברה",
+      "להריץ את המודולים המיועדים לגולשים שרתים פיזיים/וירטואליים נפרדים ולהגביל את הגישה לשרת עליו רצים המודולים של הניהול רק לעובדי החנות המגיעים מכתובות IP ידועות, ולא לאפשר גישה אליו לגולשים ברשת באמצעות חוקי ה Firewall, וכן לתת לכל מודול את ההרשאות המינימליות הנדרשות לו בבסיס הנתונים",
+      "ליישם בכל מודול מנגנון Authentication מתאים לרמת הסיכון במקרה של Impersonation (כלומר שמודולים שמיועדים לעובדי חברה ידרשו two-factor authentication בעוד שמודולים המיועדים ללקוחות ידרשו סיסמא בלבד), ללא חשש ממצב שבו בעיית יישום של Access-control ברמת האפליקציה מאפשרת ללקוח לבצע פעולות שמותרות רק לעובד חברה, להריץ את המודולים המיועדים לגולשים שרתים פיזיים/וירטואליים נפרדים ולהגביל את הגישה לשרת עליו רצים המודולים של הניהול רק לעובדי החנות המגיעים מכתובות IP ידועות, ולא לאפשר גישה אליו לגולשים ברשת באמצעות חוקי ה Firewall, וכן לתת לכל מודול את ההרשאות המינימליות הנדרשות לו בבסיס הנתונים"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הפרדה למודולים וריצתם כתהליכים נפרדים מאפשרת את כל היתרונות הללו: הקשחת רשת (Firewall), הקשחת בסיס נתונים (Least Privilege), והתאמת מנגנוני אימות שונים.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע כדאי להפריד בין אפליקצית הניהול המיועדת לשימוש מנהלי האתר (ו/או האפליקציה) ובין האפליקציה שנועדה לשימוש המשתמשים?",
+    "options": [
+      "לא באמת כדאי להפריד את האפליקציות כי זה מיקר את עלות הפיתוח ולא תורם מבחינת אבטחת מידע",
+      "כי זה מאפשר לישם בכל אחת מהאפליקציות מנגנון Authentication שונה",
+      "כי זה מאפשר לישם הגבלות גישה שונות אל כל אחת מהאפליקציות (ברמת הרשת)",
+      "כי זה מקטין את הסיכוי לבעית Access Control לעומת מצב שבו שתי האפליקציות מיושמות כאפליקציה אחת עם מנגנון Access Control להגבלת הגישה של כל אחד מהמשתמשים השונים.",
+      "כי זה מאפשר לישם בכל אחת מהאפליקציות מנגנון Authentication שונה, וכן ליישם הגבלות גישה שונות אל כל אחת מהאפליקציות (ברמת הרשת), וכן כי זה מקטין את הסיכוי לבעיית Access Control לעומת מצב שבו שתי האפליקציות מיושמות כאפליקציה אחת עם מנגנון Access Control להגבלת הגישה של כל אחד מהמשתמשים השונים"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הפרדה מלאה מאפשרת ליישם מדיניות אבטחה שונה לכל סביבה (אימות, רשת, הרשאות) ומקטינה את הסיכון שחולשה באפליקציית המשתמשים תאפשר גישה אדמיניסטרטיבית.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזו מבין הטענות הבאות ביחס בין התקפת XSS ובין התקפת XSRF/CSRF נכונות?",
+    "options": [
+      "התקפת XSS מטרתה לתקוף את הדפדפן של המשתמש והתקפת CSRF/XSRF מטרתה לתקוף את האפליקציה",
+      "התקפת XSS מנצל את האמון של הדפדפן בדפי ה HTML שנשלחים אליו ע\"י ה Web server והתקפת CSRF/XSRF מנצל את האמון של ה Web application ב HTTP Request שנשלח אליו מהדפדפן של המשתמש עם ה SessionID של המשתמש",
+      "פגיעות להתקפת XSRF/CSRF מאפשרת התקפת XSS",
+      "התקפת XSS מנצל את האמון של הדפדפן בדפי ה HTML שנשלחים אליו ע\"י ה Web server והתקפת CSRF/XSRF מנצל את האמון של ה Web application ב HTTP Request שנשלח אליו מהדפדפן של המשתמש עם ה SessionID של המשתמש, וכן התקפת XSS מטרתה לתקוף את הדפדפן של המשתמש והתקפת CSRF/XSRF מטרתה לתקוף את האפליקציה",
+      "התקפת XSS מנצל את האמון של הדפדפן בדפי ה HTML שנשלחים אליו ע\"י ה Web server והתקפת CSRF/XSRF מנצל את האמון של ה Web application ב HTTP Request שנשלח אליו מהדפדפן של המשתמש עם ה SessionID של המשתמש, וכן התקפת XSS מטרתה לתקוף את הדפדפן של המשתמש והתקפת CSRF/XSRF מטרתה לתקוף את האפליקציה, וכן פגיעות להתקפת XSRF/CSRF מאפשרת התקפת XSS"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "XSS מנצל את אמון הדפדפן בתוכן מהשרת (ולכן מריץ סקריפט), ו-CSRF מנצל את אמון השרת בבקשות מהדפדפן (עם ה-Cookie). טענה ג' שגויה (CSRF לא מאפשר XSS, אלא להפך - XSS מאפשר CSRF).",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מנגנון ה Content Security Policy) CSP) מטרתו:",
+    "options": [
+      "למנוע התקפת SQL Injection",
+      "למנוע התקפת CSRF שמנצלת XSS",
+      "למנוע התקפת Session Hijacking",
+      "לחסוך את הצורך ב Output encoding למניעת התקפת XSS",
+      "להוות שכבת הגנה נוספת שמקטינה את הנזק הפוטנציאלי שיכול תוקף לגרום באמצעות התקפת XSS (כלומר באמצעות קוד זדוני ל Browser אותו הצליח התוקף לשלב בדף ה HTML שנשלח לדפדפן)"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "CSP הוא מנגנון דפדפן המאפשר לשרת להגדיר אלו מקורות תוכן מותרים לטעינה, ובכך מגביל את היכולת של תוקף להריץ סקריפטים זדוניים (XSS) גם אם הצליח להזריק אותם.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה זה Output Encoding?",
+    "options": [
+      "מנגנון אבטחת מידע שבא למנוע התקפת SQL Injection",
+      "מנגנון אבטחת מידע שבא למנוע התקפת Session Hijacking",
+      "מנגנון אבטחת מידע שבא למנוע התקפת XSS",
+      "מנגנון אבטחת מידע שבא למנוע Cookie Poisoning",
+      "מנגנון אבטחת מידע שבא למנוע התקפת Session Hijacking וכן למנוע Cookie Poisoning"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Output Encoding הוא המנגנון העיקרי למניעת Cross-Site Scripting (XSS). הוא ממיר תווים מיוחדים לקוד HTML בטוח לפני הצגתם בדפדפן.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות Server side Input-Validation לא יכול למנוע למנוע את ההתקפה?",
+    "options": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM-Based XSS",
+      "SQL Injection",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "DOM-Based XSS מתרחש בצד הלקוח (בדפדפן) כתוצאה מעיבוד לא בטוח של נתונים ב-DOM, ולעיתים המידע הזדוני (למשל אחרי ה-# ב-URL) כלל לא מגיע לשרת, ולכן בדיקה בשרת לא יכולה למנוע אותה.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בהנחה שה SessionID נשלח באמצעות Cookie עם HTTP-Only Option אבל האפליקציה חשופה להתקפת XSS וחלק מהבקשות לאפליקציה נשלחות מהדפדפן ב HTTP, האם התוקף יכול לבצע Session Hijacking?",
+    "options": [
+      "כן, כי הוא יכול לגנוב ה SessionID באמצעות התקפת XSS וה SessionID כולל את שם המשתמש ואת הסיסמא של המשתמש",
+      "כן, כי הוא יכול לגנוב את ה SessionID באמצעות האזנה לבקשות ה HTTP שנשלחות בגלוי, ומכיוון שה SessionID מתבסס על הסיסמא של המשתמש, אפשר לשחזר מתוכו את הסיסמא של המשתמש ולהשתמש בה לביצוע Session Hijacking",
+      "כן, כי הוא יכול לגנוב את ה SessionID באמצעות האזנה לבקשות ה HTTP שנשלחות בגלוי, וה SessionID משמש כמזהה של המשתמש במהלך ה Session (ואין למעשה תהליך של Authentication במהלך ה Session)",
+      "לא, כי העובדה שה שה SessionID נשלח באמצעות Cookie עם HTTPonly Option מגנה עליו הן מפני גנבה באמצעות התקפת XSS, והדפדפן לא שולח את ה Cookie SessionID בבקשות HTTPS אלא רק בבקשות HTTP",
+      "לא, כי העובדה שה שה SessionID נשלח באמצעות Cookie עם HTTPonly Option מגנה עליו הן מפני גנבה באמצעות התקפת XSS והן מפני גנבה באמצעות האזנה לתעבורה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "דגל HttpOnly מגן מפני גניבה ע\"י סקריפט (XSS), אך אינו מצפין את התעבורה. אם הבקשות עוברות ב-HTTP (לא מוצפן), תוקף המאזין לרשת יכול לקרוא את ה-Cookie.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "למה שילוב ה SessionID ב URL של ה HTTP request נחשבת לא בטוחה מבחינת אבטחת מידע?",
+    "options": [
+      "כי זה עלול להישלח כחלק מה Referrer Header לשרת אחר",
+      "כי זה נשמר בד\"כ בלוג של ה Web server",
+      "כי זה נשמר ב History של הדפדפן",
+      "כי זה עלול להישלח כחלק מה Referrer Header לשרת אחר, וכן כי זה נשמר בד\"כ בלוג של ה Web server",
+      "כי זה נשמר ב History של הדפדפן, כי זה עלול להישלח כחלק מה Referrer Header לשרת אחר, וכן כי זה נשמר בד\"כ בלוג של ה Web server"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "העברת מידע רגיש ב-URL חושפת אותו במספר מקומות: היסטוריית הדפדפן, לוגים של שרתים ופרוקסי, וכותרת ה-Referer בעת גלישה לאתרים חיצוניים.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר נעשה שימוש ב HTTP Digest Authentication ,וה Web server מתבסס על ה Authorization Header בבדיקת ה Request שנשלח Challenge ולא בודק שה Challenge שמופיע ב Authorization Header הוא ה Challenge שאכן נשלח לדפדפן ע\"י ה Web Server, אזי לאיזה התקפה חשוף ה Web Server (תחת ההנחה שהסיסמא של המשתמש אינה ברת מניה)?",
+    "options": [
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת הסיסמא של המשתמש",
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת ה SessionID של המשתמש",
+      "התחזות של התוקף למשתמש החוקי באמצעות שימוש ב Authorization Header בבקשות לאותו URI Method (של הבקשה המקורית)",
+      "התחזות של התוקף למשתמש החוקי באמצעות גניבת הסיסמא של המשתמש, וכן התחזות של התוקף למשתמש החוקי באמצעות גניבת ה SessionID של המשתמש",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "אם השרת לא מאמת את ה-Nonce (האתגר), תוקף יכול לבצע Replay Attack: להשתמש שוב באותה כותרת Authorization חוקית שהוא האזין לה, כדי לגשת לאותו משאב.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה ה Header שנשלח ב HTTP Request ששולח הדפדפן ל Web server אחרי שקבל בקשת הזדהות מה web server ב HTTP Basic Authentication?",
+    "options": [
+      "Authentication: Basic Username and password encoded at base64",
+      "Authorization: Basic Username and password encoded at base64",
+      "Authentication: Basic Username Password",
+      "Authorization: Basic Username Password",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הכותרת הנכונה בתגובה לבקשת אימות היא `Authorization`, והערך ב-Basic Auth הוא המילה Basic ואחריה המחרוזת username:password מקודדת ב-Base64.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל בין HTTP Basic Authentication לבין HTTP Digest Authentication?",
+    "options": [
+      "ב HTTP Basic Authentication המשתמש מזין סיסמא סטטית וב HTTP Digest Authentication המשתמש מזין סיסמא חד פעמית",
+      "ב HTTP Basic Authentication ההזדהות נבדקת ע\"י ה Web browser וב HTTP Digest Authentication ההזדהות נבדקת ע\"י ה Web server",
+      "ב HTTP Basic Authentication ההזדהות נבדקת ע\"י ה Web server וב HTTP Digest Authentication ההזדהות נבדקת ע\"י ה Web application",
+      "ב HTTP Basic Authentication הסיסמא של המשתמש נשלחת ברשת ללא הצפנה וב HTTP Digest Authentication במקום הסיסמא נשלח ה Response שמחושב על סמך הסיסמא וה Challenge",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ההבדל המרכזי הוא שב-Basic הסיסמה עוברת ברשת (בקידוד הפיך), בעוד שב-Digest הסיסמה לא עוברת אלא רק Hash שלה עם האתגר (Response).",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון במימוש ה Challenge-Response לצורך Authentication באמצעות הצפנה אסימטרית?",
+    "options": [
+      "אין צורך לתאם מראש את האלמנט הסודי על פיו מתבצע תהליך ה Authentication, ולכן הוא מתאים למצב שבו אין Trust relationships בין ה client ובין ה server",
+      "החישוב והבדיקה של ה Response מהירים יותר",
+      "אין צורך לשמור את ה Challenge בשרת שמבצע את תהליך ה Authentication",
+      "אין הבדל בין מימוש ה Challenge-Response בהצפנה סימטרית ובין מימוש ה -Challenge Response בהצפנה אסימטרית",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "באימות אסימטרי (מפתח ציבורי/פרטי), השרת צריך רק את המפתח הציבורי של המשתמש. אין צורך להעביר סוד משותף (כמו סיסמה) מראש, מה שמקל על ניהול מפתחות במערכות פתוחות.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מממש Two Party Authentication?",
+    "options": [
+      "בהזדהות של ה Web Server בפני ה Client בפרוקול ה SSL",
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Form Based Authentication",
+      "HTTP Basic Authentication, HTTP Digest Authentication, Form Based Authentication"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כל השיטות המנויות (Basic, Digest, Form) הן מנגנוני אימות שבהם הלקוח מזדהה ישירות מול השרת (מודל שרת-לקוח, שני צדדים).",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה תפקידו של ה Salt בהגנה על הסיסמאות הסטטיות הנשמרות בקובץ Etc/password במערכות Unix/Linux",
+    "options": [
+      "הוא משמש להצפנת הקובץ בהצפנה סימטרית",
+      "הוא משתמש לביצוע Hash על ה Username",
+      "הוא משמש למניעת מניה מלאה על הסיסמא",
+      "הוא משמש למניעת Dictionary attack על הסיסמא",
+      "הוא משמש למניעת Dictionary attack על הסיסמא באמצעות טבלאות של סיסמאות מוצפנות (Pre computed dictionary attack) מוכנות מראש"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הוספת Salt אקראי לכל סיסמה לפני ה-Hashing מונעת שימוש בטבלאות Rainbow Tables (טבלאות מחושבות מראש), שכן התוקף חייב לחשב את הטבלה מחדש עבור כל Salt ספציפי.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה הדרכים למנוע התקפת SQL Injection attacks? (לא לצמצם נזק אפשרי של ההתקפה)",
+    "options": [
+      "צמצום ההרשאות של האפליקציה על פי עקרון ה Least privileges",
+      "מימוש נכון של Input validation על הקלט המתקבל מ Untrusted sources",
+      "לא לבנות שאילתות SQL ע\"י שרשור של מחרוזות קבועות וקלט אלא להשתמש ב strongly typed parametrizes query APIs",
+      "מימוש נכון של Input validation על הקלט המתקבל מ Untrusted sources, וכן לא לבנות שאילתות SQL ע\"י שרשור של מחרוזות קבועות וקלט אלא להשתמש ב strongly typed parametrizes query APIs",
+      "צמצום ההרשאות של האפליקציה על פי עקרון ה Least privileges, מימוש נכון של Input validationעל הקלט המתקבל Untrusted sources, וכן לא לבנות שאילתות SQL ע\"י שרשור של מחרוזות קבועות וקלט אלא להשתמש strongly typed parametrizes query APIs"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הגנה מקיפה (Defense in Depth) כוללת: מניעה מוחלטת ע\"י Parameterized Queries, שכבת הגנה נוספת של Input Validation, ומזעור נזק במקרה של כשל ע\"י Least Privileges.",
+    "source": "2023 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "התקפה מסוג Content Replacement Attack מנצלת את ה Vulnerability",
+    "options": [
+      "שהאפליקציה כלל אינה מבצעת Input Validation",
+      "שהאפליקציה מבצעת Input validation המבוסס על Format validation",
+      "שהאפליקציה מבצעת Input Validation המבוסס על Positive Security Logic",
+      "שהאפליקציה מבצעת Input Validation המבוסס על Negative Security Logic",
+      "שהאפליקציה אינה מבצעת Input Validation request (במלואו) לאחר ש\"הסירה\" מה Request תוכן שאותר כ\"חשוד\""
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "התקפה זו מסתמכת על כך שהמערכת מסירה תוכן זדוני (Sanitization) אך התוצאה שנשארת יוצרת מחדש ביטוי זדוני (למשל <scr<script>ipt>), והמערכת לא בודקת שוב את התוצר הסופי.",
+    "source": "2023 Moed A"
+  }
+]
