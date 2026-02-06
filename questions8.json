@@ -1,0 +1,502 @@
+[
+  {
+    "type": "mc",
+    "question": "מהי הגדרה המדויקת ביותר למתקפת ערוץ צד (Side-Channel Attack) בהקשר של מתקפת Marvin?",
+    "options": [
+      "התקפה שמנצלת חולשה מתמטית באלגוריתם ההצפנה RSA עצמו כדי לפרק את המכפלה של המספרים הראשוניים",
+      "התקפה שמנצלת שגיאות בלוגיקה העסקית של האפליקציה (כגון SQL Injection) כדי לעקוף מנגנוני אימות",
+      "התקפה שמנצלת מידע שדולף מאופן המימוש הפיזי או ההתנהגותי של המערכת (כגון זמן ביצוע, צריכת חשמל)",
+      "התקפה שמנצלת את חוסר הזהירות של המשתמש ע\"י הנדסה חברתית",
+      "התקפה המבוססת על מניעת שירות (DoS) ע\"י הצפת השרת בבקשות",
+      "תשובות א' ו-ג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "מתקפת ערוץ צד אינה תוקפת את המתמטיקה (\"break the math\") אלא את המימוש (Implementation), ומנצלת דליפות כמו זמן ביצוע (Timing), צריכת חשמל או קרינה אלקטרומגנטית.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ההבדל המרכזי בין האורקל במתקפת Bleichenbacher (1998) לבין האורקל במתקפת Marvin (2023)?",
+    "options": [
+      "Bleichenbacher משתמש ב-Implicit Oracle המבוסס על זמן, בעוד Marvin משתמש ב-Explicit Oracle המבוסס על שגיאות",
+      "Bleichenbacher משתמש ב-Explicit Oracle (הודעות שגיאה), בעוד Marvin משתמש ב-Implicit Oracle (זמן תגובה)",
+      "Bleichenbacher תוקף את הצד של הלקוח, בעוד Marvin תוקף את הצד של השרת",
+      "Bleichenbacher מנצל חולשה ב-AES, בעוד Marvin מנצל חולשה ב-RSA",
+      "אין הבדל מהותי, שתיהן משתמשות באותו סוג אורקל בדיוק",
+      "Marvin הוא דטרמיניסטי בעוד Bleichenbacher הוא הסתברותי"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בלייכנבאכר הסתמך על הודעות שגיאה מפורשות (Explicit) שהשרת החזיר. Marvin מסתמך על מדידת זמן (Implicit/Timing) מכיוון שהשרתים הפסיקו לשלוח שגיאות מפורשות.",
+    "source": "מתקפת Marvin_ ערוץ צד ו-RSA.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "אילו מבין המאפיינים הבאים מתארים נכונה את מתקפת Marvin?",
+    "options": [
+      "היא מוגדרת כמתקפה הסתברותית (Probabilistic)",
+      "היא מנצלת ערוץ צד של זמן (Timing Side-Channel)",
+      "היא מחייבת שהשרת יחזיר הודעת שגיאה ספציפית על Padding שגוי",
+      "היא מבוססת על פרוטוקול PKCS#1 v1.5",
+      "תשובות א', ב' ו-ד' נכונות",
+      "תשובות א' ו-ג' נכונות",
+      "כל התשובות נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "מתקפת Marvin היא הסתברותית (דורשת סטטיסטיקה), מבוססת על זמן (Timing), ותוקפת את פרוטוקול PKCS#1 v1.5. היא אינה דורשת הודעת שגיאה ספציפית (בניגוד לבלייכנבאכר).",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע תיקון הודעות השגיאה (החזרת הודעת שגיאה אחידה וכללית) אינו מספק הגנה מלאה מפני חשיפת מפתחות RSA כפי שהוכח ב-Marvin?",
+    "options": [
+      "כי התוקף יכול לפרוץ לשרת ולקרוא את הלוגים הפנימיים",
+      "כי עדיין קיימים הבדלי זמן מזעריים (Microseconds) בעיבוד הפנימי של הודעות תקינות מול לא תקינות",
+      "כי התוקף יכול לנחש את המפתח הפרטי ללא קשר לתגובת השרת",
+      "כי הודעת השגיאה הכללית מכילה בתוכה את המפתח המוצפן",
+      "כי תיקון הודעות השגיאה רלוונטי רק לפרוטוקול TLS 1.3"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הסתרת השגיאה מונעת אורקל מפורש, אך אם השרת מבצע חישובים שונים או עוצר מוקדם יותר במקרה של שגיאה, נוצר ערוץ צד של זמן (Timing Side-Channel) שהתוקף יכול למדוד.",
+    "source": "מתקפת Marvin_ ערוץ צד ו-RSA.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו המנגנון (Mitigation) המומלץ ביותר למניעה מוחלטת של מתקפות מסוג Marvin ו-Bleichenbacher?",
+    "options": [
+      "הוספת השהייה אקראית (Random Delay) לכל תשובה מהשרת",
+      "מעבר לשימוש בפרוטוקול TLS 1.3 שמבטל את RSA Key Exchange לטובת Diffie-Hellman",
+      "שימוש ב-PKCS#1 v1.5 עם הודעות שגיאה אחידות",
+      "החלפת מפתח ה-RSA כל 24 שעות",
+      "חסימת כתובות IP שמבצעות יותר מ-10 בקשות בדקה",
+      "תשובות א' ו-ה' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הפתרון המומלץ וההרמטי ביותר הוא להפסיק להשתמש במנגנון הפגיע (RSA Key Exchange) ולעבור ל-TLS 1.3 שמחייב שימוש ב-Diffie-Hellman להחלפת מפתחות.",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד תוקף מזהה את ה-Ciphertext הנכון (זה שפוענח עם Padding תקין) במהלך מתקפת Marvin?",
+    "options": [
+      "השרת מחזיר קוד HTTP 200 OK",
+      "השרת שולח לתוקף את המפתח הסימטרי",
+      "התוקף מזהה אנומליה סטטיסטית בזמן התגובה של השרת (למשל, עיבוד ארוך יותר)",
+      "השרת קורס (Crash) כתוצאה מהעומס",
+      "התוקף מודד את צריכת החשמל של השרת",
+      "תשובות א' ו-ד' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "במתקפת Marvin, האינדיקציה להצלחה (Padding תקין) היא שינוי מזערי בזמן העיבוד (בדרך כלל ארוך יותר עקב בדיקות נוספות), אותו מזהים באמצעות ניתוח סטטיסטי.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מהו תפקידו של ה-Padding בהצפנת RSA ומדוע הוא נחוץ?",
+    "options": [
+      "להאריך את המפתח הפרטי כדי להקשות על Brute Force",
+      "להוסיף אקראיות להודעה כדי למנוע הצפנה דטרמיניסטית של הודעות זהות או קצרות",
+      "לאפשר דחיסת נתונים יעילה יותר לפני ההצפנה",
+      "לזרז את פעולת ההצפנה במעבדים חלשים",
+      "לוודא שההודעה מגיעה מהשולח הנכון (כמו חתימה דיגיטלית)",
+      "תשובות ב' ו-ה' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ה-Padding (כמו PKCS#1 v1.5 או OAEP) מוסיף בתים אקראיים כדי להבטיח שגם אם מצפינים את אותה הודעה פעמיים (או הודעה קצרה וצפויה), התוצאה המוצפנת תהיה שונה ובטוחה.",
+    "source": "General Crypto / Marvin Context"
+  },
+  {
+    "type": "mc",
+    "question": "איזה רכיב בפרוטוקול TLS (גרסאות ישנות) הוא היעד העיקרי לתקיפה באמצעות Marvin?",
+    "options": [
+      "החתימה הדיגיטלית של ה-Certificate Authority",
+      "הצפנת המידע השוטף (Bulk Encryption) באמצעות AES",
+      "ה-RSA Key Exchange שבו הלקוח מצפין את ה-Premaster Secret",
+      "מנגנון ה-Handshake של TCP (SYN/ACK)",
+      "פונקציית ה-Hash שבודקת את שלמות ההודעה (HMAC)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "המתקפה מתמקדת בשלב החלפת המפתחות (Key Exchange), שבו ה-Premaster Secret מוצפן ב-RSA ונשלח לשרת. פענוח ערך זה מאפשר לתוקף לשבור את ההצפנה של כל השיחה.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע קשה מאוד ליישם הגנת Constant-Time (זמן קבוע) בצורה אפקטיבית בקוד?",
+    "options": [
+      "כי המפתחים לא מודעים לבעיה",
+      "כי אופטימיזציות של המעבד (CPU), המהדר (Compiler) ומערכת ההפעלה עשויות ליצור הבדלי זמן לא מכוונים",
+      "כי השעון הפנימי של השרתים אינו מדויק מספיק",
+      "כי פרוטוקול TCP/IP מוסיף השהיות אקראיות שאינן בשליטת המתכנת",
+      "תשובות ב' ו-ד' נכונות",
+      "כל התשובות נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "האתגר ב-Constant Time הוא שגם אם הקוד נראה ליניארי, רכיבי חומרה ותוכנה (כמו Branch Prediction במעבד או אופטימיזציות קומפיילר) עשויים לגרום לשינויים בזמן הריצה בהתאם לערכי הקלט.",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "מה הייתה התרומה העיקרית של מחקר ROBOT משנת 2018?",
+    "options": [
+      "המצאת אלגוריתם RSA חדש",
+      "גילוי ששרתים רבים עדיין חשופים למתקפת Bleichenbacher המקורית למרות שעברו 20 שנה",
+      "פיתוח כלי אוטומטי לפריצת סיסמאות",
+      "הוכחה שפרוטוקול TLS 1.3 אינו מאובטח",
+      "חשיפת חולשה במעבדי אינטל"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ROBOT (Return Of Bleichenbacher's Oracle Threat) הראה שיישומים מודרניים רבים עדיין הדליפו מידע על תקינות ה-Padding, והחזיר את החולשה הישנה למודעות.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "איזה סוג של תקן ריפוד (Padding Scheme) נחשב לבטוח יותר ועמיד בפני מתקפות Padding Oracle, ומהווה תחליף ל-PKCS#1 v1.5?",
+    "options": [
+      "No Padding (Raw RSA)",
+      "RSA-OAEP (Optimal Asymmetric Encryption Padding)",
+      "PKCS#7",
+      "Zero Padding",
+      "ANSI X9.23",
+      "תשובות ג' ו-ד' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "OAEP תוכנן מתמטית עם מנגנוני אקראיות ובדיקת שלמות כדי להיות עמיד בפני מתקפות Chosen Ciphertext כמו Padding Oracle.",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ה-Premaster Secret?",
+    "options": [
+      "המפתח הציבורי של השרת",
+      "סוד משותף זמני שנוצר ע\"י הלקוח ומשמש לגזירת מפתחות ההצפנה של ה-Session",
+      "החתימה הדיגיטלית על התעודה",
+      "הסיסמה של מנהל המערכת",
+      "קוד האימות של הודעת ה-MAC"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ה-Premaster Secret הוא הערך הסודי שהלקוח מייצר, מצפין ושולח לשרת. ממנו (וממספרים אקראיים נוספים) נגזרים המפתחות הסימטריים להצפנת תעבורת הנתונים.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "בטבלה המשווה בין Bleichenbacher ל-Marvin, מהו סוג ה-Oracle בכל אחת מהן?",
+    "options": [
+      "Bleichenbacher: Implicit, Marvin: Explicit",
+      "Bleichenbacher: Explicit (Error), Marvin: Implicit (Timing)",
+      "שתיהן משתמשות ב-Implicit Oracle",
+      "שתיהן משתמשות ב-Explicit Oracle",
+      "Bleichenbacher: Random, Marvin: Deterministic"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הטבלה במצגת מגדירה בבירור: Bleichenbacher השתמש באורקל מפורש (שגיאה), בעוד Marvin משתמש באורקל מרומז (זמן).",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "מהו המושג Jitter בהקשר של מתקפת Marvin?",
+    "options": [
+      "רעידות פיזיות של השרת שמשפיעות על הדיסק הקשיח",
+      "שינויים אקראיים בזמן התגובה ברשת (רעש) שמקשים על מדידת זמן העיבוד המדויק בשרת",
+      "כלי התקיפה אוטומטי שפותח ע\"י Red Hat",
+      "סוג של הצפנה קוונטית",
+      "באג במעבד שגורם לקריסת המערכת"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Jitter הוא השונות בזמני הגעת החבילות ברשת שנובעת מעומסים, ניתוב וכו'. הוא מוסיף \"רעש\" למדידה ומחייב את התוקף להשתמש בסטטיסטיקה כדי לסנן אותו ולמצוא את זמן העיבוד האמיתי.",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "מהו סדר הפעולות הכללי של מתקפת Marvin?",
+    "options": [
+      "Capture -> Decrypt -> Modify -> Send",
+      "Capture -> Modify -> Send -> Measure Time -> Statistical Analysis",
+      "Send -> Receive Error -> Guess Key -> Decrypt",
+      "Inject SQL -> Dump Database -> Crack Hash",
+      "Brute Force -> Measure Time -> Decrypt"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התהליך הוא: לכידת הצופן (Capture), יצירת וריאציות (Modify), שליחה לשרת, מדידת הזמן (Measure), וניתוח סטטיסטי לזיהוי ה-Padding התקין.",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "האם ניתן להשתמש ב-Workarounds (מעקפים) כדי להתגונן מ-Marvin ללא שדרוג קוד?",
+    "options": [
+      "לא, חייבים לשדרג את הקוד",
+      "כן, ע\"י ביטול תמיכה ב-Cipher Suites המשתמשים ב-RSA Key Exchange (המתחילים ב-TLS_RSA)",
+      "כן, ע\"י הגדלת אורך המפתח ל-4096 ביט",
+      "כן, ע\"י שימוש ב-Firewall פשוט",
+      "תשובות ב' ו-ג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "פתרון מיידי (ללא שכתוב קוד) הוא קונפיגורציה של השרת כך שיפסיק לתמוך ב-Cipher Suites הפגיעים (אלו המבצעים RSA Key Exchange) וישתמש רק ב-Diffie-Hellman.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מהי המשמעות של \"Chosen Ciphertext Attack\" (CCA) בהקשר זה?",
+    "options": [
+      "התוקף בוחר את הטקסט המקורי (Plaintext) ומקבל את הצופן",
+      "התוקף בוחר הודעות מוצפנות (Ciphertexts), שולח אותן למערכת (לאורקל), ומנתח את התגובה כדי ללמוד על התוכן",
+      "התוקף יודע את המפתח הפרטי מראש",
+      "התוקף מנסה את כל המפתחות האפשריים",
+      "התוקף משנה את קוד המקור של השרת"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "במתקפה זו התוקף מייצר (בוחר) צפנים שונים (Modified Ciphertexts) ושולח אותם לשרת כדי לראות איך הוא מגיב, ולפי זה מסיק מסקנות.",
+    "source": "General Crypto / Context"
+  },
+  {
+    "type": "mc",
+    "question": "איזה גוף פרסם את מתקפת Marvin?",
+    "options": [
+      "IBM Research",
+      "Microsoft Security Response Center",
+      "Red Hat Cryptography Team",
+      "The Apache Foundation",
+      "Cisco Talos"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "המחקר פורסם על ידי חוקרי Red Hat.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע מתקפת Marvin נחשבת למסוכנת למרות שהיא \"רק\" חושפת את ה-Premaster Secret?",
+    "options": [
+      "כי היא מאפשרת לתוקף להשתלט על השרת כ-Root",
+      "כי ה-Premaster Secret מאפשר לתוקף לחשב את מפתח ה-Session ולפענח את כל תעבורת הנתונים שהוקלטה",
+      "כי היא גורמת למחיקת בסיס הנתונים",
+      "כי היא חושפת את סיסמאות המשתמשים ב-Plaintext ישירות",
+      "תשובות א' ו-ד' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "חשיפת ה-Premaster Secret שקולה לשבירת ההצפנה כולה. התוקף יכול לייצר את מפתחות ההצפנה הסימטריים ולקרוא את כל המידע שעבר ברשת (כגון סיסמאות, פרטי אשראי וכו').",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "אילו מהפעולות הבאות עלולות להחזיר את החולשה (Reintroduce leakage) גם לאחר ניסיון תיקון?",
+    "options": [
+      "שימוש ב-OpenSSL בגרסה העדכנית ביותר",
+      "Micro-optimizations בקוד שמנסות לחסוך זמן ריצה במקרי קצה",
+      "הפעלת לוגים בשרת",
+      "שימוש במערכת הפעלה Linux",
+      "שימוש ב-RSA עם מפתח 2048 ביט",
+      "תשובות ב' ו-ג' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "אופטימיזציות קטנות (למשל, \"אם השגיאה התגלתה בהתחלה, צא מיד מהפונקציה כדי לחסוך זמן\") הן בדיוק הגורם להבדלי הזמן שמאפשרים את ההתקפה.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מהו מספר הניסיונות (Queries) המוערך הנדרש לביצוע מתקפת Marvin?",
+    "options": [
+      "ניסיון אחד בודד",
+      "כמה עשרות",
+      "אלפים עד מיליונים (תלוי ברמת הרעש ברשת)",
+      "מספר אינסופי (לא מעשי)",
+      "בדיוק 256 ניסיונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בגלל האופי הסטטיסטי והצורך להתגבר על רעשים (Jitter), המתקפה דורשת כמות גדולה מאוד של בקשות (אלפים עד מיליונים) כדי להגיע למובהקות סטטיסטית.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד מתחיל ה-Header של הודעת PKCS#1 v1.5 תקינה (לפני ה-Padding והמידע)?",
+    "options": [
+      "0x00 0x00",
+      "0x00 0x01",
+      "0x00 0x02",
+      "0x01 0x02",
+      "0xFF 0x00"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "התקן מגדיר שהבית הראשון הוא 00 והשני הוא 02 (עבור הצפנה).",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מהי המשמעות של Side-Channel (ערוץ צד)?",
+    "options": [
+      "ערוץ תקשורת משני לגיבוי",
+      "מידע שדולף מהמערכת שלא דרך הערוץ המרכזי (הפלט המתוכנן), אלא דרך תופעות לוואי פיזיקליות",
+      "פרוטוקול תקשורת צדדי בין הלקוח לשרת",
+      "כלי לפריצת סיסמאות",
+      "חולשה במערכת ההפעלה Windows"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ערוץ צד הוא ניצול של מידע ש\"דולף\" מהצד (Side), כגון כמה זמן לקח לחישוב, כמה חשמל נצרך, או צלילים שהמחשב הפיק, במקום לתקוף את האלגוריתם ישירות.",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "האם מתקפת Marvin נחשבת למתקפה שמפרת את ה\"מתמטיקה\" של RSA?",
+    "options": [
+      "כן, היא שוברת את בעיית הפירוק לגורמים",
+      "כן, היא מוכיחה ש-P=NP",
+      "לא, היא תוקפת את המימוש (Implementation) ואת הדרך שבה המערכת מטפלת במידע, לא את האלגוריתם המתמטי הטהור",
+      "לא, היא תוקפת רק את פרוטוקול TCP",
+      "כן, היא מצאה דרך לחשב את המפתח הפרטי מתוך הציבורי באופן מיידי"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "המתקפה אינה שוברת את המתמטיקה של RSA (הצפנה אסימטרית) אלא מנצלת את הדרך שבה קוד ספציפי (Implementation) רץ על חומרה ומגיב לקלטים.",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מהבאים הוא דוגמה ל-Implicit Oracle?",
+    "options": [
+      "הודעת שגיאה \"Padding Error 304\"",
+      "הודעת שגיאה \"Decryption Failed\"",
+      "החזרת דף HTML עם הטקסט \"Error\"",
+      "עיכוב של 5 מיקרו-שניות בתשובה כשה-Padding תקין",
+      "קריסת השרת ויצירת Core Dump"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הודעות שגיאה טקסטואליות הן Explicit (מפורשות). הבדלי זמן הם Implicit (מרומזים), כי המידע לא נאמר במפורש אלא משתמע מההתנהגות.",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "במסגרת מתקפת Marvin, מהו המידע שהתוקף מנסה לגלות בסופו של דבר?",
+    "options": [
+      "את כתובת ה-IP של השרת",
+      "את מערכת ההפעלה של השרת",
+      "את ה-Premaster Secret (ומשם את מפתח ה-Session)",
+      "את סיסמת ה-Root",
+      "את קוד המקור של האתר"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "המטרה הסופית היא לפענח את ה-Premaster Secret כדי שניתן יהיה לפענח את כל תעבורת ה-TLS שהוקלטה.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע שימוש ב-TLS 1.3 מונע את מתקפת Marvin?",
+    "options": [
+      "כי הוא משתמש בהצפנה קוונטית",
+      "כי הוא הסיר לחלוטין את התמיכה ב-RSA Key Exchange ומחייב שימוש ב-Ephemeral Diffie-Hellman",
+      "כי הוא מוסיף Padding אקראי לכל הודעת שגיאה",
+      "כי הוא חוסם גישה לפורט 443",
+      "הוא לא מונע את המתקפה, רק מקשה עליה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "TLS 1.3 ביצע שינוי ארכיטקטוני והסיר את המנגנון הפגיע (RSA Key Exchange) לחלוטין, מה שהופך את ההתקפה לבלתי רלוונטית בפרוטוקול זה.",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "מהי הסיבה העיקרית לכך שמתקפת Bleichenbacher חזרה בווריאציות שונות (כמו ROBOT ו-Marvin) לאורך 25 שנה?",
+    "options": [
+      "האקרים משתעממים",
+      "מערכות ישנות (Legacy) ממשיכות להיתמך, ותיקונים מלאים (כמו ביטול PKCS#1 v1.5) קשים ליישום בגלל תאימות לאחור",
+      "המתמטיקה של RSA השתנתה",
+      "המחשבים נהיו איטיים יותר",
+      "אין סיבה מיוחדת, זה צירוף מקרים"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הצורך לתמוך במערכות ישנות (Legacy Support) וקושי ליישם תיקונים הרמטיים (כמו Constant Time) משאיר פתח לחזרת החולשה במימושים שונים.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "אילו סוגי דליפות (Leakage Sources) נחשבים לערוצי צד?",
+    "options": [
+      "Timing (זמן)",
+      "Power Usage (צריכת חשמל)",
+      "EM Radiation (קרינה אלקטרומגנטית)",
+      "Acoustic (רעש אקוסטי)",
+      "כל התשובות נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "כל האפשרויות הן דוגמאות קלאסיות לערוצי צד פיזיקליים שמהם ניתן לחלץ מידע על המערכת.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מהו הצעד שמומלץ לבצע כדי לוודא שתיקון ל-Marvin אכן עובד?",
+    "options": [
+      "להריץ את הקוד ב-Debug Mode",
+      "לבצע בדיקה ניסויית (Experimental Verification) עם כלים סטטיסטיים למדידת זמנים",
+      "לשאול את המתכנת אם הוא כתב קוד בטוח",
+      "להריץ אנטי-וירוס",
+      "אין דרך לוודא"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בגלל הרגישות והדקות של הבעיה, לא ניתן להסתמך רק על סקירת קוד. חובה לבצע בדיקות אמפיריות (ניסויים ומדידות) כדי לוודא שאין דליפת זמן בפועל.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ההתקפה משפיעה על CIA Triad (Confidentiality, Integrity, Availability)?",
+    "options": [
+      "פוגעת ב-Availability (מפילה את השרת)",
+      "פוגעת ב-Integrity (משנה מידע)",
+      "פוגעת ב-Confidentiality (חושפת מידע סודי)",
+      "פוגעת בכולם באותה מידה",
+      "לא פוגעת באף אחד מהם"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "ההתקפה מאפשרת פענוח של מידע מוצפן, ולכן הפגיעה הישירה והעיקרית היא בסודיות (Confidentiality).",
+    "source": "Marvin Attack Summary"
+  },
+  {
+    "type": "mc",
+    "question": "מהי המשמעות של Homomorphic Properties ב-RSA בהקשר של המתקפה?",
+    "options": [
+      "היכולת לשנות את הצופן (Ciphertext) בצורה מתמטית כך שהתוצאה תהיה קשורה לטקסט המקורי (Plaintext) בצורה ידועה",
+      "היכולת להצפין במהירות",
+      "היכולת לחתום על הודעות",
+      "היכולת ליצור מפתחות אקראיים",
+      "תכונה שמונעת את ההתקפה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "התכונה המולטיפליקטיבית (Homomorphic) של RSA מאפשרת לתוקף לקחת צופן C, להכפיל אותו ב-s^e, ולקבל צופן חדש C' שהפענוח שלו קשור למקור: M' = M*s. זה הבסיס ליצירת הוריאציות להתקפה.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "איזה חלק בתהליך ההצפנה/פענוח בשרת גורם להבדלי הזמן?",
+    "options": [
+      "קבלת הבקשה ברשת",
+      "בדיקת תקינות ה-Padding לאחר פעולת ה-Decryption",
+      "כתיבת הלוג לדיסק",
+      "בדיקת ה-Firewall",
+      "יצירת ה-Session ID"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הקוד שבודק את מבנה ה-Padding (האם הוא מתחיל ב-00 02, האם יש מפריד 00 וכו') הוא זה שעשוי לרוץ מהר יותר או לאט יותר בהתאם למקום השגיאה.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "האם מתקפת Marvin רלוונטית למערכות המשתמשות ב-Forward Secrecy בלבד (כגון ECDHE)?",
+    "options": [
+      "כן, היא משפיעה על כל הפרוטוקולים",
+      "לא, היא רלוונטית רק למערכות המשתמשות ב-RSA Key Exchange",
+      "כן, אבל רק אם משתמשים ב-AES",
+      "תלוי בגרסת הדפדפן",
+      "כן, אם השרת הוא Linux"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מערכות המשתמשות ב-Forward Secrecy (כמו Ephemeral Diffie-Hellman) אינן משתמשות ב-RSA להעברת הסוד, ולכן אינן חשופות לחולשה הזו.",
+    "source": "Marvin Attack Presentation"
+  },
+  {
+    "type": "mc",
+    "question": "מהו הלקח העיקרי למפתחים ממתקפת Marvin?",
+    "options": [
+      "לא להשתמש בקריפטוגרפיה בכלל",
+      "להסתמך רק על הודעות שגיאה גנריות זה לא מספיק; יש להקפיד על מימוש Constant-Time או לעבור לאלגוריתמים בטוחים יותר",
+      "לכתוב את כל הקוד באסמבלי",
+      "לא להשתמש בקוד פתוח",
+      "לשדרג חומרה כל שנה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הלקח הוא שפתרונות שטחיים (כמו שינוי הודעת שגיאה) אינם עמידים בפני תוקף מתוחכם המודד זמנים, ויש צורך בפתרונות עומק (שינוי פרוטוקול או כתיבה מוקפדת של זמן קבוע).",
+    "source": "Marvin Attack Summary"
+  }
+]
