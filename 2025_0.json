@@ -1,0 +1,464 @@
+[
+  {
+    "type": "mc",
+    "question": "מקרה שבו מנהל מערכת (system administrator) מנצל הרשאה WRITE מיותרת שיש לו לקובץ משכורות של החברה על מנת לשנות את משכורתו הוא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "השינוי של הנתונים (משכורת) הוא פגיעה בשלמות המידע (Integrity). הפעולה האקטיבית של ניצול ההרשאה לביצוע השינוי מוגדרת כהתקפה (Attack), גם אם היא מתבססת על חולשה של הרשאות יתר.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "אפליקצית מובייל באנדרואיד שומרת מידע רגיש בקובץ על הדיסק של המובייל, ועל מנת לאפשר לאפליקצית מובייל אחרת לקרוא את המידע היא נותנת לקובץ הרשאת קריאה ל other/world, מצב זה הוא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות ושלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack – התקפה שפוגעת בסודיות ושלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "מתן הרשאות קריאה גורפות (World Readable) למידע רגיש היא חולשה (Vulnerability) המאפשרת לכל אפליקציה אחרת לקרוא את המידע, ובכך מסכנת את סודיות המידע (Confidentiality).",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "אכיפה Read and Write Access Control באמצעות מערכת ההפעלה ביחס למידע שנמצא על הדיסק (data-center) מאפשרת להגן על: (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "סודיות ושלמות המידע וגם למנוע שינוי במידע שיפגע בזמינות המידע",
+      "שלמות המידע",
+      "סודיות המידע",
+      "שלמות וסודיות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "בקרת גישה לקריאה (Read) מגנה על הסודיות. בקרת גישה לכתיבה (Write) מגנה על השלמות. שילוב שניהם מגן על סודיות ושלמות. (הערה: ניתן לטעון שגם א' נכון כי מניעת כתיבה מונעת השחתה שפוגעת בזמינות, אך ד' היא התשובה הישירה והקלאסית לשילוב הרשאות אלו).",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מפתח רצה לוודא בדיקה ראשונית של הקוד סודי שמזין המשתמש בדפדפן ולצורך זה הצפין באמצעות פונקצית Hash קריפטוגרפית (SHA-256) את רשימת הקודים החוקיים וצרף אותה לקוד ה Javascript בדף ה HTML המבצע את בדיקת הקוד הסודי שהזין המשתמש, האם תוקף יוכל להשתמש בתוכן זה שנשלח לדפדפן על מנת לשחזר את רשימת נקודים החוקיים?",
+    "options": [
+      "לא, כי לא מבצעים בדיקות בצד הדפדפן",
+      "לא, כי תמיד ניתן למנות על הקודים החוקיים ולהשוות לרשימת הקודים המוצפנים",
+      "כן, כי לא ניתן למנות על הקודים החוקיים",
+      "התשובה תלויה במרחב האפשרויות של הקודים החוקיים.",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "פונקציית Hash היא חד-כיוונית, אך אם מרחב הקודים הסודיים קטן (למשל קוד בן 4 ספרות), התוקף יכול לחשב בקלות את ה-Hash לכל האפשרויות (Brute Force/Enumeration) ולהשוות לרשימה שבדפדפן. אם המרחב גדול מאוד (אנטרופיה גבוהה), זה יהיה מעשית בלתי אפשרי.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר משתמשים בקריפטוגרפיה אסימטרית לשמירת סודיות ושלמות המידע אזי:",
+    "options": [
+      "המפתח הציבורי משמש להצפנה לשמירת סודיות המידע והמפתח הפרטי משמש לחתימה דיגיטלית",
+      "המפתח הציבורי משמש לחתימה דיגיטלית והמפתח הפרטי משמש להצפנה לשמירת סודיות המידע",
+      "שתי המפתחות (הפרטי והציבורי) משמשים להצפנה לשמירת סודיות המידע",
+      "שני המפתחות (הפרטי והציבורי) משמשים לחתימה דיגיטלית לשמירת שלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "לצורך סודיות: מצפינים עם המפתח הציבורי של המקבל (כך שרק המפתח הפרטי שלו יפתח). לצורך שלמות (חתימה): המקבל חותם עם המפתח הפרטי שלו (ואחרים מאמתים עם הציבורי).",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מתי חייבים להשתמש במנגנון אבטחת מידע המתבסס על Positive Security Logic? (אנא בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "כאשר צריכים להבטיח Zero false positive ואין צורך להבטיח Zero false negative",
+      "כאשר צריכים להבטיח Zero false positive ואין צורך להבטיח Zero false negative",
+      "כאשר חייבים להבטיח Zero false negative",
+      "כאשר לא ניתן להגדיר את רשימת המקרים החוקיים אותם יש לאפשר",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Positive Security Logic (רשימה לבנה) חוסמת כל מה שלא הוגדר כמותר. גישה זו חיונית כאשר רוצים למנוע לחלוטין כניסה של תעבורה זדונית לא מוכרת (Zero False Negative - כלומר, שלא תהיה התקפה שתחמוק מהזיהוי), במחיר של אפשרות לחסימת תעבורה לגיטימית (False Positive).",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות לא ניתן למנוע ע\"י Input Validation המתבסס על Format validation (כלומר בדיקה שהפורמט של הקלט תקין)?",
+    "options": [
+      "התקפת XSS",
+      "התקפת XSRF/CSRF",
+      "התקפת Cookie Poisoning",
+      "התקפת Cookie Poisoning והתקפת XSRF/CSRF",
+      "התקפת XSRF/CSRF,התקפת Cookie Poisoning והתקפת XSS"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "בדיקת פורמט יכולה למנוע XSS (חסימת תווים כמו < >). לעומת זאת, CSRF משתמשת בבקשות בפורמט חוקי לחלוטין (אך מזויפות), ו-Cookie Poisoning יכולה לכלול שינוי ערכים לערכים חוקיים אחרים מבחינת פורמט.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות מטרתה לשלוח לאפליקציה פקודות בשמו של המותקף (כך שהאפליקציה תחשוב שבקשות ה HTTP נשלחו ע\"י המותקף)?",
+    "options": [
+      "הן התקפת XSS והן התקפת CSRF",
+      "הן התקפת XSS והן התקפת SQL Injection",
+      "הן התקפת CSRF והן התקפת SQL Injection",
+      "הן התקפת CSRF והן התקפת Session Hijacking",
+      "הן התקפת SQL Injection והן התקפת Session Hijacking"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "התקפת CSRF גורמת לדפדפן לשלוח בקשה בשם המשתמש. התקפת Session Hijacking מאפשרת לתוקף להשתמש בזהות המשתמש לשליחת בקשות. בשני המקרים הפעולות מבוצעות בשם המותקף.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מתי ולמה מומלץ משיקולי אבטחת מידע לפרק את האפליקציה לרכיבים שכל אחד מהם רץ כתהליך נפרד?",
+    "options": [
+      "כאשר לכל רכיב קלט שונה",
+      "כאשר לכל רכיב פונקציונאליות שונה",
+      "כאשר לכל רכיב יש דרישות Input validation שונות",
+      "כאשר לכל רכיב נדרשות הרשאות שונות לגישה ל file system של השרת עליו רצה האפליקציה",
+      "כאשר לכל רכיב פונקציונאליות שונה וכן כאשר לכל רכיב יש דרישות Input validation שונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הרצה כתהליכים נפרדים מאפשרת להקצות לכל תהליך User ID שונה במערכת ההפעלה, ובכך לאכוף הרשאות גישה שונות לקבצים ולמשאבים (Least Privilege) ברמת מערכת ההפעלה.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן להקטין את הסיכון למערכת (כלומר הן את ה Attack surface והן את הנזק האפשרי) כתוצאה מניצול Unknown vulnerability (כלומר פגיעות שיידועה רק לתוקף) ב Service ע\"י תוקף?",
+    "options": [
+      "מקטינים את ההרשאות של ה Services למינימום האפשרי",
+      "מאפשרים גישה ל Service רק לאותם גורמים/תהליכים/ משתמשים שלהם נדרשת גישה ל Service",
+      "אין אפשרות להקטין את הנזק כתוצאה מניצול Unknown vulnerability שקיים ב Service",
+      "עובדים עם הגירסא העדכנית ביותר של היצרן עבור ה Service",
+      "מקטינים את ההרשאות של ה Services למינימום האפשרי ומאפשרים גישה ל Service רק לאותם גורמים/תהליכים/ משתמשים שלהם נדרשת גישה ל Service"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "שילוב של צמצום הרשאות (Least Privilege - מקטין נזק) והגבלת גישה רשתית/תהליכית (מקטין Attack Surface) הוא ההגנה הטובה ביותר (Defense in Depth) מפני חולשות לא ידועות.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר מתבצע Client Authentication בפני השרת באמצעות מנגנון ה-Challenge Response אסימטרי (המבוסס על שימוש בקריפטוגרפיה אסימטרית), אזי אפשר לממש את המנגנון עי\"כ שה Client מצפין את ה Challenge באמצעות:",
+    "options": [
+      "מפתח סימטרי המוסכם על ה Client והשרת",
+      "המפתח הציבורי של ה Client",
+      "המפתח הציבורי של השרת",
+      "המפתח הפרטי של ה Client",
+      "המפתח הפרטי של השרת"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "כדי להוכיח זהות (Authentication), הלקוח חייב להשתמש במפתח שרק הוא מחזיק בו - המפתח הפרטי שלו. הצפנה/חתימה על האתגר בעזרת המפתח הפרטי מאפשרת לשרת לוודא את הזהות בעזרת המפתח הציבורי.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תהליכי Authentication נעשה שימוש ב Challenge-Response?",
+    "options": [
+      "HTTP Basic Authentication ו HTTP Digest Authentication",
+      "HTTP Digest Authentication ו Form based Authentication",
+      "HTTP Digest Authentication ו Certificated based Authentication",
+      "Certificated based Authentication בלבד",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "פרוטוקול HTTP Digest משתמש ב-Nonce (אתגר). אימות מבוסס תעודות (SSL/TLS Client Auth) משתמש בחתימה על אתגר במסגרת הלחיצת יד. Basic ו-Form שולחים סיסמה ולא משתמשים באתגר.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "ב FORM based Authentication מי בודק את שם המשתמש והסיסמא שהזין המשתמש?",
+    "options": [
+      "ה Web application או ה Application server",
+      "הדפדפן (Web browser)",
+      "המימוש של פרוטוקול ה HTTP ב Web server",
+      "המימוש של פרוטוקול ה SSL ב Web server",
+      "מערכת ההפעלה של השרת עליו רק ה Web server"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ב-Form Based, הטופס נשלח כ-POST לאפליקציה, והקוד של האפליקציה (או שרת האפליקציות) הוא שמבצע את האימות מול בסיס הנתונים. (בשונה מ-Basic/Digest שמטופלים ע\"י שרת ה-Web עצמו).",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה תפקידו של ה Salt בהגנה על הסיסמאות הסטטיות הנשמרות בקובץ etc/password במערכות Unix/Linux?",
+    "options": [
+      "הוא משמש למניעת מניה מלאה על הסיסמא המוצפנת באמצעות פונקצית HASH",
+      "הוא משמש למניעת מניה מלאה על הסיסמא באמצעות טבלאות של סיסמאות HASHED מוכנות מראש (Pre computed dictionary attack)",
+      "הוא מונע מצב שבו ניתן יהיה לאתר משתמשים שבחרו סיסמאות זהות",
+      "הוא משמש למניעת מניה מלאה על הסיסמא המוצפנת באמצעות פונקצית HASH וכן למניעת מניה מלאה על הסיסמא באמצעות טבלאות של סיסמאות HASHED מוכנות מראש (Pre computed dictionary attack)",
+      "הוא משמש למניעת מניה מלאה על הסיסמא באמצעות טבלאות של סיסמאות HASHED מוכנות מראש (Pre computed dictionary attack) וכן הוא מונע מצב שבו ניתן יהיה לאתר משתמשים שבחרו סיסמאות זהות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ה-Salt (תוספת אקראית לסיסמה) מבטיח שגם אם לשני משתמשים יש אותה סיסמה, ה-Hash יהיה שונה (מונע זיהוי משתמשים עם סיסמאות זהות). כמו כן, הוא מחייב חישוב מחדש של טבלאות Rainbow לכל Salt בנפרד, ובכך מונע שימוש בטבלאות מוכנות מראש.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין הטענות הבאות ביחס לניהול משתמשים אינה נכונה?",
+    "options": [
+      "מערכת Authentication מרכזית (SSO) מקלה על המשתמש",
+      "פיזור הסיסמאות בהרבה מערכות יוצר בעיית אבטחת מידע",
+      "עדיף שכל מערכת תנהל את תהליך ה Authentication של המשתמשים שלה בעצמה",
+      "ניהול משתמשים והרשאות מרכזי מאפשרת אבטחת מידע טובה יותר",
+      "אף תשובה אינה נכונה (כלומר כל שאר התשובות בשאלה נכונות)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הטענה השגויה היא שעדיף ניהול מבוזר. הגישה המקובלת באבטחת מידע היא שניהול מרכזי (SSO) עדיף הן מבחינת חווית משתמש והן מבחינת אבטחה (בקרה, אכיפת מדיניות סיסמאות, ביטול גישה מהיר).",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "למה שליחת ה SessionID מהדפדפן אל ה Web-server ב URL של ה HTTP request נחשבת לא בטוחה מבחינת אבטחת מידע?",
+    "options": [
+      "כי זה לא נשלח אוטומטית ע\"י הדפדפן",
+      "כי זה חשוף בשורת ה URL שנשמרת ב history של הדפדפן",
+      "כי זה עלול להישלח כחלק מה Referrer Header",
+      "כי זה חשוף בשורת ה URL שנשמרת ב history של הדפדפן וכן כי זה עלול להישלח כחלק מה Referrer Header",
+      "כי זה לא נשלח אוטומטית ע\"י הדפדפן וכן כי זה חשוף בשורת ה URL שנשמרת ב history של הדפדפן"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "מידע ב-URL (כגון פרמטרים של GET) נשמר בהיסטוריית הדפדפן, בלוגים של שרתים ופרוקסי, ומועבר לאתרים חיצוניים דרך כותרת ה-Referer, ולכן הוא חשוף לדליפה.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "למשתמש ב Gmail היה Session פעיל מול Gmail., כעבור פרק זמן מסוים (כאשר ה Gmail פתוח כל הזמן ונעשה בו שימוש) המשתמש נדרש לבצע Authentication,מה היה/היו Cookie Options שאותו שלח Gmail לדפדפן של המשתמש ב session הראשון?",
+    "options": [
+      "Age",
+      "Discard ו Max-Age",
+      "Persistent",
+      "Session",
+      "Discard או Max-Age"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מכיוון שהמשתמש נותק למרות שהדפדפן נשאר פתוח, סימן שהוגדר זמן תפוגה (Max-Age). השימוש ב-Discard (או היעדר Expires/Max-Age) מציין מחיקה בסגירת דפדפן. שילוב שניהם (או Max-Age בלבד עם ערך קצר) גורם לתפוגה בזמן קצוב.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מטרת השימוש ב Cookie option HTTP-Only עבור ה Cookie המשמש להעברת ה Session ID היא למנוע:",
+    "options": [
+      "התקפת CSRF על האפליקציה באמצעות הדפדפן",
+      "גניבת ה Session ID שנשלח ב cookie ע\"י התקפת XSS",
+      "גניבת ה Session ID שנשלח ב cookie ע\"י האזנה ל HTTP Requests and/or Responses",
+      "מניה או ניחוש של ה Session ID שנשלח ב cookie",
+      "התקפת Cookie Poisoning על הערך של ה Session ID"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "דגל HttpOnly מורה לדפדפן למנוע גישה ל-Cookie דרך סקריפטים (JavaScript), ובכך מסכל את היכולת של תוקף XSS לגנוב את ה-Cookie.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע חתימה דיגיטלית סימטרית (MAC) מספיקה לצורך מניעת Cookie Poisoning?",
+    "options": [
+      "כי החותם הוא הבודק",
+      "כי לא צריך חתימה דיגיטלית חזקה",
+      "כי חייבים חתימה דיגיטלית מהירה",
+      "כי הבודק לא יודע את המפתח הציבורי לצורך בדיקת החתימה",
+      "כי לא צריך חתימה דיגיטלית חזקה וכן כי חייבים חתימה דיגיטלית מהירה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ב-Cookie Poisoning, המטרה היא למנוע מהמשתמש לשנות את העוגייה. מכיוון שהשרת הוא זה שמנפיק את העוגייה והוא זה שמקבל אותה חזרה ובודק אותה, אין צורך במפתח ציבורי/פרטי. השרת חולק סוד עם עצמו.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מתי אין צורך לבצע Input Validation בשרת",
+    "options": [
+      "עבור ערכ(ים) שהמשתמש אמור להקליד",
+      "עבור ערכ(ים) משתמשים שהמשתמש לבחור מתוך סט ערכים אפשריים",
+      "עבור ערכ(ים) שלא מציגים למשתמש (Hidden parameter)",
+      "אין מצב כזה, חייבים לבצע Input Validation על כל הערכים המתקבלים מה Client",
+      "עבור ערכ(ים) שנשלחים ב cookie header"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "כל קלט שמגיע מה-Client (כולל שדות מוסתרים, עוגיות, כותרות, בחירות מתפריט) נחשב Untrusted וחייב לעבור ולידציה בשרת, כיוון שהתוקף שולט בצד הלקוח ויכול לשנות הכל.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "בהנחה שניתן להגביל את תוכנו של שדה קלט לאותיות וספרות בלבד, וכן להגביל את אורכו של הקלט ל 20 תווים, ובהנחה שהאפליקציה בודקת בשרת את תוכן הקלט שהוא אכן אלפא-נומרי ושאורכו עד 20 תווים. לאיזה התקפה חשופה האפליקציה?",
+    "options": [
+      "SQL Injection",
+      "OS/Command Injection",
+      "Forceful Browsing",
+      "XSS בו האפליקציה משלבת את הקלט בתוכנו של אלמנט HTML בדף ה HTML המוחזר למשתמש",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הגבלה לתווים אלפא-נומריים בלבד מונעת ביעילות SQL Injection, OS Injection ו-XSS, שכן כל ההתקפות הללו דורשות תווים מיוחדים (כגון ' ; < >) כדי לפעול. Forceful Browsing לא קשור לתוכן הקלט בשדה אלא לגישה ל-URL.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "לצורך איזה מנגנון אבטחת מידע יש צורך ב canocalization ?",
+    "options": [
+      "Input validation that is based on positive security logic",
+      "Input validation that is based on negative security logic",
+      "Access-control",
+      "Digital Signature",
+      "Input validation that is based on positive security logic וכן Input validation that is based on negative security logic"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Canonicalization (הבאת הקלט לצורה תקנית אחידה) קריטי במיוחד עבור Negative Security Logic (חסימת תבניות אסורות), כדי למנוע מתוקפים לעקוף את החסימה באמצעות קידודים שונים (Evasion) של אותה התקפה.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא ה Vulnerability אותו מנצלת התקפה מסוג Content Replacement Attack?",
+    "options": [
+      "שהאפליקציה לא מבצעת Canocalization על הקלט לפני שהיא מבצעת Input validation",
+      "שהאפליקציה לא מטפלת נכון בחלק מסוגי הקידוד השונים האפשריים ב HTML, ומבצעת המרות לא נכונות של התוכן הנבדק",
+      "שהאפליקציה מבצעת Input Validation המבוסס על Positive Security Logic",
+      "שהאפליקציה אינה מבצעת Input Validation חוזר לתוכן של ה request לאחר ש\"הסירה\" מה Request תוכן שאותר כ\"חשוד\"",
+      "שהתבניות בהם משתמש האפליקציה לאיתור תכנים חשודים אינם תואמים לסוג הקידוד של תוכן Request"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "התקפה זו מתרחשת כאשר מנגנון הסינון מסיר טקסט זדוני (למשל 'script') אך בכך גורם לטקסט הנותר להתחבר וליצור מחדש את הטקסט הזדוני (למשל 'scrscriptipt' -> 'script'), והמערכת לא בודקת שוב את התוצאה הסופית.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "על מנת להבטיח שלא בוצע Hidden Parameter Tampering נדרש בצד השרת המקבל את בקשת ה HTTP:",
+    "options": [
+      "לבדוק שהערך שהתקבל בבקשת ה HTTP הוא אחד מהערכים (או הערך) שנשלח בדף ה Web לדפדפן ע\"י השרת",
+      "ללבצע Input validation based on Negative security logic על ערך הפרמטר המתקבל בבקשת ה HTTP",
+      "לבצע Format validation על ערך הפרמטר המתקבל בבקשת ה HTTP",
+      "לבדוק שהערך של הפרמטר אינו כולל תווים שאופיניים להתקפת SQL Injection או להתקפת XSS",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "כדי למנוע מניפולציה על פרמטרים נסתרים (כמו מחיר מוצר), השרת חייב לוודא שהערך החוזר מהלקוח תואם לערך המקורי שהשרת שלח או מחזיק ב-Session, ולא להסתמך על מה שהלקוח שלח.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא ה Vulnerability שמאפשר את התקפת ה DOM based XSS שתיארנו בהרצאה?",
+    "options": [
+      "חוסר ב Input validation בקוד האפליקציה שרץ ב Web server",
+      "חוסר ב Output encoding בקוד האפליקציה שרץ ב Web server",
+      "חוסר ב Input validation / Output encoding בקוד ה JavaScript של האפליקציה שרץ בדפדפן",
+      "חוסר ב Input validation / Output encoding בקוד האפליקציה שרץ ב Web server",
+      "SessionID מועבר בגלוי ברשת"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "DOM Based XSS הוא חולשה בצד הלקוח (Client-side), הנובעת מכך שקוד ה-JavaScript בדפדפן מעבד מידע לא בטוח (Source) ומעביר אותו לביצוע (Sink) ללא בדיקה או קידוד.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה מנגנון אבטחת מידע יחודי למניעת התקפת SQL Injection attacks? (לא לצמצם נזק אפשרי של ההתקפה)",
+    "options": [
+      "צמצום ההרשאות של האפליקציה על פי עקרון ה Least privileges",
+      "מימוש נכון של Input validation על הקלט המתקבל מ Untrusted sources",
+      "להשתמש ב strongly typed parametrizes query APIs (ולא לבנות שאילתות SQL ע\"י שרשור של מחרוזות קבועות וקלט)",
+      "Output Encoding",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "שימוש בשאילתות פרמטריות (Prepared Statements) הוא הפתרון המניעתי היעיל ביותר ל-SQL Injection, כיוון שהוא מפריד בין הקוד לבין הנתונים ברמת המפרש.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות אין קשר ישיר בין התוקף למותקף (אלא רק באמצעות ה Web application ? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM-Based XSS",
+      "DOM-Based XSS ו-Reflected XSS",
+      "Stored XSS ו-Reflected XSS"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ב-Stored XSS התוקף שם את המלכודת באתר (למשל תגובה בפורום) ומחכה. הקורבנות מגיעים לאתר באופן בלתי תלוי ונתקפים. ב-Reflected/DOM התוקף צריך לשלוח לינק לקורבן (פישינג).",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון ה CSP ומנגנון ה output encoding?",
+    "options": [
+      "שני המנגנונים משלימים זה את זה, כאשר מנגנון ה output encoding בא למנוע את ההתקפה ומנגנון ה CSP בא לצמצם את הנזק שההתקפה יכלה לגרום",
+      "שני המנגנונים משלימים זה את זה, כאשר מנגנון ה output encoding בא לצמצם את הנזק שההתקפה יכלה לגרום ומנגנון ה CSP בא למנוע את ההתקפה",
+      "שני המנגנונים באים למנוע את ההתקפה",
+      "שני המנגנונים באים לצמצם את הנזק שההתקפה יכולה לגרום",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Output Encoding הוא קו ההגנה הראשון שמונע את הזרקת הקוד (Prevention). CSP הוא שכבת הגנה נוספת (Defense in Depth) שמגבילה את יכולת הקוד לרוץ או לשדר מידע אם ההזרקה הצליחה (Mitigation/Damage control).",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "מה מטרתה של התקפת CSRF?",
+    "options": [
+      "לגנוב את הסיסמא של המשתמש ולשלוח אותה לתוקף",
+      "לגנוב את ה Session ID של המשתמש ולשלוח אותו לתוקף",
+      "לבצע Cookie Poisoning",
+      "לשלוח בקשת HTTP בשמו של המשתמש ללא ידיעתו",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "CSRF גורמת לדפדפן המשתמש לשלוח בקשה לשרת, תוך ניצול ה-Session הקיים, כך שהשרת מבצע פעולה בשם המשתמש.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מנגנון אבטחת מידע מאפשר למנוע התקפת XSRF/CSRF?",
+    "options": [
+      "דרישה למעורבות אנושית לאישור הפעולה אותה מתבקש השרת לבצע, לדוגמא ע\"י מנגנון של Capcha",
+      "Client-side Input Validation",
+      "Server-Side Input Validation",
+      "Output Encoding",
+      "Server-Side Input Validation או Client-side Input Validation."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "מנגנון CAPTCHA מחייב אינטראקציה אנושית שהסקריפט האוטומטי של התוקף לא יכול לבצע, ולכן הוא מונע ביעילות CSRF (לצד שימוש ב-Anti-CSRF Tokens).",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר משתמש עוזב את הארגון ויש לבטל את הרשאות Access Control שלו לאוביקטים במערכת אזי:",
+    "options": [
+      "יותר קל לבצע זאת במודל ה ACL מאשר במודל ה Capabilities",
+      "יותר קשה לבצע זאת במודל ה ACL מאשר במודל Capabilities",
+      "בשני המודלים זה קל יחסית לביצוע",
+      "בשני המודלים זה קשה לביצוע",
+      "זה תלוי לכמה Objects היו לו הרשאות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "במודל Capabilities, ההרשאות נמצאות אצל המשתמש (כמו מפתח), ולכן קל לבטלן על ידי ביטול המפתח. במודל ACL, ההרשאות רשומות על כל אובייקט בנפרד, ולכן צריך לעבור על כל האובייקטים במערכת כדי להסיר את המשתמש, מה שהופך את זה לקשה יותר.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין המודלים הבאים ניהול ההרשאות הוא מבוזר (כל בעל Object מנהל את ההרשאות ביחס לאותו ה Object)?",
+    "options": [
+      "MAC",
+      "RBAC",
+      "RBAC",
+      "DAC",
+      "ACL בשילוב עם DAC"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב-Discretionary Access Control (DAC), הבעלים של האובייקט מחליט מי רשאי לגשת אליו (ניהול מבוזר). ב-MAC הניהול מרכזי.",
+    "source": "16.2.2025 Moed A"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המשפטים הבאים הוא נכון ביותר:",
+    "options": [
+      "בישום של מערכת Access-Control אנו מעדיפים שקבלת החלטות ה Access Control תהיה מרכזית ומיושמת בקוד של ה PEP",
+      "בישום של מערכת Access-Control אנו מעדיפים שקבלת החלטות ה Access Control תהיה מרכזית ומיושמת בקוד של ה PDP",
+      "ישום של מערכת Access-Control אנו מעדיפים שקבלת החלטות ה Access Control תהיה מבוזרת ומיושמת בקוד של ה PDP",
+      "בישום של מערכת Access-Control אנו מעדיפים שקבלת החלטות ה Access Control תהיה מרכזית ומיושמת באמצעות הגדרות (Declarative) בקובץ מדיניות אבטחת מידע שמולו עובד ה PDP",
+      "ישום של מערכת Access-Control אנו מעדיפים שקבלת החלטות ה Access Control תהיה מבוזרת ומיושמת באמצעות הגדרות (Declarative) בקובץ מדיניות אבטחת מידע שמולו עובד ה PEP"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ארכיטקטורת אבטחה טובה מפרידה בין אכיפה (PEP) להחלטה (PDP). ההחלטה צריכה להיות מרכזית ומבוססת על מדיניות הצהרתית (Declarative Policy) ולא hard-coded, כדי לאפשר גמישות וניהול תקין.",
+    "source": "16.2.2025 Moed A"
+  }
+]

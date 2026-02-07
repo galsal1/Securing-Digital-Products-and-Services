@@ -1,0 +1,366 @@
+[
+  {
+    "type": "mc",
+    "question": "מה ההבדל בין חתימה דיגיטלית סימטרית לחתימה דיגיטלית אסימטרית? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "שחתימה דיגיטלית סימטרית מספקת רק Data Integrity וחתימה דיגיטלית אסימטרית מספקת Data Integrity, Authenticity",
+      "שחתימה דיגיטלית סימטרית מספקת רק Data Integrity וחתימה דיגיטלית אסימטרית מספקת Authenticity, Non-repudiation",
+      "שחתימה דיגיטלית סימטרית מספקת Data Integrity, Authenticity וחתימה דיגיטלית אסימטרית Data Integrity, Non-repudiation",
+      "שחתימה דיגיטלית סימטרית מספקת Data Integrity, Authenticity וחתימה דיגיטלית אסימטרית מספקת Data Integrity, Authenticity, Non-repudiation",
+      "אין הבדל בין חתימה דיגיטלית סימטרית לחתימה דיגיטלית אסימטרית מבחינת היכולות שהם מספקות ושני סוגי החתימות מספקים Data Integrity, Authenticity, Non-repudiation"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "חתימה סימטרית (MAC) מספקת שלמות ואימות (בין הצדדים המשתפים מפתח), אך אינה מספקת אי-התכחשות (Non-repudiation) כיוון שהמפתח משותף. חתימה אסימטרית (מבוססת מפתח פרטי) מספקת גם אי-התכחשות. (הערה: בטבלת התשובות שאלה זו סומנה כ-T/פסולה, אך זו התשובה הנכונה תיאורטית).",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות לא ניתן למנוע ע\"י Input Validation המתבסס על Format validation (כלומר בדיקה שהפורמט של הקלט תקין)?",
+    "options": [
+      "התקפת Session Hijacking",
+      "התקפת XSRF/CSRF",
+      "Cookie Poisoning",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "בדיקת פורמט (Format Validation) אינה מונעת התקפות שבהן הקלט תקין מבחינת פורמט אך זדוני בהקשר (כגון Session ID גנוב אך תקין, בקשת CSRF תקינה, או שינוי ערך Cookie לערך אחר חוקי).",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה התקפה ניתן יהיה לבצע על HTTP Basic Authentication אפילו אם הסיסמא תהיה מוצפנת באמצעות אלגוריתם AES?",
+    "options": [
+      "לשחזר את הסיסמא של המשתמש",
+      "לבצע התקפת Replay של בקשת ה HTTP",
+      "להשתמש ב Authorization Header כדי לשלוח HTTP Request אחר בשם המשתמש",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "הצפנה (כמו AES) מונעת את שחזור הסיסמה (A), אך מכיוון שכותרת ה-Authorization קבועה (סטטית) עבור אותו משתמש וסיסמה, תוקף יכול להעתיק אותה (Replay) או להשתמש בה לבקשות אחרות (Reuse) כל עוד השרת מקבל אותה.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה התקפות יכול ניהול הרשאות של ה web application/web server על פי מדיניות של Least privileges לסייע למזער את הנזק?",
+    "options": [
+      "Forceful Browsing",
+      "SQL Injection",
+      "OS/Command Injection",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "עקרון המידור (Least Privilege) מפחית את הנזק בכל המקרים: מונע גישה לדפים לא מורשים (Forceful Browsing), מגביל את הפעולות בבסיס הנתונים (SQLi), ומגביל את הפקודות שניתן להריץ במערכת ההפעלה (OS Injection).",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "Phishing מנצלת התקפת Vulnerability איזה:",
+    "options": [
+      "את העובדה שהאפליקציה לא מבצעת Authentication באופן תקין",
+      "את העובדה שהאפליקציה לא מיישמת את העקרון של Least privileges",
+      "את חוסר ההבנה של המשתמש והאמון של המשתמש בהודעות דואל (Social Hacking)",
+      "את העובדה שהאפליקציה שומרת את הסיסמאות בגלוי בבסיס הנתונים שלה",
+      "את העובדה שהאפליקציה רצה על שרת שלא הוקשח כהלכה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "בדרך כלל Phishing מוגדר כניצול הגורם האנושי (תשובה ג'). עם זאת, לפי טבלת התשובות הרשמית במבחן זה, התשובה הנכונה היא א'. ייתכן שהכוונה היא לכך שהיעדר אימות הדדי (Mutual Auth) מאפשר התחזות לשרת.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה מבין הטענות הבאות אינו חסרון של זיהוי התקפות המבוסס על תבניות של התקפות ידועות (Patterns and Signatures)?",
+    "options": [
+      "היא דורשת עדכון תמידי של תבניות ההתקפות",
+      "היא דורשת הגדרה מראש של התכנים החוקיים",
+      "היא חשופה ל Zero day attack",
+      "היא חשופה לזיהוי שגוי של תכנים חוקיים כהתקפה (False positive)",
+      "היא חשופה למצבים בהם היא אינה מזהה את ההתקפה (False Negative)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הצורך להגדיר מראש תכנים חוקיים (Whitelisting) הוא מאפיין של Positive Security Logic, ולא של שיטת החתימות (Negative Security Logic). לכן, זהו *אינו* חיסרון של שיטת החתימות (זה פשוט לא רלוונטי אליה).",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה מאפשרת גנבת ה SessionID לתוקף? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "לעקוף את מנגנון ה Authentication ולהתחזות למשתמש לו שייך ה session",
+      "לעקוף את מנגנון ה Authorization ולבצע פעולות אותם רשאי המשתמש לו שייך ה session לבצע",
+      "לעקוף את מנגנון ה Auditing כי הפעולות נרשמות על שמו של המשתמש לו שייך ה session",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ברגע שתוקף מחזיק ב-SessionID, המערכת מזהה אותו כמשתמש החוקי לכל דבר ועניין. הוא עוקף את האימות, מקבל את הרשאות המשתמש, ופעולותיו נרשמות תחת שם המשתמש.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר רוצים לשלוח ב Request שנשלח ב HTTPS מידע סודי שלא רוצים יחשף לצד שלישי (שאינו המשתמש עצמו) שיש לו גישה לדפדפן של המשתמש, מה המיקום הכי פחות בטוח מבחינת אבטחת מידע? (בחר את התשובה המדויקת ביותר)",
+    "options": [
+      "QueryString",
+      "POST Data",
+      "Cookie",
+      "אין הבדל בין POST data Query string ושניהם פחות בטוחים באותה מידה לעומת ה Cookie",
+      "אין הבדל בין המיקומים השונים ב Request"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "ה-QueryString (חלק מה-URL) נשמר בהיסטוריית הדפדפן, ולעיתים קרובות גם בלוגים של שרתי Proxy ובכותרת ה-Referer, ולכן הוא המיקום החשוף ביותר למידע רגיש, גם ב-HTTPS.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "במימוש של Challenge-Response (בו השרת מאמת את זהות המשתמש) המבוסס על הצפנה אסימטרית אזי המשתמש שולח לשרת כ response את:",
+    "options": [
+      "ה Challenge מוצפן ע\"י המפתח הציבורי של המשתמש",
+      "ה Challenge מוצפן ע\"י המפתח הפרטי של המשתמש",
+      "ה Challenge מוצפן ע\"י המפתח הציבורי של השרת",
+      "ה Challenge מוצפן ע\"י הסיסמא המוסכמת על ה Client והשרת",
+      "את תוצאת ה Cryptographic Hash על ה Challenge המחושב על ה Client והסיסמא המוסכמת בין ה והשרת, כשהוא מוצפן במפתח הציבורי של המשתמש"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "כדי להוכיח זהות במערכת אסימטרית, המשתמש חותם על האתגר (Challenge) באמצעות המפתח הפרטי שלו (שנמצא רק אצלו). פעולה זו שקולה להצפנה עם המפתח הפרטי.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היחס בין מנגנון הצפנת המידע ומנגנון Write Access control ביחס למידע נייח?",
+    "options": [
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא למנוע את השינוי הלא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע ומטרת שניהם היא לאפשר לאתר שבוצע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת ההצפנה היא לאפשר לאתר שינוי לא מורשה שנעשה במידע ומטרת ה Write access control הוא למנוע שינוי לא מורשה במידע",
+      "שניהם באים לשמור על שלמות המידע כאשר מטרת ההצפנה היא למנוע שינוי לא מורשה במידע ומטרת ה Write access control היא לאתר שינוי לא מורשה שנעשה במידע",
+      "מנגנון ההצפנה בא לשמור על סודיות המידע ומנגנון ה Write Access control בא לשמור על שלמות המידע"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הצפנה נועדה להבטיח סודיות (Confidentiality). בקרת גישה לכתיבה (Write Access Control) נועדה למנוע שינויים לא מורשים ובכך להבטיח שלמות (Integrity).",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה היתרון מבחינת אבטחת מידע בכך שה HTTP Digest Authentication Response מחושב על סמך MD5(username:realm:password)?",
+    "options": [
+      "השרת לא צריך לשמור את הסיסמא של המשתמש בגלוי אלא רק את תוצאת ה Hash וזה עדיף מבחינת אבטחת המידע כי כך הסיסמא לא נשמרת בגלוי בשרת",
+      "השרת שומר את הסיסמא של המשתמש יחד עם שם המשתמש",
+      "שגם שם המשתמש ולא רק הסיסמא משולבים בחישוב ה Response",
+      "אין יתרון מבחינת אבטחת מידע, רק מבחינה חישובית",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "המבנה של Digest Auth מאפשר לשרת לשמור רק את ה-Hash (A1) ולא את הסיסמה הגלויה (Cleartext), מה שמגן על הסיסמאות במקרה של פריצה למסד הנתונים של השרת.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה שיטת/שיטות Authentication נעשה שימוש בחתימה דיגיטלית אסימטרית?",
+    "options": [
+      "HTTP Basic Authentication",
+      "HTTP Digest Authentication",
+      "Certificate based Authentication",
+      "Form Based Authentication",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "אימות מבוסס תעודות (Certificate Based) משתמש במפתחות ציבוריים/פרטיים ובחתימות דיגיטליות לצורך אימות הזהות. שאר השיטות מבוססות על סוד משותף (סיסמה).",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "כאשר ב Set-cookie header של ה Options מופיע רק Max-age אזי:",
+    "options": [
+      "ה Cookie שיווצר יהיה Persistent Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "ה Cookie שיווצר יהיה Session Cookie שימחק כעבור פרק הזמן שמוגדר ב Max-age",
+      "ה Cookie שיווצר יהיה Session Cookie שימחק רק כאשר הדפדפן יסגר ע\"י המשתמש",
+      "ה Cookie שיווצר יהיה Persistent Cookie שימחק או כעבור פרק הזמן שמוגדר ב Max-age או כאשר הדפדפן יסגר ע\"י המשתמש, המאוחר מבין שניהם",
+      "ה Cookie שיווצר יהיה Session Cookie שימחק או כעבור פרק הזמן שמוגדר ב Max-age או כאשר הדפדפן יסגר ע\"י המשתמש, המוקדם מבין שניהם"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "הגדרה של Max-Age (או Expires) הופכת את העוגייה ל-Persistent (קבועה), כך שהיא נשמרת בדיסק ונמחקת רק לאחר שחולף הזמן שהוגדר.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "שמירת קובץ על הדיסק בשרת שיש להגן הסודיות והשלמות שלו, כשהוא לא מוצפן וללא חתימה דיגיטלית על הקובץ, אבל כאשר מיושם Read and Write Access Control על הגישה לקובץ, היא:",
+    "options": [
+      "Vulnerability שיכול להיות מנוצל לפגיעה בסודיות המידע",
+      "Vulnerability שיכול להיות מנוצל לפגיעה בשלמות המידע",
+      "Attack - התקפה שפוגעת בסודיות המידע",
+      "Attack - התקפה שפוגעת בשלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "יישום הרשאות גישה (Access Control) הוא אמצעי הגנה לגיטימי. המצב המתואר אינו בהכרח חולשה או התקפה, אלא הסתמכות על הגנות מערכת ההפעלה.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מטרת השימוש ב Cookie option Only-HTTP עבור ה Cookie המשמש להעברת ה Session ID היא למנוע:",
+    "options": [
+      "גניבת ה Session ID שנשלח ב cookie ע\"י התקפת XSS",
+      "התקפת XSS על הדפדפן",
+      "גניבת ה Session ID שנשלח ב cookie ע\"י האזנה ל HTTP Requests and/or Responses",
+      "מניה או ניחוש של ה Session ID שנשלח ב cookie",
+      "התקפת Cookie Poisoning על הערך של ה Session ID"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "דגל HttpOnly מונע מקוד JavaScript לגשת ל-Cookie, ובכך מגן מפני גניבת ה-Session ID במקרה של התקפת Cross-Site Scripting (XSS).",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "בהתקפת Cookie Poisoning התוקף הוא בד\"כ:",
+    "options": [
+      "צד שלישי שמאזין לתעבורה בין הדפדפן לשרת",
+      "המשתמש של ה Web application",
+      "מי שהצליח להחדיר קוד עוין לדפדפן של המשתמש",
+      "תשובות א' וג' נכונות",
+      "אף אחת מהתשובות אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Cookie Poisoning מתבצע בדרך כלל על ידי המשתמש עצמו (Client), שמשנה את ערכי העוגייה בדפדפן שלו לפני שהם נשלחים חזרה לשרת, כדי לקבל הרשאות או גישה לא מורשית.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "היכן צריך השרת לשלב את ה Anti-CSRF Token שמטרתו למנוע התקפת XSRF/CSRF, בהנחה שהשרת שומר את ערכו של ה Anti-CSRF Token בשרת Session object?",
+    "options": [
+      "בכל URL שחשוב להגן על ה Request שהוא יוצר מפני התקפת CSRF",
+      "בכל FORM ב Hidden parameter שחשוב להגן על ה Request שהוא יוצר מפני התקפת CSRF",
+      "יש לשלוח אותו ב Set-Cookie Header בכל אחד מה responses שהשרת מחזיר לדפדפן",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ה-Token חייב להיות משולב בתוך הבקשה עצמה (כפרמטר ב-URL או כשדה נסתר בטופס) כדי שהשרת יוכל לאמת אותו מול ה-Session. שליחתו ב-Cookie אינה מספקת הגנה מפני CSRF.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מה security properties ניתן לפגוע באמצעות התקפה פאסיבית (Passive attack)?",
+    "options": [
+      "סודיות המידע",
+      "שלמות המידע",
+      "זמינות המידע",
+      "סודיות המידע ושלמות המידע",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "התקפה פאסיבית (כגון האזנת סתר) פוגעת בסודיות המידע (Confidentiality) מכיוון שהתוקף נחשף למידע, אך אינה משנה אותו (שלמות) ואינה מונעת גישה אליו (זמינות).",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין האמצעים הבאים מקשה על ביצוע Dictionary attack על סיסמא סטטית של משתמש, בהנחה שהתוקף יכול רק לנסות סיסמאות באמצעות ניסיונות הזדהות דרך מסך ה login?",
+    "options": [
+      "הגדלת מספר תווים מהם מורכבת הסיסמא",
+      "הגדלת מספר האפשרויות לכל תו בסיסמא",
+      "חסימת החשבון של המשתמש לאחר מספר ניסיונות הזדהות בהם המשתמש שלח סיסמא שגויה",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הגדלת אורך ומורכבות הסיסמה (א' וב') מגדילה את מרחב החיפוש ומקשה על ניחוש. חסימת החשבון (ג') מונעת את היכולת לבצע מספר רב של ניסיונות (Brute Force/Dictionary) דרך ממשק ההתחברות.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה מבין ההתקפות הבאות נדרש קשר בין התוקף למותקף (למשל באמצעות שליחת דוא\"ל מהתוקף למותקף) לצורך ביצוע ההתקפה?",
+    "options": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM-Based XSS",
+      "תשובות א' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "ב-Reflected XSS וב-DOM-Based XSS, הקוד הזדוני נמצא בתוך ה-URL שהתוקף צריך לגרום לקורבן ללחוץ עליו (למשל דרך מייל). ב-Stored XSS הקוד מחכה באתר.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה אומר עקרון ה Least Privileges?",
+    "options": [
+      "שצריך לשתף את מפתחות ההצפנה עם מספר מצומצם ככל האפשר של שותפי סוד",
+      "שצריך לתת לכל תהליך במערכת את סט ההרשאות המינימליות הנדרשות על מנת שיוכל לבצע את תפקידו",
+      "שצריך לתת לכל משתמש במערכת את סט ההרשאות המינימליות הנדרשות על מנת שיוכל לבצע את תפקידו",
+      "תשובות ב' וג' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "עקרון המידור (Least Privilege) קובע שיש להעניק לכל ישות (תהליך או משתמש) אך ורק את ההרשאות ההכרחיות לביצוע תפקידה, ולא מעבר לכך.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מה הוא/הם ה Vulnerability שמאפשר DOM based XSS שתיארנו בהרצאה?",
+    "options": [
+      "חוסר ב Input validation בקוד האפליקציה שרץ ב Web server",
+      "חוסר ב Output encoding בקוד האפליקציה שרץ ב Web server",
+      "חוסר ב Input validation בקוד ה JavaScript של האפליקציה שרץ בדפדפן",
+      "חוסר ב Output encoding בקוד JavaScript של האפליקציה שרץ בדפדפן",
+      "תשובות ג' וד' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "DOM Based XSS מתרחש בצד הלקוח. החולשה נובעת מכך שקוד ה-JavaScript בדפדפן מעבד קלט לא בטוח (Source) ומעביר אותו לביצוע (Sink) ללא ולידציה או קידוד מתאימים בתוך הסקריפט.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "אפליקציה מצפה לקבל כפרמטר מספר ת.ז. של המשתמש ולכן מוודאת שהקלט הוא מחרוזת של תווים נומריים (0-9) שאורכה המקסימלי הוא תשעה תווים, ולאחר שבדיקת התקינות עברה בהצלחה היא משלבת את הקלט הן בשאילתא SQL שהיא שולחת לבסיס הנתונים, והן משלבת אותו בדף ה HTML שהיא מחזירה למשתמש. לאיזה התקפה חשופה האפליקציה?",
+    "options": [
+      "SQL Injection",
+      "XSS",
+      "Parameter manipulation בו המשתמש ישלח מספר ת.ז. של משתמש אחר",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בדיקת הקלט (רק ספרות, אורך 9) מונעת הזרקת תווים מיוחדים הנדרשים ל-SQL Injection ול-XSS. עם זאת, היא אינה בודקת הרשאות (Authorization), ולכן חשופה ל-Parameter Manipulation (IDOR).",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין המנגנונים הבאים מקטין את ה Attack surface של התקפת XSRF/CSRF?",
+    "options": [
+      "שהפעולות החשובות יבוצעו רק באמצעות POST Requests",
+      "מנגנון של Inactivity timeout שסוגר את ה Session לאחר זמן קצר שאין בו פעילות",
+      "מנגנון של Output encoding",
+      "תשובות א' וב' נכונות",
+      "תשובות ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "שימוש ב-POST מונע התקפות טריוויאליות (דרך IMG או קישור), ו-Timeout מצמצם את חלון הזמן לתקיפה. Output Encoding רלוונטי ל-XSS ולא ל-CSRF.",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "מתי ולמה מומלץ לפרק את האפליקציה לרכיבים (וכל רכיב רץ כתהליך נפרד)?",
+    "options": [
+      "כאשר כל רכיב מיועד לשימוש של קבוצת משתמשים שונה (בעלת רמת אמון (Trust) שונה)",
+      "כאשר לכל רכיב נדרשות הרשאות שונות לבסיס הנתונים",
+      "כאשר לכל רכיב יש קלט שונה ולכן דרישות Input validation שונות",
+      "תשובות א' וב' נכונות",
+      "תשובות א' ב' וג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "פירוק לרכיבים מאפשר בידוד אבטחה (Isolation): הפרדת הרשאות (Least Privilege), הפרדת אזורי אמון, וטיפול מותאם בקלט לכל רכיב (הערה: טבלת התשובות מסמנת שאלה זו כ-T/פסולה, אך התשובה הלוגית היא ה').",
+    "source": "TAU 2023 Moed B"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מבין ההתקפות הבאות מטרתה לשלוח לאפליקציה פקודות בשמו של המותקף?",
+    "options": [
+      "התקפת XSS",
+      "התקפת XSRF/CSRF",
+      "התקפת SQL Injection",
+      "התקפת Hidden Parameter Manipulation",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מטרת CSRF (Cross-Site Request Forgery) היא בדיוק זו: לגרום לדפדפן הקורבן לשלוח בקשות (פקודות) לשרת, תוך ניצול ה-Session הקיים, כך שהשרת חושב שהמשתמש ביצע אותן מרצונו.",
+    "source": "TAU 2023 Moed B"
+  }
+]

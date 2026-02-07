@@ -68,6 +68,8 @@
                     <label><input type="checkbox" value="7" class="topic"> נושא 7 - ראוטר ביתי</label>
                     <label><input type="checkbox" value="8" class="topic"> נושא 8 - Marvin</label>
                     <label><input type="checkbox" value="9" class="topic"> נושא 9 - Sign in with Apple</label>
+                    <label><input type="checkbox" value="10" class="topic"> נושא 10 - Zendesk</label>
+                    <label><input type="checkbox" value="11" class="topic"> נושא 11 - ShadowLeak</label>
                 </div>
 
                 <label class="flex items-center gap-2 mt-4 text-slate-700">
@@ -168,7 +170,7 @@
         }
         for(let y=2016;y<=2020;y++) ['A','B'].forEach(m=>addExam(`${y}${m}`));
         ['2023','2024'].forEach(y=>['A','B'].forEach(m=>addExam(`${y}${m}`)));
-        for(let i=0;i<=5;i++) addExam(`2025_${i}`);
+        for(let i=0;i<=0;i++) addExam(`2025_${i}`);
 
         /* ---------- QUIZ ENGINE ---------- */
         let questions=[], quizResults=[], currentIndex=0, score=0;
