@@ -1,563 +1,494 @@
 [
   {
     "type": "mc",
-    "question": "איזו התקפה מנצלת את העובדה שה־Session-ID שנמצא ב־Cookie נשלח אוטומטית ע\"י הדפדפן?",
+    "question": "מהי המטרה המקורית והלגיטימית של פרוטוקול OAuth 2.0 Device Code Flow?",
     "options": [
-      "התקפת XSS",
-      "התקפת XSRF/CSRF",
-      "התקפת SQL Injection",
-      "התקפת Cookie Poisoning",
-      "התקפת Session Hijacking"
+      "לאפשר לשרתים לתקשר ביניהם ללא מגע יד אדם",
+      "לאפשר למכשירים בעלי יכולת קלט מוגבלת (Input-Constrained) כמו טלוויזיות חכמות ומדפסות לבצע אימות מול שירותי ענן",
+      "לאפשר למנהלי מערכת לעקוף את מנגנון ה-MFA בארגון",
+      "להחליף את פרוטוקול ה-Phishing הקיים",
+      "ליצור ערוץ מוצפן בין שני דפדפנים שונים"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "CSRF מנצלת את העובדה שהדפדפן שולח את ה־Session-ID אוטומטית עם כל בקשה, גם אם המשתמש לא יזם אותה במודע.",
-    "source": "original"
+    "explanation": "הפרוטוקול נועד במקור למכשירים שבהם קשה להקליד שם משתמש וסיסמה (כגון Smart TV), ומאפשר להם להציג קוד שהמשתמש מזין במכשיר אחר נוח יותר (כמו סמארטפון או מחשב).",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
   },
   {
     "type": "mc",
-    "question": "כיצד ניתן לממש client authentication באמצעות challenge-response כאשר יש קשר בין השרת ל־client לפני ביצוע ה־Authentication (נניח שקיים מפתח סודי המשותף ל־Client ולשרת)?",
+    "question": "כיצד מתבצעת התחלת ההתקפה (Initiation) מצד התוקף במתקפת Device Code Abuse?",
     "options": [
-      "ה־Client מצפין את ה־Challenge ע\"י מפתח סימטרי ושולח לשרת",
-      "ה־Client מצפין את ה־Challenge ע\"י המפתח הציבורי של השרת",
-      "ה־Client מצפין את ה־Challenge ע\"י המפתח הפרטי של ה־Client ויוצר response הכוללת את המפתח הציבורי שלו",
-      "ה־Client מצפין את ה־Challenge ע\"י המפתח הציבורי של ה־Client",
-      "אף תשובה אינה נכונה"
-    ],
-    "correctAnswerIndex": 0,
-    "explanation": "כאשר קיים מפתח סודי משותף, הצפנת האתגר באמצעותו מוכיחה של־Client יש את המפתח ולכן את זהותו.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "באיזה תהליכי Authentication הדפדפן אחראי להצגת חלון בו המשתמש מקליד את שם המשתמש והסיסמה שלו?",
-    "options": [
-      "HTTP Basic Authentication ו־HTTP Digest Authentication",
-      "Form based Authentication ו־HTTP Digest Authentication",
-      "HTTP Basic Authentication ו־Form based Authentication",
-      "Certificate based Authentication",
-      "Certificate based Authentication ו־HTTP Digest Authentication"
-    ],
-    "correctAnswerIndex": 0,
-    "explanation": "ב־HTTP Basic ו־Digest הדפדפן עצמו מציג חלון הזדהות מובנה.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "כיצד יודע הדפדפן האם עליו לבצע Authentication בשיטת HTTP Basic Authentication או בשיטת HTTP Digest Authentication?",
-    "options": [
-      "זה נבחר ע\"י המשתמש באיזו שיטה להזדהות",
-      "זה נקבע בקונפיגורציה של הדפדפן",
-      "זה נקבע ע\"י פרמטר ב־WWW-Authenticate Header",
-      "זה נקבע ע\"י פרמטר ב־Authorization Header",
-      "אף תשובה אינה נכונה"
+      "התוקף שולח וירוס למחשב של הקורבן",
+      "התוקף פורץ לשרת ה-Exchange הארגוני",
+      "התוקף שולח בקשה לשרת האימות (Authorization Server) ומבקש Device Code ו-User Code",
+      "התוקף גונב את הסיסמה של הקורבן באמצעות Keylogger",
+      "התוקף מבצע מתקפת Man-in-the-Middle על ה-WIFI של הקורבן"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "השרת מודיע לדפדפן על שיטת ההזדהות הנדרשת באמצעות ה־WWW-Authenticate Header.",
-    "source": "original"
+    "explanation": "הצעד הראשון הוא שהתוקף (ולא הקורבן) יוזם את הבקשה מול השרת (למשל מיקרוסופט או סיילספורס) ומקבל קוד למכשיר וקוד למשתמש, כאילו הוא המכשיר הלגיטימי.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
   },
   {
     "type": "mc",
-    "question": "באיזה שיטת הזדהות חייבים לשקול אבטחת מידע (כלומר על מנת לשמור על סודיות הסיסמא) לשלוח את ה־HTTP Request המכיל את בקשת ה־Authentication על גבי חיבור מוצפן, כלומר ב־HTTPS תחת ההנחה שהסיסמה של המשתמש אינה בתת מפתח?",
+    "question": "מדוע מתקפה זו נחשבת למסוכנת במיוחד בהשוואה לפישינג רגיל (Credential Harvesting)?",
     "options": [
-      "HTTP Basic Authentication",
-      "HTTP Digest Authentication",
-      "Form Based Authentication",
-      "HTTP Digest Authentication ו־HTTP Basic Authentication",
-      "HTTP Basic Authentication ו־Form Based Authentication"
+      "כי היא משתמשת באתרים לגיטימיים לחלוטין (כגון microsoft.com) עם תעודת SSL תקינה",
+      "כי הקורבן מבצע את תהליך ההזדהות בעצמו, כולל MFA, מה שיוצר תחושת ביטחון (Trust)",
+      "כי אין צורך שהתוקף יקים אתר מתחזה (Fake Site)",
+      "כי מערכות הגנה שמחפשות לינקים זדוניים לא יזהו את הלינק כזדוני",
+      "כל התשובות נכונות"
     ],
     "correctAnswerIndex": 4,
-    "explanation": "ב־HTTP Basic וב־Form Based הסיסמה נשלחת באופן שניתן לחשיפה ללא HTTPS.",
-    "source": "original"
+    "explanation": "ההתקפה עוקפת מנגנוני זיהוי פישינג קלאסיים כי הלינק הוא לאתר האמיתי, והקורבן רואה מנעול ירוק ותעודה תקינה, מה שגורם לו לבצע את הפעולות ללא חשד.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
   },
   {
     "type": "mc",
-    "question": "בתצורה בה יש שרת Authentication מולו מבצע ה־Authentication והוא מעביר את המשתמש לאחר ה־Authentication ל־Web application בצירוף Ticket שנשלח באמצעות מנגנון Cookie, איזה מנגנון אבטחה נדרש כדי למנוע Replay attack?",
+    "question": "במקרה הבוחן של Shiny Hunters נגד משתמשי Salesforce, באיזה תירוץ (Pretext) השתמשו התוקפים?",
     "options": [
-      "אין צורך להצפין את ה־Ticket",
-      "יש להצפין את ה־Ticket באמצעות מפתח סודי",
-      "יש להצפין את ה־Ticket באמצעות פרוטוקול SSL ולמנוע שינוי בתוכן ה־Ticket",
-      "יש להצפין את ה־Ticket אך אין צורך להגן על שלמותו",
-      "אין צורך להגן על ה־Ticket כלל"
+      "זכייה בלוטו",
+      "התחזות לנציג תמיכה טכנית שטוען שיש כרטיס תקלה (Ticket) פתוח שצריך לסגור",
+      "בקשה לאיפוס סיסמה דחוף",
+      "הודעה על וירוס במחשב",
+      "הצעה עסקית דחופה"
     ],
-    "correctAnswerIndex": 2,
-    "explanation": "SSL מגן גם על סודיות וגם על שלמות ה־Ticket וכך מונע שימוש חוזר בו.",
-    "source": "original"
+    "correctAnswerIndex": 1,
+    "explanation": "התוקפים יצרו קשר אישי (Vishing) וטענו שיש 'Open IT Ticket' שצריך לסגור, והנחו את הקורבן להיכנס ללינק לגיטימי של Salesforce כדי 'לפתור' את הבעיה.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
   },
   {
     "type": "mc",
-    "question": "למה צורך ב־Web application במנגנון Session management?",
+    "question": "האם מנגנון MFA (אימות דו-שלבי) מגן מפני מתקפת Device Code Abuse?",
     "options": [
-      "כי Web application לא יכול לעבוד ללא מנגנון Client-server",
-      "כי HTTP הוא Request-Response protocol",
-      "כי HTTP הוא Stateless protocol",
-      "כי Web server לא יכול לשמור מידע על הלקוח",
-      "אף תשובה אינה נכונה"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "HTTP אינו שומר מצב בין בקשות ולכן יש צורך במנגנון Session.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "כאשר ב־Options על ה־Set-cookie header מופיעים גם Max-age וגם Discard, איזו Cookie ייווצר?",
-    "options": [
-      "Persistent Cookie שיימחק כאשר יעבור פרק הזמן שהוגדר ב־Max-age",
-      "Session Cookie שיימחק כאשר יעבור פרק הזמן שהוגדר ב־Max-age",
-      "Session Cookie שיימחק כאשר יסגר הדפדפן",
-      "Persistent Cookie שיימחק כאשר יסגר הדפדפן",
-      "Session Cookie שיימחק כאשר יסגר הדפדפן או כאשר יעבור פרק הזמן שהוגדר ב־Max-age"
-    ],
-    "correctAnswerIndex": 4,
-    "explanation": "השילוב קובע שה־Cookie יימחק או בסגירת הדפדפן או בתום הזמן – המוקדם מביניהם.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "איזו התקפה יכול שימוש ב־HTTP Only Option עבור ה־Cookie למנוע?",
-    "options": [
-      "גניבת ה־Cookie מהדפדפן באמצעות התקפת XSS",
-      "Cookie Poisoning",
-      "גניבת ה־Cookie באמצעות האזנה לערוץ התקשורת",
-      "ניחוש ה־Cookie ע\"י התוקף",
-      "גניבת ה־Cookie מהדפדפן באמצעות התקפת XSS ו־Cookie Poisoning"
-    ],
-    "correctAnswerIndex": 0,
-    "explanation": "HttpOnly מונע גישה ל־Cookie דרך JavaScript וכך מגן מפני XSS.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "על מנת שהתקפת XSRF/CSRF תוכל לפגוע באפליקציה תלויה בכך ש:",
-    "options": [
-      "הדפדפן לא יבצע Input validation על HTTP Request",
-      "הדפדפן לא יבצע Input validation על HTTP Response",
-      "שלמשתמש יהיה Session פתוח מול האפליקציה",
-      "שלמשתמש תהיה הרשאה של אדמיניסטרטור",
-      "שלמשתמש והאפליקציה יהיו באותו דומיין"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "CSRF מנצלת Session קיים ופעיל של המשתמש מול האפליקציה.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה הסיבה העיקרית שבגללה קל לבצע dictionary attack על סיסמאות שבחרו משתמשים?",
-    "options": [
-      "כי הן קצרות יחסית",
-      "כי מספר האפשרויות עבור כל תו מוגבל ל־94 תווים",
-      "כי משתמשים בוחרים סיסמאות בעלות משמעות עבורם מתוך מרחב אפשרויות קטן יחסית",
-      "תשובות א׳ ו־ב׳ נכונות",
-      "תשובות א׳ ב׳ ו־ג׳ נכונות"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "משתמשים נוטים לבחור סיסמאות שקל לזכור, ולכן מרחב האפשרויות האפקטיבי קטן.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "כיצד כדאי להפריד בין אפליקציית הניהול המיועדת לשימוש מנהלי האתר (או האפליקציה) ובין אפליקציית השימוש למשתמשים?",
-    "options": [
-      "אין חשיבות להפרדה כי אפליקציית הניהול היא מאובטחת יותר",
-      "כדי למנוע מהאפליקציית השימוש לממש את כל יכולות הניהול",
-      "כדי לאפשר למשתמשים גישה שונה אל אחת מהאפליקציות (ברמת הרשת)",
-      "כדי להקטין את הסיכון לבעיית Access Control ולמנוע מצב שבו שתי האפליקציות משתמשות באותו מנגנון",
-      "תשובות ב׳ ו־ג׳ נכונות"
+      "כן, תמיד. ה-MFA חוסם גישה ממכשירים לא מוכרים",
+      "כן, אבל רק אם משתמשים ב-SMS",
+      "לא, מכיוון שהתוקף משכפל את ה-SIM של הקורבן",
+      "לא בהכרח. מכיוון שהקורבן הוא זה שמבצע את ה-Login באתר הלגיטימי, הוא זה שיזין את קוד ה-MFA בעצמו ויאשר את הכניסה",
+      "כן, אם משתמשים באפליקציית Authenticator"
     ],
     "correctAnswerIndex": 3,
-    "explanation": "הפרדה תכנונית מקטינה סיכון לטעויות Authentication ו־Access Control.",
-    "source": "original"
+    "explanation": "זוהי נקודה קריטית: ה-MFA לא עוזר כי המשתמש הלגיטימי הוא זה שמבצע את תהליך ההזדהות המלא מול השרת. המערכת רואה משתמש מאומת (עם MFA) שמאשר התקן חדש.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
   },
   {
     "type": "mc",
-    "question": "איזה מבין המנגנונים הבאים מממש Third Party Authentication? (בחר את התשובה המדויקת ביותר)",
+    "question": "מהו הכשל העיקרי במונחי אבטחת מידע שמאפשר את ההתקפה הזו?",
     "options": [
-      "הזדהות בין Web server לבין Client בפרוטוקול SSL",
-      "HTTP Basic Authentication",
-      "HTTP Digest Authentication",
-      "Form Based Authentication",
-      "הזדהות של Web server בפני Client בפרוטוקול SSL ו־HTTP Digest Authentication"
-    ],
-    "correctAnswerIndex": 0,
-    "explanation": "Third Party Authentication מתבצע כאשר צד שלישי (כמו CA) מאמת את זהות השרת.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "כיצד ניתן לממש Challenge-Response לצורך Authentication באמצעות הצפנה אסימטרית? (בהנחה שהשרת מכיר את המפתח הציבורי של ה־Client)",
-    "options": [
-      "יש ליצור Challenge רנדומלי",
-      "יש להצפין את ה־Challenge באמצעות המפתח הציבורי של ה־Client",
-      "יש להצפין את ה־Challenge באמצעות המפתח הפרטי של ה־Client",
-      "יש לשלוח את ה־Response באמצעות המפתח הציבורי של השרת",
-      "תשובות א׳ ו־ג׳ נכונות"
-    ],
-    "correctAnswerIndex": 4,
-    "explanation": "השרת יוצר Challenge וה־Client מוכיח זהות ע\"י הצפנה עם המפתח הפרטי שלו.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "באיזה תהליך Authentication ה־Username וה־Password שהזין המשתמש נשלחים ל־Web server בתוך Authorization Header כשהם מקודדים ב־Base64?",
-    "options": [
-      "HTTP Basic Authentication",
-      "HTTP Digest Authentication",
-      "Form Based Authentication",
-      "תשובות א׳ ו־ב׳ נכונות",
-      "תשובות א׳ ו־ג׳ נכונות"
-    ],
-    "correctAnswerIndex": 0,
-    "explanation": "HTTP Basic שולח את הפרטים ב־Authorization Header כשהם מקודדים ב־Base64.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "איזו שיטת הזדהות עושה שימוש ב־Challenge-Response?",
-    "options": [
-      "HTTP Basic Authentication",
-      "HTTP Digest Authentication",
-      "Form Based Authentication",
-      "תשובות א׳ ו־ב׳ נכונות",
-      "תשובות א׳ ו־ג׳ נכונות"
-    ],
-    "correctAnswerIndex": 1,
-    "explanation": "HTTP Digest מבוסס על Challenge-Response ולא שולח סיסמה גלויה.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "כאשר מפתח ה־Web application רוצים לשלוח ב־Request מידע רגיש למשתמש החוקי של האפליקציה, מה המקום הכי בטוח מבחינת אבטחת מידע? (בהנחה שהמשתמש החוקי עושה שימוש ב־Proxy)",
-    "options": [
-      "Query String",
-      "POST Data",
-      "Cookie",
-      "אין הבדל בין המיקומים השונים ב־Request",
-      "תשובות ב׳ ו־ג׳ נכונות"
-    ],
-    "correctAnswerIndex": 1,
-    "explanation": "POST Data אינו נרשם בלוגים ו־URLs כמו Query String.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "Form Method איזה Form hidden parameter SessionID מממשים את ה־SessionID כדי?",
-    "options": [
-      "GET",
-      "POST",
-      "HEAD",
-      "POST או GET",
-      "לא משנה כל עוד הבקשה נשלחת ב־HTTPS"
-    ],
-    "correctAnswerIndex": 1,
-    "explanation": "SessionID כ־hidden parameter נשלח בגוף הבקשה (POST).",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "איזו התקפה מאפשרת לגנוב את הערך של ה־SessionID מתוך הדפדפן?",
-    "options": [
-      "Cookie Poisoning",
-      "SQL Injection",
-      "Session Hijacking",
-      "XSS",
-      "Session Hijacking ו־Cookie Poisoning"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "XSS מאפשר הרצת JavaScript בדפדפן וגניבת SessionID.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "התקפת Cookie Poisoning תוקף גורם ל:",
-    "options": [
-      "צד שלישי שמאזין לתעבורה בין הדפדפן לשרת",
-      "המשתמש של ה־Web application",
-      "צד שלישי שמצליח להחדיר קוד זדוני לדפדפן של המשתמש",
-      "תשובות א׳ ו־ב׳ נכונות",
-      "אף אחת מהתשובות אינה נכונה"
+      "כשל ב-Authentication (הזדהות)",
+      "כשל ב-Encryption (הצפנה)",
+      "כשל ב-Authorization (הרשאות/אישור גישה)",
+      "כשל ב-Availability (זמינות)",
+      "כשל ב-Accounting (רישום)"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "Cookie Poisoning מתבצעת ע\"י קוד זדוני בדפדפן שמשנה ערכי Cookies.",
-    "source": "original"
+    "explanation": "ההזדהות (Authentication) תקינה לחלוטין (המשתמש הוא מי שהוא טוען שהוא). הכשל הוא ב-Authorization: המשתמש מעניק הרשאה (Consent) למכשיר זר לפעול בשמו, מבלי להבין את המשמעות.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
   },
   {
     "type": "mc",
-    "question": "מה היתרון במימוש ה Response-Challenge לצורך Authentication באמצעות הצפנה אסימטרית?",
+    "question": "מהו ה-Polling בהקשר של מתקפה זו?",
     "options": [
-      "החישוב והבדיקה של ה Response מהירים יותר",
-      "אין צורך לשמור את ה Challenge בשרת שמבצע את תהליך ה Authentication",
-      "אין צורך לשמור את האלמנט הסודי על פיו מתבצע תהליך ה Authentication בשרת שמבצע את תהליך ה Authentication ולכן הוא מתאים גם ל party Third Authentication",
-      "אין הבדל בין מימוש ה Response-Challenge בהצפנה סימטרית ובין מימוש ה Response-Challenge בהצפנה אסימטרית",
-      "תשובות ב' וג' נכונות"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "בהצפנה אסימטרית השרת אינו מחזיק סוד משותף ולכן המנגנון מתאים גם ל-Third Party Authentication.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "כאשר נעשה שימוש ב Authentication Digest HTTP , וה server Web מתבסס על ה Challenge ב Header Authorization שנשלח ב Request בבדיקת ה Response, ולא בודק שה Challenge שמופיע ב Header Authorization הוא ה Challenge שאכן נשלח לדפדפן ע\"י ה Server Web, אזי לאיזה התקפה חשוף ה Server Web (תחת ההנחה שהסיסמא של המשתמש אינה ברת מניה)?",
-    "options": [
-      "התחזות של התוקף למשתמש החוקי באמצעות גניבת הסיסמא של המשתמש",
-      "התחזות של התוקף למשתמש החוקי באמצעות גניבת ה ID-Session של המשתמש",
-      "התחזות של התוקף למשתמש החוקי באמצעות שימוש ב Header Authorization בבקשות לאותו URI ו Method של הבקשה המקורית",
-      "תשובות א' ב' וג' נכונות",
-      "אף תשובה אינה נכונה"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "אי־אימות ה-Challenge מאפשר Replay של Authorization Header לאותו URI/Method.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "אפליקציה בנקאית רוצה שה cookie שבו נשמר ה ID-session ימחק מהדפדפן כעבור חמש דקות או כאשר המשתמש סוגר את הדפדפן, מה הם ה Options ב Cookie שבהם היא צריכה להשתמש עבור ה cookie הזה?",
-    "options": [
-      "Discard",
-      "Max-Age",
-      "Max-Age ו Discard",
-      "Persistent",
-      "אף תשובה אינה נכונה"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "Max-Age מגביל בזמן ו-Discard מוחק בסגירת הדפדפן – המוקדם מביניהם.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מטרת השימוש ב option Cookie של Only HTTP עבור ה Cookie המשמש להעברת ה ID Session היא למנוע:",
-    "options": [
-      "התקפת XSS על הדפדפן",
-      "גניבת ה ID Session שנשלח ב cookie ע\"י התקפת XSS",
-      "גניבת ה ID Session שנשלח ב cookie ע\"י האזנה ל or/and Requests HTTP Responses",
-      "מניה או ניחוש של ה ID Session שנשלח ב cookie",
-      "התקפת Poisoning Cookie על הערך של ה ID Session"
+      "סקר שהתוקף שולח לקורבן",
+      "תהליך שבו התוקף שואל שוב ושוב את השרת האם הקורבן הזין כבר את הקוד ואישר את הגישה",
+      "תהליך של ניחוש סיסמאות",
+      "הצבעה בין שרתי הענן",
+      "שיטה לעקוף חומת אש"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "HttpOnly מונע גישה ל-Cookie מ-JavaScript ולכן חוסם גניבה ב-XSS.",
-    "source": "original"
+    "explanation": "לאחר קבלת ה-Device Code, התוקף מריץ סקריפט שבודק כל הזמן מול השרת האם הסטטוס השתנה והאם הקורבן ביצע את האישור. ברגע שהתשובה חיובית, התוקף מקבל את הטוקן.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
   },
   {
     "type": "mc",
-    "question": "התקפת Hijacking Session מאפשרת לתוקף: (בחר את התשובה המדויקת ביותר)",
+    "question": "אילו סוגי מידע (Scopes) התבקשו ואושרו במתקפה שתוארה על Salesforce/Microsoft?",
     "options": [
-      "לעקוף את מנגנון ההזדהות",
-      "לעקוף את מנגנון ההזדהות ואת מנגנון ההרשאות",
-      "לעקוף את מנגנון ההזדהות ואת מנגנון ה Auditing",
-      "לעקוף את מנגנון ההזדהות, את מנגנון ההרשאות ואת מנגנון ה Auditing",
-      "לבצע התקפת XSS"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "עם Session תקף ניתן לעקוף Authentication, Authorization ו-Auditing.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "באיזה מבין ההתקפות הבאות מטרת ההתקפה היא לשלוח לאפליקציה בקשות HTTP בשמו של המותקף (כך שהאפליקציה תחשוב שבקשת ה HTTP נשלחה ע\"י המותקף)?",
-    "options": [
-      "הן התקפת XSS והן התקפת CSRF",
-      "הן התקפת XSS והן התקפת Injection SQL",
-      "הן התקפת CSRF והן התקפת Injection SQL",
-      "הן התקפת CSRF והן התקפת Hijacking Session",
-      "הן התקפת Hijacking Session והן התקפת Injection SQL"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "גם CSRF וגם Session Hijacking גורמות לשליחת בקשות בשם הקורבן.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה היתרון בשימוש במנגנון Authentication מסוג Challenge-Response?",
-    "options": [
-      "הסיסמה נשלחת לשרת בצורה מוצפנת",
-      "הסיסמה אינה נשלחת כלל ברשת",
-      "אין צורך ב־HTTPS",
-      "השרת אינו נדרש לבצע ולידציה",
-      "המנגנון מונע CSRF"
-    ],
-    "correctAnswerIndex": 1,
-    "explanation": "ב־Challenge-Response הסוד אינו נשלח כלל ברשת.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה מאפיין את מנגנון HTTP Digest Authentication?",
-    "options": [
-      "שליחת Username וסיסמה כ־Base64",
-      "שליחת Hash של הסיסמה וה־Challenge",
-      "שימוש ב־Session Cookie",
-      "תלות ב־JavaScript",
-      "שליחת הסיסמה בטקסט גלוי"
-    ],
-    "correctAnswerIndex": 1,
-    "explanation": "Digest משתמש ב־Hash של הסיסמה וה-Challenge ולא שולח סיסמה גלויה.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "אפליקציה רוצה שה־SessionID ימחק לאחר 10 דקות או עם סגירת הדפדפן. באילו Cookie Options עליה להשתמש?",
-    "options": [
-      "Max-Age בלבד",
-      "Discard בלבד",
-      "Max-Age ו־Discard",
-      "Persistent Cookie",
-      "HttpOnly"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "Max-Age מגביל בזמן ו-Discard מוחק בסגירת הדפדפן.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה מונע שימוש ב־HttpOnly Cookie?",
-    "options": [
-      "גניבת Cookie באמצעות האזנה לרשת",
-      "גניבת Cookie באמצעות XSS",
-      "Session Fixation",
-      "CSRF",
-      "SQL Injection"
-    ],
-    "correctAnswerIndex": 1,
-    "explanation": "HttpOnly מונע גישה ל-Cookie מ-JavaScript ולכן חוסם גניבה ב-XSS.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה מאפשרת התקפת Session Hijacking?",
-    "options": [
-      "עקיפת Authentication בלבד",
-      "עקיפת Authorization בלבד",
-      "עקיפת Authentication ו-Authorization",
-      "עקיפת Auditing בלבד",
-      "גניבת סיסמה"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "Session תקף מאפשר התחזות מלאה למשתמש.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "באיזו מהשיטות הבאות נשלחים Username ו-Password לשרת?",
-    "options": [
-      "HTTP Basic Authentication",
-      "HTTP Digest Authentication",
-      "Form Authentication",
+      "Read and write files",
+      "Read your calendar",
+      "Sign you in and read your profile",
+      "offline_access (קבלת Refresh Token)",
       "תשובות א' ו-ג' נכונות",
       "כל התשובות נכונות"
     ],
-    "correctAnswerIndex": 3,
-    "explanation": "Basic ו-Form שולחות סיסמה (לעומת Digest).",
-    "source": "original"
+    "correctAnswerIndex": 5,
+    "explanation": "התוקפים ביקשו הרשאות רחבות מאוד שכללו גישה לקבצים, ללוח השנה, לפרופיל, וכן offline_access שמאפשר גישה מתמשכת גם לאחר שהמשתמש מתנתק.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
   },
   {
     "type": "mc",
-    "question": "מי מציג בפועל את חלון ההזדהות למשתמש ב-HTTP Authentication?",
+    "question": "מהי המשמעות של Consent Phishing בהקשר זה?",
     "options": [
-      "שרת ה-Web",
-      "האפליקציה",
-      "הדפדפן",
-      "שרת ה-Authentication",
-      "Identity Provider"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "הדפדפן מציג את חלון ההזדהות בתגובה ל-WWW-Authenticate.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "במימוש Challenge-Response סימטרי, מה משותף ל-Client ול-Server?",
-    "options": [
-      "מפתח ציבורי",
-      "מפתח פרטי",
-      "סוד משותף",
-      "Certificate",
-      "SessionID"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "במנגנון סימטרי יש סוד משותף.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה המשמעות של שימוש משולב ב-Max-Age ו-Discard?",
-    "options": [
-      "ה־Cookie לעולם לא יימחק",
-      "ה־Cookie ימחק רק ידנית",
-      "ה־Cookie יימחק במוקדם מבין הזמן או סגירת הדפדפן",
-      "ה־Cookie יהפוך Persistent",
-      "אין משמעות מיוחדת"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "המחיקה מתבצעת לפי התנאי המוקדם ביותר.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מדוע שליחת SessionID כחלק מה-URL אינה בטוחה?",
-    "options": [
-      "כי ה-URL מוצפן",
-      "כי ה-URL נשמר ב-History, Logs ו-Referer",
-      "כי ה-URL מוגבל באורך",
-      "כי הדפדפן חוסם אותו",
-      "כי הוא לא תומך ב-HTTPS"
+      "גניבת סיסמאות באמצעות דף מתחזה",
+      "הנדסה חברתית הגורמת למשתמש לאשר לאפליקציה צד-שלישי (External App) גישה לנתונים שלו",
+      "פריצה לחשבון הבנק של המשתמש",
+      "התקפת DDoS על שרתי האימות",
+      "שליחת ספאם דרך המייל של הקורבן"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "SessionID עלול לדלוף דרך Logs, History ו-Referer.",
-    "source": "original"
+    "explanation": "ההתקפה מסתמכת על כך שהמשתמש מאשר (נותן Consent) לאפליקציה זדונית לגשת למידע שלו, לעיתים קרובות מבלי לקרוא את רשימת ההרשאות המבוקשת.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
   },
   {
     "type": "mc",
-    "question": "איזה מנגנון נחשב העיקרי למניעת CSRF/XSRF?",
+    "question": "אילו מהאמצעים הבאים יכולים לשמש כמיטיגציה (הגנה) מפני מתקפת Device Code Abuse?",
     "options": [
-      "HttpOnly Cookie",
-      "Output Encoding",
-      "CSRF Token",
-      "Parameterized Queries",
-      "HTTPS בלבד"
+      "הגברת מודעות עובדים (Security Awareness) לא להזין קודים שלא ביקשו",
+      "חסימת האפשרות למשתמשים רגילים לאשר אפליקציות צד-שלישי (Least Privilege)",
+      "שימוש ב-Conditional Access כדי להגביל את ה-Device Code Flow למכשירים מנוהלים (Managed Devices) בלבד",
+      "שימוש בסיסמאות מורכבות יותר",
+      "תשובות א', ב' ו-ג' נכונות",
+      "תשובות א' ו-ד' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "הגנה יעילה דורשת שילוב של מודעות, הגבלת הרשאות (ביטול Consent למשתמשים), והגבלת הגישה ברמת הרשת/מכשיר (Conditional Access). סיסמאות מורכבות לא יעזרו כאן.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ההתקפה משפיעה על ה-Confidentiality (סודיות) של הארגון?",
+    "options": [
+      "היא לא משפיעה על הסודיות, רק על הזמינות",
+      "היא מאפשרת לתוקף להצפין את המידע (Ransomware)",
+      "היא מאפשרת לתוקף גישה למידע רגיש, מסמכים, אימיילים ונתוני לקוחות (Data Exfiltration)",
+      "היא מוחקת את כל הנתונים בארגון",
+      "היא משנה את הנתונים בבסיס הנתונים בלבד"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "Token ייחודי לבקשה מונע שליחה זדונית.",
-    "source": "original"
+    "explanation": "הפגיעה העיקרית היא בסודיות (Confidentiality) מכיוון שהתוקף משתמש בטוקן הגישה כדי לשלוף (Exfiltrate) מידע ארגוני רגיש דרך ה-API.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
   },
   {
     "type": "mc",
-    "question": "מה מכילה SAML Assertion?",
+    "question": "בשלב ה-Kill Chain, מהו ה-\"Lure\" (הפיתוי) במתקפה זו?",
     "options": [
-      "SessionID",
-      "פרטי Authentication והרשאות",
-      "רק שם משתמש",
-      "רק מפתח ציבורי",
-      "Cookie"
+      "הבקשה הראשונית לשרת האימות",
+      "הודעת המייל, ה-SMS או השיחה שמשכנעת את הקורבן להיכנס ללינק ולהזין את הקוד",
+      "קבלת הטוקן הסופי",
+      "מסך הבקשה לאישור הרשאות",
+      "סריקת הרשת של הארגון"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "Assertion מכילה מידע על זהות והקשרים (Attributes).",
-    "source": "original"
+    "explanation": "הפיתוי הוא אלמנט ההנדסה החברתית שגורם לקורבן לפעול – ההודעה או השיחה שגורמת לו לגשת ל-URL ולהקליד את הקוד שהתוקף סיפק.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
   },
   {
     "type": "mc",
-    "question": "ב-SAML SSO במודל PULL, מה עובר בדפדפן?",
+    "question": "מהו היתרון של התוקף בשימוש ב-Vishing (Voice Phishing) במתקפה זו?",
     "options": [
-      "Assertion",
-      "Artifact",
-      "SessionID",
-      "Username ו-Password",
-      "Certificate"
+      "זה זול יותר משליחת אימייל",
+      "זה מאפשר ליצור אמון (Trust) ולבלבל את הקורבן בזמן אמת, מה שמעלה את סיכויי ההצלחה",
+      "זה מאפשר לעקוף את הפיירוול הארגוני",
+      "זה מאפשר להקליט את הקורבן לשימוש עתידי",
+      "אין לזה יתרון מיוחד"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "רק Artifact אקראי עובר בדפדפן; ה-Assertion נשלף בערוץ ישיר.",
-    "source": "original"
+    "explanation": "שיחת טלפון (Vishing) יוצרת לחץ ואמון אישי, ומאפשרת לתוקף להנחות את הקורבן שלב אחר שלב, מה שמקשה על הקורבן לעצור ולחשוב על מוזרות הבקשה.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
   },
   {
     "type": "mc",
-    "question": "למה משמש הערוץ הישיר בין IdP ל-SP ב-SAML SSO?",
+    "question": "מהו ה-Authorization Server בתרשים הזרימה של ההתקפה?",
     "options": [
-      "שליחת Cookie",
-      "שליחת Assertion בצורה מאובטחת",
-      "שליחת Redirect למשתמש",
-      "שליחת HTML",
-      "שליחת Credentials"
+      "המחשב של הקורבן",
+      "השרת של התוקף",
+      "הגוף המנפיק את הטוקנים (כגון Azure AD / Entra ID, Google)",
+      "האפליקציה הזדונית",
+      "הראוטר הארגוני"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "שרת האימות (כמו Microsoft Azure AD בתמונות) הוא הגוף הסמכותי שאליו פונים גם התוקף (לבקשת קוד) וגם הקורבן (לאימות), והוא זה שמנפיק את הטוקנים.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מה קורה מיד לאחר שהקורבן מזין את הקוד ומאשר את ההרשאות?",
+    "options": [
+      "הקורבן מקבל הודעת שגיאה",
+      "התוקף מקבל הודעה במייל",
+      "השרת מאשר את ה-Device Code שהתוקף מחזיק, והתוקף מקבל Access Token ו-Refresh Token",
+      "המחשב של הקורבן נכבה",
+      "הסיסמה של הקורבן משתנה אוטומטית"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "ברגע שהקורבן משלים את התהליך, בקשת ה-Polling של התוקף נענית בחיוב, והוא מקבל את הטוקנים המאפשרים לו גישה לחשבון.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "איזה רכיב ב-CIA Triad נפגע אם התוקף קיבל הרשאת 'Write files'?",
+    "options": [
+      "רק Confidentiality",
+      "רק Availability",
+      "גם Confidentiality וגם Integrity",
+      "אף רכיב לא נפגע",
+      "רק Non-repudiation"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "גישה לקבצים פוגעת בסודיות (Confidentiality). היכולת לכתוב או לשנות קבצים פוגעת בשלמות (Integrity) הנתונים.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע התקפה זו מכונה לעיתים \"Phishing 2.0\" או \"Modern Phishing\"?",
+    "options": [
+      "כי היא משתמשת ב-AI",
+      "כי היא משתמשת בגרפיקה משופרת",
+      "כי היא אינה דורשת גניבת סיסמה (Credential Harvesting) אלא גניבת Session/Token באמצעות מנגנון לגיטימי",
+      "כי היא עובדת רק בטלפונים ניידים",
+      "כי היא פותחה בשנת 2020"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "בניגוד לפישינג קלאסי שמנסה לגנוב את הסיסמה (אותה ניתן לשנות), מתקפה זו גונבת את הגישה (Token) עצמה, תוך עקיפת הגנות כמו MFA, ושימוש בתשתית לגיטימית.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ה-user_code?",
+    "options": [
+      "הסיסמה של המשתמש",
+      "קוד קצר המוצג למשתמש על המכשיר (או ע\"י התוקף) שיש להזין בכתובת האימות",
+      "הקוד הסודי של השרת",
+      "מפתח ההצפנה הסימטרי",
+      "כתובת ה-IP של התוקף"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "הערוץ הישיר משמש להעברת Assertion ללא חשיפה לדפדפן.",
-    "source": "original"
+    "explanation": "ה-user_code הוא המחרוזת הקצרה (למשל CKW4U8R7U) שהמערכת מנפיקה כדי לקשר בין סשן הדפדפן של המשתמש לבין הבקשה של המכשיר (או התוקף).",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו הסיכון בקבלת offline_access scope על ידי התוקף?",
+    "options": [
+      "התוקף יכול לגשת למחשב כשהוא כבוי",
+      "התוקף מקבל Refresh Token המאפשר לו לחדש את הגישה ללא צורך באינטראקציה נוספת עם המשתמש לאורך זמן",
+      "התוקף יכול לגשת רק לקבצים מקומיים",
+      "התוקף יכול לנתק את המשתמש מהאינטרנט",
+      "אין בזה סיכון מיוחד"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הרשאת offline_access מספקת Refresh Token, שבאמצעותו התוקף יכול לבקש Access Tokens חדשים גם אחרי שהראשון פג תוקף, ובכך לשמור על גישה (Persistence) לאורך זמן.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "האם התקנה של אנטי-וירוס (Antivirus) על מחשב הקורבן תמנע את ההתקפה?",
+    "options": [
+      "כן, האנטי-וירוס יחסום את האתר של מיקרוסופט",
+      "כן, האנטי-וירוס יזהה את הסקריפט של התוקף שרץ בענן",
+      "לא, מכיוון שאין שום קובץ זדוני (Malware) או סקריפט שרץ על מחשב הקורבן; הכל מתבצע בדפדפן מול אתר לגיטימי",
+      "כן, אם זה אנטי-וירוס בתשלום",
+      "תלוי במערכת ההפעלה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "ההתקפה היא Client-less ו-Malware-less בצד הקורבן. הקורבן גולש לאתר לגיטימי ומבצע פעולה לגיטימית (אימות), ולכן אין חתימה של וירוס לזהות.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי הפעולה המומלצת למנהל אבטחה שרוצה למנוע מתקפה זו בארגון שלו?",
+    "options": [
+      "לחסום את כל המיילים מחוץ לארגון",
+      "להגדיר מדיניות המונעת ממשתמשים לאשר אפליקציות (Consent) באופן עצמאי",
+      "לבטל את השימוש ב-HTTPS",
+      "להכריח החלפת סיסמה כל שבוע",
+      "לעבור לעבוד עם דפים ומחברות בלבד"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מניעת Consent Grant ממשתמשים (User Consent Settings) ודרישת אישור אדמין לאפליקציות חדשות היא דרך יעילה למנוע ממשתמשים לאשר בטעות אפליקציות זדוניות.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה שלב של ההתקפה מעורב ה-API?",
+    "options": [
+      "בשלב הראשון של בקשת הקוד",
+      "בשלב הזנת הקוד ע\"י המשתמש",
+      "בשלב ה-Exfiltration (הוצאת המידע) לאחר שהתוקף השיג את הטוקן",
+      "בשלב שיחת הטלפון",
+      "תשובות א' ו-ג' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ה-API מעורב גם בהתחלה (בקשת ה-Device Code ע\"י התוקף) וגם בסוף (שימוש ב-Access Token כדי לשלוף מידע דרך Microsoft Graph API למשל).",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ה-Device Code?",
+    "options": [
+      "הקוד שהמשתמש מזין בדפדפן",
+      "קוד סודי שהתוקף מקבל ומשתמש בו כדי לתשאל (Poll) את השרת ולבסוף להמיר אותו לטוקן גישה",
+      "המספר הסידורי של המכשיר",
+      "כתובת ה-MAC של המחשב",
+      "סיסמת ה-WIFI"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ה-Device Code הוא הרכיב שנשאר אצל הצד המבקש (המכשיר/התוקף) ומשמש אותו כדי לבדוק מול השרת האם המשתמש כבר אישר את הבקשה.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע התקפה זו נקראת \"Device Code Abuse\"?",
+    "options": [
+      "כי היא גונבת את המכשיר הפיזי",
+      "כי היא משתמשת בקוד של המכשיר כדי לפרוץ למכשיר",
+      "כי היא מנצלת לרעה (Abuse) את זרימת העבודה (Flow) הלגיטימית של Device Code שנועדה למכשירים מוגבלים",
+      "כי היא שולחת קודים זדוניים למכשיר",
+      "אף תשובה אינה נכונה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "השם נובע מכך שהתוקפים מנצלים פיצ'ר לגיטימי של הפרוטוקול (הנועד לטלוויזיות וכו') למטרות זדוניות של פישינג.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו סוג האיום הכללי אליו משתייכת התקפה זו?",
+    "options": [
+      "Brute Force",
+      "SQL Injection",
+      "Identity Attack המשלבת Social Engineering",
+      "Buffer Overflow",
+      "Zero Day Exploit"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "זוהי התקפת זהות (ניצול פרוטוקולי אימות) הנשענת בכבדות על הנדסה חברתית כדי לשכנע את המשתמש לשתף פעולה.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ה-URL שבו בדרך כלל המשתמש מתבקש להזין את הקוד (במקרה של מיקרוסופט)?",
+    "options": [
+      "microsoft-support.com",
+      "login.microsoftonline.com/common/oauth2/deviceauth",
+      "microsoft.com/devicelogin",
+      "hacker-site.com/login",
+      "google.com"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הכתובת הלגיטימית והמוכרת של מיקרוסופט להזנת קודים היא microsoft.com/devicelogin. השימוש בכתובת זו הוא חלק מההונאה.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד תוקף יכול להשתמש ב-Conditional Access כדי למנוע התקפות כאלו, אך גם כיצד התקפה זו עוקפת Conditional Access בסיסי?",
+    "options": [
+      "CA יכול לחסום גישה מ-IP לא מוכר; ההתקפה עוקפת זאת כי האימות מבוצע ממחשב הקורבן שהוא IP מורשה",
+      "CA לא יכול לחסום כלום",
+      "התקפה זו תמיד נחסמת על ידי CA",
+      "התוקף חייב להיות בתוך המשרד",
+      "תשובה א' נכונה, אך ניתן להגדיר CA שיחסום ספציפית את ה-Device Code Flow למכשירים לא מנוהלים"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "CA בסיסי שבודק את ה-IP של המשתמש יאפשר את הגישה כי המשתמש נמצא ברשת הארגונית. עם זאת, CA מתקדם יכול לחסום את השימוש ב-Device Code Flow עצמו או לדרוש שהמכשיר המבקש (של התוקף) יהיה Managed Device, ובכך למנוע את ההתקפה.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי המשמעות של \"Data at Transit\" בהקשר של ההתקפה המתוארת?",
+    "options": [
+      "הנתונים מועברים בדיסק און קי",
+      "הנתונים זורמים מהענן של Salesforce ישירות לתוקף דרך ה-API",
+      "הנתונים מוצפנים במחשב הקורבן",
+      "הנתונים נמחקים מהשרת",
+      "הנתונים עוברים ברשת ה-WIFI הפנימית"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התוקף משתמש בטוקן כדי למשוך נתונים בזמן אמת דרך הרשת (Transit) מהענן אליו, תחת מעטה של תעבורה מוצפנת ולגיטימית.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "איזה פרוטוקול הוא הבסיס להתקפה זו?",
+    "options": [
+      "SAML 2.0",
+      "OAuth 2.0",
+      "LDAP",
+      "Kerberos",
+      "Radius"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ההתקפה מנצלת ספציפית את ה-Device Code Flow שהוא חלק מתקן OAuth 2.0.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי תגובת השרת לבקשת ה-POST הראשונית של התוקף?",
+    "options": [
+      "קובץ ZIP להורדה",
+      "JSON המכיל user_code, device_code ו-verification_uri",
+      "דף HTML עם טופס התחברות",
+      "הודעת שגיאה 404",
+      "בקשה לסיסמת משתמש"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "השרת מחזיר לתוקף את הקודים הנדרשים ואת הכתובת שאליה יש להפנות את המשתמש, בפורמט JSON.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "באיזה תרחיש לגיטימי נשתמש ב-Device Code Flow?",
+    "options": [
+      "התחברות לאפליקציית בנק בסמארטפון",
+      "התחברות ל-Netflix בטלוויזיה חכמה",
+      "כניסה למחשב בארגון עם כרטיס חכם",
+      "גלישה באתר חדשות",
+      "שינוי סיסמה ב-Active Directory"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "טלוויזיה חכמה היא דוגמה קלאסית ל-Input Constrained Device שבו קשה להקליד, ולכן השימוש ב-Device Code Flow הוא הפתרון המיועד.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ה-client_id בבקשת התוקף?",
+    "options": [
+      "מספר הזהות של התוקף",
+      "מזהה האפליקציה (Application ID) הלגיטימית שהתוקף רוצה להתחזות אליה או להשתמש בה (למשל, אפליקציית Outlook או אפליקציה זדונית שיצר)",
+      "כתובת ה-IP של הקורבן",
+      "מספר הפורט של השרת",
+      "הסיסמה של המערכת"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ה-client_id מזהה את האפליקציה שמבקשת גישה. תוקפים יכולים להשתמש ב-ID של אפליקציות מוכרות (כמו אופיס) כדי להיראות אמינים יותר, או באפליקציה משלהם.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד התוקף משיג Persistence (נוכחות מתמשכת) בחשבון הקורבן?",
+    "options": [
+      "על ידי התקנת Rootkit",
+      "על ידי שינוי סיסמת המשתמש",
+      "על ידי שימוש ב-Refresh Token לחידוש הגישה ללא צורך באימות חוזר",
+      "על ידי יצירת משתמש חדש במערכת",
+      "על ידי השבתת ה-Firewall"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "קבלת ה-Refresh Token (לרוב דרך scope של offline_access) מאפשרת לתוקף להישאר מחובר ולקבל טוקנים חדשים גם אם הקורבן שינה סיסמה (בחלק מהמקרים) או התנתק מהדפדפן.",
+    "source": "deviceCodeAbuse - Shiran Hamami.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מה משותף למתקפות Shiny Hunters ומתקפות פישינג קלאסיות, ומה שונה?",
+    "options": [
+      "שתיהן משתמשות במייל זדוני; השוני הוא שהאחת גונבת סיסמה והשנייה גונבת טוקן דרך מנגנון לגיטימי",
+      "אין שום דמיון ביניהן",
+      "שתיהן דורשות התקנת תוכנה; השוני הוא סוג התוכנה",
+      "שתיהן תוקפות רק שרתים; השוני הוא מערכת ההפעלה",
+      "המשותף הוא ששתיהן נחסמות ע\"י MFA; השוני הוא המחיר"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "בשני המקרים יש אלמנט של הנדסה חברתית (Lure). ההבדל הקריטי הוא שב-Device Code Abuse הקורבן לא מזין את הסיסמה באתר מזויף, אלא מבצע תהליך אימות מלא ותקין מול הספק האמיתי.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "איזה רכיב בתהליך יוצר אצל הקורבן את תחושת ה-Trust (אמון)?",
+    "options": [
+      "הקול של התוקף בטלפון",
+      "העובדה שהוא נכנס ל-URL אמיתי של הספק (כגון מיקרוסופט) ורואה את תעודת האבטחה התקינה",
+      "השימוש בקוד קצר ופשוט",
+      "הלוגו של החברה במייל",
+      "תשובות א' וב' נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "השילוב של הנדסה חברתית משכנעת (בטלפון/מייל) יחד עם העובדה הטכנית שהדפדפן מראה אתר בטוח ומוכר, מנטרלים את החשדנות של המשתמש.",
+    "source": "Device Code Abuse_ מתקפת פישינג מתוחכמת.pdf"
   }
 ]
-

@@ -1,199 +1,494 @@
 [
   {
     "type": "mc",
-    "question": "מה ההבדל בין מנגנון ההרשאה Read Access control לבין Write Access control ביחס למידע רגיש?",
+    "question": "מהי ההגדרה המדויקת ביותר למתקפת SSRF (Server-Side Request Forgery)?",
     "options": [
-      "שניהם באים לשמור על סודיות המידע ומטרתם היא למנוע ממי שאינו מורשה לגשת לקובץ שמכיל את המידע",
-      "Read Access control שומר על סודיות המידע ו־Write Access control שומר על שלמות המידע",
-      "Write Access control שומר על סודיות המידע ו־Read Access control שומר על שלמות המידע",
-      "שניהם באים לשמור על זמינות המידע",
-      "אף תשובה אינה נכונה"
+      "מתקפה שבה התוקף מזייף את כתובת ה-IP של הלקוח כדי לעקוף חסימות",
+      "מתקפה שבה התוקף גורם לשרת (Server) לבצע בקשות HTTP למשאבים שהתוקף בוחר, בשמו של השרת",
+      "מתקפה שבה התוקף שותל קוד JavaScript בדפדפן של הקורבן",
+      "מתקפה המנצלת חולשה בפרוטוקול ההצפנה של השרת",
+      "מתקפה שבה התוקף מציף את השרת בבקשות כדי להפיל אותו (DoS)"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "Read Access Control מונע חשיפה של מידע רגיש (סודיות), בעוד Write Access Control מונע שינוי לא מורשה של המידע (שלמות).",
-    "source": "original"
+    "explanation": "ב-SSRF, התוקף מנצל את יכולת השרת להוציא בקשות רשת כדי לגשת למשאבים שאינם נגישים לו ישירות (כמו רשת פנימית), כשהבקשה יוצאת מתוך השרת עצמו.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
   },
   {
     "type": "mc",
-    "question": "האם ניתן להשתמש בבחינת עלויות ניהול מדיניות אבטחת מידע לשימוש במנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic לעומת שימוש במנגנון אבטחת מידע המיישם את התפיסה של Positive Security Logic?",
+    "question": "מהו ה-\"Twist\" (הייחוד) המרכזי במתקפת SSRF שהופך אותה למסוכנת כל כך?",
     "options": [
-      "כן, כי הוא מאפשר ניהול נכון למנוע False Positive",
-      "כן, כי הוא מאפשר ניהול נכון למנוע False Negative",
-      "כן, כי הוא מאפשר ניהול נכון למנוע False Positive ו־False Negative",
-      "כן, כי הוא Generic ואינו דורש הגדרות עבור כל מערכת בנפרד, ועלויות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic משמעותית נמוכות מעלויות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Positive Security Logic",
-      "לא, אין הבדל משמעותי בין עלויות ניהול מדיניות אבטחת מידע בין שימוש במנגנון המיישם את התפיסה של Positive Security Logic לבין מנגנון המיישם את התפיסה של Negative Security Logic"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "Negative Security Logic מבוסס על חסימת חריגים ולכן פשוט יותר לניהול, בעוד Positive Security Logic דורש הגדרה מדויקת של כל מה שמותר.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "האם ומדוע להפריד את רכיב הניהול של המערכת מהאפליקציה הנגישה למשתמשים המשתמשת את המשתמשים (למשל השלושים ברשת האינטרנט) תחת הנחה ששתי האפליקציות רצות על שרת האינטרנט?",
-    "options": [
-      "אין יתרון בהפרדה כזאת והוא נועד רק לשפר ביצועים",
-      "אין יתרון בהפרדה כזאת כי ניתן לממש בקרת גישה באמצעות Access Control",
-      "הפרדה כזאת חשובה כי היא מונעת מצב שבו משתמש רגיל מנצל Vulnerability במנגנון Access Control כדי לבצע פעולות שאינן מורשות",
-      "הפרדה כזאת נועדה למנוע שימוש במנגנוני Authentication",
-      "הפרדה כזאת נועדה להגן על רכיב הניהול באמצעות מנגנון Authentication חזק יותר"
+      "היא משתמשת בפרוטוקול UDP במקום TCP",
+      "היא תמיד מצליחה לעבור WAF",
+      "הבקשה הזדונית מגיעה מתוך הרשת הפנימית של הארגון (\"From Inside\"), ולכן נהנית מהאמון (Trust) שניתן לשרת",
+      "היא דורשת הרשאות Root על השרת",
+      "היא פוגעת רק בשרתי Linux"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "הפרדה תכנונית מקטינה את ה־Attack Surface ומונעת פגיעה מערכתית הנובעת מחולשה ב־Access Control.",
-    "source": "original"
+    "explanation": "מערכות פנימיות רבות סומכות על בקשות המגיעות מתוך הרשת הפנימית (למשל, לא דורשות אימות מ-localhost או מכתובות IP פנימיות), ו-SSRF מנצל בדיוק את האמון הזה.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
   },
   {
     "type": "mc",
-    "question": "מה הדרכים לצמצם את הנזק כתוצאה מהתקפות Injection attacks (עד שמקרים מסוימים זה בולם את ההתקפה)?",
+    "question": "מהו שורש הבעיה (Root Cause) שמאפשר את קיומן של חולשות SSRF?",
     "options": [
-      "שימוש טוב ב־Authentication Factor",
-      "שימוש נכון במנגנון Session management",
-      "צמצום ההרשאות של האפליקציה מול כל המערכת שאליה יעד ההתקפה",
-      "שימוש טוב ב־Authentication Factor ושימוש נכון במנגנון Session management",
-      "מימוש מנגנון Session management וצמצום ההרשאות של האפליקציה מול כל המערכת שאליה יעד ההתקפה"
+      "שימוש בטכנולוגיות ענן",
+      "העדר הצפנה בתעבורה הפנימית",
+      "המערכת מתייחסת לפעולה של \"הבאת URL\" כפעולה תמימה, אך לא מבצעת אימות קלט (Input Validation) מספק על היעד",
+      "שימוש בקוד פתוח",
+      "תשובות ב' ו-ד' נכונות"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "צמצום ההרשאות (Least Privilege) מקטין את הנזק גם אם מתבצעת התקפת Injection.",
-    "source": "original"
+    "explanation": "הבעיה נוצרת כשהאפליקציה מאפשרת למשתמש לשלוט בכתובת ה-URL שהשרת ניגש אליה, מבלי לוודא שהכתובת אינה מצביעה למשאבים רגישים או פנימיים.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
   },
   {
     "type": "mc",
-    "question": "מה הדרכים למנוע או לצמצם נזק אפשרי של התקפת SQL Injection?",
+    "question": "איזה פיצ'ר במערכת Jira התגלה כפגיע ואפשר את מתקפת ה-SSRF?",
     "options": [
-      "צמצום ההרשאות של האפליקציה בבסיס הנתונים על פי עקרון Least privileges",
-      "Untrusted sources ב־output encoding לפני החזרת הפלט",
-      "לא לבנות שאילתות SQL על ידי שרשור של מחרוזות, אלא להשתמש ב־strongly typed parameterized query APIs",
-      "צמצום ההרשאות של האפליקציה על פי עקרון Least privileges ושימוש נכון ב־output encoding",
-      "צמצום ההרשאות של האפליקציה בבסיס הנתונים על פי עקרון Least privileges ולא לבנות שאילתות SQL על ידי שרשור של מחרוזות אלא להשתמש ב־strongly typed parameterized query APIs"
+      "מנגנון התגובות (Comments)",
+      "העלאת קבצים (File Upload)",
+      "Jira Gadgets בלוח המחוונים (Dashboard), המאפשרים משיכת מידע מ-API חיצוני",
+      "מנגנון איפוס הסיסמה",
+      "יצירת כרטיסים חדשים (Issues)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "החולשה נמצאה ב-Gadgets, שמאפשרים למשתמש להגדיר URL שממנו ה-Gadget ימשוך מידע כדי להציגו בדשבורד.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד הצליחו התוקפים לעקוף את מנגנון ה-Whitelist במוצר Jira?",
+    "options": [
+      "הם פרצו לשרת ה-Whitelist ומחקו אותו",
+      "הם השתמשו בטכניקת DNS Rebinding",
+      "הם ניצלו חולשה בפרסור ה-URL (URL Parsing) באמצעות שימוש בתו '@' (Userinfo Confusion)",
+      "הם השתמשו בכתובת IP במקום ב-Domain",
+      "הם ניצלו חולשת SQL Injection"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "התוקפים השתמשו בכתובת כמו `http://allowed.com:80@evil.com`. הוולידטור בדק את החלק לפני ה-@ ואישר אותו, אך בקשת ה-HTTP נשלחה בפועל לחלק שאחרי ה-@.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי כתובת ה-IP המיוחדת `169.254.169.254` בסביבת ענן (כגון AWS)?",
+    "options": [
+      "כתובת ה-DNS של גוגל",
+      "כתובת ה-Default Gateway של הרשת",
+      "כתובת שירות ה-Metadata (Instance Metadata Service) המספק מידע על השרת והרשאותיו",
+      "כתובת שרת ה-Update של Windows",
+      "כתובת ה-Loopback המקומית"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "זוהי כתובת Link-Local מיוחדת שנגישה רק מתוך המכונה עצמה בענן, ומשמשת לשליפת מידע קונפיגורציה ו-Credentials זמניים.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "בפריצת Capital One, מה היה הצעד הראשון בשרשרת התקיפה (Kill Chain)?",
+    "options": [
+      "פישינג לעובדי הבנק",
+      "ניצול חולשת SSRF בשרת ה-WAF (Web Application Firewall)",
+      "גניבת מחשב נייד של עובד",
+      "התקפת DDoS על שרתי הבנק",
+      "הזרקת קוד זדוני לאתר הבנק"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התוקף זיהה שרת WAF שהיה מוגדר בצורה שגויה וחשוף ל-SSRF, מה שאפשר לו לשלוח בקשות לשירותים פנימיים.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מה השיג התוקף בפריצת Capital One לאחר שפנה לשירות ה-Metadata ב-AWS?",
+    "options": [
+      "את קוד המקור של האפליקציה",
+      "רשימה של כל העובדים בבנק",
+      "Temporary Credentials (מפתחות גישה וטוקן) של ה-IAM Role שהשרת רץ איתו",
+      "גישה למצלמות האבטחה",
+      "את בסיס הנתונים של ה-Firewall"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "פנייה ל-metadata service החזירה את ה-Access Key, Secret Key ו-Token הזמניים המשויכים לתפקיד (Role) של השרת.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניצל התוקף את ה-Credentials שהשיג בפריצת Capital One?",
+    "options": [
+      "הוא מכר אותם ב-Dark Web",
+      "הוא הגדיר אותם במחשב הפרטי שלו וביצע Privilege Escalation ע\"י התחזות לשרת ה-WAF",
+      "הוא השתמש בהם כדי לכבות את השרתים",
+      "הוא השתמש בהם כדי לשלוח מיילים בשם הבנק",
+      "תשובות א' ו-ד' נכונות"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התוקף העתיק את המפתחות למכונה שלו, ובכך \"הפך\" להיות בעל ההרשאות של השרת הפנימי של הבנק (Role Assumption).",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "איזה עקרון אבטחה הופר בצורה החמורה ביותר בהגדרת ההרשאות של ה-IAM Role ב-Capital One?",
+    "options": [
+      "Defense in Depth",
+      "Separation of Duties",
+      "Least Privilege (הזכות המינימלית)",
+      "Security by Obscurity",
+      "Keep it Simple"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "לשרת ה-WAF היו הרשאות מוגזמות (Excessive Privileges) לקרוא את כל ה-S3 Buckets של הבנק, למרות שלא הייתה לו שום סיבה עסקית לכך.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "איזה מידע הצליח התוקף לגנוב בפריצת Capital One?",
+    "options": [
+      "סיסמאות של עובדים בלבד",
+      "קוד מקור של תוכנות הבנק",
+      "כ-106 מיליון רשומות של לקוחות, כולל מספרי ביטוח לאומי (SSN) וחשבונות בנק",
+      "רק כתובות אימייל",
+      "סרטוני אבטחה מהסניפים"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הפריצה חשפה כמות עצומה של מידע רגיש (PII) של לקוחות בארה\"ב ובקנדה.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי הפקודה שבה השתמש התוקף כדי להוריד את המידע?",
+    "options": [
+      "git clone",
+      "wget -r",
+      "aws s3 sync",
+      "scp",
+      "ftp get"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "לאחר קבלת ההרשאות, התוקף השתמש בכלי ה-CLI של AWS וביצע פקודת sync כדי להוריד תכולה של Buckets שלמים למחשב שלו.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד התגלתה הפריצה ב-Capital One בסופו של דבר?",
+    "options": [
+      "מערכות הניטור של הבנק זיהו את התעבורה החריגה בזמן אמת",
+      "ה-FBI גילה את הפריצה ביוזמתו",
+      "טיפ חיצוני (Tipster) דיווח לבנק על מידע גנוב שפורסם ב-GitHub",
+      "התוקף דרש כופר",
+      "בדיקת אבטחה שגרתית גילתה את החולשה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הפריצה לא זוהתה ע\"י מערכות הניטור הפנימיות במשך חודשים. היא התגלתה רק לאחר שמישהו חיצוני ראה שהתוקף פרסם את המידע (או רמזים עליו) ב-GitHub ודיווח על כך.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו IMDSv2 וכיצד הוא עוזר למנוע SSRF?",
+    "options": [
+      "זהו פיירוול חדש של אמזון",
+      "זוהי גרסה מאובטחת של שירות ה-Metadata הדורשת Token בבקשת PUT לפני קריאת המידע",
+      "זהו כלי לניטור תעבורת רשת",
+      "זהו פרוטוקול הצפנה חדש ל-S3",
+      "זהו שירות לניהול זהויות משתמשים"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "IMDSv2 (Instance Metadata Service Version 2) מחייב יצירת Session Token באמצעות בקשת PUT לפני שניתן לגשת למידע. זה מקשה מאוד על ניצול SSRF פשוט שבד\"כ מאפשר רק בקשות GET או לא מאפשר שליחת Headers מותאמים.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד עקרון Defense in Depth (הגנה לעומק) כשל במקרה של Capital One?",
+    "options": [
+      "היו יותר מדי שכבות הגנה שהפריעו אחת לשנייה",
+      "חולשה אחת בודדת (SSRF) מוטטה את כל ההגנה ולא היו מעגלי אבטחה נוספים שעצרו את התוקף",
+      "ההצפנה הייתה חלשה מדי",
+      "העובדים לא עברו הכשרת אבטחה",
+      "הבנק השתמש בתוכנת אנטי-וירוס חינמית"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ברגע שהפרימטר נפרץ (ה-SSRF ב-WAF), לא היו בקרות פנימיות (כגון הגבלת גישה ל-Metadata או סגמנטציה) כדי למנוע את המשך התקיפה וגניבת המידע.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "אילו מהפעולות הבאות הן מיתיגציה (הגנה) מומלצת נגד SSRF?",
+    "options": [
+      "אימות קלט (Input Validation) קפדני של כתובות URL בצד השרת",
+      "שימוש ב-Allowlist (רשימה לבנה) חזקה שלא ניתנת לעקיפה",
+      "חסימת גישה לכתובות IP פנימיות ולשירותי Metadata ברמת הרשת/Firewall",
+      "שימוש ב-IMDSv2 בענן",
+      "כל התשובות נכונות",
+      "תשובות א' ו-ב' בלבד"
     ],
     "correctAnswerIndex": 4,
-    "explanation": "השילוב של Least Privilege יחד עם Parameterized Queries הוא ההגנה היעילה ביותר מפני SQL Injection.",
-    "source": "original"
+    "explanation": "הגנה יעילה דורשת שילוב של ולידציה בקוד, שימוש ברשימות מותרות, חסימות ברמת הרשת (למנוע גישה ל-Private IPs), ושימוש בפיצ'רים מאובטחים של הענן.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
   },
   {
     "type": "mc",
-    "question": "באמצעות מימוש עקרון ה־Least Privileges במערכת הרשאות ביחס לעובדי הארגון (בחר את התשובה המדויקת ביותר)?",
+    "question": "מהי המשמעות של Excessive Privileges בהקשר של ה-IAM Role שנפרץ?",
     "options": [
-      "למנוע לחלוטין מעובד עוין במערכת לגרום נזק למערכת תוך ניצול הרשאות שלו",
-      "להקטין את הנזק למערכת כתוצאה מפעולות של עובד עוין שמנצל את הרשאותיו",
-      "להקטין את הנזק למערכת כתוצאה מפעולות של עובד עוין שמתחזה לעובד במערכת (Impersonation)",
-      "תשובות א׳ ו־ג׳ נכונות",
-      "תשובות ב׳ ו־ג׳ נכונות"
+      "התוקף יצר משתמש חדש עם הרשאות מנהל",
+      "לשרת ה-WAF ניתנה הרשאה לבצע פעולות רבות (כגון ListAllMyBuckets) שלא היו נחוצות לתפקודו השוטף",
+      "השרת היה מחובר לאינטרנט ללא סיסמה",
+      "העובדים השתמשו באותה סיסמה לכל השירותים",
+      "התוקף הצליח לפרוץ לסיסמת ה-Root של AWS"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "Least Privilege אינו מונע לחלוטין נזק, אך מצמצם אותו למינימום האפשרי בהתאם להרשאות.",
-    "source": "original"
+    "explanation": "השרת היה צריך גישה מוגבלת מאוד (או בכלל לא ל-S3), אך בפועל קיבל הרשאות לקרוא ולשלוף מידע מכל ה-Buckets בחשבון.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
   },
   {
     "type": "mc",
-    "question": "האם כאשר מממשים תפיסת אבטחת מידע של Positive Security Logic יתכן False Positive?",
+    "question": "מהו ה-Endpoint הפגיע במוצר Jira?",
     "options": [
-      "כן, כי הבעיה נובעת של תפיסת אבטחת מידע של Positive Security Logic",
-      "כן, כי אם שוכחים להגדיר תסריט חוקי",
-      "כן, אם שוכחים לבטל תסריט שהוא חוקי ובוטל",
-      "לא, False Positive אף פעם לא יתכן בתפיסת אבטחת מידע של Positive Security Logic",
-      "אף תשובה אינה נכונה"
+      "/admin/login",
+      "/plugins/servlet/gadgets/makeRequest",
+      "/api/v2/users",
+      "/secure/Dashboard.jspa",
+      "/setup/db"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "ב־Positive Security Logic כל מה שלא הוגדר כמותר נחסם, ולכן תסריט חוקי שלא הוגדר ייחסם (False Positive).",
-    "source": "original"
+    "explanation": "הכתובת `/plugins/servlet/gadgets/makeRequest` היא זו שאפשרה קבלת פרמטר `url` וביצוע בקשה אליו בשם השרת.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
   },
   {
     "type": "mc",
-    "question": "האם יש יתרון המשמעותי מבחינת אבטחת מידע לשימוש במנגנון אבטחת מידע המיישם את התפיסה של Logic Security Positive לעומת שימוש מנגנון אבטחת מידע המיישם את התפיסה של Logic Security Negative? (בחר את התשובה המדויקת ביותר)",
+    "question": "אילו נתונים יכול תוקף להשיג באמצעות SSRF מלבד Cloud Metadata?",
     "options": [
-      "כן, כי הוא מאפשר בניהול נכון להימנע מ Positive False",
-      "כן, כי הוא מאפשר בניהול נכון להימנע מ Negative False",
-      "כן, כי הוא מאפשר בניהול נכון להימנע מ Positive False ומ Negative False",
-      "כן, כי הוא Generic ואינו דורש הגדרות עבור כל מערכת בנפרד, ולכן עלות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Logic Security Positive נמוך משמעותית לעומת עלות הניהול של מנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic",
-      "לא, אין הבדל משמעותי בין שימוש במנגנון אבטחת מידע המיישם את התפיסה של Logic Security Positive לבין שימוש במנגנון אבטחת מידע המיישם את התפיסה של Negative Security Logic"
+      "גישה לממשקי ניהול פנימיים (Admin Panels) שאינם חשופים לאינטרנט",
+      "תוכן של קבצים מקומיים (אם הפרוטוקול file:// נתמך)",
+      "מידע משירותים פנימיים אחרים (Internal APIs)",
+      "סריקת פורטים (Port Scanning) ברשת הפנימית",
+      "כל התשובות נכונות",
+      "תשובות א' ו-ג' בלבד"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "SSRF מאפשר לתוקף \"לראות\" את הרשת דרך עיני השרת, ולכן הוא יכול לגשת לכל משאב שהשרת יכול לגשת אליו, כולל ממשקים פנימיים, קבצים וסריקת הרשת.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מה הייתה הבעיה במערכת הניטור (Monitoring) של Capital One?",
+    "options": [
+      "היא לא עבדה כלל",
+      "היא התריעה אך התעלמו ממנה",
+      "היא כשלה בזיהוי תעבורה חריגה של הורדת כמויות עצומות של מידע (30GB) על ידי שרת ה-WAF",
+      "הלוגים נמחקו על ידי התוקף",
+      "היא ניטרה רק את המשרדים הפיזיים"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "Positive Security Logic (Allowlist) מאפשרת, בניהול נכון, להימנע גם מ-False Positives וגם מ-False Negatives.",
-    "source": "original"
+    "explanation": "העובדה ששרת WAF (שמיועד להגן) התחיל להוריד כמויות מידע מ-S3 הייתה צריכה להדליק נורה אדומה מיידית, אך זה לא קרה והפריצה נמשכה זמן רב.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
   },
   {
     "type": "mc",
-    "question": "האם ומדוע יש להפריד את רכיב הניהול של המערכת לאפליקציה נפרדת מהאפליקציה המשרתת את המשתמשים של המערכת (למשל הגולשים ברשת האינטרנט) תחת ההנחה ששתי האפליקציות רצות על שרת האינטרנט ב DMZ ?",
+    "question": "מדוע WAF (Web Application Firewall) לא מנע את התקפת ה-SSRF ב-Capital One?",
     "options": [
-      "אין צורך בהפרדה כזאת והיא מיותרת כי היא גורמת לשכפול של קוד בין אפליקצית הניהול לאפליקציה המיועדת למשתמשים",
-      "אין צורך בהפרדה כזאת כי ניתן לממש בקלות מנגנון Control Access באמצעות העובדה שלכל אחד מהמשתמשים מוצגות בדף ה HTML רק הפעולות המותרות עבורו",
-      "הפרדה כזאת חשובה כי היא תמנע מצב שבו משתמש רגיל מנצל vulnerability במנגנון ה Control Access על מנת לבצע פעולות שמותרות רק למנהל המערכת (והנסיון מלמד שבמימוש של Control Access יש לעיתים קרובות Vulnerabilities)",
-      "הפרדה כזאת חוסכת את הצורך בהקשחה של שרת האינטרנט ומאפשרת להסתפק בהגנה על אפליקצית הניהול באמצעות מנגנון של Authentication Strong",
-      "תשובות ג' וד' נכונות"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "הפרדה תכנונית מקטינה Attack Surface ומגינה מפני כשלי Access Control.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "באיזה התקפות יכול ניהול הרשאות של האפליקציה במדיניות של privileges Least לסייע למזער את הנזק? (בחר את התשובה המדויקת ביותר)",
-    "options": [
-      "התקפת Injection SQL",
-      "התקפת CSRF",
-      "התקפת Hijacking Session",
-      "תשובות ב' וג' נכונות",
-      "תשובות א' ב' וג' נכונות"
+      "כי ה-WAF עצמו היה השרת הפגיע שנוצל (Misconfigured)",
+      "כי התוקף השתמש ב-HTTPS",
+      "כי ה-WAF לא היה פעיל",
+      "כי ה-SSRF הוא מתקפה שלא ניתן לזהות ב-WAF",
+      "כי התוקף הגיע מכתובת IP מורשית"
     ],
     "correctAnswerIndex": 0,
-    "explanation": "Least Privilege מצמצם את הנזק בעיקר בהתקפות SQL Injection ע\"י הגבלת הרשאות ה-DB.",
-    "source": "original"
+    "explanation": "באופן אירוני, החולשה הייתה בשרת ה-WAF עצמו (שהיה מבוסס כנראה על ModSecurity עם קונפיגורציה שגויה או אפליקציה נלווית), והוא זה ששימש כקרש הקפיצה.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
   },
   {
     "type": "mc",
-    "question": "באיזה התקפות יכול מימוש עקרון Least Privilege לסייע לצמצום הנזק? (בחר את התשובה המדויקת ביותר)",
+    "question": "מהו ה-Impact העסקי של הפריצה על Capital One?",
     "options": [
-      "SQL Injection",
-      "CSRF",
-      "Session Hijacking",
-      "תשובות א' וב' נכונות",
-      "תשובות א' ב' וג' נכונות"
+      "קנס של 80 מיליון דולר ופשרה בתביעות ייצוגיות על סך 190 מיליון דולר",
+      "הבנק פשט רגל",
+      "לא היה נזק כספי משמעותי",
+      "המנכ\"ל נכנס לכלא",
+      "איבוד רישיון הבנקאות"
     ],
     "correctAnswerIndex": 0,
-    "explanation": "Least Privilege מצמצם בעיקר את הנזק מ-SQL Injection ע\"י הגבלת הרשאות במסד הנתונים.",
-    "source": "original"
+    "explanation": "הפריצה עלתה לבנק מאות מיליוני דולרים בקנסות, פיצויים והוצאות משפטיות.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
   },
   {
     "type": "mc",
-    "question": "באיזה מהמצבים הבאים חייבים להשתמש ב-Negative Security Logic?",
+    "question": "איזו פעולה ב-Jira Gadgets הייתה אמורה להגן מפני גישה לכתובות לא רצויות, אך כשלה?",
     "options": [
-      "כאשר ניתן להגדיר במדויק את כל ההתנהגויות החוקיות",
-      "כאשר המערכת סגורה ומוגדרת היטב",
-      "כאשר מדובר במערכת פתוחה עם קלט חופשי ומגוון",
-      "כאשר קיימת הפרדה בין אפליקציית ניהול לאפליקציית משתמשים",
-      "אף תשובה אינה נכונה"
+      "הצפנת ה-URL",
+      "בדיקת ה-Whitelist של הדומיינים המותרים",
+      "דרישת Login למערכת",
+      "חסימת גישה ל-Port 80",
+      "שימוש ב-Captcha"
     ],
-    "correctAnswerIndex": 2,
-    "explanation": "במערכות פתוחות עם קלט מגוון קשה להגדיר Allowlist מלא ולכן נדרשת Blacklist.",
-    "source": "original"
+    "correctAnswerIndex": 1,
+    "explanation": "הייתה קיימת בדיקת Whitelist, אך היא יושמה בצורה לא נכונה (Logic Flaw) שאפשרה עקיפה באמצעות מניפולציה על ה-URL.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
   },
   {
     "type": "mc",
-    "question": "Firewall המממש Negative Security Logic מאופיין בכך ש:",
+    "question": "איזה עקרון ב-CIA Triad נפגע כאשר התוקף הוריד את קבצי הלקוחות?",
     "options": [
-      "הוא חוסם רק תעבורה שהוגדרה מראש כחוקית",
-      "הוא מאפשר רק תעבורה שהוגדרה מראש כחוקית",
-      "הוא חוסם תעבורה שנמצאה כחשודה או אסורה",
-      "הוא אינו מבצע סינון תעבורה כלל",
-      "הוא מבצע Authentication"
+      "Integrity",
+      "Availability",
+      "Confidentiality",
+      "Authenticity",
+      "Non-repudiation"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "Negative Security Logic חוסם מה שמזוהה כחשוד ומאפשר את השאר.",
-    "source": "original"
+    "explanation": "חשיפת מידע רגיש ואישי (PII) לגורם לא מורשה היא פגיעה ישירה בסודיות (Confidentiality).",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
   },
   {
     "type": "mc",
-    "question": "מדוע ניהול הרשאות לפי עקרון Least Privilege מסייע בצמצום נזק מתקיפות?",
+    "question": "מהי הדרך הנכונה למנוע SSRF ברמת הרשת (Network Layer)?",
     "options": [
-      "כי הוא מונע לחלוטין תקיפות",
-      "כי הוא מונע גניבת SessionID",
-      "כי הוא מגביל את הפעולות שניתן לבצע גם לאחר חדירה",
-      "כי הוא מבצע הצפנה",
-      "כי הוא מונע XSS"
+      "חסימת תעבורה יוצאת (Egress Filtering) מהשרתים לכתובות פרטיות (Private Ranges) ולשירותי Metadata, אלא אם כן נדרש במפורש",
+      "חסימת תעבורה נכנסת (Ingress Filtering)",
+      "שימוש ב-VPN",
+      "התקנת אנטי-וירוס על השרת",
+      "שימוש בכתובות IP דינמיות"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "הגבלת היכולת של השרת ליזום תקשורת החוצה, ובמיוחד לכתובות רגישות בתוך הרשת הפנימית, היא שכבת הגנה קריטית.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ה-CVE המשויך לחולשה ב-Jira?",
+    "options": [
+      "CVE-2017-5638",
+      "CVE-2019-8451",
+      "CVE-2021-44228",
+      "CVE-2020-0601",
+      "CVE-2018-1337"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "המצגת מציינת במפורש את CVE-2019-8451 כחולשת ה-SSRF ב-Jira.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד תוקף יכול להשתמש ב-SSRF לצורך Port Scanning?",
+    "options": [
+      "ע\"י שליחת פינגים (Ping)",
+      "ע\"י מדידת זמני תגובה (Timing) והודעות שגיאה שונות שהשרת מחזיר עבור פורטים פתוחים וסגורים",
+      "ע\"י התקנת Nmap על השרת",
+      "ע\"י האזנה לתעבורה (Sniffing)",
+      "לא ניתן לבצע סריקת פורטים עם SSRF"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "גם אם השרת לא מחזיר את התוכן המלא, הבדלים בזמן התגובה (פורט פתוח מגיב מהר/לאט יותר מפורט סגור) או קודי שגיאה שונים מאפשרים למופות את הרשת הפנימית.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מה אמזון (AWS) עשתה בעקבות הפריצה כדי להקשיח את שירות ה-Metadata?",
+    "options": [
+      "ביטלה את השירות לחלוטין",
+      "חייבה שימוש ב-VPN",
+      "הוסיפה דרישה ל-Token בבקשת PUT, חסמה את הכותרת X-Forwarded-For והגדירה TTL=1",
+      "העבירה את השירות לכתובת IP אחרת",
+      "הצפינה את המידע בתוך השרת"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "גם לאחר חדירה, ההרשאות המצומצמות מגבילות את הנזק.",
-    "source": "original"
+    "explanation": "אמזון שדרגה את ההגנות (IMDSv2) כדי למנוע ניצול קל ע\"י SSRF, כולל הגבלת ה-Hop Limit (TTL) כדי למנוע גישה דרך פרוקסי ומניעת כותרות מזויפות.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו הלקח העיקרי לגבי הרשאות בענן (Cloud Permissions) מהמקרה הזה?",
+    "options": [
+      "תמיד לתת הרשאות Admin כדי למנוע תקלות",
+      "הרשאות IAM צריכות להיות Granular (מפורטות) ומצומצמות למינימום ההכרחי (Least Privilege)",
+      "ענן הוא לא מאובטח ולכן לא כדאי להשתמש בו",
+      "יש להשתמש רק ב-Root Account",
+      "אין צורך לנהל הרשאות בענן, הספק דואג לזה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "אם ה-IAM Role היה מוגבל רק ל-Bucket הספציפי שהאפליקציה צריכה, התוקף לא היה יכול לגשת לכל הנתונים של הבנק.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מה הייתה הטעות הקריטית של Capital One בנוגע ל-WAF?",
+    "options": [
+      "הם לא התקינו WAF",
+      "הם השתמשו ב-WAF זול",
+      "הם סמכו על ה-WAF כפתרון קסם ולא הקשיחו את השרתים וההרשאות מאחוריו (כשל ב-Defense in Depth)",
+      "הם הגדירו את ה-WAF לחסום את כל התעבורה",
+      "הם נתנו ל-WAF גישה לאינטרנט"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הסתמכות יתר על רכיב הגנה אחד (הפרימטר) ללא שכבות הגנה נוספות פנימיות היא הטעות שאפשרה לפריצה להתרחב.",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "איזה סוג של מידע מחזיר ה-endpoint `/latest/meta-data/iam/security-credentials/ROLE_NAME`?",
+    "options": [
+      "שם המשתמש והסיסמה של מנהל המערכת",
+      "קובץ JSON עם AccessKeyId, SecretAccessKey ו-Token",
+      "כתובת ה-MAC של השרת",
+      "רשימת התוכנות המותקנות",
+      "היסטוריית הגלישה של השרת"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "זוהי התשובה הסטנדרטית של AWS Metadata Service כשמבקשים Credentials של תפקיד.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ה-Policy vs. Mechanism Gap שהוזכר בניתוח האירוע?",
+    "options": [
+      "הפער בין מה שההנהלה רצתה לבין מה שהטכנולוגיה אפשרה",
+      "מדיניות האבטחה דרשה הגנה על מידע לקוחות, אך המנגנונים הטכניים (WAF, IAM) כשלו באכיפתה בגלל קונפיגורציה שגויה",
+      "הפער בין תקציב האבטחה להוצאות בפועל",
+      "ההבדל בין אבטחה בענן לאבטחה ב-On Premise",
+      "חוסר התאמה בין נהלי ה-FBI לחוקי הבנק"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הייתה מדיניות (Policy) ברורה להגן על המידע, אך המימוש הטכני (Mechanism) בפועל לא תאם את המדיניות הזו ואפשר את הפריצה.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע התוקף היה צריך להריץ את פקודת `aws s3 sync` מהמכונה שלו ולא ישירות מהשרת הפרוץ?",
+    "options": [
+      "כי בשרת לא היה מקום בדיסק",
+      "כי השרת היה איטי מדי",
+      "כי ברגע שיש לו את ה-Credentials, הוא יכול לגשת ל-S3 מכל מקום בעולם (אם אין מגבלות נוספות)",
+      "כי השרת לא היה מחובר לאינטרנט",
+      "כדי לא להשאיר עקבות בשרת"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "מפתחות הגישה של AWS הם גלובליים לאותו חשבון. ברגע שהם נגנבו, ניתן להשתמש בהם מכל מחשב שיש לו גישה ל-API של AWS Public Endpoints.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ה-Whitelist Bypass שהוצג בהקשר של Jira?",
+    "options": [
+      "שימוש ב-Null Byte (%00)",
+      "שימוש בכתובת IP הקסדצימלית",
+      "ניצול אופן הפרסור של כתובות URL המכילות userinfo (למשל `@`), כך שהבדיקה נעשית על דומיין אחד והבקשה נשלחת לאחר",
+      "שימוש ב-DNS Rebinding",
+      "שימוש בתווים בסינית"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "החולשה נבעה מכך שהמערכת בדקה את `allowed.com` (לפני ה-@) אבל הספרייה שביצעה את הבקשה התעלמה מזה ופנתה לכתובת שאחרי ה-@ (`internal.server`).",
+    "source": "SSRF, Jira, Capital One_ ניתוח אבטחתי.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מה מומלץ לעשות לגבי גרסאות תוכנה כדי למנוע מקרים דומים?",
+    "options": [
+      "להישאר עם גרסאות ישנות ויציבות",
+      "לעדכן תוכנה (Patching) באופן קבוע, שכן Jira כבר הוציאה תיקון לחולשה זו",
+      "לכתוב את התוכנה לבד",
+      "לא להשתמש בתוכנות צד ג'",
+      "למחוק את התוכנה מהשרת"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "ניהול פגיעויות (Vulnerability Management) ועדכון גרסאות (Patching) הם בסיסיים. החולשה ב-Jira הייתה ידועה ותוקנה, אך שרתים שלא עודכנו נותרו חשופים.",
+    "source": "SSRF, Jira, Capital One 2019 Data Breach (1).pdf"
   }
 ]
-

@@ -1,353 +1,492 @@
 [
   {
     "type": "mc",
-    "question": "איזו התקפה מאפשרת לתוקף לבצע פעולות בשם המשתמש ללא ידיעתו תוך ניצול Session קיים?",
+    "question": "מיהי קבוצת התקיפה שעמדה מאחורי פריצת Midnight Blizzard למיקרוסופט בינואר 2024?",
     "options": [
-      "SQL Injection",
-      "XSS",
-      "CSRF",
-      "Session Fixation",
-      "Cookie Poisoning"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "CSRF מנצלת Session פעיל של המשתמש ומבצעת בקשות בשמו ללא ידיעתו.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה הקשר בין התקפת XSS לבין התקפת SQL Injection?",
-    "options": [
-      "אין קשר בין ההתקפות",
-      "שתיהן פוגעות ב־Database",
-      "שתיהן פוגעות בצד ה־Client",
-      "שתיהן מבוססות על פירוש קלט כקוד",
-      "XSS היא תת־סוג של SQL Injection"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "בשתי ההתקפות קלט לא מהימן מפורש כקוד – SQL בצד השרת ו־JavaScript בצד הלקוח.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מהי התקפת Cookie Poisoning?",
-    "options": [
-      "גניבת Cookie באמצעות XSS",
-      "שינוי ערך Cookie על ידי התוקף כדי להשפיע על לוגיקת האפליקציה",
-      "שליחת Cookie דרך ערוץ לא מוצפן",
-      "ניחוש Cookie של משתמש אחר",
-      "מחיקת Cookie של משתמש"
+      "Lazarus Group (צפון קוריאה)",
+      "APT29 / Nobelium (מקושרת למודיעין הרוסי)",
+      "Anonymous",
+      "Shiny Hunters",
+      "Equation Group"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "Cookie Poisoning היא שינוי ערך Cookie במטרה להשפיע על התנהגות האפליקציה.",
-    "source": "original"
+    "explanation": "התוקפים זוהו כקבוצת Midnight Blizzard (הידועה גם כ-Nobelium או APT29), קבוצת APT מתוחכמת המקושרת לרוסיה.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
   },
   {
     "type": "mc",
-    "question": "כיצד התקפת XSS מאפשרת עקיפה של Same Origin Policy?",
+    "question": "מה הייתה המטרה העיקרית (Goal) של התוקפים בפריצה זו?",
     "options": [
-      "באמצעות שליחת בקשות HTTP ישירות לשרת",
-      "באמצעות הרצת קוד זדוני בהקשר של הדומיין הלגיטימי",
-      "באמצעות שינוי כותרות HTTP",
-      "באמצעות שינוי DNS",
-      "באמצעות שימוש ב־HTTPS"
+      "הצפנת שרתי מיקרוסופט ודרישת כופר",
+      "גניבת פרטי כרטיסי אשראי של לקוחות",
+      "ריגול (Espionage) - גישה לתיבות המייל של בכירי מיקרוסופט ואנשי אבטחה כדי להבין מה מיקרוסופט יודעת על הקבוצה",
+      "הפלת שירותי הענן של Azure (DDoS)",
+      "כריית מטבעות קריפטו על שרתי מיקרוסופט"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "המוטיבציה הייתה מודיעינית: התוקפים חיפשו מידע בתיבות המייל של אנשי האבטחה והבכירים כדי לגלות מה ידוע עליהם ועל פעילותם.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי שיטת התקיפה הראשונית (Initial Access) ששימשה לפריצת החשבון הראשון?",
+    "options": [
+      "Phishing ממוקד לעובדים",
+      "ניצול חולשת Zero-day ב-Windows",
+      "Password Spraying על חשבון בדיקות (Legacy Test Account)",
+      "SQL Injection באתר החברה",
+      "גניבת מחשב פיזי ממשרדי החברה"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "התוקפים השתמשו בטכניקת Password Spraying כנגד חשבון ישן בסביבת טסט (Test Tenant) שלא היה בשימוש שוטף.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מה ההבדל בין Password Spraying לבין Brute Force רגיל?",
+    "options": [
+      "Password Spraying מנסה הרבה סיסמאות על משתמש אחד; Brute Force מנסה סיסמה אחת על הרבה משתמשים",
+      "Password Spraying מנסה מספר קטן של סיסמאות נפוצות על כמות גדולה של משתמשים כדי להימנע מנעילה; Brute Force מנסה את כל הצירופים האפשריים על חשבון אחד",
+      "אין הבדל, אלו שמות נרדפים",
+      "Password Spraying משתמש ב-Hash, Brute Force משתמש ב-Plaintext",
+      "Password Spraying עובד רק ב-Linux"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "קוד XSS רץ בדפדפן בהקשר של הדומיין הלגיטימי ולכן עוקף את Same Origin Policy.",
-    "source": "original"
+    "explanation": "Password Spraying היא טכניקה \"שקטה\" יותר שנועדה לחמוק ממנגנוני Account Lockout על ידי ניסיון של מעט סיסמאות על הרבה חשבונות, בניגוד ל-Brute Force \"רועש\" על חשבון בודד.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
   },
   {
     "type": "mc",
-    "question": "איזה סוג של XSS מתרחש כולו בצד ה־Client ללא מעורבות של השרת?",
+    "question": "איזה כשל אבטחה קריטי בחשבון הטסט אפשר את הצלחת ה-Password Spraying?",
     "options": [
-      "Stored XSS",
-      "Reflected XSS",
-      "DOM-Based XSS",
-      "Persistent XSS",
-      "אף תשובה אינה נכונה"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "DOM-Based XSS מתרחש כאשר הקלט מעובד ונוצל ישירות בדפדפן.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה ההבדל המהותי בין התקפת XSS להתקפת CSRF?",
-    "options": [
-      "XSS פוגעת בשרת ו־CSRF בדפדפן",
-      "XSS מנצלת Session ו־CSRF לא",
-      "XSS מזריקה קוד ו־CSRF מנצלת אמון ב־Session",
-      "CSRF דורשת JavaScript ו־XSS לא",
-      "אין הבדל מהותי"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "XSS מזריקה קוד זדוני לדפדפן, בעוד CSRF מנצלת Session קיים לביצוע פעולות.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה מטרתו המרכזית של מנגנון Content Security Policy (CSP)?",
-    "options": [
-      "הצפנת התעבורה",
-      "מניעת SQL Injection",
-      "הגבלת מקורות מהם ניתן לטעון ולהריץ קוד בדפדפן",
-      "אימות זהות המשתמש",
-      "ניהול Sessions"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "CSP מגביל מקורות קוד ומקטין את הסיכון להתקפות XSS.",
-    "source": "original"
-  },
-   {
-    "type": "mc",
-    "question": "איזו מבין ההתקפות הבאות מנצלת vulnerability באפליקציה שרצה על Web server על מנת להעביר קוד זדוני ליעד ההתקפה? (בחר את התשובה המדויקת ביותר)",
-    "options": [
-      "התקפת XSS",
-      "התקפת SQL Injection",
-      "התקפת Session Hijacking",
-      "התקפת XSS והתקפת SQL Injection",
-      "התקפת XSS והתקפת SQL Injection והתקפת Session Hijacking"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "גם XSS וגם SQL Injection מנצלות חולשה באפליקציה כדי להעביר קוד זדוני – בדפדפן או בשרת.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "איזו התקפה מאפשרת לגנוב את הערך של ה־SessionID מתוך הדפדפן?",
-    "options": [
-      "Cookie Poisoning",
-      "SQL Injection",
-      "Session Hijacking",
-      "XSS",
-      "Session Hijacking ו־Cookie Poisoning"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "XSS מאפשר הרצת JavaScript בדפדפן וגניבת SessionID.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "התקפת Cookie Poisoning תוקף גורם ל:",
-    "options": [
-      "צד שלישי שמאזין לתעבורה בין הדפדפן לשרת",
-      "המשתמש של ה־Web application",
-      "צד שלישי שמצליח להחדיר קוד זדוני לדפדפן של המשתמש",
-      "תשובות א׳ ו־ב׳ נכונות",
-      "אף אחת מהתשובות אינה נכונה"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "Cookie Poisoning מתבצעת כאשר קוד זדוני בדפדפן משנה ערכי Cookies.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "איזו מבין ההתקפות הבאות התקפת ה־XSS נחשבת בעיית אבטחה נשמרת בבסיס הנתונים בשרת של ה־Web application?",
-    "options": [
-      "Reflected XSS",
-      "Persistence XSS",
-      "DOM-Based XSS",
-      "תשובות א׳ ו־ב׳ נכונות",
-      "תשובות ב׳ ו־ג׳ נכונות"
+      "הסיסמה הייתה \"123456\"",
+      "החשבון לא היה מוגן ב-MFA (אימות דו-שלבי)",
+      "לחשבון היו הרשאות Global Admin",
+      "החשבון היה פעיל רק בסופי שבוע",
+      "החשבון היה שייך למנכ\"ל"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "Persistent (Stored) XSS נשמרת בבסיס הנתונים ומופצת למשתמשים.",
-    "source": "original"
+    "explanation": "היעדר MFA על חשבון ה-Legacy Test Account היה הפרצה שאפשרה לתוקפים להיכנס עם סיסמה בלבד.",
+    "source": "Midnight_Blizzard (1).pdf"
   },
   {
     "type": "mc",
-    "question": "איזה מבין ההתקפות הבאות יש לממש את מנגנוני הגנה כנגד XSS בצד ה־client על מנת למנוע את ההתקפה? (בחר את התשובה המדויקת ביותר)",
+    "question": "כיצד הצליחו התוקפים להסוות את תעבורת הרשת שלהם במהלך ה-Password Spraying?",
     "options": [
-      "Reflected XSS",
-      "Stored XSS",
-      "DOM-Based XSS",
-      "תשובות א׳ ו־ב׳ נכונות",
-      "תשובות א׳ ב׳ ו־ג׳ נכונות"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "DOM-Based XSS מתרחש כולו בדפדפן ולכן ההגנה העיקרית נדרשת בצד ה־client.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "כיצד ניתן לצמצם את ה Attack Surface של התקפת CSRF (XSRF)?",
-    "options": [
-      "שימוש ב Cookie עם HttpOnly",
-      "הוספת Token רנדומלי וחד־פעמי לבקשות המבצעות פעולה עם side effect",
-      "ולידציה מחמירה של הקלט בצד ה client",
-      "שימוש ב Output Encoding",
-      "שימוש ב Parameterized Queries"
+      "הם השתמשו ב-VPN של מיקרוסופט",
+      "הם ניתבו את התעבורה דרך רשת של Residential Proxies (כתובות IP ביתיות לגיטימיות)",
+      "הם פרצו לשרתי ה-DNS",
+      "הם השתמשו בכתובות IP של גוגל",
+      "הם ביצעו את ההתקפה מתוך בניין מיקרוסופט"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "Token ייחודי לכל בקשה מצמצם את מספר ה־Endpoints החשופים ל־CSRF.",
-    "source": "original"
+    "explanation": "שימוש ב-Residential Proxy Networks אפשר לתוקפים להסתיר את מקור ההתקפה ולהציג כתובות IP לגיטימיות, מה שהקשה על זיהוי הפעילות כזדונית.",
+    "source": "Midnight_Blizzard (1).pdf"
   },
   {
     "type": "mc",
-    "question": "באיזה מקרה האפליקציה חשופה להתקפת XSS?",
+    "question": "לאחר הפריצה לחשבון הטסט, איזה תפקיד (Role) גילו התוקפים שיש לחשבון זה?",
     "options": [
-      "כאשר האפליקציה משלבת קלט מהמשתמש ישירות בתוך קוד JavaScript",
-      "כאשר האפליקציה משלבת קלט מהמשתמש בתוך אלמנט HTML ללא Output Encoding",
-      "כאשר האפליקציה משתמשת ב HTTPS",
-      "תשובות א' וב' נכונות",
-      "אף תשובה אינה נכונה"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "שילוב קלט לא מהימן בקוד JavaScript או HTML ללא Encoding מוביל ל-XSS.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה ההבדל המרכזי בין Reflected XSS לבין DOM-Based XSS?",
-    "options": [
-      "Reflected XSS מתבצע בצד השרת ו-DOM-Based XSS בצד הלקוח",
-      "Reflected XSS נשמר בבסיס הנתונים ו-DOM-Based XSS לא",
-      "DOM-Based XSS תמיד דורש JavaScript זדוני",
-      "אין הבדל מהותי בין שני הסוגים",
-      "DOM-Based XSS פוגע רק ב-Availability"
-    ],
-    "correctAnswerIndex": 0,
-    "explanation": "Reflected XSS מערב את השרת, בעוד DOM-Based XSS מתרחש כולו בדפדפן.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "איזו מבין התקפות ה-XSS הבאות נשמרת בבסיס הנתונים של השרת ומופצת למשתמשים רבים?",
-    "options": [
-      "Reflected XSS",
-      "DOM-Based XSS",
-      "Stored (Persistent) XSS",
-      "Self-XSS",
-      "אף תשובה אינה נכונה"
-    ],
-    "correctAnswerIndex": 2,
-    "explanation": "Stored XSS נשמר בשרת ומופעל עבור כל משתמש שצורך את התוכן.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "מה ההבדל המהותי בין התקפת CSRF לבין התקפת XSS או Session Hijacking?",
-    "options": [
-      "CSRF דורשת JavaScript ו-XSS לא",
-      "CSRF אינה דורשת גניבת SessionID",
-      "XSS ו-Session Hijacking פוגעות ב-Integrity בלבד",
-      "CSRF מתבצעת בצד השרת בלבד",
-      "אין הבדל מהותי"
+      "Global Administrator",
+      "Application Administrator",
+      "User Administrator",
+      "Helpdesk Administrator",
+      "Security Reader"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "CSRF מנצלת Session קיים ללא צורך בגניבתו, בניגוד ל-XSS/Session Hijacking.",
-    "source": "original"
+    "explanation": "החשבון החזיק בהרשאת Application Administrator, המאפשרת יצירה וניהול של אפליקציות ו-Service Principals בטננט.",
+    "source": "Midnight_Blizzard (1).pdf"
   },
   {
     "type": "mc",
-    "question": "איזו מבין ההתקפות הבאות מנצלת Vulnerability באפליקציה על מנת להעביר קוד זדוני ליעד ההתקפה?",
+    "question": "מהי המשמעות של OAuth Application בסביבת ענן?",
     "options": [
-      "SQL Injection",
-      "XSS",
-      "Session Hijacking",
-      "תשובות א' וב' נכונות",
-      "תשובות א' ב' וג' נכונות"
-    ],
-    "correctAnswerIndex": 3,
-    "explanation": "גם SQL Injection וגם XSS מעבירות קוד זדוני – בשרת או בדפדפן.",
-    "source": "original"
-  },
-  {
-    "type": "mc",
-    "question": "כיצד ניתן לצמצם את ה-Attack Surface של התקפת CSRF (XSRF)?",
-    "options": [
-      "שימוש ב-HttpOnly Cookie",
-      "הוספת CSRF Token לבקשות עם side-effect",
-      "Output Encoding",
-      "Parameterized Queries",
-      "ולידציה בצד ה-client בלבד"
+      "זוהי אפליקציה לניהול סיסמאות",
+      "זוהי ישות (Service Principal) המאפשרת לאפליקציה צד-שלישי לגשת למשאבים בשם משתמש או בשם עצמה, ללא צורך בסיסמת משתמש",
+      "זהו פרוטוקול להצפנת דואר אלקטרוני",
+      "זהו כלי לניטור רשת",
+      "זהו שרת וירטואלי"
     ],
     "correctAnswerIndex": 1,
-    "explanation": "Token ייחודי לכל בקשה מצמצם את נקודות התקיפה של CSRF.",
-    "source": "original"
+    "explanation": "אפליקציית OAuth משמשת למתן גישה (Delegated או Application permissions) למשאבים, תוך שימוש בטוקנים ובסודות (Secrets/Certificates) במקום בסיסמאות רגילות.",
+    "source": "Midnight_Blizzard (1).pdf"
   },
   {
     "type": "mc",
-    "question": "באיזה מקרה האפליקציה חשופה להתקפת XSS?",
+    "question": "מה היה הצעד הבא של התוקפים (Privilege Escalation) לאחר שזיהו את אפליקציית ה-Legacy OAuth בטננט הטסט?",
     "options": [
-      "כאשר משלבים קלט בתוך JavaScript ללא Encoding",
-      "כאשר משלבים קלט בתוך HTML ללא Output Encoding",
-      "כאשר משתמשים ב-HTTPS",
-      "תשובות א' וב' נכונות",
-      "אף תשובה אינה נכונה"
+      "הם מחקו את האפליקציה",
+      "הם יצרו Client Secret חדש לאפליקציה, מה שאפשר להם להזדהות בשמה",
+      "הם שינו את שם האפליקציה",
+      "הם שלחו פישינג למנהל האפליקציה",
+      "הם השביתו את השרת"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מכיוון שהיה להם תפקיד App Admin, הם יכלו להוסיף Credentials (סוד/מפתח) חדשים לאפליקציה הקיימת ולהשתמש בהם כדי להתחבר כאפליקציה עצמה.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע האפליקציה בטננט הטסט הייתה מסוכנת כל כך?",
+    "options": [
+      "היה לה וירוס",
+      "היא הייתה מחוברת לאינטרנט",
+      "היא החזיקה בהרשאות גבוהות (כגון היכולת ליצור משתמשים) גם בסביבת ה-Corporate (Production) של מיקרוסופט",
+      "היא לא הייתה מעודכנת",
+      "היא הייתה כתובה בשפת C"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "האפליקציה הייתה Multi-tenant או בעלת הרשאות חוצות-טננט, וכבר החזיקה בהרשאות אדמיניסטרטיביות בסביבת הייצור, מה שאפשר לתוקפים \"לקפוץ\" מהטסט לפרודקשן.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "איזו הרשאה קריטית (Permission) ניתנה לאפליקציה הזדונית שיצרו התוקפים בסביבת ה-Production?",
+    "options": [
+      "User.Read",
+      "Mail.Send",
+      "full_access_as_app (עבור Office 365 Exchange Online)",
+      "Files.ReadWrite",
+      "Directory.Read.All"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "התוקפים העניקו לאפליקציה שלהם את ההרשאה `full_access_as_app`, המאפשרת גישה מלאה לכל תיבות המייל בארגון דרך ה-API, ללא מגבלות.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד עקרון ה-Least Privilege (הזכות המינימלית) הופר במקרה זה?",
+    "options": [
+      "לחשבון הטסט היו הרשאות יתר (App Admin)",
+      "לאפליקציית ה-Legacy היו הרשאות יתר בסביבת הייצור",
+      "לאפליקציה הזדונית ניתנה גישה גלובלית לכל המיילים במקום גישה נקודתית",
+      "כל התשובות נכונות",
+      "תשובות א' ו-ג' בלבד"
     ],
     "correctAnswerIndex": 3,
-    "explanation": "שילוב קלט לא מהימן בקוד/HTML ללא Encoding מוביל ל-XSS.",
-    "source": "original"
+    "explanation": "הפרת העקרון התרחשה במספר רמות: גם בחשבון המשתמש הראשוני, גם בקונפיגורציית האפליקציה הישנה, וגם בהרשאות הגורפות שניתנו לאפליקציה החדשה.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
   },
   {
     "type": "mc",
-    "question": "מה ההבדל המרכזי בין Reflected XSS לבין DOM-Based XSS?",
+    "question": "מהי המשמעות של \"Service Principal\"?",
     "options": [
-      "Reflected XSS מערב את השרת, DOM-Based מתרחש בדפדפן בלבד",
-      "Reflected XSS נשמר בבסיס הנתונים",
-      "DOM-Based XSS אינו דורש JavaScript",
-      "אין הבדל מהותי",
-      "DOM-Based XSS פוגע רק בזמינות"
+      "מנהל השירות הראשי של מיקרוסופט",
+      "הזהות הדיגיטלית (Identity) של אפליקציה בתוך ה-Directory, המאפשרת לה לקבל הרשאות ולבצע פעולות",
+      "השרת הראשי בארגון",
+      "פרוטוקול אבטחה",
+      "סיסמה ראשית"
     ],
-    "correctAnswerIndex": 0,
-    "explanation": "Reflected XSS עובר דרך השרת; DOM-Based מתרחש כולו בצד ה-client.",
-    "source": "original"
+    "correctAnswerIndex": 1,
+    "explanation": "Service Principal הוא הייצוג של האפליקציה ב-Azure AD (Entra ID), ודרכו מנוהלות ההרשאות והגישה של האפליקציה למשאבים.",
+    "source": "Midnight_Blizzard (1).pdf"
   },
   {
     "type": "mc",
-    "question": "איזו התקפת XSS נשמרת בבסיס הנתונים של השרת ומופצת למשתמשים?",
+    "question": "כיצד התוקפים יצרו Persistence (נוכחות מתמשכת) ברשת?",
     "options": [
-      "Reflected XSS",
-      "DOM-Based XSS",
-      "Stored (Persistent) XSS",
-      "Self-XSS",
-      "אף תשובה אינה נכונה"
+      "הם התקינו Rootkit על השרתים",
+      "הם יצרו מספר אפליקציות OAuth זדוניות שונות, כך שאם אחת תיחסם, האחרות ימשיכו לפעול",
+      "הם שינו את סיסמאות המנהלים",
+      "הם יצרו חיבור VPN קבוע",
+      "הם השביתו את מערכת הניטור"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "יצירת אפליקציות OAuth מרובות (Backdoors) אפשרה להם יתירות. בנוסף, זה עזר להם לחמוק מניטור ממוקד באפליקציה אחת.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע קשה לנטר יצירה של אפליקציות OAuth חדשות בארגון גדול?",
+    "options": [
+      "כי הלוגים מוצפנים",
+      "כי זו פעולה נפוצה ולגיטימית שקורית בתדירות גבוהה (רעש)",
+      "כי אין לוגים לפעולה זו",
+      "כי התוקפים מוחקים את הלוגים מיד",
+      "כי מיקרוסופט לא מאפשרת ניטור כזה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "בסביבות פעילות (כמו של מיקרוסופט), מפתחים יוצרים אפליקציות כל הזמן. זיהוי אפליקציה זדונית בתוך שפע הפעילות הלגיטימית הוא אתגר משמעותי.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "אילו רכיבי CIA נפגעו במתקפה זו?",
+    "options": [
+      "רק Availability",
+      "בעיקר Confidentiality (חשיפת מיילים) וגם Integrity (ערעור האמון במערכת)",
+      "רק Integrity",
+      "אף רכיב לא נפגע",
+      "רק Non-repudiation"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הפגיעה הישירה הייתה בסודיות המידע. בנוסף, עצם הימצאות התוקף בעומק המערכת פוגעת באמינות (Integrity) של המערכת, גם אם לא שונה מידע בפועל.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו הלקח המרכזי לגבי סביבות \"Non-Production\" (כגון Dev/Test)?",
+    "options": [
+      "אין צורך לאבטח אותן כי אין בהן מידע חשוב",
+      "יש לנתק אותן מהאינטרנט",
+      "יש לאבטח אותן באותה רמת קפדנות כמו סביבות Production, ולהפריד ביניהן לחלוטין",
+      "צריך למחוק אותן כל יום",
+      "אפשר להשתמש בהן בסיסמאות פשוטות"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "Stored XSS נשמר בשרת ומופעל לכל משתמש הצורך את התוכן.",
-    "source": "original"
+    "explanation": "תוקפים משתמשים בסביבות פחות מוגנות (כמו טננט בדיקות ישן) כדלת אחורית או קרש קפיצה כדי להגיע לסביבת הייצור הקריטית.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
   },
   {
     "type": "mc",
-    "question": "מה מאפשרת התקפת Session Hijacking?",
+    "question": "מהי הפעולה המומלצת לגבי חשבונות ואפליקציות ישנות (Legacy)?",
     "options": [
-      "עקיפת Authentication בלבד",
-      "עקיפת Authorization בלבד",
-      "עקיפת Authentication ו-Authorization",
-      "עקיפת Auditing בלבד",
-      "גניבת סיסמה"
+      "לשמור אותן ליתר ביטחון",
+      "לבצע Audit תקופתי ולמחוק כל מה שאינו בשימוש פעיל (\"ניקוי אורוות\")",
+      "לשנות להן סיסמה ל-\"123456\"",
+      "להעביר אותן לשרת אחר",
+      "להסתיר אותן"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "תשתיות \"יתומות\" או נשכחות הן יעד מועדף לתוקפים כי הן לרוב לא מנוטרות ולא מעודכנות. הסרתן מצמצמת את משטח התקיפה.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד תוקף מנצל את מנגנון ה-OAuth לרעה (OAuth Abuse)?",
+    "options": [
+      "הוא משתמש בטוקן כדי לקנות מוצרים",
+      "הוא גונב את שם המשתמש של המנכ\"ל",
+      "הוא יוצר או משתלט על אפליקציה בעלת הרשאות גבוהות, ומשתמש בה כדי לגשת למידע ללא תלות במשתמש אנושי",
+      "הוא מפיל את שרת ה-OAuth",
+      "הוא משנה את פרוטוקול ה-HTTP"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "Session תקף מאפשר התחזות מלאה למשתמש.",
-    "source": "original"
+    "explanation": "OAuth Abuse מאפשר לתוקף להחזיק בגישה מתמשכת ועצמאית למשאבים, עוקף MFA (לאחר ההגדרה הראשונית), ופועל \"בשם האפליקציה\".",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
   },
   {
     "type": "mc",
-    "question": "באילו סוגי XSS חייבים לממש מנגנוני הגנה בצד השרת?",
+    "question": "מהי המלצת המיטיגציה לגבי MFA בעקבות האירוע?",
     "options": [
-      "Reflected XSS בלבד",
-      "Stored XSS בלבד",
-      "DOM-Based XSS בלבד",
-      "Reflected ו-Stored XSS",
-      "כל סוגי ה-XSS"
+      "להפעיל MFA רק למנהלים",
+      "Enforce MFA Everywhere - להפעיל חובת MFA על כל החשבונות, כולל בטסט וחשבונות שירות",
+      "להשתמש בסיסמאות ארוכות במקום MFA",
+      "לבטל MFA כדי לא להכביד על המפתחים",
+      "להשתמש ב-SMS בלבד"
     ],
-    "correctAnswerIndex": 3,
-    "explanation": "Reflected ו-Stored מערבים את השרת ולכן מחייבים הגנה בצד השרת.",
-    "source": "original"
+    "correctAnswerIndex": 1,
+    "explanation": "היעדר MFA על חשבון אחד בודד היה נקודת הכשל הראשונה. המדיניות חייבת להיות גורפת לכל זהות במערכת.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
   },
   {
     "type": "mc",
-    "question": "מה תפקידו של Output Encoding?",
+    "question": "באיזה שלב של ה-Kill Chain התבצעה הגישה לתיבות המייל?",
     "options": [
-      "מניעת SQL Injection",
-      "מניעת CSRF",
-      "מניעת XSS",
-      "מניעת Session Hijacking",
-      "מניעת Parameter Tampering"
+      "Initial Access",
+      "Privilege Escalation",
+      "Exfiltration / Actions on Objectives",
+      "Reconnaissance",
+      "Defense Evasion"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "Output Encoding מונע פרשנות של קלט כקוד בדפדפן.",
-    "source": "original"
+    "explanation": "הגישה למייל וגניבת המידע (Exfiltration) הם השלב הסופי בו התוקף מממש את מטרתו (ריגול).",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו ה-Grant Type ב-OAuth ששימש ככל הנראה את האפליקציה הזדונית?",
+    "options": [
+      "Authorization Code",
+      "Implicit Flow",
+      "Client Credentials Grant",
+      "Device Code Flow",
+      "Password Grant"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "כאשר אפליקציה (Service Principal) ניגשת למשאבים בשם עצמה (כמו תהליך רקע) ולא בשם משתמש מחובר, היא משתמשת ב-Client Credentials Grant.",
+    "source": "General OAuth Knowledge (Implied in Context)"
+  },
+  {
+    "type": "mc",
+    "question": "מהי הסכנה בשימוש ב-Legacy Infrastructure (תשתיות מורשת)?",
+    "options": [
+      "הן איטיות יותר",
+      "הן יקרות לתחזוקה",
+      "הן לרוב אינן מחוברות למערכות ההגנה והניטור המודרניות, ולכן מהוות \"שטח מת\" מבחינת אבטחה",
+      "הן לא תומכות בעברית",
+      "אין בהן סכנה מיוחדת"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "הטננט הישן \"נשכח\" ולא היה תחת אותה מטריית הגנה וניטור כמו הטננט הראשי, מה שאפשר לתוקפים לפעול בו באין מפריע.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד הצליחו התוקפים ליצור משתמש חדש בסביבת ה-Corporate?",
+    "options": [
+      "הם ניחשו את הסיסמה של המנכ\"ל",
+      "הם השתמשו ב-SQL Injection",
+      "הם השתמשו ב-Legacy OAuth App שהייתה לה הרשאה (Role) ליצור משתמשים בטננט הראשי",
+      "הם התקשרו לתמיכה וביקשו ליצור משתמש",
+      "הם פרצו פיזית לחוות השרתים"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "האפליקציה שנפרצה בטננט הטסט החזיקה בהרשאות ניהול חזקות גם בטננט הפרודקשן, מה שאפשר לתוקפים ליצור משתמש אדמין חדש.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי המשמעות של Environment Isolation (סגמנטציה)?",
+    "options": [
+      "בידוד המשרדים הפיזיים",
+      "הפרדה מוחלטת בין סביבות פיתוח/בדיקות לסביבת הייצור, כך שפריצה לאחת לא תאפשר מעבר לשנייה",
+      "שימוש במזגנים בחדר השרתים",
+      "הפרדת רשתות WIFI",
+      "שימוש במחשבים נפרדים לכל עובד"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "היעדר בידוד (חשבון בטסט שיכול להשפיע על פרודקשן) היה הגורם שאפשר את התפשטות המתקפה. בידוד מונע תנועה רוחבית (Lateral Movement) בין סביבות.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "איזו יכולת נותנת הרשאת `RoleManagement.ReadWrite.Directory` לאפליקציה?",
+    "options": [
+      "לקרוא מיילים",
+      "לשנות סיסמאות",
+      "לנהל תפקידים והרשאות ב-Directory (כולל להפוך את עצמה או אחרים ל-Admin)",
+      "למחוק קבצים",
+      "לכבות את השרת"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "זוהי הרשאה קריטית המאפשרת הסלמת הרשאות (Privilege Escalation) על ידי הוספת משתמשים לקבוצות אדמיניסטרטיביות.",
+    "source": "General Azure AD Knowledge (Relevant to Context)"
+  },
+  {
+    "type": "mc",
+    "question": "מהו הלקח לגבי כלי הגנה ומוצרי אבטחה ממתקפה זו?",
+    "options": [
+      "שצריך לקנות עוד מוצרים",
+      "שמוצרים לא מספיקים אם המדיניות (Policy) וההיגיינה הבסיסית (כמו מחיקת חשבונות ישנים) לקויות",
+      "שמיקרוסופט לא משתמשת באנטי-וירוס",
+      "שהאקרים תמיד ינצחו",
+      "שצריך לעבור ל-Linux"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הפריצה מדגישה שגם עם הכלים המתקדמים ביותר, הזנחה של נהלים בסיסיים (מחיקת חשבונות לא פעילים, אכיפת MFA) משאירה דלתות פתוחות.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מדוע התוקפים השתמשו ב-Residential Proxies?",
+    "options": [
+      "כדי לגלוש מהר יותר",
+      "כדי להיראות כמו משתמשים ביתיים רגילים ולהימנע מחסימות מבוססות IP Reputation",
+      "כדי לחסוך כסף",
+      "כדי לעקוף את ה-MFA",
+      "כדי להצפין את התעבורה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "מערכות אבטחה חוסמות לרוב כתובות IP של שרתי VPN או Tor. שימוש בכתובות IP של אנשים פרטיים (Residential) מקשה על הזיהוי והחסימה.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו המונח APT (Advanced Persistent Threat)?",
+    "options": [
+      "וירוס פשוט",
+      "תוקף מתוחכם, לרוב מדינתי, בעל משאבים וסבלנות, שמטרתו לחדור לרשת ולהישאר בה לאורך זמן",
+      "כלי לבדיקת חדירות",
+      "חולשת אבטחה בתוכנה",
+      "פרוטוקול תקשורת מתקדם"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Midnight Blizzard היא דוגמה קלאסית ל-APT: קבוצה מדינתית (רוסיה) שפעלה בשיטתיות ובסבלנות כדי להשיג יעדי ריגול.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי הפעולה של \"Grant Consent\" במתקפה?",
+    "options": [
+      "אישור שליחת מייל",
+      "מתן אישור מנהל לאפליקציה הזדונית לגשת לנתונים בארגון",
+      "אישור כניסה ב-MFA",
+      "חתימה על חוזה",
+      "אישור עדכון תוכנה"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התוקף, שהשיג הרשאות אדמין, השתמש בהן כדי לאשר (Grant Consent) לאפליקציה הזדונית את ההרשאות הגבוהות שהיא ביקשה.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "איזה סוג של איום מייצגת מתקפה זו?",
+    "options": [
+      "Insider Threat",
+      "Script Kiddie",
+      "Nation-State Actor (תוקף מדינתי)",
+      "Hacktivist",
+      "Cyber Criminal (למטרות רווח)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "התקיפה מיוחסת למודיעין הרוסי (SVR), ולכן היא תקיפת סייבר מדינתית.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי החולשה העיקרית במנגנון \"App Roles\" (כמו full_access_as_app) אם לא מנוהל נכון?",
+    "options": [
+      "הוא איטי",
+      "הוא נותן לאפליקציה כוח אבסולוטי ללא תלות במשתמש, ולכן אם המפתחות נגנבים, לתוקף יש שליטה מלאה",
+      "הוא לא תומך ב-HTTPS",
+      "הוא עובד רק בדפדפן כרום",
+      "הוא דורש חידוש סיסמה כל יום"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "הרשאות מסוג Application Permissions (בניגוד ל-Delegated) הן חזקות מאוד כי הן לא דורשות משתמש מחובר. הן למעשה \"מפתח מאסטר\" לשירות.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהו המונח Lateral Movement?",
+    "options": [
+      "הזזת העכבר מצד לצד",
+      "תנועה של התוקף בתוך הרשת ממחשב/חשבון אחד לאחר כדי להגיע ליעד הסופי",
+      "העברת נתונים לענן",
+      "שינוי כתובת IP",
+      "גיבוי נתונים"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "המעבר מחשבון הטסט -> לאפליקציה בטסט -> לאפליקציה בפרודקשן -> למשתמש אדמין בפרודקשן -> לתיבות המייל, הוא דוגמה קלאסית לתנועה רוחבית ואנכית ברשת.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
+  },
+  {
+    "type": "mc",
+    "question": "מהי המשמעות של \"Non-Production Environment\" בהקשר של אבטחה?",
+    "options": [
+      "סביבה שאינה חשובה",
+      "סביבת פיתוח או בדיקות, שלעיתים קרובות מאובטחת פחות אך מכילה גישה או נתונים שמאפשרים לפרוץ לסביבת האמת",
+      "סביבה מנותקת רשת",
+      "סביבה של לקוחות",
+      "סביבת ענן"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "התוקפים מנצלים את העובדה שארגונים משקיעים פחות בהגנה על סביבות Dev/Test, ומשתמשים בהן כדלת כניסה.",
+    "source": "Midnight_Blizzard (1).pdf"
+  },
+  {
+    "type": "mc",
+    "question": "כיצד ניתן לזהות פעילות חשודה של Service Principal?",
+    "options": [
+      "לחפש Login בשעות לא שגרתיות",
+      "לנטר שינויים בהרשאות (New Permissions Granted)",
+      "לזהות יצירת סודות (Client Secrets) חדשים לאפליקציות קיימות",
+      "לזהות תעבורת נתונים חריגה מהאפליקציה",
+      "כל התשובות נכונות"
+    ],
+    "correctAnswerIndex": 4,
+    "explanation": "ניטור אפקטיבי דורש מעקב אחרי כל מחזור החיים של האפליקציה: מיצירת סודות, דרך שינוי הרשאות ועד דפוסי הגישה לנתונים.",
+    "source": "ניתוח מתקפת Midnight Blizzard על מיקרוסופט.pdf"
   }
 ]
-
